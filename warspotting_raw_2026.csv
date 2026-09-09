@@ -1123,16 +1123,21 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46855,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-08-31,"Bakhmut raion, Donetsk oblast",,,Cope cage
 46875,"Radars, jammers",R-330Zh 'Zhytel' electronic warfare station,Destroyed,Russia,2026-08-31,"Rubizhne, Siverskodonetsk raion",,,
 46798,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-02,,,,
+46933,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Damaged,Russia,2026-09-02,"Baranykivka, Svatove raion","49.245280,38.355740",,
 46794,Self-propelled artillery,152mm 2S43 'Malva',Destroyed,Russia,2026-09-03,"Shirokii, Belgorod raion","50.484194,36.293750",,Jammer
 46797,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-09-03,"Ivanivka, Svatove raion","49.291490,38.338270",,Cope cage
 46804,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-03,South Ukraine,,,
 46806,Anti-aircraft systems,5P85D or S TEL (for 75R6 S-300PS),Destroyed,Russia,2026-09-03,"Sirius, Krasnodar krai","43.388299,40.005066",1721st Anti-Aircraft Missile Regiment,"Shattered, Loitering"
 46877,Helicopters,Unknown helicopter,Destroyed,Russia,2026-09-03,"Sochi airport, Sochi","43.437940,39.937694",,Loitering
+46947,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-03,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Jammer"
 46807,Tanks,T-90M 'Proryv',Destroyed,Russia,2026-09-04,,,,
 46809,Tanks,T-72B3 Obr. 2022,Destroyed,Russia,2026-09-04,"Kolodiazi, Kramatorsk raion","49.102648,37.915385",,Cope cage
 46810,Transport,Ural-4320,Destroyed,Russia,2026-09-04,Belgorod oblast,,,"Loitering, ◇, ✕"
 46847,Transport,KamAZ 6x6 with armoured cabin,Destroyed,Russia,2026-09-04,"Demianivka, Mariupol raion","47.051417,37.117667",,Loitering
+46944,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,
+46945,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,Jammer
 46909,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2026-09-07,Kursk oblast,,,
-46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion",,,Cope cage
+46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion","51.266600,34.889770",,Cope cage
+46946,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-07,"Pokrovsk raion, Donetsk oblast",,,
 46934,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Pokrovsk raion, Donetsk oblast",,,Cope cage
 46950,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-09-08,"Terny, Kramatorsk raion","49.134156,38.082890",,"Turretless, Z, ◇, Turtle, Additional armour"
