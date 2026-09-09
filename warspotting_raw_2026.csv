@@ -1134,3 +1134,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46847,Transport,KamAZ 6x6 with armoured cabin,Destroyed,Russia,2026-09-04,"Demianivka, Mariupol raion","47.051417,37.117667",,Loitering
 46909,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2026-09-07,Kursk oblast,,,
 46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion",,,Cope cage
+46934,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Pokrovsk raion, Donetsk oblast",,,Cope cage
+46950,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-09-08,"Terny, Kramatorsk raion","49.134156,38.082890",,"Turretless, Z, ◇, Turtle, Additional armour"
