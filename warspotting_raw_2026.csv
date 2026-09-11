@@ -1141,6 +1141,12 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46909,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2026-09-07,Kursk oblast,,,
 46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion","51.266600,34.889770",,Cope cage
 46946,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-07,"Pokrovsk raion, Donetsk oblast",,,
+46991,Transport,ZiL-131,Destroyed,Russia,2026-09-07,"Polohy raion, Zaporizhzhia oblast",,36th Combined Arms Army,Cope cage
 46934,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Pokrovsk raion, Donetsk oblast",,,Cope cage
 46950,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-09-08,"Chervonopopivka, Siverskodonetsk raion","49.134156,38.082890",,"Turretless, Z, ◇, Turtle, Additional armour"
 46953,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,Kursk oblast,,,Cope cage
+46490,Vessels,Project 11356R 'Burevestnik' class frigate,Damaged,Russia,2026-09-09,"Novorossiysk, Novorossiysk okrug","44.715252,37.832764",30th Surface Ship Division,Loitering
+46990,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-09,"Kupiansk raion, Kharkiv oblast",,,
+46987,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-09-10,"Novoielyzavetivka, Pokrovsk raion","48.122783,37.055325",,"Cope cage, Additional armour"
+46988,Transport,KrAZ-255B,Destroyed,Russia,2026-09-10,"Valuyki raion, Belgorod oblast",,,
+46989,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-10,Donetsk oblast,,,"Cope cage, Jammer"
