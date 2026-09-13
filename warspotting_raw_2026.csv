@@ -1126,6 +1126,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46952,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-31,"Saint Petersburg, Leningrad oblast",,,"Turretless, Loitering"
 46798,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-02,,,,
 46933,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Damaged,Russia,2026-09-02,"Baranykivka, Svatove raion","49.245280,38.355740",,
+47010,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-02,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Expanded cabin, Additional armour, Removed turret, Hedgehog"
 46794,Self-propelled artillery,152mm 2S43 'Malva',Destroyed,Russia,2026-09-03,"Shirokii, Belgorod raion","50.484194,36.293750",,Jammer
 46797,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-09-03,"Ivanivka, Svatove raion","49.291490,38.338270",,Cope cage
 46804,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-03,South Ukraine,,,
@@ -1146,8 +1147,10 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46953,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Zaoleshenka, Sudzha raion","51.222043,35.240041",,Cope cage
 46490,Vessels,Project 11356R 'Burevestnik' class frigate,Damaged,Russia,2026-09-09,"Novorossiysk, Novorossiysk okrug","44.715252,37.832764",30th Surface Ship Division,Loitering
 46990,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-09,"Kupiansk raion, Kharkiv oblast",,,
+47011,Towed artillery,152mm 52-P-546 D-20 gun-howitzer,Destroyed,Russia,2026-09-09,Zaporizhzhia oblast,,,
 46987,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-09-10,"Novoielyzavetivka, Pokrovsk raion","48.122783,37.055325",,"Cope cage, Additional armour"
 46988,Transport,KrAZ-255B,Destroyed,Russia,2026-09-10,"Valuyki raion, Belgorod oblast",,,
 46989,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-10,Donetsk oblast,,,"Cope cage, Jammer"
+47008,Transport,ZiL-131,Destroyed,Russia,2026-09-10,"Chuhuiv raion, Kharkiv oblast",,,Cope cage
 47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,
 47006,Transport,Ural-4320,Destroyed,Russia,2026-09-11,"Chervonopopivka, Siverskodonetsk raion","49.100729,38.088392",,Cope cage
