@@ -1,7 +1,7 @@
 # ============================================================
 # WARSPOTTING ANALYTICS PIPELINE
 # ============================================================
-#
+
 # Purpose:
 #   Collect, validate and analyse Russian equipment losses
 #   documented by WarSpotting.
@@ -21,6 +21,7 @@
 # Outputs:
 #   warspotting_raw.csv
 #   weekly_losses.csv
+#   weekly_equipment_losses.csv
 #   dashboard.png
 #
 # ============================================================
@@ -724,9 +725,15 @@ def create_weekly_dataset(df):
     weekly = (
         df
         .set_index("date")
-        .resample("W-MON", label="left", closed="left")
+        .resample(
+            "W-MON",
+            label="left",
+            closed="left"
+        )
         .size()
-        .reset_index(name="weekly_losses")
+        .reset_index(
+            name="weekly_losses"
+        )
     )
 
     weekly = weekly.rename(
@@ -765,6 +772,7 @@ def create_weekly_dataset(df):
 
     return weekly
 
+
 # ============================================================
 # WEEKLY EQUIPMENT ANALYSIS
 # ============================================================
@@ -773,6 +781,9 @@ def create_weekly_equipment_dataset(df):
     """
     Create weekly equipment-loss dataset using
     WarSpotting's own equipment categories.
+
+    The WarSpotting 'type' field is used directly.
+    No manual model-to-category mapping is applied.
     """
 
     data = df.copy()
@@ -782,7 +793,7 @@ def create_weekly_equipment_dataset(df):
         errors="coerce"
     )
 
-    # Monday as the start of the week
+    # Monday as the start of the week.
     data["week"] = (
         data["date"]
         - pd.to_timedelta(
@@ -1107,6 +1118,7 @@ def main():
     print("=" * 60)
 
     print()
+
     print(
         f"Data scope starts: "
         f"{START_DATE.isoformat()}"
@@ -1167,6 +1179,7 @@ def main():
     )
 
     print()
+
     print(
         f"Raw dataset saved: "
         f"{RAW_FILE}"
@@ -1184,7 +1197,23 @@ def main():
     weekly = create_weekly_dataset(df)
 
     # --------------------------------------------------------
-    # 8. Dashboard
+    # 8. Weekly equipment analysis
+    # --------------------------------------------------------
+
+    equipment_weekly = create_weekly_equipment_dataset(df)
+
+    equipment_weekly.to_csv(
+        EQUIPMENT_WEEKLY_FILE,
+        index=False
+    )
+
+    print(
+        f"Weekly equipment dataset saved: "
+        f"{EQUIPMENT_WEEKLY_FILE}"
+    )
+
+    # --------------------------------------------------------
+    # 9. Dashboard
     # --------------------------------------------------------
 
     create_dashboard(
@@ -1193,7 +1222,7 @@ def main():
     )
 
     # --------------------------------------------------------
-    # 9. Complete
+    # 10. Complete
     # --------------------------------------------------------
 
     print()
@@ -1208,6 +1237,11 @@ def main():
     print(
         f"Latest data date: "
         f"{df['date'].max().date()}"
+    )
+
+    print(
+        f"Equipment categories: "
+        f"{equipment_weekly['type'].nunique()}"
     )
 
     print(
