@@ -22,52 +22,32 @@ df = pd.read_csv(RAW_FILE)
 print(f"Total records: {len(df):,}")
 
 print("\nRecords by status:")
-print(df["status"].value_counts().to_string())
 
-
-# ============================================================
-# 2. CURRENT WARSPOTTING TOTAL STATS
-# ============================================================
-
-print("\n" + "=" * 70)
-print("CURRENT WARSPOTTING API")
-print("=" * 70)
-
-response = requests.get(
-    f"{BASE_URL}/stats/russia",
-    headers=HEADERS,
-    timeout=60
+our_status = (
+    df["status"]
+    .str.lower()
+    .value_counts()
+    .to_dict()
 )
 
-response.raise_for_status()
-
-stats = response.json()
-
-counts = stats["counts_by_status"]
-
-print("\nWarSpotting totals:")
-
-for status, count in counts.items():
+for status, count in sorted(our_status.items()):
     print(f"  {status}: {count:,}")
-
-api_total = sum(counts.values())
-
-print(f"  TOTAL: {api_total:,}")
 
 
 # ============================================================
-# 3. COMPARE STATUS TOTALS
+# 2. COMPARE EACH STATUS WITH WARSPOTTING
 # ============================================================
 
 print("\n" + "=" * 70)
 print("STATUS COMPARISON")
 print("=" * 70)
 
-our_status = df["status"].value_counts().to_dict()
-
-all_statuses = sorted(
-    set(our_status.keys()) | set(counts.keys())
-)
+statuses = [
+    "destroyed",
+    "captured",
+    "abandoned",
+    "damaged"
+]
 
 print(
     f"{'Status':<15}"
@@ -78,10 +58,27 @@ print(
 
 print("-" * 57)
 
-for status in all_statuses:
+api_totals = {}
+
+for status in statuses:
+
+    response = requests.get(
+        f"{BASE_URL}/stats/russia/{status}",
+        headers=HEADERS,
+        timeout=60
+    )
+
+    response.raise_for_status()
+
+    data = response.json()
+
+    # API returns total count
+    api_count = data["count"]
+
+    api_totals[status] = api_count
 
     our_count = our_status.get(status, 0)
-    api_count = counts.get(status, 0)
+
     difference = api_count - our_count
 
     print(
@@ -93,56 +90,24 @@ for status in all_statuses:
 
 
 # ============================================================
-# 4. COMPARE EQUIPMENT TYPES
+# 3. TOTAL COMPARISON
 # ============================================================
 
 print("\n" + "=" * 70)
-print("EQUIPMENT TYPE COMPARISON")
+print("TOTAL")
 print("=" * 70)
 
-# Our data
-our_type_counts = (
-    df[df["status"].isin(["Destroyed", "Captured", "Abandoned"])]
-    .groupby("equipment_type")
-    .size()
-    .to_dict()
-)
+our_total = len(df)
 
-# API data
-api_types = {
-    item["type_name"]: item["counts"]
-    for item in stats["counts_by_type"]
-}
+api_total = sum(api_totals.values())
 
-print(
-    f"{'Equipment type':<35}"
-    f"{'Our CSV':>10}"
-    f"{'API':>10}"
-    f"{'Diff':>10}"
-)
-
-print("-" * 65)
-
-for equipment_type in sorted(api_types.keys()):
-
-    api_count = api_types[equipment_type]["losses"]
-
-    our_count = our_type_counts.get(equipment_type, 0)
-
-    difference = api_count - our_count
-
-    if difference != 0:
-
-        print(
-            f"{equipment_type:<35}"
-            f"{our_count:>10,}"
-            f"{api_count:>10,}"
-            f"{difference:>10,}"
-        )
+print(f"Our CSV:       {our_total:,}")
+print(f"WarSpotting:   {api_total:,}")
+print(f"Difference:    {api_total - our_total:+,}")
 
 
 # ============================================================
-# 5. RECENT RECORDS
+# 4. RECENT RECORD CHECK
 # ============================================================
 
 print("\n" + "=" * 70)
@@ -169,7 +134,6 @@ missing_ids = recent_ids - our_ids
 print(f"Recent records returned: {len(recent_df):,}")
 print(f"Recent IDs missing from our dataset: {len(missing_ids):,}")
 
-
 if missing_ids:
 
     print("\nMissing recent records:")
@@ -178,23 +142,7 @@ if missing_ids:
         recent_df["id"].astype(str).isin(missing_ids)
     ]
 
-    columns = [
-        "id",
-        "date",
-        "status",
-        "equipment_type"
-    ]
-
-    available_columns = [
-        column
-        for column in columns
-        if column in missing.columns
-    ]
-
-    print(
-        missing[available_columns]
-        .to_string(index=False)
-    )
+    print(missing.to_string(index=False))
 
 else:
 
@@ -202,15 +150,15 @@ else:
 
 
 # ============================================================
-# 6. FINAL SUMMARY
+# 5. FINAL SUMMARY
 # ============================================================
 
 print("\n" + "=" * 70)
 print("DIAGNOSTIC SUMMARY")
 print("=" * 70)
 
-print(f"Our dataset:          {len(df):,}")
+print(f"Our dataset:          {our_total:,}")
 print(f"WarSpotting API:      {api_total:,}")
-print(f"Difference:           {api_total - len(df):+,}")
+print(f"Difference:           {api_total - our_total:+,}")
 
 print("\nDiagnostic complete.")
