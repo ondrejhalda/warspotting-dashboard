@@ -784,6 +784,9 @@ def create_weekly_equipment_dataset(df):
 
     The WarSpotting 'type' field is used directly.
     No manual model-to-category mapping is applied.
+
+    Includes validation to ensure that the equipment
+    aggregation matches the complete raw dataset.
     """
 
     data = df.copy()
@@ -793,7 +796,10 @@ def create_weekly_equipment_dataset(df):
         errors="coerce"
     )
 
-    # Monday as the start of the week.
+    # --------------------------------------------------------
+    # Create Monday-based week
+    # --------------------------------------------------------
+
     data["week"] = (
         data["date"]
         - pd.to_timedelta(
@@ -801,6 +807,10 @@ def create_weekly_equipment_dataset(df):
             unit="D"
         )
     )
+
+    # --------------------------------------------------------
+    # Aggregate losses by week and equipment category
+    # --------------------------------------------------------
 
     weekly_equipment = (
         data
@@ -818,6 +828,14 @@ def create_weekly_equipment_dataset(df):
         .reset_index(drop=True)
     )
 
+    # --------------------------------------------------------
+    # Validation
+    # --------------------------------------------------------
+
+    raw_total = len(data)
+
+    equipment_total = weekly_equipment["losses"].sum()
+
     print()
     print("=" * 60)
     print("WEEKLY EQUIPMENT ANALYSIS")
@@ -831,6 +849,38 @@ def create_weekly_equipment_dataset(df):
     print(
         f"Equipment categories: "
         f"{weekly_equipment['type'].nunique()}"
+    )
+
+    print()
+    print("EQUIPMENT DATA VALIDATION")
+
+    print(
+        f"  Raw records: "
+        f"{raw_total:,}"
+    )
+
+    print(
+        f"  Equipment aggregated records: "
+        f"{equipment_total:,}"
+    )
+
+    # The sum of all equipment categories must equal
+    # the number of records in the raw dataset.
+    if equipment_total != raw_total:
+
+        raise ValueError(
+            "Equipment aggregation does not match "
+            "the raw dataset: "
+            f"raw={raw_total:,}, "
+            f"equipment={equipment_total:,}"
+        )
+
+    print(
+        "  Raw vs equipment total: OK"
+    )
+
+    print(
+        "EQUIPMENT VALIDATION STATUS: OK"
     )
 
     return weekly_equipment
