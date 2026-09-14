@@ -1,20 +1,30 @@
-"""
-WarSpotting Losses Dashboard
+# ============================================================
+# WARSPOTTING ANALYTICS PIPELINE
+# ============================================================
+#
+# Purpose:
+#   Collect, validate and analyse Russian equipment losses
+#   documented by WarSpotting.
+#
+# Data scope:
+#   2022-02-24 -> present
+#
+# Update strategy:
+#   1. First run:
+#      - download complete historical dataset
+#
+#   2. Following runs:
+#      - download newly added records via /recent
+#      - refresh the last N days via date-based API
+#      - merge everything by unique loss ID
+#
+# Outputs:
+#   warspotting_raw.csv
+#   weekly_losses.csv
+#   dashboard.png
+#
+# ============================================================
 
-Automated data pipeline:
-
-WarSpotting API
-        ↓
-Raw CSV
-        ↓
-Data validation
-        ↓
-Weekly aggregation
-        ↓
-Dashboard
-
-Designed for GitHub Actions and local execution.
-"""
 
 from datetime import date, timedelta
 from pathlib import Path
@@ -29,25 +39,26 @@ import requests
 # CONFIGURATION
 # ============================================================
 
-BASE_URL = "https://ukr.warspotting.net/api/losses/russia"
+BASE_URL = "https://ukr.warspotting.net/api"
 
-RAW_FILE = Path("warspotting_raw_2026.csv")
-WEEKLY_FILE = Path("weekly_losses_2026.csv")
-DASHBOARD_FILE = Path("dashboard.png")
+START_DATE = date(2022, 2, 24)
 
-# First date included in the project.
-START_DATE = date(2026, 1, 1)
-
-# Re-download the most recent 10 days on every run.
-# This helps capture late-added or corrected records.
 REFRESH_DAYS = 10
 
-# WarSpotting API limit:
-# maximum 10 requests per 10 seconds.
 REQUEST_DELAY = 1.1
 
+RAW_FILE = Path("warspotting_raw.csv")
+WEEKLY_FILE = Path("weekly_losses.csv")
+DASHBOARD_FILE = Path("dashboard.png")
+
+USER_AGENT = (
+    "Mozilla/5.0 "
+    "(compatible; WarSpottingAnalytics/1.0; "
+    "+https://github.com/ondrejhalda/warspotting-dashboard)"
+)
+
 HEADERS = {
-    "User-Agent": "WarSpotting-Analytics-Dashboard/1.0"
+    "User-Agent": USER_AGENT
 }
 
 REQUIRED_COLUMNS = [
@@ -65,154 +76,109 @@ REQUIRED_COLUMNS = [
 
 
 # ============================================================
-# API FUNCTIONS
+# API HELPERS
+# ============================================================
+
+def api_get(url, max_retries=5):
+    """
+    Perform a GET request with retries.
+
+    Retries are used for temporary API/server errors
+    and rate limiting.
+    """
+
+    for attempt in range(1, max_retries + 1):
+
+        try:
+
+            response = requests.get(
+                url,
+                headers=HEADERS,
+                timeout=60
+            )
+
+            if response.status_code == 200:
+                return response.json()
+
+            if response.status_code in [429, 500, 502, 503, 504, 520]:
+
+                wait_time = min(10 * attempt, 60)
+
+                print(
+                    f"  API status {response.status_code}. "
+                    f"Retrying in {wait_time}s..."
+                )
+
+                time.sleep(wait_time)
+                continue
+
+            response.raise_for_status()
+
+        except requests.RequestException as error:
+
+            if attempt == max_retries:
+                raise
+
+            wait_time = min(10 * attempt, 60)
+
+            print(
+                f"  Request error: {error}. "
+                f"Retrying in {wait_time}s..."
+            )
+
+            time.sleep(wait_time)
+
+    raise RuntimeError(f"API request failed: {url}")
+
+
+# ============================================================
+# API: DATE-BASED DATA
 # ============================================================
 
 def get_day_data(target_date):
     """
-    Download all loss records for one day.
+    Download all Russian losses recorded for one date.
 
-    Handles pagination automatically.
-    One API page can contain up to 100 records.
+    WarSpotting returns up to 100 records per page,
+    therefore pagination is handled automatically.
     """
 
     all_losses = []
+
     page = 1
 
     while True:
 
-        url = f"{BASE_URL}/{target_date.isoformat()}/{page}"
+        date_string = target_date.isoformat()
 
-        max_retries = 5
-        losses = None
+        url = (
+            f"{BASE_URL}/losses/russia/"
+            f"{date_string}/{page}"
+        )
 
-        for attempt in range(1, max_retries + 1):
+        data = api_get(url)
 
-            try:
-
-                response = requests.get(
-                    url,
-                    headers=HEADERS,
-                    timeout=30
-                )
-
-                # ------------------------------------------------
-                # Successful request
-                # ------------------------------------------------
-
-                if response.status_code == 200:
-
-                    data = response.json()
-
-                    losses = data.get("losses", [])
-
-                    break
-
-                # ------------------------------------------------
-                # Rate limit
-                # ------------------------------------------------
-
-                if response.status_code == 429:
-
-                    wait_time = 10 * attempt
-
-                    print(
-                        f"Rate limited. "
-                        f"Waiting {wait_time}s..."
-                    )
-
-                    time.sleep(wait_time)
-
-                    continue
-
-                # ------------------------------------------------
-                # Temporary server errors
-                # ------------------------------------------------
-
-                if response.status_code in [
-                    500,
-                    502,
-                    503,
-                    504,
-                    520,
-                ]:
-
-                    wait_time = 3 * attempt
-
-                    print(
-                        f"HTTP {response.status_code}. "
-                        f"Retry {attempt}/{max_retries} "
-                        f"in {wait_time}s..."
-                    )
-
-                    time.sleep(wait_time)
-
-                    continue
-
-                # ------------------------------------------------
-                # Unexpected HTTP error
-                # ------------------------------------------------
-
-                response.raise_for_status()
-
-            except requests.RequestException as error:
-
-                if attempt == max_retries:
-
-                    raise RuntimeError(
-                        f"Request failed for "
-                        f"{target_date}, page {page}: "
-                        f"{error}"
-                    )
-
-                wait_time = 3 * attempt
-
-                print(
-                    f"Request error: {error}. "
-                    f"Retry {attempt}/{max_retries} "
-                    f"in {wait_time}s..."
-                )
-
-                time.sleep(wait_time)
-
-        # --------------------------------------------------------
-        # All retries failed
-        # --------------------------------------------------------
-
-        if losses is None:
-
-            raise RuntimeError(
-                f"Could not download "
-                f"{target_date}, page {page}"
-            )
-
-        # --------------------------------------------------------
-        # No records = no more pages
-        # --------------------------------------------------------
+        losses = data.get("losses", [])
 
         if not losses:
-
             break
 
         all_losses.extend(losses)
 
         print(
-            f"  {target_date} | "
+            f"    {date_string} | "
             f"page {page} | "
             f"{len(losses)} records"
         )
 
-        # --------------------------------------------------------
-        # Fewer than 100 records means last page
-        # --------------------------------------------------------
-
+        # If fewer than 100 records were returned,
+        # this was the final page.
         if len(losses) < 100:
-
             break
 
         page += 1
 
-        # Respect API rate limit.
+        # Respect API request limits.
         time.sleep(REQUEST_DELAY)
 
     return all_losses
@@ -220,41 +186,78 @@ def get_day_data(target_date):
 
 def download_date_range(start_date, end_date):
     """
-    Download all records between two dates.
+    Download losses between start_date and end_date,
+    inclusive.
     """
-
-    if start_date > end_date:
-
-        return []
 
     all_losses = []
 
     current_date = start_date
 
+    total_days = (end_date - start_date).days + 1
+
+    day_number = 0
+
     while current_date <= end_date:
 
+        day_number += 1
+
         print(
-            f"Downloading {current_date}..."
+            f"  [{day_number}/{total_days}] "
+            f"Downloading {current_date.isoformat()}"
         )
 
-        daily_losses = get_day_data(
-            current_date
-        )
+        day_losses = get_day_data(current_date)
 
-        all_losses.extend(
-            daily_losses
+        all_losses.extend(day_losses)
+
+        print(
+            f"    Total records for day: "
+            f"{len(day_losses)}"
         )
 
         current_date += timedelta(days=1)
 
-        # Respect API rate limit.
-        time.sleep(REQUEST_DELAY)
+        # Do not unnecessarily sleep after the final request.
+        if current_date <= end_date:
+            time.sleep(REQUEST_DELAY)
 
     return all_losses
 
 
 # ============================================================
-# DATA LOADING
+# API: RECENTLY ADDED DATA
+# ============================================================
+
+def get_recent_data():
+    """
+    Download the 100 most recently added Russian losses.
+
+    Important:
+    These records are sorted by when they were added to
+    WarSpotting, not necessarily by their loss date.
+
+    Therefore a record added today can have a loss date
+    from 2022, 2023, etc.
+    """
+
+    url = f"{BASE_URL}/losses/russia/recent"
+
+    print("Downloading recently added records...")
+
+    data = api_get(url)
+
+    losses = data.get("losses", [])
+
+    print(
+        f"  Recently added records: {len(losses)}"
+    )
+
+    return losses
+
+
+# ============================================================
+# LOAD EXISTING DATA
 # ============================================================
 
 def load_existing_data():
@@ -266,71 +269,109 @@ def load_existing_data():
 
     if not RAW_FILE.exists():
 
-        print(
-            "No existing raw CSV found."
-        )
+        print("No existing raw dataset found.")
 
-        return pd.DataFrame(
-            columns=REQUIRED_COLUMNS
-        )
+        return pd.DataFrame(columns=REQUIRED_COLUMNS)
 
-    df = pd.read_csv(
-        RAW_FILE
-    )
+    print(f"Loading existing dataset: {RAW_FILE}")
+
+    df = pd.read_csv(RAW_FILE)
 
     print(
-        f"Existing raw data loaded: "
-        f"{len(df):,} records"
+        f"Existing records: {len(df):,}"
     )
 
     return df
 
 
 # ============================================================
-# DATA UPDATE
+# HISTORICAL INITIAL IMPORT
 # ============================================================
 
-def update_raw_data(df):
+def create_initial_dataset():
     """
-    Update the raw dataset.
+    Perform the one-time historical backfill.
 
-    Existing data is preserved.
+    Downloads all records from START_DATE until yesterday.
 
-    The most recent REFRESH_DAYS are downloaded again
-    to capture late-added or corrected records.
-
-    Older data is not downloaded again.
+    This function is only used when the raw CSV does not yet
+    exist.
     """
 
-    today = date.today()
+    yesterday = date.today() - timedelta(days=1)
 
-    # We only process completed days.
-    yesterday = today - timedelta(days=1)
+    print()
+    print("=" * 60)
+    print("INITIAL HISTORICAL IMPORT")
+    print("=" * 60)
+
+    print(
+        f"Date range: "
+        f"{START_DATE.isoformat()} -> "
+        f"{yesterday.isoformat()}"
+    )
+
+    records = download_date_range(
+        START_DATE,
+        yesterday
+    )
+
+    if not records:
+
+        raise RuntimeError(
+            "Historical import returned no records."
+        )
+
+    df = pd.DataFrame(records)
+
+    print()
+    print(
+        f"Historical records downloaded: "
+        f"{len(df):,}"
+    )
+
+    return df
+
+
+# ============================================================
+# UPDATE EXISTING DATASET
+# ============================================================
+
+def update_existing_dataset(df):
+    """
+    Update an existing dataset.
+
+    Two sources are used:
+
+    1. /recent
+       Captures newly added records, including old loss dates.
+
+    2. Last REFRESH_DAYS
+       Refreshes recent dates to capture changes/corrections.
+    """
+
+    print()
+    print("=" * 60)
+    print("UPDATING EXISTING DATASET")
+    print("=" * 60)
 
     # --------------------------------------------------------
-    # First run
+    # 1. Recently added records
     # --------------------------------------------------------
 
-    if df.empty:
+    recent_records = get_recent_data()
 
-        download_start = START_DATE
+    recent_df = pd.DataFrame(recent_records)
+
+    if not recent_df.empty:
 
         print(
-            f"First run: "
-            f"{download_start} → {yesterday}"
-        )
-
-        new_records = download_date_range(
-            download_start,
-            yesterday
-        )
-
-        return pd.DataFrame(
-            new_records
+            f"  New/recent records received: "
+            f"{len(recent_df):,}"
         )
 
     # --------------------------------------------------------
-    # Prepare existing dates
+    # 2. Refresh recent date range
     # --------------------------------------------------------
 
     df["date"] = pd.to_datetime(
@@ -340,93 +381,72 @@ def update_raw_data(df):
 
     last_date = df["date"].max().date()
 
-    # --------------------------------------------------------
-    # Determine refresh window
-    # --------------------------------------------------------
+    yesterday = date.today() - timedelta(days=1)
 
     refresh_start = max(
         START_DATE,
-        last_date - timedelta(
-            days=REFRESH_DAYS - 1
-        )
+        yesterday - timedelta(days=REFRESH_DAYS - 1)
     )
 
-    download_end = max(
-        last_date,
-        yesterday
-    )
+    refresh_end = yesterday
 
+    print()
     print(
-        f"Refreshing last "
-        f"{REFRESH_DAYS} days:"
+        f"Refreshing date range: "
+        f"{refresh_start.isoformat()} -> "
+        f"{refresh_end.isoformat()}"
     )
 
-    print(
-        f"{refresh_start} → {download_end}"
-    )
-
-    # --------------------------------------------------------
-    # Download refresh window
-    # --------------------------------------------------------
-
-    new_records = download_date_range(
+    refreshed_records = download_date_range(
         refresh_start,
-        download_end
+        refresh_end
     )
 
-    new_df = pd.DataFrame(
-        new_records
-    )
+    refreshed_df = pd.DataFrame(refreshed_records)
 
     # --------------------------------------------------------
-    # Nothing downloaded
+    # 3. Remove old records from refresh window
     # --------------------------------------------------------
 
-    if new_df.empty:
+    before_count = len(df)
 
-        print(
-            "No records downloaded "
-            "during refresh window."
-        )
-
-        return df
-
-    # --------------------------------------------------------
-    # Prepare new data
-    # --------------------------------------------------------
-
-    new_df["date"] = pd.to_datetime(
-        new_df["date"],
-        errors="coerce"
-    )
-
-    # --------------------------------------------------------
-    # Remove old records from refresh window
-    # --------------------------------------------------------
-
-    keep_old = df[
+    df = df[
         ~(
             (df["date"].dt.date >= refresh_start)
             &
-            (df["date"].dt.date <= download_end)
+            (df["date"].dt.date <= refresh_end)
         )
-    ]
+    ].copy()
+
+    removed_count = before_count - len(df)
+
+    print(
+        f"  Removed old records from refresh window: "
+        f"{removed_count:,}"
+    )
 
     # --------------------------------------------------------
-    # Combine old + refreshed data
+    # 4. Merge all sources
     # --------------------------------------------------------
+
+    frames = [df]
+
+    if not recent_df.empty:
+        frames.append(recent_df)
+
+    if not refreshed_df.empty:
+        frames.append(refreshed_df)
 
     combined = pd.concat(
-        [
-            keep_old,
-            new_df
-        ],
+        frames,
         ignore_index=True
     )
 
     # --------------------------------------------------------
-    # Deduplicate by WarSpotting ID
+    # 5. Deduplicate by unique WarSpotting ID
     # --------------------------------------------------------
+
+    before_dedup = len(combined)
 
     combined = (
         combined
@@ -434,24 +454,89 @@ def update_raw_data(df):
             subset="id",
             keep="last"
         )
+    )
+
+    duplicates_removed = (
+        before_dedup - len(combined)
+    )
+
+    print(
+        f"  Duplicate records removed: "
+        f"{duplicates_removed:,}"
+    )
+
+    # --------------------------------------------------------
+    # 6. Sort
+    # --------------------------------------------------------
+
+    combined["date"] = pd.to_datetime(
+        combined["date"],
+        errors="coerce"
+    )
+
+    combined = (
+        combined
         .sort_values(
             by=["date", "id"]
         )
         .reset_index(drop=True)
     )
 
+    print(
+        f"Updated total records: "
+        f"{len(combined):,}"
+    )
+
     return combined
 
 
 # ============================================================
-# VALIDATION
+# MASTER DATA UPDATE
+# ============================================================
+
+def update_raw_data(existing_df):
+    """
+    Decide whether this is the first run or a normal update.
+    """
+
+    # --------------------------------------------------------
+    # FIRST RUN
+    # --------------------------------------------------------
+
+    if existing_df.empty:
+
+        df = create_initial_dataset()
+
+        # Deduplicate historical import.
+        df = (
+            df
+            .drop_duplicates(
+                subset="id",
+                keep="last"
+            )
+            .reset_index(drop=True)
+        )
+
+        return df
+
+    # --------------------------------------------------------
+    # NORMAL DAILY UPDATE
+    # --------------------------------------------------------
+
+    return update_existing_dataset(
+        existing_df
+    )
+
+
+# ============================================================
+# DATA VALIDATION
 # ============================================================
 
 def validate_data(df):
     """
-    Perform data-quality checks.
+    Validate the complete raw dataset.
 
-    The pipeline stops if a critical validation fails.
+    Raises an error if a critical validation fails.
     """
 
     print()
@@ -472,45 +557,46 @@ def validate_data(df):
     if missing_columns:
 
         raise ValueError(
-            f"Missing required columns: "
-            f"{missing_columns}"
+            f"Missing columns: {missing_columns}"
         )
 
+    print("  Required columns: OK")
+
     # --------------------------------------------------------
-    # Empty dataset
+    # Dataset not empty
     # --------------------------------------------------------
 
     if df.empty:
+        raise ValueError("Dataset is empty.")
 
-        raise ValueError(
-            "Dataset is empty."
-        )
+    print("  Dataset not empty: OK")
 
     # --------------------------------------------------------
-    # ID validation
+    # IDs
     # --------------------------------------------------------
 
-    if df["id"].isna().any():
+    missing_ids = df["id"].isna().sum()
+
+    if missing_ids > 0:
 
         raise ValueError(
-            "Dataset contains missing IDs."
+            f"Missing IDs: {missing_ids}"
         )
 
-    duplicate_ids = (
-        df["id"]
-        .duplicated()
-        .sum()
-    )
+    print("  Missing IDs: 0")
+
+    duplicate_ids = df["id"].duplicated().sum()
 
     if duplicate_ids > 0:
 
         raise ValueError(
-            f"Dataset contains "
-            f"{duplicate_ids} duplicate IDs."
+            f"Duplicate IDs: {duplicate_ids}"
         )
 
+    print("  Duplicate IDs: 0")
+
     # --------------------------------------------------------
-    # Date validation
+    # Dates
     # --------------------------------------------------------
 
     df["date"] = pd.to_datetime(
@@ -518,96 +604,104 @@ def validate_data(df):
         errors="coerce"
     )
 
-    invalid_dates = (
-        df["date"]
-        .isna()
-        .sum()
-    )
+    invalid_dates = df["date"].isna().sum()
 
     if invalid_dates > 0:
 
         raise ValueError(
-            f"Dataset contains "
-            f"{invalid_dates} invalid dates."
+            f"Invalid dates: {invalid_dates}"
         )
+
+    print("  Invalid dates: 0")
 
     min_date = df["date"].min().date()
     max_date = df["date"].max().date()
 
-    # Dataset should not start before project start.
+    today = date.today()
+
     if min_date < START_DATE:
 
         raise ValueError(
-            f"Unexpected date before "
-            f"{START_DATE}: {min_date}"
+            f"Date before START_DATE found: {min_date}"
         )
 
-    # Dataset should not contain future records.
-    if max_date > date.today():
+    if max_date > today:
 
         raise ValueError(
-            f"Dataset contains "
-            f"future dates: {max_date}"
+            f"Future date found: {max_date}"
         )
 
+    print(
+        f"  Date range: "
+        f"{min_date} -> {max_date}"
+    )
+
     # --------------------------------------------------------
-    # lost_by validation
+    # Lost by
     # --------------------------------------------------------
 
     lost_by_values = (
         df["lost_by"]
         .dropna()
         .astype(str)
+        .str.strip()
         .unique()
     )
 
-    unexpected_values = [
+    unexpected_lost_by = [
         value
         for value in lost_by_values
         if value != "Russia"
     ]
 
-    if unexpected_values:
+    if unexpected_lost_by:
 
         raise ValueError(
-            "Unexpected values in lost_by: "
-            f"{unexpected_values}"
+            "Unexpected lost_by values: "
+            f"{unexpected_lost_by}"
         )
 
+    print("  lost_by = Russia: OK")
+
     # --------------------------------------------------------
-    # Basic record integrity
+    # Type
     # --------------------------------------------------------
 
-    if df["type"].isna().any():
+    missing_types = df["type"].isna().sum()
+
+    if missing_types > 0:
 
         raise ValueError(
-            "Dataset contains records "
-            "without equipment type."
+            f"Missing equipment types: "
+            f"{missing_types}"
         )
 
+    print("  Equipment type: OK")
+
     # --------------------------------------------------------
-    # Validation summary
+    # Year distribution
     # --------------------------------------------------------
 
-    print(
-        f"Records     : {len(df):,}"
-    )
-
-    print(
-        f"Unique IDs  : "
-        f"{df['id'].nunique():,}"
-    )
-
-    print(
-        f"First date  : {min_date}"
-    )
-
-    print(
-        f"Last date   : {max_date}"
+    year_counts = (
+        df["date"]
+        .dt.year
+        .value_counts()
+        .sort_index()
     )
 
     print()
-    print("VALIDATION: OK")
+    print("Records by year:")
+
+    for year, count in year_counts.items():
+
+        print(
+            f"  {year}: {count:,}"
+        )
+
+    print()
+    print("VALIDATION STATUS: OK")
+
+    return True
 
 
 # ============================================================
@@ -616,59 +710,35 @@ def validate_data(df):
 
 def create_weekly_dataset(df):
     """
-    Aggregate equipment losses by Monday-based week.
+    Create weekly loss dataset.
+
+    Weeks start on Monday.
     """
 
-    analysis_df = df.copy()
-
-    analysis_df["date"] = pd.to_datetime(
-        analysis_df["date"]
-    )
-
-    # --------------------------------------------------------
-    # Calculate Monday of each week
-    # --------------------------------------------------------
-
-    analysis_df["week"] = (
-        analysis_df["date"]
-        - pd.to_timedelta(
-            analysis_df["date"].dt.weekday,
-            unit="D"
-        )
-    ).dt.normalize()
-
-    # --------------------------------------------------------
-    # Weekly loss count
-    # --------------------------------------------------------
+    print()
+    print("=" * 60)
+    print("WEEKLY ANALYSIS")
+    print("=" * 60)
 
     weekly = (
-        analysis_df
-        .groupby("week")
+        df
+        .set_index("date")
+        .resample("W-MON", label="left", closed="left")
         .size()
-        .reset_index(
-            name="weekly_losses"
-        )
+        .reset_index(name="weekly_losses")
     )
 
-    weekly = (
-        weekly
-        .sort_values("week")
-        .reset_index(drop=True)
+    weekly = weekly.rename(
+        columns={"date": "week"}
     )
 
-    # --------------------------------------------------------
-    # Cumulative losses
-    # --------------------------------------------------------
-
+    # Cumulative documented losses.
     weekly["cumulative_losses"] = (
         weekly["weekly_losses"]
         .cumsum()
     )
 
-    # --------------------------------------------------------
-    # Rolling 4-week average
-    # --------------------------------------------------------
-
+    # Four-week rolling average.
     weekly["rolling_4_week_avg"] = (
         weekly["weekly_losses"]
         .rolling(
@@ -676,51 +746,20 @@ def create_weekly_dataset(df):
             min_periods=1
         )
         .mean()
-        .round(2)
     )
-
-    # --------------------------------------------------------
-    # Save weekly dataset
-    # --------------------------------------------------------
 
     weekly.to_csv(
         WEEKLY_FILE,
         index=False
     )
 
-    print()
-    print("=" * 60)
-    print("WEEKLY ANALYSIS")
-    print("=" * 60)
-
     print(
-        f"Number of weeks : "
-        f"{len(weekly)}"
-    )
-
-    print(
-        f"First week      : "
-        f"{weekly['week'].min().date()}"
-    )
-
-    print(
-        f"Last week       : "
-        f"{weekly['week'].max().date()}"
-    )
-
-    print()
-    print("Last 10 weeks:")
-
-    print(
-        weekly.tail(10).to_string(
-            index=False
-        )
-    )
-
-    print()
-    print(
-        f"WEEKLY DATA SAVED: "
+        f"Weekly dataset saved: "
         f"{WEEKLY_FILE}"
+    )
+
+    print(
+        f"Weeks: {len(weekly):,}"
     )
 
     return weekly
@@ -732,293 +771,103 @@ def create_weekly_dataset(df):
 
 def create_dashboard(df, weekly):
     """
-    Create the WarSpotting dashboard.
-
-    Dashboard contains:
-
-    - TOTAL LOSSES
-    - THIS WEEK
-    - 4-WEEK AVG
-    - DATA CHECK
-    - Weekly loss bars
-    - Cumulative loss line
+    Create static dashboard visualization.
     """
 
     print()
     print("=" * 60)
-    print("WARSPOTTING DASHBOARD")
+    print("CREATING DASHBOARD")
     print("=" * 60)
 
     # --------------------------------------------------------
     # KPI calculations
     # --------------------------------------------------------
 
-    total_losses = len(df)
+    latest_date = df["date"].max().date()
 
-    latest_date = (
-        df["date"]
-        .max()
-        .date()
-    )
-
-    # Monday of latest data week.
-    current_week_start = (
+    latest_monday = (
         latest_date
         - timedelta(
             days=latest_date.weekday()
         )
     )
 
-    this_week_losses = len(
+    this_week_count = len(
         df[
-            df["date"].dt.date
-            >= current_week_start
+            df["date"].dt.date >= latest_monday
         ]
     )
 
-    # --------------------------------------------------------
-    # 4-week average
-    # --------------------------------------------------------
-
-    last_four_weeks = weekly.tail(4)
-
     four_week_average = (
-        last_four_weeks[
-            "weekly_losses"
-        ].mean()
-    )
-
-    # --------------------------------------------------------
-    # Data integrity check
-    # --------------------------------------------------------
-
-    weekly_total = (
         weekly["weekly_losses"]
-        .sum()
+        .tail(4)
+        .mean()
     )
 
     data_check = (
-        "OK"
-        if weekly_total == total_losses
-        else "ERROR"
+        weekly["weekly_losses"].sum()
+        == len(df)
     )
-
-    print(
-        f"TOTAL LOSSES : "
-        f"{total_losses:,}"
-    )
-
-    print(
-        f"THIS WEEK    : "
-        f"{this_week_losses:,}"
-    )
-
-    print(
-        f"4-WEEK AVG   : "
-        f"{four_week_average:.1f}"
-    )
-
-    print(
-        f"DATA CHECK   : "
-        f"{data_check}"
-    )
-
-    if data_check != "OK":
-
-        raise ValueError(
-            "Data integrity check failed: "
-            "weekly losses do not equal "
-            "total losses."
-        )
 
     # --------------------------------------------------------
-    # Create figure
+    # Figure
     # --------------------------------------------------------
 
-    fig = plt.figure(
+    fig, ax = plt.subplots(
         figsize=(14, 8)
     )
 
-    # --------------------------------------------------------
-    # KPI cards
-    # --------------------------------------------------------
-
-    ax_total = fig.add_axes(
-        [0.06, 0.78, 0.20, 0.13]
-    )
-
-    ax_week = fig.add_axes(
-        [0.29, 0.78, 0.20, 0.13]
-    )
-
-    ax_avg = fig.add_axes(
-        [0.52, 0.78, 0.20, 0.13]
-    )
-
-    ax_check = fig.add_axes(
-        [0.75, 0.78, 0.19, 0.13]
-    )
-
-    kpi_axes = [
-        ax_total,
-        ax_week,
-        ax_avg,
-        ax_check
-    ]
-
-    for ax in kpi_axes:
-
-        ax.set_xticks([])
-        ax.set_yticks([])
-
-        for spine in ax.spines.values():
-            spine.set_visible(True)
+    fig.patch.set_facecolor("white")
 
     # --------------------------------------------------------
-    # TOTAL LOSSES
+    # Weekly bars
     # --------------------------------------------------------
 
-    ax_total.text(
-        0.5,
-        0.70,
-        "TOTAL LOSSES",
-        ha="center",
-        va="center",
-        fontsize=10
-    )
-
-    ax_total.text(
-        0.5,
-        0.30,
-        f"{total_losses:,}",
-        ha="center",
-        va="center",
-        fontsize=24,
-        fontweight="bold"
-    )
-
-    # --------------------------------------------------------
-    # THIS WEEK
-    # --------------------------------------------------------
-
-    ax_week.text(
-        0.5,
-        0.70,
-        "THIS WEEK",
-        ha="center",
-        va="center",
-        fontsize=10
-    )
-
-    ax_week.text(
-        0.5,
-        0.30,
-        f"{this_week_losses:,}",
-        ha="center",
-        va="center",
-        fontsize=24,
-        fontweight="bold"
-    )
-
-    # --------------------------------------------------------
-    # 4-WEEK AVG
-    # --------------------------------------------------------
-
-    ax_avg.text(
-        0.5,
-        0.70,
-        "4-WEEK AVG",
-        ha="center",
-        va="center",
-        fontsize=10
-    )
-
-    ax_avg.text(
-        0.5,
-        0.30,
-        f"{four_week_average:.1f}",
-        ha="center",
-        va="center",
-        fontsize=24,
-        fontweight="bold"
-    )
-
-    # --------------------------------------------------------
-    # DATA CHECK
-    # --------------------------------------------------------
-
-    ax_check.text(
-        0.5,
-        0.70,
-        "DATA CHECK",
-        ha="center",
-        va="center",
-        fontsize=10
-    )
-
-    ax_check.text(
-        0.5,
-        0.30,
-        data_check,
-        ha="center",
-        va="center",
-        fontsize=24,
-        fontweight="bold"
-    )
-
-    # --------------------------------------------------------
-    # Main chart
-    # --------------------------------------------------------
-
-    ax = fig.add_axes(
-        [0.08, 0.12, 0.84, 0.57]
-    )
-
-    x = range(len(weekly))
-
-    # Weekly losses
-    ax.bar(
-        x,
+    bars = ax.bar(
+        weekly["week"],
         weekly["weekly_losses"],
-        width=0.85,
+        width=5,
         alpha=0.8
     )
 
-    ax.set_ylabel(
-        "Weekly losses",
-        fontsize=10
-    )
-
-    ax.set_xlabel(
-        "Week",
-        fontsize=10
-    )
-
-    ax.grid(
-        axis="y",
-        alpha=0.2
-    )
-
     # --------------------------------------------------------
-    # Cumulative losses
+    # Cumulative line
     # --------------------------------------------------------
 
-    ax_cumulative = ax.twinx()
+    ax2 = ax.twinx()
 
-    ax_cumulative.plot(
-        x,
+    ax2.plot(
+        weekly["week"],
         weekly["cumulative_losses"],
         linewidth=1.5,
-        alpha=0.55
-    )
-
-    ax_cumulative.set_ylabel(
-        "Cumulative losses",
-        fontsize=10
+        alpha=0.45
     )
 
     # --------------------------------------------------------
-    # X-axis month labels
+    # Titles
+    # --------------------------------------------------------
+
+    ax.set_title(
+        "Russian Equipment Losses — Weekly",
+        fontsize=18,
+        fontweight="bold",
+        pad=20
+    )
+
+    ax.set_ylabel(
+        "Weekly documented losses"
+    )
+
+    ax2.set_ylabel(
+        "Cumulative documented losses"
+    )
+
+    # --------------------------------------------------------
+    # X-axis
+    #
+    # Use a date several days into the week when generating
+    # labels. This prevents the first week of 2022 from being
+    # visually labelled as the previous month.
     # --------------------------------------------------------
 
     weeks = weekly["week"]
@@ -1029,9 +878,13 @@ def create_dashboard(df, weekly):
 
     for i, week in enumerate(weeks):
 
-        month = week.month
+        display_date = (
+            week
+            + pd.Timedelta(days=3)
+        )
 
-        # Approximately every 2 months.
+        month = display_date.month
+
         if (
             month != last_labelled_month
             and month in [1, 3, 5, 7, 9, 11]
@@ -1041,35 +894,104 @@ def create_dashboard(df, weekly):
 
             last_labelled_month = month
 
-    # Always show first week.
     if 0 not in tick_positions:
 
         tick_positions.insert(0, 0)
 
     tick_labels = [
-        weeks.iloc[i].strftime(
-            "%b %Y"
-        )
+        (
+            weeks.iloc[i]
+            + pd.Timedelta(days=3)
+        ).strftime("%b %Y")
         for i in tick_positions
     ]
 
     ax.set_xticks(
-        tick_positions
+        weeks.iloc[tick_positions]
     )
 
     ax.set_xticklabels(
-        tick_labels
+        tick_labels,
+        rotation=0
     )
 
     # --------------------------------------------------------
-    # Chart title
+    # Grid
     # --------------------------------------------------------
 
-    ax.set_title(
-        "Russian Equipment Losses — Weekly",
-        fontsize=16,
-        fontweight="bold",
-        pad=15
+    ax.grid(
+        axis="y",
+        alpha=0.25
+    )
+
+    ax.set_axisbelow(True)
+
+    # --------------------------------------------------------
+    # KPI cards
+    # --------------------------------------------------------
+
+    fig.text(
+        0.12,
+        0.91,
+        "TOTAL LOSSES",
+        fontsize=10,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.12,
+        0.865,
+        f"{len(df):,}",
+        fontsize=22,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.34,
+        0.91,
+        "THIS WEEK",
+        fontsize=10,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.34,
+        0.865,
+        f"{this_week_count:,}",
+        fontsize=22,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.56,
+        0.91,
+        "4-WEEK AVG",
+        fontsize=10,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.56,
+        0.865,
+        f"{four_week_average:.1f}",
+        fontsize=22,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.78,
+        0.91,
+        "DATA CHECK",
+        fontsize=10,
+        fontweight="bold"
+    )
+
+    fig.text(
+        0.78,
+        0.865,
+        "OK" if data_check else "ERROR",
+        fontsize=22,
+        fontweight="bold"
     )
 
     # --------------------------------------------------------
@@ -1077,30 +999,40 @@ def create_dashboard(df, weekly):
     # --------------------------------------------------------
 
     fig.text(
-        0.08,
-        0.04,
+        0.5,
+        0.02,
         f"WarSpotting | Data through "
         f"{latest_date.isoformat()}",
+        ha="center",
         fontsize=9
     )
 
     # --------------------------------------------------------
-    # Save dashboard
+    # Layout
     # --------------------------------------------------------
 
-    fig.savefig(
+    plt.subplots_adjust(
+        top=0.78,
+        bottom=0.12,
+        left=0.08,
+        right=0.92
+    )
+
+    # --------------------------------------------------------
+    # Save
+    # --------------------------------------------------------
+
+    plt.savefig(
         DASHBOARD_FILE,
-        dpi=150,
+        dpi=160,
         bbox_inches="tight"
     )
 
-    plt.close(fig)
-
-    print()
-    print("DASHBOARD CREATED")
+    plt.close()
 
     print(
-        f"File: {DASHBOARD_FILE}"
+        f"Dashboard saved: "
+        f"{DASHBOARD_FILE}"
     )
 
 
@@ -1115,6 +1047,12 @@ def main():
     print("=" * 60)
 
     print()
+    print(
+        f"Data scope starts: "
+        f"{START_DATE.isoformat()}"
+    )
+
+    print()
 
     # --------------------------------------------------------
     # 1. Load existing raw data
@@ -1123,7 +1061,7 @@ def main():
     df = load_existing_data()
 
     # --------------------------------------------------------
-    # 2. Update raw data
+    # 2. Update / create raw dataset
     # --------------------------------------------------------
 
     df = update_raw_data(df)
@@ -1170,20 +1108,23 @@ def main():
 
     print()
     print(
-        f"RAW DATA SAVED: "
+        f"Raw dataset saved: "
         f"{RAW_FILE}"
+    )
+
+    print(
+        f"Total records: "
+        f"{len(df):,}"
     )
 
     # --------------------------------------------------------
     # 7. Weekly analysis
     # --------------------------------------------------------
 
-    weekly = create_weekly_dataset(
-        df
-    )
+    weekly = create_weekly_dataset(df)
 
     # --------------------------------------------------------
-    # 8. Create dashboard
+    # 8. Dashboard
     # --------------------------------------------------------
 
     create_dashboard(
@@ -1199,11 +1140,23 @@ def main():
     print("=" * 60)
     print("PIPELINE COMPLETE")
     print("=" * 60)
-    print("STATUS: OK")
+
+    print(
+        f"Records: {len(df):,}"
+    )
+
+    print(
+        f"Latest data date: "
+        f"{df['date'].max().date()}"
+    )
+
+    print(
+        "STATUS: OK"
+    )
 
 
 # ============================================================
-# SCRIPT ENTRY POINT
+# RUN
 # ============================================================
 
 if __name__ == "__main__":
