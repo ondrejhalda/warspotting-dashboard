@@ -1,0 +1,2577 @@
+week,type,losses
+2022-02-21,Airplanes,4
+2022-02-21,Anti-aircraft systems,16
+2022-02-21,Anti-tank systems,3
+2022-02-21,"Command posts, communication",23
+2022-02-21,Engineering,37
+2022-02-21,Helicopters,7
+2022-02-21,Infantry fighting vehicles,70
+2022-02-21,Infantry mobility vehicles,18
+2022-02-21,"Radars, jammers",1
+2022-02-21,Rocket and missile artillery,5
+2022-02-21,Self-propelled artillery,2
+2022-02-21,Tanks,42
+2022-02-21,Towed artillery,3
+2022-02-21,Transport,89
+2022-02-28,Airplanes,7
+2022-02-28,"Ambulances, medical vehicles",8
+2022-02-28,Anti-aircraft systems,17
+2022-02-28,Anti-tank systems,1
+2022-02-28,"Command posts, communication",22
+2022-02-28,Drones,2
+2022-02-28,Engineering,16
+2022-02-28,Helicopters,8
+2022-02-28,Infantry fighting vehicles,150
+2022-02-28,Infantry mobility vehicles,16
+2022-02-28,"Radars, jammers",4
+2022-02-28,Rocket and missile artillery,8
+2022-02-28,Self-propelled artillery,19
+2022-02-28,Tanks,76
+2022-02-28,Towed artillery,17
+2022-02-28,Transport,214
+2022-03-07,Airplanes,4
+2022-03-07,"Ambulances, medical vehicles",3
+2022-03-07,Anti-aircraft systems,10
+2022-03-07,"Command posts, communication",10
+2022-03-07,Drones,4
+2022-03-07,Engineering,13
+2022-03-07,Helicopters,11
+2022-03-07,Infantry fighting vehicles,87
+2022-03-07,Infantry mobility vehicles,14
+2022-03-07,Other,1
+2022-03-07,"Radars, jammers",2
+2022-03-07,Rocket and missile artillery,3
+2022-03-07,Self-propelled artillery,10
+2022-03-07,Tanks,49
+2022-03-07,Towed artillery,1
+2022-03-07,Transport,73
+2022-03-14,Airplanes,3
+2022-03-14,"Ambulances, medical vehicles",4
+2022-03-14,Anti-aircraft systems,6
+2022-03-14,Anti-tank systems,5
+2022-03-14,"Command posts, communication",17
+2022-03-14,Drones,5
+2022-03-14,Engineering,21
+2022-03-14,Helicopters,13
+2022-03-14,Infantry fighting vehicles,96
+2022-03-14,Infantry mobility vehicles,12
+2022-03-14,Other,2
+2022-03-14,"Radars, jammers",7
+2022-03-14,Rocket and missile artillery,7
+2022-03-14,Self-propelled artillery,12
+2022-03-14,Tanks,57
+2022-03-14,Towed artillery,9
+2022-03-14,Transport,156
+2022-03-21,"Ambulances, medical vehicles",2
+2022-03-21,Anti-aircraft systems,3
+2022-03-21,"Command posts, communication",18
+2022-03-21,Drones,4
+2022-03-21,Engineering,13
+2022-03-21,Helicopters,3
+2022-03-21,Infantry fighting vehicles,79
+2022-03-21,Infantry mobility vehicles,8
+2022-03-21,Other,1
+2022-03-21,"Radars, jammers",2
+2022-03-21,Rocket and missile artillery,3
+2022-03-21,Self-propelled artillery,15
+2022-03-21,Tanks,49
+2022-03-21,Towed artillery,10
+2022-03-21,Transport,97
+2022-03-21,Vessels,2
+2022-03-28,Airplanes,1
+2022-03-28,"Ambulances, medical vehicles",5
+2022-03-28,Anti-aircraft systems,9
+2022-03-28,Anti-tank systems,4
+2022-03-28,"Command posts, communication",35
+2022-03-28,Drones,7
+2022-03-28,Engineering,28
+2022-03-28,Helicopters,4
+2022-03-28,Infantry fighting vehicles,235
+2022-03-28,Infantry mobility vehicles,26
+2022-03-28,Other,5
+2022-03-28,"Radars, jammers",8
+2022-03-28,Rocket and missile artillery,9
+2022-03-28,Self-propelled artillery,24
+2022-03-28,Tanks,106
+2022-03-28,Towed artillery,9
+2022-03-28,Transport,232
+2022-04-04,Airplanes,1
+2022-04-04,"Ambulances, medical vehicles",6
+2022-04-04,Anti-aircraft systems,4
+2022-04-04,Anti-tank systems,3
+2022-04-04,"Command posts, communication",14
+2022-04-04,Drones,7
+2022-04-04,Engineering,22
+2022-04-04,Helicopters,2
+2022-04-04,Infantry fighting vehicles,77
+2022-04-04,Infantry mobility vehicles,12
+2022-04-04,Other,1
+2022-04-04,"Radars, jammers",2
+2022-04-04,Rocket and missile artillery,2
+2022-04-04,Self-propelled artillery,21
+2022-04-04,Tanks,65
+2022-04-04,Towed artillery,2
+2022-04-04,Transport,128
+2022-04-11,Anti-aircraft systems,1
+2022-04-11,Anti-tank systems,1
+2022-04-11,"Command posts, communication",4
+2022-04-11,Drones,8
+2022-04-11,Engineering,14
+2022-04-11,Helicopters,1
+2022-04-11,Infantry fighting vehicles,45
+2022-04-11,Infantry mobility vehicles,5
+2022-04-11,Other,3
+2022-04-11,"Radars, jammers",1
+2022-04-11,Rocket and missile artillery,5
+2022-04-11,Self-propelled artillery,6
+2022-04-11,Tanks,23
+2022-04-11,Towed artillery,2
+2022-04-11,Transport,69
+2022-04-11,Vessels,1
+2022-04-18,Airplanes,2
+2022-04-18,"Command posts, communication",2
+2022-04-18,Drones,8
+2022-04-18,Engineering,4
+2022-04-18,Helicopters,2
+2022-04-18,Infantry fighting vehicles,42
+2022-04-18,Infantry mobility vehicles,4
+2022-04-18,"Radars, jammers",1
+2022-04-18,Rocket and missile artillery,2
+2022-04-18,Self-propelled artillery,2
+2022-04-18,Tanks,20
+2022-04-18,Towed artillery,2
+2022-04-18,Transport,37
+2022-04-25,Airplanes,1
+2022-04-25,Anti-aircraft systems,7
+2022-04-25,"Command posts, communication",3
+2022-04-25,Drones,5
+2022-04-25,Engineering,2
+2022-04-25,Infantry fighting vehicles,57
+2022-04-25,Infantry mobility vehicles,2
+2022-04-25,Other,1
+2022-04-25,"Radars, jammers",1
+2022-04-25,Rocket and missile artillery,6
+2022-04-25,Self-propelled artillery,8
+2022-04-25,Tanks,29
+2022-04-25,Towed artillery,2
+2022-04-25,Transport,63
+2022-05-02,"Ambulances, medical vehicles",1
+2022-05-02,Anti-aircraft systems,4
+2022-05-02,Anti-tank systems,1
+2022-05-02,"Command posts, communication",1
+2022-05-02,Drones,8
+2022-05-02,Engineering,6
+2022-05-02,Helicopters,1
+2022-05-02,Infantry fighting vehicles,69
+2022-05-02,Infantry mobility vehicles,2
+2022-05-02,Other,1
+2022-05-02,Rocket and missile artillery,2
+2022-05-02,Self-propelled artillery,6
+2022-05-02,Tanks,42
+2022-05-02,Towed artillery,2
+2022-05-02,Transport,51
+2022-05-02,Vessels,6
+2022-05-09,Anti-tank systems,3
+2022-05-09,"Command posts, communication",4
+2022-05-09,Drones,9
+2022-05-09,Engineering,31
+2022-05-09,Infantry fighting vehicles,104
+2022-05-09,Infantry mobility vehicles,3
+2022-05-09,Rocket and missile artillery,2
+2022-05-09,Self-propelled artillery,6
+2022-05-09,Tanks,40
+2022-05-09,Towed artillery,1
+2022-05-09,Transport,19
+2022-05-16,Airplanes,1
+2022-05-16,Anti-aircraft systems,5
+2022-05-16,Anti-tank systems,1
+2022-05-16,"Command posts, communication",1
+2022-05-16,Drones,11
+2022-05-16,Helicopters,1
+2022-05-16,Infantry fighting vehicles,33
+2022-05-16,"Radars, jammers",1
+2022-05-16,Rocket and missile artillery,1
+2022-05-16,Self-propelled artillery,5
+2022-05-16,Tanks,14
+2022-05-16,Towed artillery,1
+2022-05-16,Transport,26
+2022-05-23,Airplanes,1
+2022-05-23,"Command posts, communication",1
+2022-05-23,Drones,3
+2022-05-23,Infantry fighting vehicles,19
+2022-05-23,Self-propelled artillery,1
+2022-05-23,Tanks,15
+2022-05-23,Transport,11
+2022-05-30,Anti-aircraft systems,3
+2022-05-30,"Command posts, communication",1
+2022-05-30,Drones,5
+2022-05-30,Engineering,1
+2022-05-30,Helicopters,1
+2022-05-30,Infantry fighting vehicles,60
+2022-05-30,Infantry mobility vehicles,1
+2022-05-30,Other,1
+2022-05-30,Rocket and missile artillery,2
+2022-05-30,Self-propelled artillery,3
+2022-05-30,Tanks,20
+2022-05-30,Towed artillery,1
+2022-05-30,Transport,34
+2022-06-06,Airplanes,1
+2022-06-06,"Ambulances, medical vehicles",1
+2022-06-06,"Command posts, communication",1
+2022-06-06,Drones,2
+2022-06-06,Engineering,6
+2022-06-06,Infantry fighting vehicles,38
+2022-06-06,Infantry mobility vehicles,1
+2022-06-06,Rocket and missile artillery,11
+2022-06-06,Self-propelled artillery,1
+2022-06-06,Tanks,19
+2022-06-06,Towed artillery,2
+2022-06-06,Transport,33
+2022-06-13,Airplanes,2
+2022-06-13,Anti-aircraft systems,1
+2022-06-13,Anti-tank systems,1
+2022-06-13,"Command posts, communication",3
+2022-06-13,Drones,6
+2022-06-13,Engineering,4
+2022-06-13,Helicopters,1
+2022-06-13,Infantry fighting vehicles,49
+2022-06-13,Other,1
+2022-06-13,Rocket and missile artillery,7
+2022-06-13,Self-propelled artillery,2
+2022-06-13,Tanks,7
+2022-06-13,Towed artillery,1
+2022-06-13,Transport,18
+2022-06-13,Vessels,1
+2022-06-20,Airplanes,1
+2022-06-20,"Ambulances, medical vehicles",1
+2022-06-20,Anti-aircraft systems,1
+2022-06-20,"Command posts, communication",4
+2022-06-20,Drones,5
+2022-06-20,Engineering,6
+2022-06-20,Infantry fighting vehicles,22
+2022-06-20,Infantry mobility vehicles,1
+2022-06-20,Self-propelled artillery,2
+2022-06-20,Tanks,16
+2022-06-20,Towed artillery,4
+2022-06-20,Transport,18
+2022-06-27,Anti-aircraft systems,9
+2022-06-27,"Command posts, communication",1
+2022-06-27,Drones,3
+2022-06-27,Engineering,3
+2022-06-27,Helicopters,2
+2022-06-27,Infantry fighting vehicles,39
+2022-06-27,Infantry mobility vehicles,2
+2022-06-27,Other,2
+2022-06-27,"Radars, jammers",2
+2022-06-27,Rocket and missile artillery,3
+2022-06-27,Self-propelled artillery,6
+2022-06-27,Tanks,22
+2022-06-27,Towed artillery,1
+2022-06-27,Transport,33
+2022-07-04,"Ambulances, medical vehicles",1
+2022-07-04,Anti-aircraft systems,4
+2022-07-04,Drones,3
+2022-07-04,Engineering,4
+2022-07-04,Infantry fighting vehicles,31
+2022-07-04,Infantry mobility vehicles,3
+2022-07-04,Rocket and missile artillery,1
+2022-07-04,Self-propelled artillery,3
+2022-07-04,Tanks,29
+2022-07-04,Towed artillery,1
+2022-07-04,Transport,19
+2022-07-11,"Command posts, communication",2
+2022-07-11,Drones,4
+2022-07-11,Helicopters,1
+2022-07-11,Infantry fighting vehicles,19
+2022-07-11,Rocket and missile artillery,1
+2022-07-11,Self-propelled artillery,3
+2022-07-11,Tanks,12
+2022-07-11,Towed artillery,2
+2022-07-11,Transport,17
+2022-07-18,Airplanes,2
+2022-07-18,Anti-aircraft systems,2
+2022-07-18,"Command posts, communication",2
+2022-07-18,Drones,2
+2022-07-18,Engineering,1
+2022-07-18,Infantry fighting vehicles,24
+2022-07-18,Infantry mobility vehicles,1
+2022-07-18,Other,1
+2022-07-18,"Radars, jammers",1
+2022-07-18,Rocket and missile artillery,1
+2022-07-18,Self-propelled artillery,7
+2022-07-18,Tanks,9
+2022-07-18,Transport,14
+2022-07-25,Anti-aircraft systems,1
+2022-07-25,"Command posts, communication",2
+2022-07-25,Drones,9
+2022-07-25,Engineering,1
+2022-07-25,Infantry fighting vehicles,30
+2022-07-25,Infantry mobility vehicles,1
+2022-07-25,Self-propelled artillery,3
+2022-07-25,Tanks,23
+2022-07-25,Transport,21
+2022-08-01,"Command posts, communication",1
+2022-08-01,Drones,4
+2022-08-01,Engineering,2
+2022-08-01,Infantry fighting vehicles,28
+2022-08-01,Infantry mobility vehicles,1
+2022-08-01,Rocket and missile artillery,2
+2022-08-01,Self-propelled artillery,2
+2022-08-01,Tanks,14
+2022-08-01,Towed artillery,2
+2022-08-01,Transport,9
+2022-08-08,Airplanes,11
+2022-08-08,Anti-aircraft systems,1
+2022-08-08,"Command posts, communication",4
+2022-08-08,Drones,3
+2022-08-08,Engineering,1
+2022-08-08,Infantry fighting vehicles,25
+2022-08-08,Infantry mobility vehicles,1
+2022-08-08,Other,1
+2022-08-08,Rocket and missile artillery,2
+2022-08-08,Tanks,8
+2022-08-08,Transport,35
+2022-08-15,Airplanes,1
+2022-08-15,Anti-aircraft systems,1
+2022-08-15,"Command posts, communication",1
+2022-08-15,Drones,5
+2022-08-15,Helicopters,1
+2022-08-15,Infantry fighting vehicles,15
+2022-08-15,Other,1
+2022-08-15,"Radars, jammers",1
+2022-08-15,Self-propelled artillery,3
+2022-08-15,Tanks,11
+2022-08-15,Towed artillery,1
+2022-08-15,Transport,5
+2022-08-22,Anti-aircraft systems,2
+2022-08-22,"Command posts, communication",2
+2022-08-22,Drones,4
+2022-08-22,Engineering,1
+2022-08-22,Infantry fighting vehicles,35
+2022-08-22,Infantry mobility vehicles,4
+2022-08-22,"Radars, jammers",1
+2022-08-22,Self-propelled artillery,7
+2022-08-22,Tanks,13
+2022-08-22,Towed artillery,3
+2022-08-22,Transport,11
+2022-08-29,Anti-aircraft systems,2
+2022-08-29,"Command posts, communication",5
+2022-08-29,Drones,9
+2022-08-29,Engineering,2
+2022-08-29,Helicopters,1
+2022-08-29,Infantry fighting vehicles,45
+2022-08-29,Infantry mobility vehicles,3
+2022-08-29,Other,2
+2022-08-29,Rocket and missile artillery,1
+2022-08-29,Self-propelled artillery,12
+2022-08-29,Tanks,17
+2022-08-29,Towed artillery,1
+2022-08-29,Transport,32
+2022-09-05,Airplanes,3
+2022-09-05,"Ambulances, medical vehicles",2
+2022-09-05,Anti-aircraft systems,6
+2022-09-05,Anti-tank systems,2
+2022-09-05,"Command posts, communication",18
+2022-09-05,Drones,1
+2022-09-05,Engineering,13
+2022-09-05,Infantry fighting vehicles,134
+2022-09-05,Infantry mobility vehicles,7
+2022-09-05,Other,1
+2022-09-05,"Radars, jammers",2
+2022-09-05,Rocket and missile artillery,10
+2022-09-05,Self-propelled artillery,20
+2022-09-05,Tanks,63
+2022-09-05,Towed artillery,9
+2022-09-05,Transport,81
+2022-09-12,Airplanes,1
+2022-09-12,"Ambulances, medical vehicles",9
+2022-09-12,Anti-aircraft systems,3
+2022-09-12,Anti-tank systems,1
+2022-09-12,"Command posts, communication",34
+2022-09-12,Drones,1
+2022-09-12,Engineering,19
+2022-09-12,Helicopters,1
+2022-09-12,Infantry fighting vehicles,132
+2022-09-12,Infantry mobility vehicles,8
+2022-09-12,Other,3
+2022-09-12,"Radars, jammers",3
+2022-09-12,Rocket and missile artillery,8
+2022-09-12,Self-propelled artillery,22
+2022-09-12,Tanks,78
+2022-09-12,Towed artillery,5
+2022-09-12,Transport,80
+2022-09-19,Airplanes,1
+2022-09-19,Anti-aircraft systems,5
+2022-09-19,"Command posts, communication",11
+2022-09-19,Drones,4
+2022-09-19,Engineering,3
+2022-09-19,Helicopters,1
+2022-09-19,Infantry fighting vehicles,63
+2022-09-19,Infantry mobility vehicles,1
+2022-09-19,Other,3
+2022-09-19,"Radars, jammers",3
+2022-09-19,Self-propelled artillery,5
+2022-09-19,Tanks,25
+2022-09-19,Towed artillery,4
+2022-09-19,Transport,47
+2022-09-26,Airplanes,2
+2022-09-26,"Ambulances, medical vehicles",3
+2022-09-26,Anti-aircraft systems,4
+2022-09-26,"Command posts, communication",9
+2022-09-26,Drones,3
+2022-09-26,Engineering,10
+2022-09-26,Helicopters,4
+2022-09-26,Infantry fighting vehicles,79
+2022-09-26,Infantry mobility vehicles,8
+2022-09-26,Other,1
+2022-09-26,"Radars, jammers",1
+2022-09-26,Rocket and missile artillery,6
+2022-09-26,Self-propelled artillery,7
+2022-09-26,Tanks,58
+2022-09-26,Towed artillery,2
+2022-09-26,Transport,56
+2022-10-03,Airplanes,2
+2022-10-03,"Ambulances, medical vehicles",3
+2022-10-03,Anti-aircraft systems,12
+2022-10-03,Anti-tank systems,3
+2022-10-03,"Command posts, communication",2
+2022-10-03,Drones,6
+2022-10-03,Engineering,5
+2022-10-03,Infantry fighting vehicles,111
+2022-10-03,Infantry mobility vehicles,13
+2022-10-03,Rocket and missile artillery,8
+2022-10-03,Self-propelled artillery,8
+2022-10-03,Tanks,54
+2022-10-03,Towed artillery,10
+2022-10-03,Transport,54
+2022-10-10,Anti-aircraft systems,5
+2022-10-10,Anti-tank systems,1
+2022-10-10,"Command posts, communication",4
+2022-10-10,Drones,2
+2022-10-10,Helicopters,1
+2022-10-10,Infantry fighting vehicles,53
+2022-10-10,Infantry mobility vehicles,6
+2022-10-10,Rocket and missile artillery,9
+2022-10-10,Self-propelled artillery,13
+2022-10-10,Tanks,24
+2022-10-10,Towed artillery,2
+2022-10-10,Transport,34
+2022-10-17,Airplanes,1
+2022-10-17,Anti-aircraft systems,3
+2022-10-17,"Command posts, communication",4
+2022-10-17,Drones,4
+2022-10-17,Engineering,8
+2022-10-17,Helicopters,1
+2022-10-17,Infantry fighting vehicles,45
+2022-10-17,Infantry mobility vehicles,6
+2022-10-17,Rocket and missile artillery,2
+2022-10-17,Self-propelled artillery,7
+2022-10-17,Tanks,24
+2022-10-17,Towed artillery,7
+2022-10-17,Transport,23
+2022-10-24,Anti-aircraft systems,2
+2022-10-24,"Command posts, communication",3
+2022-10-24,Engineering,2
+2022-10-24,Infantry fighting vehicles,45
+2022-10-24,Infantry mobility vehicles,2
+2022-10-24,Other,1
+2022-10-24,Rocket and missile artillery,6
+2022-10-24,Self-propelled artillery,9
+2022-10-24,Tanks,24
+2022-10-24,Towed artillery,2
+2022-10-24,Transport,35
+2022-10-31,"Command posts, communication",10
+2022-10-31,Drones,4
+2022-10-31,Engineering,6
+2022-10-31,Helicopters,2
+2022-10-31,Infantry fighting vehicles,36
+2022-10-31,Infantry mobility vehicles,3
+2022-10-31,Other,1
+2022-10-31,Rocket and missile artillery,2
+2022-10-31,Tanks,23
+2022-10-31,Transport,35
+2022-11-07,"Ambulances, medical vehicles",2
+2022-11-07,Anti-aircraft systems,3
+2022-11-07,Anti-tank systems,1
+2022-11-07,"Command posts, communication",4
+2022-11-07,Drones,7
+2022-11-07,Engineering,3
+2022-11-07,Infantry fighting vehicles,67
+2022-11-07,Infantry mobility vehicles,4
+2022-11-07,"Radars, jammers",4
+2022-11-07,Rocket and missile artillery,3
+2022-11-07,Self-propelled artillery,15
+2022-11-07,Tanks,50
+2022-11-07,Towed artillery,8
+2022-11-07,Transport,58
+2022-11-14,Anti-aircraft systems,2
+2022-11-14,Anti-tank systems,2
+2022-11-14,"Command posts, communication",4
+2022-11-14,Drones,2
+2022-11-14,Engineering,3
+2022-11-14,Infantry fighting vehicles,38
+2022-11-14,Infantry mobility vehicles,1
+2022-11-14,Other,1
+2022-11-14,Rocket and missile artillery,6
+2022-11-14,Self-propelled artillery,9
+2022-11-14,Tanks,16
+2022-11-14,Towed artillery,5
+2022-11-14,Transport,41
+2022-11-21,Anti-aircraft systems,2
+2022-11-21,"Command posts, communication",3
+2022-11-21,Drones,2
+2022-11-21,Engineering,3
+2022-11-21,Infantry fighting vehicles,21
+2022-11-21,Infantry mobility vehicles,1
+2022-11-21,Other,1
+2022-11-21,Rocket and missile artillery,1
+2022-11-21,Tanks,11
+2022-11-21,Towed artillery,2
+2022-11-21,Transport,18
+2022-11-28,Airplanes,4
+2022-11-28,"Ambulances, medical vehicles",3
+2022-11-28,Anti-aircraft systems,6
+2022-11-28,Anti-tank systems,2
+2022-11-28,"Command posts, communication",13
+2022-11-28,Drones,4
+2022-11-28,Engineering,5
+2022-11-28,Helicopters,1
+2022-11-28,Infantry fighting vehicles,107
+2022-11-28,Infantry mobility vehicles,5
+2022-11-28,Other,1
+2022-11-28,"Radars, jammers",1
+2022-11-28,Rocket and missile artillery,3
+2022-11-28,Self-propelled artillery,15
+2022-11-28,Tanks,38
+2022-11-28,Towed artillery,9
+2022-11-28,Transport,56
+2022-12-05,Airplanes,2
+2022-12-05,"Command posts, communication",2
+2022-12-05,Drones,2
+2022-12-05,Engineering,1
+2022-12-05,Infantry fighting vehicles,22
+2022-12-05,Infantry mobility vehicles,4
+2022-12-05,Other,1
+2022-12-05,"Radars, jammers",1
+2022-12-05,Rocket and missile artillery,1
+2022-12-05,Self-propelled artillery,3
+2022-12-05,Tanks,16
+2022-12-05,Towed artillery,4
+2022-12-05,Transport,14
+2022-12-12,Drones,4
+2022-12-12,Engineering,2
+2022-12-12,Infantry fighting vehicles,14
+2022-12-12,Self-propelled artillery,2
+2022-12-12,Tanks,9
+2022-12-12,Transport,14
+2022-12-19,Anti-aircraft systems,3
+2022-12-19,Drones,1
+2022-12-19,Engineering,1
+2022-12-19,Helicopters,1
+2022-12-19,Infantry fighting vehicles,8
+2022-12-19,Infantry mobility vehicles,2
+2022-12-19,Rocket and missile artillery,2
+2022-12-19,Self-propelled artillery,3
+2022-12-19,Tanks,9
+2022-12-19,Towed artillery,1
+2022-12-19,Transport,6
+2022-12-26,Anti-aircraft systems,1
+2022-12-26,"Command posts, communication",1
+2022-12-26,Drones,3
+2022-12-26,Engineering,1
+2022-12-26,Infantry fighting vehicles,42
+2022-12-26,Infantry mobility vehicles,1
+2022-12-26,"Radars, jammers",1
+2022-12-26,Rocket and missile artillery,3
+2022-12-26,Self-propelled artillery,5
+2022-12-26,Tanks,10
+2022-12-26,Towed artillery,1
+2022-12-26,Transport,21
+2023-01-02,Airplanes,1
+2023-01-02,Anti-aircraft systems,3
+2023-01-02,"Command posts, communication",2
+2023-01-02,Drones,2
+2023-01-02,Infantry fighting vehicles,16
+2023-01-02,Infantry mobility vehicles,2
+2023-01-02,Rocket and missile artillery,1
+2023-01-02,Self-propelled artillery,3
+2023-01-02,Tanks,9
+2023-01-02,Transport,12
+2023-01-09,Anti-aircraft systems,2
+2023-01-09,"Command posts, communication",2
+2023-01-09,Drones,2
+2023-01-09,Engineering,2
+2023-01-09,Infantry fighting vehicles,20
+2023-01-09,Infantry mobility vehicles,1
+2023-01-09,"Radars, jammers",1
+2023-01-09,Self-propelled artillery,5
+2023-01-09,Tanks,11
+2023-01-09,Transport,14
+2023-01-16,"Command posts, communication",1
+2023-01-16,Drones,2
+2023-01-16,Engineering,1
+2023-01-16,Infantry fighting vehicles,14
+2023-01-16,Infantry mobility vehicles,1
+2023-01-16,Rocket and missile artillery,2
+2023-01-16,Self-propelled artillery,5
+2023-01-16,Tanks,8
+2023-01-16,Towed artillery,3
+2023-01-16,Transport,12
+2023-01-23,Anti-tank systems,2
+2023-01-23,"Command posts, communication",3
+2023-01-23,Drones,1
+2023-01-23,Engineering,1
+2023-01-23,Infantry fighting vehicles,26
+2023-01-23,Infantry mobility vehicles,2
+2023-01-23,"Radars, jammers",1
+2023-01-23,Rocket and missile artillery,1
+2023-01-23,Self-propelled artillery,10
+2023-01-23,Tanks,13
+2023-01-23,Towed artillery,2
+2023-01-23,Transport,4
+2023-01-30,Anti-aircraft systems,2
+2023-01-30,Drones,4
+2023-01-30,Infantry fighting vehicles,21
+2023-01-30,Infantry mobility vehicles,6
+2023-01-30,"Radars, jammers",1
+2023-01-30,Rocket and missile artillery,1
+2023-01-30,Self-propelled artillery,8
+2023-01-30,Tanks,14
+2023-01-30,Towed artillery,3
+2023-01-30,Transport,9
+2023-02-06,Airplanes,1
+2023-02-06,"Ambulances, medical vehicles",1
+2023-02-06,Anti-aircraft systems,3
+2023-02-06,Drones,4
+2023-02-06,Engineering,9
+2023-02-06,Helicopters,1
+2023-02-06,Infantry fighting vehicles,43
+2023-02-06,Rocket and missile artillery,3
+2023-02-06,Self-propelled artillery,9
+2023-02-06,Tanks,22
+2023-02-06,Towed artillery,3
+2023-02-06,Transport,17
+2023-02-13,Airplanes,1
+2023-02-13,Anti-aircraft systems,3
+2023-02-13,Anti-tank systems,1
+2023-02-13,Engineering,1
+2023-02-13,Infantry fighting vehicles,25
+2023-02-13,Infantry mobility vehicles,3
+2023-02-13,"Radars, jammers",1
+2023-02-13,Rocket and missile artillery,5
+2023-02-13,Self-propelled artillery,2
+2023-02-13,Tanks,22
+2023-02-13,Towed artillery,1
+2023-02-13,Transport,5
+2023-02-20,Airplanes,1
+2023-02-20,"Ambulances, medical vehicles",1
+2023-02-20,Anti-aircraft systems,2
+2023-02-20,Drones,2
+2023-02-20,Infantry fighting vehicles,36
+2023-02-20,Infantry mobility vehicles,2
+2023-02-20,"Radars, jammers",2
+2023-02-20,Rocket and missile artillery,2
+2023-02-20,Self-propelled artillery,3
+2023-02-20,Tanks,17
+2023-02-20,Towed artillery,5
+2023-02-20,Transport,4
+2023-02-27,Airplanes,2
+2023-02-27,"Ambulances, medical vehicles",1
+2023-02-27,Anti-aircraft systems,2
+2023-02-27,"Command posts, communication",6
+2023-02-27,Drones,2
+2023-02-27,Engineering,3
+2023-02-27,Infantry fighting vehicles,58
+2023-02-27,Infantry mobility vehicles,2
+2023-02-27,Other,1
+2023-02-27,Rocket and missile artillery,5
+2023-02-27,Self-propelled artillery,6
+2023-02-27,Tanks,34
+2023-02-27,Towed artillery,6
+2023-02-27,Transport,15
+2023-03-06,Anti-aircraft systems,4
+2023-03-06,Drones,3
+2023-03-06,Engineering,1
+2023-03-06,Infantry fighting vehicles,26
+2023-03-06,Infantry mobility vehicles,2
+2023-03-06,"Radars, jammers",2
+2023-03-06,Self-propelled artillery,2
+2023-03-06,Tanks,8
+2023-03-06,Towed artillery,1
+2023-03-06,Transport,8
+2023-03-13,Airplanes,1
+2023-03-13,Anti-aircraft systems,2
+2023-03-13,"Command posts, communication",3
+2023-03-13,Drones,2
+2023-03-13,Engineering,1
+2023-03-13,Helicopters,1
+2023-03-13,Infantry fighting vehicles,27
+2023-03-13,Infantry mobility vehicles,1
+2023-03-13,Rocket and missile artillery,5
+2023-03-13,Self-propelled artillery,2
+2023-03-13,Tanks,27
+2023-03-13,Transport,9
+2023-03-20,"Ambulances, medical vehicles",1
+2023-03-20,Anti-aircraft systems,3
+2023-03-20,"Command posts, communication",2
+2023-03-20,Drones,4
+2023-03-20,Engineering,2
+2023-03-20,Infantry fighting vehicles,28
+2023-03-20,"Radars, jammers",6
+2023-03-20,Rocket and missile artillery,5
+2023-03-20,Self-propelled artillery,4
+2023-03-20,Tanks,18
+2023-03-20,Towed artillery,1
+2023-03-20,Transport,12
+2023-03-27,Airplanes,1
+2023-03-27,Anti-tank systems,1
+2023-03-27,"Command posts, communication",1
+2023-03-27,Drones,2
+2023-03-27,Infantry fighting vehicles,18
+2023-03-27,Rocket and missile artillery,4
+2023-03-27,Self-propelled artillery,5
+2023-03-27,Tanks,11
+2023-03-27,Transport,21
+2023-04-03,Airplanes,1
+2023-04-03,Anti-aircraft systems,2
+2023-04-03,Drones,3
+2023-04-03,Helicopters,1
+2023-04-03,Infantry fighting vehicles,22
+2023-04-03,Infantry mobility vehicles,1
+2023-04-03,Other,1
+2023-04-03,Rocket and missile artillery,1
+2023-04-03,Self-propelled artillery,8
+2023-04-03,Tanks,6
+2023-04-03,Towed artillery,2
+2023-04-03,Transport,4
+2023-04-10,Anti-aircraft systems,3
+2023-04-10,Drones,2
+2023-04-10,Helicopters,1
+2023-04-10,Infantry fighting vehicles,9
+2023-04-10,Infantry mobility vehicles,4
+2023-04-10,"Radars, jammers",2
+2023-04-10,Rocket and missile artillery,1
+2023-04-10,Tanks,7
+2023-04-10,Towed artillery,3
+2023-04-10,Transport,11
+2023-04-17,"Ambulances, medical vehicles",1
+2023-04-17,"Command posts, communication",2
+2023-04-17,Drones,3
+2023-04-17,Engineering,1
+2023-04-17,Infantry fighting vehicles,18
+2023-04-17,Rocket and missile artillery,1
+2023-04-17,Self-propelled artillery,2
+2023-04-17,Tanks,8
+2023-04-17,Towed artillery,1
+2023-04-17,Transport,7
+2023-04-24,Anti-aircraft systems,5
+2023-04-24,"Command posts, communication",1
+2023-04-24,Drones,6
+2023-04-24,Engineering,2
+2023-04-24,Helicopters,1
+2023-04-24,Infantry fighting vehicles,29
+2023-04-24,"Radars, jammers",2
+2023-04-24,Rocket and missile artillery,2
+2023-04-24,Self-propelled artillery,1
+2023-04-24,Tanks,14
+2023-04-24,Transport,10
+2023-05-01,Anti-aircraft systems,2
+2023-05-01,Anti-tank systems,2
+2023-05-01,"Command posts, communication",1
+2023-05-01,Drones,5
+2023-05-01,Engineering,1
+2023-05-01,Infantry fighting vehicles,17
+2023-05-01,Rocket and missile artillery,5
+2023-05-01,Self-propelled artillery,2
+2023-05-01,Tanks,12
+2023-05-01,Towed artillery,1
+2023-05-01,Transport,8
+2023-05-08,Airplanes,2
+2023-05-08,Anti-aircraft systems,4
+2023-05-08,"Command posts, communication",1
+2023-05-08,Drones,7
+2023-05-08,Engineering,1
+2023-05-08,Helicopters,3
+2023-05-08,Infantry fighting vehicles,19
+2023-05-08,Rocket and missile artillery,1
+2023-05-08,Self-propelled artillery,1
+2023-05-08,Tanks,4
+2023-05-08,Towed artillery,7
+2023-05-08,Transport,6
+2023-05-15,"Ambulances, medical vehicles",1
+2023-05-15,Anti-aircraft systems,2
+2023-05-15,"Command posts, communication",2
+2023-05-15,Drones,7
+2023-05-15,Engineering,2
+2023-05-15,Infantry fighting vehicles,19
+2023-05-15,Infantry mobility vehicles,5
+2023-05-15,Rocket and missile artillery,1
+2023-05-15,Self-propelled artillery,5
+2023-05-15,Tanks,18
+2023-05-15,Towed artillery,1
+2023-05-15,Transport,9
+2023-05-22,Anti-aircraft systems,2
+2023-05-22,Drones,2
+2023-05-22,Engineering,2
+2023-05-22,Helicopters,1
+2023-05-22,Infantry fighting vehicles,18
+2023-05-22,Infantry mobility vehicles,2
+2023-05-22,"Radars, jammers",1
+2023-05-22,Rocket and missile artillery,1
+2023-05-22,Self-propelled artillery,4
+2023-05-22,Tanks,9
+2023-05-22,Towed artillery,8
+2023-05-22,Transport,23
+2023-05-29,Anti-aircraft systems,5
+2023-05-29,Drones,1
+2023-05-29,Engineering,1
+2023-05-29,Infantry fighting vehicles,35
+2023-05-29,Infantry mobility vehicles,1
+2023-05-29,Other,2
+2023-05-29,"Radars, jammers",2
+2023-05-29,Rocket and missile artillery,1
+2023-05-29,Self-propelled artillery,4
+2023-05-29,Tanks,15
+2023-05-29,Towed artillery,2
+2023-05-29,Transport,17
+2023-06-05,Anti-aircraft systems,5
+2023-06-05,"Command posts, communication",1
+2023-06-05,Drones,3
+2023-06-05,Infantry fighting vehicles,23
+2023-06-05,Rocket and missile artillery,4
+2023-06-05,Self-propelled artillery,8
+2023-06-05,Tanks,16
+2023-06-05,Towed artillery,5
+2023-06-05,Transport,9
+2023-06-12,Anti-aircraft systems,4
+2023-06-12,Drones,4
+2023-06-12,Engineering,4
+2023-06-12,Infantry fighting vehicles,28
+2023-06-12,Infantry mobility vehicles,1
+2023-06-12,"Radars, jammers",2
+2023-06-12,Rocket and missile artillery,1
+2023-06-12,Self-propelled artillery,13
+2023-06-12,Tanks,22
+2023-06-12,Towed artillery,2
+2023-06-12,Transport,17
+2023-06-19,Airplanes,1
+2023-06-19,Anti-aircraft systems,1
+2023-06-19,"Command posts, communication",1
+2023-06-19,Drones,5
+2023-06-19,Engineering,2
+2023-06-19,Helicopters,5
+2023-06-19,Infantry fighting vehicles,20
+2023-06-19,Infantry mobility vehicles,2
+2023-06-19,Other,1
+2023-06-19,"Radars, jammers",2
+2023-06-19,Rocket and missile artillery,7
+2023-06-19,Self-propelled artillery,3
+2023-06-19,Tanks,9
+2023-06-19,Towed artillery,8
+2023-06-19,Transport,23
+2023-06-26,Anti-aircraft systems,3
+2023-06-26,"Command posts, communication",1
+2023-06-26,Drones,5
+2023-06-26,Engineering,1
+2023-06-26,Infantry fighting vehicles,20
+2023-06-26,Infantry mobility vehicles,4
+2023-06-26,Other,1
+2023-06-26,"Radars, jammers",2
+2023-06-26,Rocket and missile artillery,3
+2023-06-26,Self-propelled artillery,3
+2023-06-26,Tanks,21
+2023-06-26,Towed artillery,2
+2023-06-26,Transport,13
+2023-07-03,"Ambulances, medical vehicles",1
+2023-07-03,Anti-aircraft systems,5
+2023-07-03,Drones,6
+2023-07-03,Engineering,2
+2023-07-03,Infantry fighting vehicles,28
+2023-07-03,"Radars, jammers",2
+2023-07-03,Rocket and missile artillery,11
+2023-07-03,Self-propelled artillery,12
+2023-07-03,Tanks,15
+2023-07-03,Towed artillery,7
+2023-07-03,Transport,7
+2023-07-10,Anti-aircraft systems,5
+2023-07-10,Drones,3
+2023-07-10,Engineering,2
+2023-07-10,Infantry fighting vehicles,25
+2023-07-10,Other,1
+2023-07-10,"Radars, jammers",4
+2023-07-10,Rocket and missile artillery,4
+2023-07-10,Self-propelled artillery,10
+2023-07-10,Tanks,16
+2023-07-10,Towed artillery,2
+2023-07-10,Transport,13
+2023-07-17,Airplanes,1
+2023-07-17,Anti-aircraft systems,3
+2023-07-17,"Command posts, communication",2
+2023-07-17,Drones,6
+2023-07-17,Engineering,2
+2023-07-17,Infantry fighting vehicles,42
+2023-07-17,Infantry mobility vehicles,1
+2023-07-17,"Radars, jammers",2
+2023-07-17,Rocket and missile artillery,6
+2023-07-17,Self-propelled artillery,12
+2023-07-17,Tanks,18
+2023-07-17,Towed artillery,1
+2023-07-17,Transport,11
+2023-07-24,Anti-aircraft systems,6
+2023-07-24,Drones,3
+2023-07-24,Helicopters,1
+2023-07-24,Infantry fighting vehicles,27
+2023-07-24,"Radars, jammers",4
+2023-07-24,Rocket and missile artillery,3
+2023-07-24,Self-propelled artillery,9
+2023-07-24,Tanks,20
+2023-07-24,Towed artillery,7
+2023-07-24,Transport,13
+2023-07-31,Anti-aircraft systems,7
+2023-07-31,"Command posts, communication",1
+2023-07-31,Drones,1
+2023-07-31,Engineering,6
+2023-07-31,Infantry fighting vehicles,28
+2023-07-31,Infantry mobility vehicles,4
+2023-07-31,Other,1
+2023-07-31,Rocket and missile artillery,1
+2023-07-31,Self-propelled artillery,8
+2023-07-31,Tanks,21
+2023-07-31,Towed artillery,4
+2023-07-31,Transport,9
+2023-07-31,Vessels,1
+2023-08-07,Anti-aircraft systems,2
+2023-08-07,"Command posts, communication",1
+2023-08-07,Drones,4
+2023-08-07,Engineering,2
+2023-08-07,Infantry fighting vehicles,30
+2023-08-07,Infantry mobility vehicles,1
+2023-08-07,Rocket and missile artillery,2
+2023-08-07,Self-propelled artillery,6
+2023-08-07,Tanks,17
+2023-08-07,Towed artillery,4
+2023-08-07,Transport,3
+2023-08-14,Airplanes,1
+2023-08-14,Anti-aircraft systems,7
+2023-08-14,Drones,3
+2023-08-14,Engineering,3
+2023-08-14,Helicopters,1
+2023-08-14,Infantry fighting vehicles,30
+2023-08-14,Infantry mobility vehicles,1
+2023-08-14,"Radars, jammers",2
+2023-08-14,Rocket and missile artillery,1
+2023-08-14,Self-propelled artillery,10
+2023-08-14,Tanks,13
+2023-08-14,Towed artillery,8
+2023-08-14,Transport,9
+2023-08-21,Anti-aircraft systems,4
+2023-08-21,"Command posts, communication",1
+2023-08-21,Drones,5
+2023-08-21,Engineering,4
+2023-08-21,Helicopters,1
+2023-08-21,Infantry fighting vehicles,35
+2023-08-21,Infantry mobility vehicles,1
+2023-08-21,"Radars, jammers",1
+2023-08-21,Rocket and missile artillery,3
+2023-08-21,Self-propelled artillery,5
+2023-08-21,Tanks,13
+2023-08-21,Towed artillery,2
+2023-08-21,Transport,11
+2023-08-28,Airplanes,4
+2023-08-28,Anti-aircraft systems,4
+2023-08-28,"Command posts, communication",1
+2023-08-28,Drones,2
+2023-08-28,Engineering,4
+2023-08-28,Infantry fighting vehicles,41
+2023-08-28,Infantry mobility vehicles,3
+2023-08-28,Other,2
+2023-08-28,"Radars, jammers",3
+2023-08-28,Rocket and missile artillery,5
+2023-08-28,Self-propelled artillery,11
+2023-08-28,Tanks,24
+2023-08-28,Towed artillery,9
+2023-08-28,Transport,18
+2023-08-28,Vessels,1
+2023-09-04,Anti-aircraft systems,1
+2023-09-04,Drones,3
+2023-09-04,Engineering,1
+2023-09-04,Infantry fighting vehicles,34
+2023-09-04,Infantry mobility vehicles,3
+2023-09-04,Rocket and missile artillery,7
+2023-09-04,Self-propelled artillery,12
+2023-09-04,Tanks,27
+2023-09-04,Towed artillery,5
+2023-09-04,Transport,15
+2023-09-11,Anti-aircraft systems,5
+2023-09-11,Drones,2
+2023-09-11,Engineering,1
+2023-09-11,Helicopters,1
+2023-09-11,Infantry fighting vehicles,11
+2023-09-11,Infantry mobility vehicles,2
+2023-09-11,Other,1
+2023-09-11,Self-propelled artillery,8
+2023-09-11,Tanks,7
+2023-09-11,Towed artillery,3
+2023-09-11,Transport,9
+2023-09-11,Vessels,2
+2023-09-18,Airplanes,1
+2023-09-18,Anti-aircraft systems,2
+2023-09-18,"Command posts, communication",2
+2023-09-18,Drones,1
+2023-09-18,Engineering,1
+2023-09-18,Infantry fighting vehicles,25
+2023-09-18,Infantry mobility vehicles,2
+2023-09-18,"Radars, jammers",1
+2023-09-18,Rocket and missile artillery,3
+2023-09-18,Self-propelled artillery,11
+2023-09-18,Tanks,13
+2023-09-18,Towed artillery,4
+2023-09-18,Transport,9
+2023-09-25,Airplanes,1
+2023-09-25,Anti-aircraft systems,3
+2023-09-25,Drones,1
+2023-09-25,Engineering,4
+2023-09-25,Helicopters,1
+2023-09-25,Infantry fighting vehicles,34
+2023-09-25,Other,1
+2023-09-25,Rocket and missile artillery,6
+2023-09-25,Self-propelled artillery,3
+2023-09-25,Tanks,30
+2023-09-25,Towed artillery,4
+2023-09-25,Transport,12
+2023-10-02,"Ambulances, medical vehicles",1
+2023-10-02,Drones,4
+2023-10-02,Engineering,2
+2023-10-02,Infantry fighting vehicles,18
+2023-10-02,Infantry mobility vehicles,1
+2023-10-02,Other,1
+2023-10-02,Rocket and missile artillery,4
+2023-10-02,Self-propelled artillery,8
+2023-10-02,Tanks,21
+2023-10-02,Towed artillery,4
+2023-10-02,Transport,8
+2023-10-09,"Ambulances, medical vehicles",1
+2023-10-09,Anti-aircraft systems,3
+2023-10-09,Drones,3
+2023-10-09,Engineering,1
+2023-10-09,Infantry fighting vehicles,62
+2023-10-09,Infantry mobility vehicles,11
+2023-10-09,Other,1
+2023-10-09,"Radars, jammers",2
+2023-10-09,Rocket and missile artillery,7
+2023-10-09,Self-propelled artillery,10
+2023-10-09,Tanks,32
+2023-10-09,Towed artillery,3
+2023-10-09,Transport,20
+2023-10-16,"Command posts, communication",1
+2023-10-16,Drones,3
+2023-10-16,Engineering,3
+2023-10-16,Helicopters,17
+2023-10-16,Infantry fighting vehicles,70
+2023-10-16,Infantry mobility vehicles,2
+2023-10-16,"Radars, jammers",1
+2023-10-16,Rocket and missile artillery,3
+2023-10-16,Self-propelled artillery,8
+2023-10-16,Tanks,27
+2023-10-16,Towed artillery,2
+2023-10-16,Transport,10
+2023-10-23,Anti-aircraft systems,2
+2023-10-23,Drones,1
+2023-10-23,Engineering,1
+2023-10-23,Infantry fighting vehicles,32
+2023-10-23,Infantry mobility vehicles,2
+2023-10-23,Rocket and missile artillery,5
+2023-10-23,Self-propelled artillery,5
+2023-10-23,Tanks,23
+2023-10-23,Towed artillery,1
+2023-10-23,Transport,14
+2023-10-30,"Ambulances, medical vehicles",1
+2023-10-30,Anti-aircraft systems,6
+2023-10-30,"Command posts, communication",3
+2023-10-30,Drones,4
+2023-10-30,Engineering,1
+2023-10-30,Infantry fighting vehicles,61
+2023-10-30,Other,1
+2023-10-30,"Radars, jammers",2
+2023-10-30,Rocket and missile artillery,3
+2023-10-30,Self-propelled artillery,9
+2023-10-30,Tanks,28
+2023-10-30,Towed artillery,1
+2023-10-30,Transport,13
+2023-10-30,Vessels,1
+2023-11-06,Anti-aircraft systems,2
+2023-11-06,Drones,1
+2023-11-06,Engineering,2
+2023-11-06,Infantry fighting vehicles,38
+2023-11-06,"Radars, jammers",2
+2023-11-06,Rocket and missile artillery,3
+2023-11-06,Self-propelled artillery,5
+2023-11-06,Tanks,17
+2023-11-06,Towed artillery,1
+2023-11-06,Transport,14
+2023-11-13,Anti-aircraft systems,3
+2023-11-13,Drones,1
+2023-11-13,Engineering,1
+2023-11-13,Infantry fighting vehicles,28
+2023-11-13,Infantry mobility vehicles,2
+2023-11-13,"Radars, jammers",1
+2023-11-13,Rocket and missile artillery,6
+2023-11-13,Self-propelled artillery,9
+2023-11-13,Tanks,13
+2023-11-13,Transport,12
+2023-11-20,"Command posts, communication",2
+2023-11-20,Engineering,2
+2023-11-20,Infantry fighting vehicles,9
+2023-11-20,Infantry mobility vehicles,1
+2023-11-20,Rocket and missile artillery,1
+2023-11-20,Self-propelled artillery,4
+2023-11-20,Tanks,9
+2023-11-20,Transport,12
+2023-11-27,Anti-aircraft systems,6
+2023-11-27,"Command posts, communication",2
+2023-11-27,Engineering,1
+2023-11-27,Infantry fighting vehicles,33
+2023-11-27,Infantry mobility vehicles,1
+2023-11-27,Rocket and missile artillery,5
+2023-11-27,Self-propelled artillery,7
+2023-11-27,Tanks,21
+2023-11-27,Towed artillery,1
+2023-11-27,Transport,8
+2023-12-04,"Ambulances, medical vehicles",1
+2023-12-04,Anti-aircraft systems,2
+2023-12-04,Engineering,2
+2023-12-04,Infantry fighting vehicles,46
+2023-12-04,Infantry mobility vehicles,1
+2023-12-04,"Radars, jammers",1
+2023-12-04,Rocket and missile artillery,1
+2023-12-04,Self-propelled artillery,5
+2023-12-04,Tanks,22
+2023-12-04,Towed artillery,3
+2023-12-04,Transport,2
+2023-12-11,Anti-aircraft systems,1
+2023-12-11,Drones,1
+2023-12-11,Engineering,1
+2023-12-11,Infantry fighting vehicles,28
+2023-12-11,Rocket and missile artillery,2
+2023-12-11,Self-propelled artillery,6
+2023-12-11,Tanks,17
+2023-12-11,Towed artillery,1
+2023-12-11,Transport,9
+2023-12-18,Airplanes,1
+2023-12-18,"Ambulances, medical vehicles",1
+2023-12-18,Anti-aircraft systems,2
+2023-12-18,Anti-tank systems,1
+2023-12-18,"Command posts, communication",2
+2023-12-18,Drones,1
+2023-12-18,Infantry fighting vehicles,48
+2023-12-18,Infantry mobility vehicles,1
+2023-12-18,"Radars, jammers",1
+2023-12-18,Rocket and missile artillery,5
+2023-12-18,Self-propelled artillery,5
+2023-12-18,Tanks,16
+2023-12-18,Towed artillery,1
+2023-12-18,Transport,7
+2023-12-25,Anti-aircraft systems,3
+2023-12-25,"Command posts, communication",1
+2023-12-25,Drones,3
+2023-12-25,Engineering,2
+2023-12-25,Infantry fighting vehicles,55
+2023-12-25,Infantry mobility vehicles,1
+2023-12-25,"Radars, jammers",2
+2023-12-25,Rocket and missile artillery,2
+2023-12-25,Self-propelled artillery,4
+2023-12-25,Tanks,31
+2023-12-25,Transport,10
+2023-12-25,Vessels,3
+2024-01-01,Anti-aircraft systems,5
+2024-01-01,Drones,2
+2024-01-01,Engineering,12
+2024-01-01,Infantry fighting vehicles,32
+2024-01-01,Infantry mobility vehicles,1
+2024-01-01,"Radars, jammers",1
+2024-01-01,Rocket and missile artillery,5
+2024-01-01,Self-propelled artillery,7
+2024-01-01,Tanks,11
+2024-01-01,Transport,6
+2024-01-08,Airplanes,1
+2024-01-08,Anti-aircraft systems,4
+2024-01-08,Engineering,1
+2024-01-08,Infantry fighting vehicles,47
+2024-01-08,Infantry mobility vehicles,2
+2024-01-08,"Radars, jammers",1
+2024-01-08,Rocket and missile artillery,2
+2024-01-08,Self-propelled artillery,6
+2024-01-08,Tanks,14
+2024-01-08,Transport,3
+2024-01-15,"Ambulances, medical vehicles",1
+2024-01-15,Anti-aircraft systems,1
+2024-01-15,"Command posts, communication",1
+2024-01-15,Drones,1
+2024-01-15,Engineering,1
+2024-01-15,Helicopters,1
+2024-01-15,Infantry fighting vehicles,44
+2024-01-15,Infantry mobility vehicles,1
+2024-01-15,Rocket and missile artillery,4
+2024-01-15,Self-propelled artillery,5
+2024-01-15,Tanks,37
+2024-01-15,Towed artillery,2
+2024-01-15,Transport,6
+2024-01-22,Airplanes,1
+2024-01-22,Anti-aircraft systems,3
+2024-01-22,Drones,1
+2024-01-22,Engineering,2
+2024-01-22,Infantry fighting vehicles,41
+2024-01-22,Infantry mobility vehicles,1
+2024-01-22,"Radars, jammers",2
+2024-01-22,Rocket and missile artillery,7
+2024-01-22,Self-propelled artillery,3
+2024-01-22,Tanks,17
+2024-01-22,Towed artillery,1
+2024-01-22,Transport,10
+2024-01-29,Drones,3
+2024-01-29,Engineering,1
+2024-01-29,Infantry fighting vehicles,43
+2024-01-29,Infantry mobility vehicles,3
+2024-01-29,Rocket and missile artillery,2
+2024-01-29,Self-propelled artillery,4
+2024-01-29,Tanks,33
+2024-01-29,Towed artillery,2
+2024-01-29,Transport,4
+2024-01-29,Vessels,1
+2024-02-05,"Ambulances, medical vehicles",1
+2024-02-05,Anti-aircraft systems,2
+2024-02-05,Drones,1
+2024-02-05,Engineering,2
+2024-02-05,Infantry fighting vehicles,30
+2024-02-05,Self-propelled artillery,5
+2024-02-05,Tanks,12
+2024-02-05,Towed artillery,1
+2024-02-05,Transport,18
+2024-02-12,Airplanes,1
+2024-02-12,Anti-aircraft systems,3
+2024-02-12,Drones,1
+2024-02-12,Engineering,3
+2024-02-12,Infantry fighting vehicles,60
+2024-02-12,Other,1
+2024-02-12,Rocket and missile artillery,2
+2024-02-12,Self-propelled artillery,5
+2024-02-12,Tanks,27
+2024-02-12,Towed artillery,1
+2024-02-12,Transport,5
+2024-02-12,Vessels,1
+2024-02-19,Airplanes,2
+2024-02-19,Anti-aircraft systems,4
+2024-02-19,Drones,8
+2024-02-19,Engineering,3
+2024-02-19,Infantry fighting vehicles,75
+2024-02-19,"Radars, jammers",1
+2024-02-19,Rocket and missile artillery,1
+2024-02-19,Self-propelled artillery,3
+2024-02-19,Tanks,21
+2024-02-19,Towed artillery,4
+2024-02-19,Transport,11
+2024-02-26,Anti-aircraft systems,2
+2024-02-26,Anti-tank systems,1
+2024-02-26,Drones,2
+2024-02-26,Engineering,1
+2024-02-26,Infantry fighting vehicles,92
+2024-02-26,Infantry mobility vehicles,1
+2024-02-26,Rocket and missile artillery,2
+2024-02-26,Self-propelled artillery,2
+2024-02-26,Tanks,42
+2024-02-26,Towed artillery,4
+2024-02-26,Transport,18
+2024-03-04,Anti-aircraft systems,1
+2024-03-04,Drones,1
+2024-03-04,Engineering,1
+2024-03-04,Infantry fighting vehicles,74
+2024-03-04,Infantry mobility vehicles,2
+2024-03-04,"Radars, jammers",1
+2024-03-04,Rocket and missile artillery,6
+2024-03-04,Self-propelled artillery,4
+2024-03-04,Tanks,20
+2024-03-04,Towed artillery,3
+2024-03-04,Transport,9
+2024-03-04,Vessels,1
+2024-03-11,Anti-aircraft systems,3
+2024-03-11,"Command posts, communication",1
+2024-03-11,Drones,1
+2024-03-11,Engineering,7
+2024-03-11,Infantry fighting vehicles,61
+2024-03-11,Infantry mobility vehicles,2
+2024-03-11,Other,1
+2024-03-11,"Radars, jammers",1
+2024-03-11,Rocket and missile artillery,1
+2024-03-11,Self-propelled artillery,9
+2024-03-11,Tanks,20
+2024-03-11,Towed artillery,1
+2024-03-11,Transport,15
+2024-03-18,Anti-aircraft systems,3
+2024-03-18,Drones,2
+2024-03-18,Engineering,3
+2024-03-18,Infantry fighting vehicles,61
+2024-03-18,Self-propelled artillery,5
+2024-03-18,Tanks,23
+2024-03-18,Towed artillery,2
+2024-03-18,Transport,15
+2024-03-18,Vessels,1
+2024-03-25,Airplanes,1
+2024-03-25,Anti-aircraft systems,6
+2024-03-25,"Command posts, communication",1
+2024-03-25,Drones,4
+2024-03-25,Engineering,5
+2024-03-25,Infantry fighting vehicles,80
+2024-03-25,Other,2
+2024-03-25,"Radars, jammers",2
+2024-03-25,Rocket and missile artillery,3
+2024-03-25,Self-propelled artillery,7
+2024-03-25,Tanks,32
+2024-03-25,Towed artillery,3
+2024-03-25,Transport,13
+2024-04-01,Airplanes,1
+2024-04-01,Anti-aircraft systems,1
+2024-04-01,Drones,1
+2024-04-01,Engineering,3
+2024-04-01,Infantry fighting vehicles,108
+2024-04-01,Infantry mobility vehicles,1
+2024-04-01,Rocket and missile artillery,4
+2024-04-01,Self-propelled artillery,5
+2024-04-01,Tanks,45
+2024-04-01,Towed artillery,1
+2024-04-01,Transport,15
+2024-04-08,Anti-aircraft systems,4
+2024-04-08,"Command posts, communication",1
+2024-04-08,Drones,5
+2024-04-08,Engineering,1
+2024-04-08,Helicopters,1
+2024-04-08,Infantry fighting vehicles,58
+2024-04-08,Infantry mobility vehicles,1
+2024-04-08,"Radars, jammers",1
+2024-04-08,Rocket and missile artillery,1
+2024-04-08,Self-propelled artillery,6
+2024-04-08,Tanks,31
+2024-04-08,Towed artillery,1
+2024-04-08,Transport,31
+2024-04-15,Airplanes,1
+2024-04-15,"Ambulances, medical vehicles",1
+2024-04-15,Anti-aircraft systems,5
+2024-04-15,"Command posts, communication",1
+2024-04-15,Drones,5
+2024-04-15,Infantry fighting vehicles,48
+2024-04-15,"Radars, jammers",2
+2024-04-15,Rocket and missile artillery,1
+2024-04-15,Self-propelled artillery,4
+2024-04-15,Tanks,17
+2024-04-15,Towed artillery,2
+2024-04-15,Transport,13
+2024-04-22,Anti-aircraft systems,3
+2024-04-22,Drones,5
+2024-04-22,Engineering,4
+2024-04-22,Helicopters,1
+2024-04-22,Infantry fighting vehicles,24
+2024-04-22,Infantry mobility vehicles,1
+2024-04-22,"Radars, jammers",3
+2024-04-22,Rocket and missile artillery,2
+2024-04-22,Self-propelled artillery,4
+2024-04-22,Tanks,20
+2024-04-22,Transport,8
+2024-04-29,Anti-aircraft systems,3
+2024-04-29,Drones,3
+2024-04-29,Engineering,1
+2024-04-29,Infantry fighting vehicles,44
+2024-04-29,Rocket and missile artillery,2
+2024-04-29,Self-propelled artillery,4
+2024-04-29,Tanks,31
+2024-04-29,Towed artillery,3
+2024-04-29,Transport,14
+2024-05-06,Anti-aircraft systems,2
+2024-05-06,Drones,3
+2024-05-06,Engineering,3
+2024-05-06,Infantry fighting vehicles,75
+2024-05-06,Infantry mobility vehicles,1
+2024-05-06,Rocket and missile artillery,2
+2024-05-06,Self-propelled artillery,3
+2024-05-06,Tanks,26
+2024-05-06,Towed artillery,2
+2024-05-06,Transport,10
+2024-05-13,Airplanes,4
+2024-05-13,"Command posts, communication",1
+2024-05-13,Drones,3
+2024-05-13,Engineering,2
+2024-05-13,Infantry fighting vehicles,58
+2024-05-13,Other,1
+2024-05-13,"Radars, jammers",1
+2024-05-13,Rocket and missile artillery,1
+2024-05-13,Self-propelled artillery,8
+2024-05-13,Tanks,34
+2024-05-13,Towed artillery,3
+2024-05-13,Transport,9
+2024-05-13,Vessels,1
+2024-05-20,Anti-aircraft systems,8
+2024-05-20,"Command posts, communication",2
+2024-05-20,Drones,2
+2024-05-20,Engineering,9
+2024-05-20,Infantry fighting vehicles,57
+2024-05-20,Infantry mobility vehicles,2
+2024-05-20,Other,1
+2024-05-20,"Radars, jammers",4
+2024-05-20,Rocket and missile artillery,3
+2024-05-20,Self-propelled artillery,7
+2024-05-20,Tanks,23
+2024-05-20,Towed artillery,2
+2024-05-20,Transport,18
+2024-05-27,Anti-aircraft systems,3
+2024-05-27,"Command posts, communication",1
+2024-05-27,Drones,4
+2024-05-27,Engineering,9
+2024-05-27,Infantry fighting vehicles,78
+2024-05-27,Infantry mobility vehicles,2
+2024-05-27,Other,2
+2024-05-27,"Radars, jammers",1
+2024-05-27,Rocket and missile artillery,1
+2024-05-27,Self-propelled artillery,6
+2024-05-27,Tanks,31
+2024-05-27,Towed artillery,1
+2024-05-27,Transport,15
+2024-05-27,Vessels,1
+2024-06-03,Airplanes,2
+2024-06-03,Anti-aircraft systems,5
+2024-06-03,Drones,3
+2024-06-03,Engineering,11
+2024-06-03,Infantry fighting vehicles,66
+2024-06-03,Infantry mobility vehicles,2
+2024-06-03,Other,3
+2024-06-03,Rocket and missile artillery,3
+2024-06-03,Self-propelled artillery,7
+2024-06-03,Tanks,35
+2024-06-03,Towed artillery,5
+2024-06-03,Transport,23
+2024-06-10,"Ambulances, medical vehicles",2
+2024-06-10,Anti-aircraft systems,4
+2024-06-10,"Command posts, communication",1
+2024-06-10,Drones,5
+2024-06-10,Engineering,9
+2024-06-10,Infantry fighting vehicles,63
+2024-06-10,Infantry mobility vehicles,5
+2024-06-10,"Radars, jammers",4
+2024-06-10,Rocket and missile artillery,2
+2024-06-10,Self-propelled artillery,2
+2024-06-10,Tanks,27
+2024-06-10,Towed artillery,2
+2024-06-10,Transport,18
+2024-06-17,Anti-aircraft systems,3
+2024-06-17,"Command posts, communication",1
+2024-06-17,Drones,2
+2024-06-17,Engineering,3
+2024-06-17,Infantry fighting vehicles,60
+2024-06-17,Other,2
+2024-06-17,Rocket and missile artillery,1
+2024-06-17,Self-propelled artillery,4
+2024-06-17,Tanks,33
+2024-06-17,Transport,14
+2024-06-24,"Ambulances, medical vehicles",1
+2024-06-24,Anti-aircraft systems,5
+2024-06-24,Drones,2
+2024-06-24,Engineering,2
+2024-06-24,Infantry fighting vehicles,56
+2024-06-24,Infantry mobility vehicles,3
+2024-06-24,Rocket and missile artillery,3
+2024-06-24,Self-propelled artillery,1
+2024-06-24,Tanks,19
+2024-06-24,Towed artillery,1
+2024-06-24,Transport,14
+2024-07-01,Anti-aircraft systems,1
+2024-07-01,"Command posts, communication",3
+2024-07-01,Drones,5
+2024-07-01,Infantry fighting vehicles,35
+2024-07-01,Infantry mobility vehicles,2
+2024-07-01,Other,1
+2024-07-01,"Radars, jammers",1
+2024-07-01,Rocket and missile artillery,1
+2024-07-01,Self-propelled artillery,7
+2024-07-01,Tanks,22
+2024-07-01,Towed artillery,4
+2024-07-01,Transport,18
+2024-07-08,Anti-aircraft systems,7
+2024-07-08,Engineering,2
+2024-07-08,Infantry fighting vehicles,45
+2024-07-08,Infantry mobility vehicles,4
+2024-07-08,Rocket and missile artillery,2
+2024-07-08,Self-propelled artillery,6
+2024-07-08,Tanks,22
+2024-07-08,Towed artillery,3
+2024-07-08,Transport,13
+2024-07-15,Drones,4
+2024-07-15,Infantry fighting vehicles,47
+2024-07-15,Infantry mobility vehicles,7
+2024-07-15,Other,1
+2024-07-15,Rocket and missile artillery,4
+2024-07-15,Self-propelled artillery,4
+2024-07-15,Tanks,19
+2024-07-15,Towed artillery,4
+2024-07-15,Transport,14
+2024-07-15,Vessels,2
+2024-07-22,Airplanes,2
+2024-07-22,Anti-aircraft systems,4
+2024-07-22,Drones,5
+2024-07-22,Engineering,1
+2024-07-22,Helicopters,3
+2024-07-22,Infantry fighting vehicles,54
+2024-07-22,Infantry mobility vehicles,1
+2024-07-22,Rocket and missile artillery,2
+2024-07-22,Self-propelled artillery,3
+2024-07-22,Tanks,28
+2024-07-22,Towed artillery,4
+2024-07-22,Transport,21
+2024-07-29,Airplanes,1
+2024-07-29,Anti-aircraft systems,3
+2024-07-29,Drones,7
+2024-07-29,Helicopters,1
+2024-07-29,Infantry fighting vehicles,38
+2024-07-29,Infantry mobility vehicles,3
+2024-07-29,"Radars, jammers",1
+2024-07-29,Rocket and missile artillery,4
+2024-07-29,Self-propelled artillery,7
+2024-07-29,Tanks,13
+2024-07-29,Towed artillery,2
+2024-07-29,Transport,16
+2024-08-05,Drones,9
+2024-08-05,Helicopters,2
+2024-08-05,Infantry fighting vehicles,42
+2024-08-05,Infantry mobility vehicles,3
+2024-08-05,Rocket and missile artillery,2
+2024-08-05,Self-propelled artillery,9
+2024-08-05,Tanks,14
+2024-08-05,Towed artillery,2
+2024-08-05,Transport,34
+2024-08-12,Airplanes,1
+2024-08-12,Anti-aircraft systems,1
+2024-08-12,"Command posts, communication",1
+2024-08-12,Drones,10
+2024-08-12,Engineering,2
+2024-08-12,Infantry fighting vehicles,62
+2024-08-12,Infantry mobility vehicles,2
+2024-08-12,Rocket and missile artillery,4
+2024-08-12,Self-propelled artillery,10
+2024-08-12,Tanks,19
+2024-08-12,Towed artillery,4
+2024-08-12,Transport,24
+2024-08-19,Anti-aircraft systems,3
+2024-08-19,Drones,10
+2024-08-19,Engineering,10
+2024-08-19,Helicopters,1
+2024-08-19,Infantry fighting vehicles,46
+2024-08-19,Infantry mobility vehicles,3
+2024-08-19,Rocket and missile artillery,3
+2024-08-19,Self-propelled artillery,4
+2024-08-19,Tanks,14
+2024-08-19,Towed artillery,1
+2024-08-19,Transport,17
+2024-08-26,Airplanes,1
+2024-08-26,Anti-aircraft systems,3
+2024-08-26,"Command posts, communication",1
+2024-08-26,Drones,7
+2024-08-26,Engineering,8
+2024-08-26,Infantry fighting vehicles,78
+2024-08-26,Infantry mobility vehicles,4
+2024-08-26,"Radars, jammers",4
+2024-08-26,Rocket and missile artillery,2
+2024-08-26,Self-propelled artillery,4
+2024-08-26,Tanks,23
+2024-08-26,Towed artillery,5
+2024-08-26,Transport,22
+2024-09-02,Drones,11
+2024-09-02,Engineering,8
+2024-09-02,Infantry fighting vehicles,46
+2024-09-02,Infantry mobility vehicles,7
+2024-09-02,Other,1
+2024-09-02,Rocket and missile artillery,3
+2024-09-02,Self-propelled artillery,5
+2024-09-02,Tanks,19
+2024-09-02,Towed artillery,2
+2024-09-02,Transport,12
+2024-09-09,Anti-aircraft systems,1
+2024-09-09,Drones,6
+2024-09-09,Engineering,2
+2024-09-09,Infantry fighting vehicles,63
+2024-09-09,Other,1
+2024-09-09,Rocket and missile artillery,1
+2024-09-09,Tanks,14
+2024-09-09,Transport,12
+2024-09-16,Anti-aircraft systems,1
+2024-09-16,"Command posts, communication",1
+2024-09-16,Drones,14
+2024-09-16,Engineering,2
+2024-09-16,Helicopters,1
+2024-09-16,Infantry fighting vehicles,54
+2024-09-16,Infantry mobility vehicles,1
+2024-09-16,Other,1
+2024-09-16,Rocket and missile artillery,4
+2024-09-16,Self-propelled artillery,1
+2024-09-16,Tanks,25
+2024-09-16,Towed artillery,1
+2024-09-16,Transport,13
+2024-09-23,"Ambulances, medical vehicles",1
+2024-09-23,Anti-aircraft systems,3
+2024-09-23,Drones,5
+2024-09-23,Engineering,4
+2024-09-23,Infantry fighting vehicles,98
+2024-09-23,Infantry mobility vehicles,3
+2024-09-23,"Radars, jammers",1
+2024-09-23,Self-propelled artillery,3
+2024-09-23,Tanks,34
+2024-09-23,Towed artillery,1
+2024-09-23,Transport,8
+2024-09-30,Airplanes,1
+2024-09-30,Anti-aircraft systems,6
+2024-09-30,Drones,13
+2024-09-30,Infantry fighting vehicles,80
+2024-09-30,Infantry mobility vehicles,3
+2024-09-30,"Radars, jammers",2
+2024-09-30,Rocket and missile artillery,5
+2024-09-30,Self-propelled artillery,5
+2024-09-30,Tanks,24
+2024-09-30,Transport,14
+2024-10-07,Anti-aircraft systems,1
+2024-10-07,"Command posts, communication",3
+2024-10-07,Drones,6
+2024-10-07,Engineering,4
+2024-10-07,Infantry fighting vehicles,54
+2024-10-07,Infantry mobility vehicles,1
+2024-10-07,"Radars, jammers",1
+2024-10-07,Rocket and missile artillery,3
+2024-10-07,Self-propelled artillery,2
+2024-10-07,Tanks,9
+2024-10-07,Transport,10
+2024-10-14,Anti-aircraft systems,2
+2024-10-14,Drones,3
+2024-10-14,Engineering,1
+2024-10-14,Infantry fighting vehicles,100
+2024-10-14,Infantry mobility vehicles,8
+2024-10-14,Rocket and missile artillery,1
+2024-10-14,Self-propelled artillery,5
+2024-10-14,Tanks,22
+2024-10-14,Towed artillery,1
+2024-10-14,Transport,12
+2024-10-21,Anti-aircraft systems,2
+2024-10-21,Drones,10
+2024-10-21,Engineering,2
+2024-10-21,Infantry fighting vehicles,63
+2024-10-21,Infantry mobility vehicles,8
+2024-10-21,"Radars, jammers",4
+2024-10-21,Rocket and missile artillery,5
+2024-10-21,Self-propelled artillery,3
+2024-10-21,Tanks,17
+2024-10-21,Towed artillery,1
+2024-10-21,Transport,10
+2024-10-28,Anti-aircraft systems,4
+2024-10-28,Anti-tank systems,1
+2024-10-28,Drones,10
+2024-10-28,Engineering,4
+2024-10-28,Infantry fighting vehicles,83
+2024-10-28,Infantry mobility vehicles,7
+2024-10-28,"Radars, jammers",1
+2024-10-28,Rocket and missile artillery,1
+2024-10-28,Self-propelled artillery,6
+2024-10-28,Tanks,31
+2024-10-28,Towed artillery,1
+2024-10-28,Transport,18
+2024-11-04,Anti-aircraft systems,1
+2024-11-04,Drones,5
+2024-11-04,Infantry fighting vehicles,77
+2024-11-04,Infantry mobility vehicles,15
+2024-11-04,"Radars, jammers",1
+2024-11-04,Rocket and missile artillery,1
+2024-11-04,Self-propelled artillery,1
+2024-11-04,Tanks,19
+2024-11-04,Transport,7
+2024-11-11,Anti-aircraft systems,3
+2024-11-11,Drones,6
+2024-11-11,Engineering,1
+2024-11-11,Infantry fighting vehicles,79
+2024-11-11,Infantry mobility vehicles,13
+2024-11-11,"Radars, jammers",1
+2024-11-11,Rocket and missile artillery,2
+2024-11-11,Self-propelled artillery,1
+2024-11-11,Tanks,27
+2024-11-11,Transport,13
+2024-11-18,Anti-aircraft systems,1
+2024-11-18,Drones,5
+2024-11-18,Engineering,2
+2024-11-18,Infantry fighting vehicles,58
+2024-11-18,Infantry mobility vehicles,9
+2024-11-18,Other,1
+2024-11-18,"Radars, jammers",1
+2024-11-18,Rocket and missile artillery,3
+2024-11-18,Self-propelled artillery,3
+2024-11-18,Tanks,16
+2024-11-18,Transport,7
+2024-11-25,Anti-aircraft systems,3
+2024-11-25,Drones,15
+2024-11-25,Engineering,4
+2024-11-25,Infantry fighting vehicles,95
+2024-11-25,Infantry mobility vehicles,10
+2024-11-25,"Radars, jammers",1
+2024-11-25,Rocket and missile artillery,2
+2024-11-25,Self-propelled artillery,5
+2024-11-25,Tanks,17
+2024-11-25,Transport,8
+2024-12-02,"Ambulances, medical vehicles",1
+2024-12-02,Anti-aircraft systems,1
+2024-12-02,Drones,3
+2024-12-02,Engineering,4
+2024-12-02,Infantry fighting vehicles,69
+2024-12-02,Infantry mobility vehicles,8
+2024-12-02,Other,2
+2024-12-02,Rocket and missile artillery,1
+2024-12-02,Self-propelled artillery,1
+2024-12-02,Tanks,13
+2024-12-02,Transport,5
+2024-12-09,Airplanes,1
+2024-12-09,Drones,3
+2024-12-09,Engineering,2
+2024-12-09,Infantry fighting vehicles,49
+2024-12-09,Infantry mobility vehicles,4
+2024-12-09,Rocket and missile artillery,1
+2024-12-09,Tanks,6
+2024-12-09,Transport,8
+2024-12-16,Drones,6
+2024-12-16,Infantry fighting vehicles,41
+2024-12-16,Infantry mobility vehicles,1
+2024-12-16,Other,1
+2024-12-16,Rocket and missile artillery,1
+2024-12-16,Tanks,15
+2024-12-16,Transport,1
+2024-12-23,Anti-aircraft systems,1
+2024-12-23,Drones,4
+2024-12-23,Infantry fighting vehicles,33
+2024-12-23,Infantry mobility vehicles,6
+2024-12-23,Other,1
+2024-12-23,Rocket and missile artillery,1
+2024-12-23,Self-propelled artillery,2
+2024-12-23,Tanks,18
+2024-12-23,Transport,3
+2024-12-30,Anti-aircraft systems,2
+2024-12-30,Drones,4
+2024-12-30,Engineering,3
+2024-12-30,Helicopters,1
+2024-12-30,Infantry fighting vehicles,59
+2024-12-30,Infantry mobility vehicles,4
+2024-12-30,"Radars, jammers",1
+2024-12-30,Self-propelled artillery,2
+2024-12-30,Tanks,15
+2024-12-30,Towed artillery,1
+2024-12-30,Transport,9
+2025-01-06,Anti-aircraft systems,2
+2025-01-06,Drones,2
+2025-01-06,Engineering,3
+2025-01-06,Infantry fighting vehicles,39
+2025-01-06,Infantry mobility vehicles,2
+2025-01-06,Rocket and missile artillery,2
+2025-01-06,Self-propelled artillery,2
+2025-01-06,Tanks,17
+2025-01-06,Towed artillery,1
+2025-01-06,Transport,8
+2025-01-13,Anti-tank systems,1
+2025-01-13,Drones,5
+2025-01-13,Engineering,1
+2025-01-13,Infantry fighting vehicles,48
+2025-01-13,Other,1
+2025-01-13,"Radars, jammers",1
+2025-01-13,Self-propelled artillery,3
+2025-01-13,Tanks,17
+2025-01-13,Transport,5
+2025-01-20,Anti-aircraft systems,2
+2025-01-20,Drones,6
+2025-01-20,Engineering,2
+2025-01-20,Helicopters,1
+2025-01-20,Infantry fighting vehicles,52
+2025-01-20,Infantry mobility vehicles,3
+2025-01-20,Rocket and missile artillery,1
+2025-01-20,Self-propelled artillery,4
+2025-01-20,Tanks,11
+2025-01-20,Transport,5
+2025-01-27,Anti-tank systems,1
+2025-01-27,Drones,9
+2025-01-27,Engineering,1
+2025-01-27,Infantry fighting vehicles,32
+2025-01-27,Infantry mobility vehicles,3
+2025-01-27,Rocket and missile artillery,3
+2025-01-27,Self-propelled artillery,2
+2025-01-27,Tanks,15
+2025-01-27,Transport,12
+2025-02-03,Airplanes,1
+2025-02-03,Anti-aircraft systems,1
+2025-02-03,Drones,7
+2025-02-03,Infantry fighting vehicles,31
+2025-02-03,Infantry mobility vehicles,6
+2025-02-03,"Radars, jammers",2
+2025-02-03,Rocket and missile artillery,2
+2025-02-03,Self-propelled artillery,3
+2025-02-03,Tanks,15
+2025-02-03,Transport,14
+2025-02-10,Anti-aircraft systems,1
+2025-02-10,Drones,7
+2025-02-10,Engineering,1
+2025-02-10,Infantry fighting vehicles,50
+2025-02-10,Infantry mobility vehicles,4
+2025-02-10,Rocket and missile artillery,6
+2025-02-10,Self-propelled artillery,3
+2025-02-10,Tanks,24
+2025-02-10,Towed artillery,1
+2025-02-10,Transport,15
+2025-02-17,Anti-aircraft systems,1
+2025-02-17,Drones,4
+2025-02-17,Engineering,1
+2025-02-17,Infantry fighting vehicles,54
+2025-02-17,Infantry mobility vehicles,2
+2025-02-17,Rocket and missile artillery,2
+2025-02-17,Self-propelled artillery,2
+2025-02-17,Tanks,14
+2025-02-17,Towed artillery,1
+2025-02-17,Transport,16
+2025-02-24,Anti-aircraft systems,6
+2025-02-24,Drones,8
+2025-02-24,Engineering,1
+2025-02-24,Infantry fighting vehicles,46
+2025-02-24,Infantry mobility vehicles,8
+2025-02-24,"Radars, jammers",2
+2025-02-24,Rocket and missile artillery,2
+2025-02-24,Self-propelled artillery,3
+2025-02-24,Tanks,16
+2025-02-24,Towed artillery,2
+2025-02-24,Transport,12
+2025-03-03,Anti-aircraft systems,1
+2025-03-03,"Command posts, communication",1
+2025-03-03,Drones,5
+2025-03-03,Engineering,3
+2025-03-03,Infantry fighting vehicles,33
+2025-03-03,Infantry mobility vehicles,5
+2025-03-03,"Radars, jammers",1
+2025-03-03,Self-propelled artillery,2
+2025-03-03,Tanks,12
+2025-03-03,Towed artillery,2
+2025-03-03,Transport,9
+2025-03-10,"Ambulances, medical vehicles",1
+2025-03-10,Anti-aircraft systems,2
+2025-03-10,Drones,5
+2025-03-10,Infantry fighting vehicles,42
+2025-03-10,Infantry mobility vehicles,3
+2025-03-10,Rocket and missile artillery,2
+2025-03-10,Self-propelled artillery,1
+2025-03-10,Tanks,11
+2025-03-10,Transport,5
+2025-03-17,Anti-aircraft systems,1
+2025-03-17,Drones,11
+2025-03-17,Engineering,6
+2025-03-17,Helicopters,2
+2025-03-17,Infantry fighting vehicles,43
+2025-03-17,Infantry mobility vehicles,2
+2025-03-17,"Radars, jammers",1
+2025-03-17,Rocket and missile artillery,6
+2025-03-17,Self-propelled artillery,5
+2025-03-17,Tanks,16
+2025-03-17,Towed artillery,2
+2025-03-17,Transport,11
+2025-03-24,Drones,8
+2025-03-24,Engineering,5
+2025-03-24,Infantry fighting vehicles,62
+2025-03-24,Infantry mobility vehicles,5
+2025-03-24,"Radars, jammers",1
+2025-03-24,Rocket and missile artillery,1
+2025-03-24,Self-propelled artillery,4
+2025-03-24,Tanks,20
+2025-03-24,Towed artillery,3
+2025-03-24,Transport,6
+2025-03-31,Airplanes,1
+2025-03-31,"Ambulances, medical vehicles",1
+2025-03-31,Anti-aircraft systems,1
+2025-03-31,Drones,12
+2025-03-31,Engineering,4
+2025-03-31,Infantry fighting vehicles,54
+2025-03-31,Infantry mobility vehicles,6
+2025-03-31,Other,2
+2025-03-31,Rocket and missile artillery,3
+2025-03-31,Self-propelled artillery,2
+2025-03-31,Tanks,31
+2025-03-31,Transport,14
+2025-04-07,"Ambulances, medical vehicles",1
+2025-04-07,Anti-aircraft systems,3
+2025-04-07,Drones,13
+2025-04-07,Engineering,3
+2025-04-07,Infantry fighting vehicles,65
+2025-04-07,Infantry mobility vehicles,7
+2025-04-07,Other,1
+2025-04-07,"Radars, jammers",1
+2025-04-07,Rocket and missile artillery,3
+2025-04-07,Self-propelled artillery,2
+2025-04-07,Tanks,19
+2025-04-07,Transport,17
+2025-04-14,Anti-aircraft systems,1
+2025-04-14,Drones,9
+2025-04-14,Engineering,1
+2025-04-14,Infantry fighting vehicles,49
+2025-04-14,Infantry mobility vehicles,7
+2025-04-14,"Radars, jammers",2
+2025-04-14,Rocket and missile artillery,3
+2025-04-14,Self-propelled artillery,3
+2025-04-14,Tanks,10
+2025-04-14,Transport,14
+2025-04-21,Anti-aircraft systems,1
+2025-04-21,Drones,8
+2025-04-21,Engineering,2
+2025-04-21,Infantry fighting vehicles,22
+2025-04-21,Infantry mobility vehicles,2
+2025-04-21,Other,1
+2025-04-21,"Radars, jammers",3
+2025-04-21,Self-propelled artillery,3
+2025-04-21,Tanks,11
+2025-04-21,Towed artillery,2
+2025-04-21,Transport,12
+2025-04-28,Airplanes,1
+2025-04-28,Anti-aircraft systems,3
+2025-04-28,Drones,7
+2025-04-28,Engineering,3
+2025-04-28,Infantry fighting vehicles,26
+2025-04-28,Infantry mobility vehicles,7
+2025-04-28,Other,2
+2025-04-28,Rocket and missile artillery,3
+2025-04-28,Self-propelled artillery,5
+2025-04-28,Tanks,11
+2025-04-28,Towed artillery,1
+2025-04-28,Transport,22
+2025-05-05,"Ambulances, medical vehicles",1
+2025-05-05,Anti-aircraft systems,2
+2025-05-05,Drones,6
+2025-05-05,Infantry fighting vehicles,30
+2025-05-05,Rocket and missile artillery,2
+2025-05-05,Self-propelled artillery,4
+2025-05-05,Tanks,9
+2025-05-05,Towed artillery,3
+2025-05-05,Transport,13
+2025-05-12,Anti-aircraft systems,3
+2025-05-12,Drones,5
+2025-05-12,Engineering,2
+2025-05-12,Infantry fighting vehicles,27
+2025-05-12,Infantry mobility vehicles,3
+2025-05-12,Other,1
+2025-05-12,"Radars, jammers",1
+2025-05-12,Rocket and missile artillery,1
+2025-05-12,Self-propelled artillery,2
+2025-05-12,Tanks,7
+2025-05-12,Transport,11
+2025-05-19,Anti-aircraft systems,2
+2025-05-19,Drones,11
+2025-05-19,Engineering,1
+2025-05-19,Helicopters,1
+2025-05-19,Infantry fighting vehicles,22
+2025-05-19,Infantry mobility vehicles,1
+2025-05-19,Other,1
+2025-05-19,"Radars, jammers",1
+2025-05-19,Rocket and missile artillery,1
+2025-05-19,Self-propelled artillery,4
+2025-05-19,Tanks,8
+2025-05-19,Towed artillery,2
+2025-05-19,Transport,14
+2025-05-26,Airplanes,14
+2025-05-26,Anti-aircraft systems,1
+2025-05-26,Drones,9
+2025-05-26,Engineering,2
+2025-05-26,Infantry fighting vehicles,11
+2025-05-26,Infantry mobility vehicles,2
+2025-05-26,Rocket and missile artillery,2
+2025-05-26,Self-propelled artillery,4
+2025-05-26,Tanks,4
+2025-05-26,Transport,7
+2025-06-02,Airplanes,1
+2025-06-02,Anti-aircraft systems,2
+2025-06-02,Drones,3
+2025-06-02,Infantry fighting vehicles,17
+2025-06-02,Infantry mobility vehicles,2
+2025-06-02,Other,1
+2025-06-02,"Radars, jammers",1
+2025-06-02,Rocket and missile artillery,2
+2025-06-02,Tanks,6
+2025-06-02,Towed artillery,2
+2025-06-02,Transport,14
+2025-06-09,Airplanes,1
+2025-06-09,"Ambulances, medical vehicles",1
+2025-06-09,Anti-aircraft systems,1
+2025-06-09,Engineering,3
+2025-06-09,Infantry fighting vehicles,12
+2025-06-09,Infantry mobility vehicles,1
+2025-06-09,Rocket and missile artillery,2
+2025-06-09,Self-propelled artillery,3
+2025-06-09,Tanks,11
+2025-06-09,Towed artillery,1
+2025-06-09,Transport,12
+2025-06-16,Drones,3
+2025-06-16,Engineering,2
+2025-06-16,Infantry fighting vehicles,20
+2025-06-16,Other,3
+2025-06-16,"Radars, jammers",1
+2025-06-16,Rocket and missile artillery,2
+2025-06-16,Self-propelled artillery,5
+2025-06-16,Tanks,7
+2025-06-16,Towed artillery,3
+2025-06-16,Transport,19
+2025-06-23,Anti-aircraft systems,3
+2025-06-23,Drones,2
+2025-06-23,Helicopters,2
+2025-06-23,Infantry fighting vehicles,17
+2025-06-23,Rocket and missile artillery,2
+2025-06-23,Self-propelled artillery,1
+2025-06-23,Tanks,6
+2025-06-23,Towed artillery,2
+2025-06-23,Transport,5
+2025-06-30,Anti-aircraft systems,1
+2025-06-30,Drones,7
+2025-06-30,Infantry fighting vehicles,11
+2025-06-30,Rocket and missile artillery,1
+2025-06-30,Self-propelled artillery,1
+2025-06-30,Tanks,6
+2025-06-30,Towed artillery,1
+2025-06-30,Transport,11
+2025-07-07,Anti-aircraft systems,2
+2025-07-07,Drones,1
+2025-07-07,Engineering,1
+2025-07-07,Infantry fighting vehicles,19
+2025-07-07,Infantry mobility vehicles,3
+2025-07-07,Rocket and missile artillery,2
+2025-07-07,Self-propelled artillery,2
+2025-07-07,Tanks,8
+2025-07-07,Towed artillery,4
+2025-07-07,Transport,13
+2025-07-14,Anti-aircraft systems,1
+2025-07-14,Drones,4
+2025-07-14,Engineering,2
+2025-07-14,Infantry fighting vehicles,11
+2025-07-14,Infantry mobility vehicles,3
+2025-07-14,Other,2
+2025-07-14,"Radars, jammers",2
+2025-07-14,Self-propelled artillery,4
+2025-07-14,Tanks,8
+2025-07-14,Towed artillery,2
+2025-07-14,Transport,8
+2025-07-21,"Command posts, communication",1
+2025-07-21,Drones,2
+2025-07-21,Engineering,4
+2025-07-21,Infantry fighting vehicles,11
+2025-07-21,Infantry mobility vehicles,1
+2025-07-21,Other,1
+2025-07-21,Rocket and missile artillery,1
+2025-07-21,Self-propelled artillery,2
+2025-07-21,Tanks,10
+2025-07-21,Towed artillery,6
+2025-07-21,Transport,10
+2025-07-28,"Command posts, communication",1
+2025-07-28,Drones,2
+2025-07-28,Engineering,1
+2025-07-28,Infantry fighting vehicles,10
+2025-07-28,Other,1
+2025-07-28,Self-propelled artillery,1
+2025-07-28,Tanks,4
+2025-07-28,Towed artillery,5
+2025-07-28,Transport,7
+2025-08-04,Drones,4
+2025-08-04,Engineering,2
+2025-08-04,Infantry fighting vehicles,11
+2025-08-04,Infantry mobility vehicles,1
+2025-08-04,Other,1
+2025-08-04,Rocket and missile artillery,5
+2025-08-04,Self-propelled artillery,1
+2025-08-04,Tanks,6
+2025-08-04,Towed artillery,2
+2025-08-04,Transport,15
+2025-08-11,"Command posts, communication",1
+2025-08-11,Drones,2
+2025-08-11,Engineering,1
+2025-08-11,Infantry fighting vehicles,19
+2025-08-11,Infantry mobility vehicles,2
+2025-08-11,Rocket and missile artillery,1
+2025-08-11,Self-propelled artillery,1
+2025-08-11,Tanks,12
+2025-08-11,Towed artillery,5
+2025-08-11,Transport,25
+2025-08-18,Anti-aircraft systems,1
+2025-08-18,Drones,4
+2025-08-18,Engineering,2
+2025-08-18,Infantry fighting vehicles,17
+2025-08-18,Rocket and missile artillery,1
+2025-08-18,Self-propelled artillery,1
+2025-08-18,Tanks,5
+2025-08-18,Towed artillery,7
+2025-08-18,Transport,9
+2025-08-25,Anti-aircraft systems,2
+2025-08-25,"Command posts, communication",3
+2025-08-25,Drones,6
+2025-08-25,Engineering,1
+2025-08-25,Helicopters,2
+2025-08-25,Infantry fighting vehicles,28
+2025-08-25,Infantry mobility vehicles,3
+2025-08-25,Rocket and missile artillery,2
+2025-08-25,Self-propelled artillery,5
+2025-08-25,Tanks,16
+2025-08-25,Towed artillery,5
+2025-08-25,Transport,16
+2025-09-01,"Ambulances, medical vehicles",1
+2025-09-01,Anti-aircraft systems,3
+2025-09-01,Drones,3
+2025-09-01,Infantry fighting vehicles,9
+2025-09-01,Rocket and missile artillery,5
+2025-09-01,Self-propelled artillery,1
+2025-09-01,Tanks,7
+2025-09-01,Towed artillery,3
+2025-09-01,Transport,23
+2025-09-08,Drones,7
+2025-09-08,Infantry fighting vehicles,12
+2025-09-08,Infantry mobility vehicles,1
+2025-09-08,Rocket and missile artillery,1
+2025-09-08,Self-propelled artillery,2
+2025-09-08,Tanks,9
+2025-09-08,Towed artillery,2
+2025-09-08,Transport,14
+2025-09-15,Anti-aircraft systems,1
+2025-09-15,Drones,5
+2025-09-15,Engineering,1
+2025-09-15,Helicopters,1
+2025-09-15,Infantry fighting vehicles,4
+2025-09-15,Infantry mobility vehicles,4
+2025-09-15,Tanks,7
+2025-09-15,Towed artillery,2
+2025-09-15,Transport,29
+2025-09-22,Airplanes,1
+2025-09-22,Drones,2
+2025-09-22,Engineering,2
+2025-09-22,Infantry fighting vehicles,2
+2025-09-22,"Radars, jammers",1
+2025-09-22,Rocket and missile artillery,1
+2025-09-22,Self-propelled artillery,1
+2025-09-22,Tanks,6
+2025-09-22,Towed artillery,2
+2025-09-22,Transport,25
+2025-09-29,Anti-aircraft systems,4
+2025-09-29,Helicopters,1
+2025-09-29,Infantry fighting vehicles,9
+2025-09-29,Infantry mobility vehicles,2
+2025-09-29,Rocket and missile artillery,1
+2025-09-29,Self-propelled artillery,1
+2025-09-29,Tanks,3
+2025-09-29,Towed artillery,1
+2025-09-29,Transport,13
+2025-10-06,Anti-aircraft systems,1
+2025-10-06,Drones,4
+2025-10-06,Infantry fighting vehicles,22
+2025-10-06,Rocket and missile artillery,1
+2025-10-06,Tanks,6
+2025-10-06,Transport,13
+2025-10-13,"Command posts, communication",1
+2025-10-13,Engineering,1
+2025-10-13,Infantry fighting vehicles,29
+2025-10-13,Infantry mobility vehicles,1
+2025-10-13,Other,2
+2025-10-13,Rocket and missile artillery,2
+2025-10-13,Tanks,6
+2025-10-13,Towed artillery,1
+2025-10-13,Transport,16
+2025-10-20,"Command posts, communication",3
+2025-10-20,Drones,1
+2025-10-20,Infantry fighting vehicles,40
+2025-10-20,"Radars, jammers",1
+2025-10-20,Rocket and missile artillery,2
+2025-10-20,Self-propelled artillery,1
+2025-10-20,Tanks,7
+2025-10-20,Towed artillery,1
+2025-10-20,Transport,9
+2025-10-27,Anti-aircraft systems,1
+2025-10-27,"Command posts, communication",1
+2025-10-27,Drones,1
+2025-10-27,Infantry fighting vehicles,25
+2025-10-27,Other,3
+2025-10-27,"Radars, jammers",1
+2025-10-27,Tanks,6
+2025-10-27,Transport,6
+2025-11-03,"Command posts, communication",1
+2025-11-03,Engineering,1
+2025-11-03,Infantry fighting vehicles,16
+2025-11-03,Other,2
+2025-11-03,Rocket and missile artillery,3
+2025-11-03,Self-propelled artillery,1
+2025-11-03,Tanks,10
+2025-11-03,Transport,10
+2025-11-10,Anti-aircraft systems,3
+2025-11-10,"Command posts, communication",1
+2025-11-10,Infantry fighting vehicles,19
+2025-11-10,Infantry mobility vehicles,1
+2025-11-10,Other,2
+2025-11-10,Rocket and missile artillery,2
+2025-11-10,Tanks,4
+2025-11-10,Towed artillery,2
+2025-11-10,Transport,11
+2025-11-17,Engineering,2
+2025-11-17,Infantry fighting vehicles,11
+2025-11-17,Other,1
+2025-11-17,Tanks,10
+2025-11-17,Transport,10
+2025-11-24,Drones,1
+2025-11-24,Engineering,1
+2025-11-24,Infantry fighting vehicles,16
+2025-11-24,Other,2
+2025-11-24,Rocket and missile artillery,1
+2025-11-24,Tanks,6
+2025-11-24,Transport,15
+2025-12-01,Drones,2
+2025-12-01,Engineering,3
+2025-12-01,Infantry fighting vehicles,8
+2025-12-01,Other,1
+2025-12-01,Rocket and missile artillery,2
+2025-12-01,Self-propelled artillery,1
+2025-12-01,Tanks,7
+2025-12-01,Towed artillery,1
+2025-12-01,Transport,15
+2025-12-08,Airplanes,1
+2025-12-08,Anti-aircraft systems,3
+2025-12-08,"Command posts, communication",1
+2025-12-08,Infantry fighting vehicles,7
+2025-12-08,Other,5
+2025-12-08,Rocket and missile artillery,1
+2025-12-08,Tanks,3
+2025-12-08,Transport,4
+2025-12-15,Anti-aircraft systems,2
+2025-12-15,Drones,3
+2025-12-15,Engineering,1
+2025-12-15,Infantry fighting vehicles,20
+2025-12-15,Infantry mobility vehicles,1
+2025-12-15,Other,6
+2025-12-15,Self-propelled artillery,2
+2025-12-15,Tanks,11
+2025-12-15,Towed artillery,4
+2025-12-15,Transport,14
+2025-12-22,Anti-aircraft systems,1
+2025-12-22,Drones,1
+2025-12-22,Engineering,2
+2025-12-22,Infantry fighting vehicles,27
+2025-12-22,Other,4
+2025-12-22,Rocket and missile artillery,4
+2025-12-22,Tanks,17
+2025-12-22,Towed artillery,2
+2025-12-22,Transport,12
+2025-12-29,Airplanes,2
+2025-12-29,Anti-aircraft systems,9
+2025-12-29,Drones,2
+2025-12-29,Infantry fighting vehicles,4
+2025-12-29,Infantry mobility vehicles,1
+2025-12-29,Other,6
+2025-12-29,"Radars, jammers",4
+2025-12-29,Rocket and missile artillery,1
+2025-12-29,Self-propelled artillery,1
+2025-12-29,Tanks,2
+2025-12-29,Towed artillery,1
+2025-12-29,Transport,17
+2026-01-05,Drones,1
+2026-01-05,Engineering,1
+2026-01-05,Infantry fighting vehicles,11
+2026-01-05,Other,1
+2026-01-05,Self-propelled artillery,1
+2026-01-05,Tanks,6
+2026-01-05,Transport,6
+2026-01-12,Anti-aircraft systems,1
+2026-01-12,Infantry fighting vehicles,3
+2026-01-12,Other,4
+2026-01-12,Rocket and missile artillery,2
+2026-01-12,Self-propelled artillery,2
+2026-01-12,Tanks,2
+2026-01-12,Transport,13
+2026-01-19,Infantry fighting vehicles,3
+2026-01-19,Other,6
+2026-01-19,"Radars, jammers",1
+2026-01-19,Rocket and missile artillery,1
+2026-01-19,Tanks,3
+2026-01-19,Transport,12
+2026-01-26,Infantry fighting vehicles,3
+2026-01-26,Other,6
+2026-01-26,Rocket and missile artillery,1
+2026-01-26,Tanks,5
+2026-01-26,Transport,4
+2026-02-02,Engineering,1
+2026-02-02,Infantry fighting vehicles,4
+2026-02-02,Infantry mobility vehicles,2
+2026-02-02,Other,1
+2026-02-02,Rocket and missile artillery,3
+2026-02-02,Self-propelled artillery,2
+2026-02-02,Tanks,1
+2026-02-02,Transport,7
+2026-02-09,Engineering,1
+2026-02-09,Infantry fighting vehicles,1
+2026-02-09,Other,4
+2026-02-09,"Radars, jammers",1
+2026-02-09,Rocket and missile artillery,4
+2026-02-09,Self-propelled artillery,2
+2026-02-09,Tanks,5
+2026-02-09,Transport,7
+2026-02-09,Vessels,1
+2026-02-16,Anti-aircraft systems,3
+2026-02-16,Drones,1
+2026-02-16,Infantry fighting vehicles,6
+2026-02-16,Rocket and missile artillery,3
+2026-02-16,Self-propelled artillery,1
+2026-02-16,Tanks,4
+2026-02-16,Transport,11
+2026-02-23,Anti-aircraft systems,2
+2026-02-23,"Command posts, communication",1
+2026-02-23,Infantry fighting vehicles,4
+2026-02-23,Infantry mobility vehicles,1
+2026-02-23,Other,1
+2026-02-23,"Radars, jammers",2
+2026-02-23,Rocket and missile artillery,5
+2026-02-23,Tanks,2
+2026-02-23,Transport,10
+2026-03-02,Anti-aircraft systems,5
+2026-03-02,Helicopters,2
+2026-03-02,Infantry fighting vehicles,9
+2026-03-02,Rocket and missile artillery,2
+2026-03-02,Tanks,2
+2026-03-02,Transport,6
+2026-03-02,Vessels,1
+2026-03-09,Anti-aircraft systems,4
+2026-03-09,"Command posts, communication",1
+2026-03-09,Engineering,1
+2026-03-09,Infantry fighting vehicles,3
+2026-03-09,Infantry mobility vehicles,2
+2026-03-09,Other,6
+2026-03-09,"Radars, jammers",4
+2026-03-09,Rocket and missile artillery,3
+2026-03-09,Self-propelled artillery,1
+2026-03-09,Tanks,2
+2026-03-09,Transport,28
+2026-03-16,Anti-aircraft systems,5
+2026-03-16,Engineering,1
+2026-03-16,Helicopters,1
+2026-03-16,Infantry fighting vehicles,19
+2026-03-16,Infantry mobility vehicles,2
+2026-03-16,Other,1
+2026-03-16,"Radars, jammers",1
+2026-03-16,Rocket and missile artillery,6
+2026-03-16,Self-propelled artillery,2
+2026-03-16,Tanks,5
+2026-03-16,Transport,13
+2026-03-23,Anti-aircraft systems,2
+2026-03-23,Engineering,2
+2026-03-23,Infantry fighting vehicles,11
+2026-03-23,Infantry mobility vehicles,2
+2026-03-23,Rocket and missile artillery,4
+2026-03-23,Tanks,6
+2026-03-23,Transport,17
+2026-03-23,Vessels,1
+2026-03-30,Anti-aircraft systems,2
+2026-03-30,Drones,1
+2026-03-30,Infantry fighting vehicles,2
+2026-03-30,"Radars, jammers",2
+2026-03-30,Rocket and missile artillery,1
+2026-03-30,Tanks,1
+2026-03-30,Towed artillery,2
+2026-03-30,Transport,15
+2026-04-06,Engineering,1
+2026-04-06,Infantry fighting vehicles,1
+2026-04-06,Other,3
+2026-04-06,Rocket and missile artillery,2
+2026-04-06,Transport,12
+2026-04-13,Anti-aircraft systems,2
+2026-04-13,"Command posts, communication",1
+2026-04-13,Engineering,1
+2026-04-13,Infantry fighting vehicles,8
+2026-04-13,Other,3
+2026-04-13,Rocket and missile artillery,4
+2026-04-13,Self-propelled artillery,2
+2026-04-13,Tanks,5
+2026-04-13,Towed artillery,1
+2026-04-13,Transport,10
+2026-04-20,Anti-aircraft systems,2
+2026-04-20,Drones,1
+2026-04-20,Infantry fighting vehicles,3
+2026-04-20,Infantry mobility vehicles,1
+2026-04-20,Rocket and missile artillery,1
+2026-04-20,Self-propelled artillery,1
+2026-04-20,Tanks,6
+2026-04-20,Towed artillery,1
+2026-04-20,Transport,8
+2026-04-27,Anti-aircraft systems,2
+2026-04-27,Helicopters,2
+2026-04-27,Infantry fighting vehicles,4
+2026-04-27,Other,1
+2026-04-27,"Radars, jammers",1
+2026-04-27,Self-propelled artillery,1
+2026-04-27,Tanks,2
+2026-04-27,Towed artillery,3
+2026-04-27,Transport,13
+2026-05-04,Anti-aircraft systems,2
+2026-05-04,"Command posts, communication",1
+2026-05-04,Infantry fighting vehicles,3
+2026-05-04,Other,1
+2026-05-04,"Radars, jammers",1
+2026-05-04,Rocket and missile artillery,1
+2026-05-04,Self-propelled artillery,1
+2026-05-04,Tanks,2
+2026-05-04,Towed artillery,2
+2026-05-04,Transport,18
+2026-05-11,Airplanes,1
+2026-05-11,"Command posts, communication",1
+2026-05-11,Drones,1
+2026-05-11,Engineering,1
+2026-05-11,Infantry fighting vehicles,2
+2026-05-11,"Radars, jammers",2
+2026-05-11,Rocket and missile artillery,3
+2026-05-11,Self-propelled artillery,2
+2026-05-11,Towed artillery,3
+2026-05-11,Transport,9
+2026-05-11,Vessels,1
+2026-05-18,Anti-aircraft systems,2
+2026-05-18,Engineering,1
+2026-05-18,Infantry fighting vehicles,7
+2026-05-18,Infantry mobility vehicles,3
+2026-05-18,Other,1
+2026-05-18,"Radars, jammers",1
+2026-05-18,Rocket and missile artillery,4
+2026-05-18,Self-propelled artillery,2
+2026-05-18,Towed artillery,1
+2026-05-18,Transport,35
+2026-05-25,"Ambulances, medical vehicles",1
+2026-05-25,Anti-aircraft systems,2
+2026-05-25,Engineering,1
+2026-05-25,Infantry fighting vehicles,5
+2026-05-25,Other,3
+2026-05-25,"Radars, jammers",2
+2026-05-25,Rocket and missile artillery,6
+2026-05-25,Self-propelled artillery,1
+2026-05-25,Tanks,2
+2026-05-25,Towed artillery,2
+2026-05-25,Transport,24
+2026-06-01,Infantry fighting vehicles,2
+2026-06-01,Other,1
+2026-06-01,Rocket and missile artillery,2
+2026-06-01,Towed artillery,2
+2026-06-01,Transport,23
+2026-06-01,Vessels,1
+2026-06-08,Infantry fighting vehicles,8
+2026-06-08,Infantry mobility vehicles,3
+2026-06-08,Rocket and missile artillery,2
+2026-06-08,Self-propelled artillery,1
+2026-06-08,Tanks,3
+2026-06-08,Towed artillery,8
+2026-06-08,Transport,30
+2026-06-15,Airplanes,1
+2026-06-15,Infantry fighting vehicles,1
+2026-06-15,"Radars, jammers",1
+2026-06-15,Rocket and missile artillery,4
+2026-06-15,Self-propelled artillery,3
+2026-06-15,Tanks,4
+2026-06-15,Towed artillery,4
+2026-06-15,Transport,22
+2026-06-22,Anti-aircraft systems,1
+2026-06-22,Drones,4
+2026-06-22,Infantry fighting vehicles,1
+2026-06-22,Other,2
+2026-06-22,"Radars, jammers",1
+2026-06-22,Rocket and missile artillery,2
+2026-06-22,Self-propelled artillery,3
+2026-06-22,Tanks,2
+2026-06-22,Towed artillery,9
+2026-06-22,Transport,20
+2026-06-29,Anti-aircraft systems,1
+2026-06-29,Drones,1
+2026-06-29,Engineering,1
+2026-06-29,Infantry fighting vehicles,1
+2026-06-29,Other,3
+2026-06-29,Self-propelled artillery,2
+2026-06-29,Towed artillery,7
+2026-06-29,Transport,17
+2026-07-06,Airplanes,1
+2026-07-06,Anti-aircraft systems,2
+2026-07-06,Drones,1
+2026-07-06,Engineering,1
+2026-07-06,Infantry fighting vehicles,1
+2026-07-06,"Radars, jammers",1
+2026-07-06,Rocket and missile artillery,1
+2026-07-06,Self-propelled artillery,2
+2026-07-06,Tanks,2
+2026-07-06,Towed artillery,4
+2026-07-06,Transport,27
+2026-07-13,Airplanes,1
+2026-07-13,Anti-aircraft systems,1
+2026-07-13,Drones,1
+2026-07-13,Infantry mobility vehicles,1
+2026-07-13,Other,3
+2026-07-13,Rocket and missile artillery,2
+2026-07-13,Self-propelled artillery,1
+2026-07-13,Tanks,3
+2026-07-13,Towed artillery,1
+2026-07-13,Transport,16
+2026-07-13,Vessels,1
+2026-07-20,Anti-aircraft systems,1
+2026-07-20,Infantry fighting vehicles,2
+2026-07-20,Infantry mobility vehicles,1
+2026-07-20,"Radars, jammers",1
+2026-07-20,Rocket and missile artillery,3
+2026-07-20,Tanks,7
+2026-07-20,Towed artillery,1
+2026-07-20,Transport,18
+2026-07-27,Anti-aircraft systems,1
+2026-07-27,Engineering,1
+2026-07-27,Infantry fighting vehicles,2
+2026-07-27,Infantry mobility vehicles,1
+2026-07-27,Self-propelled artillery,2
+2026-07-27,Tanks,3
+2026-07-27,Towed artillery,1
+2026-07-27,Transport,16
+2026-08-03,Anti-aircraft systems,1
+2026-08-03,Drones,1
+2026-08-03,Infantry fighting vehicles,1
+2026-08-03,Infantry mobility vehicles,1
+2026-08-03,Other,2
+2026-08-03,Rocket and missile artillery,2
+2026-08-03,Self-propelled artillery,4
+2026-08-03,Towed artillery,3
+2026-08-03,Transport,11
+2026-08-10,Anti-aircraft systems,1
+2026-08-10,Drones,1
+2026-08-10,Infantry fighting vehicles,3
+2026-08-10,Self-propelled artillery,3
+2026-08-10,Tanks,3
+2026-08-10,Towed artillery,1
+2026-08-10,Transport,10
+2026-08-10,Vessels,2
+2026-08-17,Anti-aircraft systems,1
+2026-08-17,Drones,6
+2026-08-17,Engineering,1
+2026-08-17,Infantry fighting vehicles,1
+2026-08-17,Other,1
+2026-08-17,Rocket and missile artillery,1
+2026-08-17,Self-propelled artillery,2
+2026-08-17,Tanks,1
+2026-08-17,Towed artillery,2
+2026-08-17,Transport,8
+2026-08-24,Anti-aircraft systems,2
+2026-08-24,Drones,1
+2026-08-24,Infantry fighting vehicles,1
+2026-08-24,Rocket and missile artillery,2
+2026-08-24,Tanks,3
+2026-08-24,Towed artillery,1
+2026-08-24,Transport,16
+2026-08-31,Anti-aircraft systems,5
+2026-08-31,Helicopters,1
+2026-08-31,Infantry fighting vehicles,1
+2026-08-31,Infantry mobility vehicles,2
+2026-08-31,Other,1
+2026-08-31,"Radars, jammers",1
+2026-08-31,Rocket and missile artillery,1
+2026-08-31,Self-propelled artillery,1
+2026-08-31,Tanks,3
+2026-08-31,Transport,8
+2026-09-07,Airplanes,1
+2026-09-07,Infantry fighting vehicles,1
+2026-09-07,Other,1
+2026-09-07,Rocket and missile artillery,3
+2026-09-07,Self-propelled artillery,2
+2026-09-07,Towed artillery,1
+2026-09-07,Transport,5
+2026-09-07,Vessels,1
