@@ -765,6 +765,65 @@ def create_weekly_dataset(df):
 
     return weekly
 
+# ============================================================
+# WEEKLY EQUIPMENT ANALYSIS
+# ============================================================
+
+def create_weekly_equipment_dataset(df):
+    """
+    Create weekly equipment-loss dataset using
+    WarSpotting's own equipment categories.
+    """
+
+    data = df.copy()
+
+    data["date"] = pd.to_datetime(
+        data["date"],
+        errors="coerce"
+    )
+
+    # Monday as the start of the week
+    data["week"] = (
+        data["date"]
+        - pd.to_timedelta(
+            data["date"].dt.weekday,
+            unit="D"
+        )
+    )
+
+    weekly_equipment = (
+        data
+        .groupby(
+            ["week", "type"],
+            as_index=False
+        )
+        .size()
+        .rename(
+            columns={"size": "losses"}
+        )
+        .sort_values(
+            by=["week", "type"]
+        )
+        .reset_index(drop=True)
+    )
+
+    print()
+    print("=" * 60)
+    print("WEEKLY EQUIPMENT ANALYSIS")
+    print("=" * 60)
+
+    print(
+        f"Weekly equipment rows: "
+        f"{len(weekly_equipment):,}"
+    )
+
+    print(
+        f"Equipment categories: "
+        f"{weekly_equipment['type'].nunique()}"
+    )
+
+    return weekly_equipment
+
 
 # ============================================================
 # DASHBOARD
