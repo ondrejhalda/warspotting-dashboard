@@ -49,6 +49,7 @@ REQUEST_DELAY = 1.5
 
 RAW_FILE = Path("warspotting_raw.csv")
 WEEKLY_FILE = Path("weekly_losses.csv")
+EQUIPMENT_WEEKLY_FILE = Path("weekly_equipment_losses.csv")
 DASHBOARD_FILE = Path("dashboard.png")
 
 USER_AGENT = (
