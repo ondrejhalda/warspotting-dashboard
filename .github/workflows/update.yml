@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run dashboard
-        run: python dashboard.py
+      - name: Run diagnostic
+        run: python check_difference.py
 
       - name: Commit updated data
         run: |
