@@ -45,7 +45,7 @@ START_DATE = date(2022, 2, 24)
 
 REFRESH_DAYS = 10
 
-REQUEST_DELAY = 1.1
+REQUEST_DELAY = 1.5
 
 RAW_FILE = Path("warspotting_raw.csv")
 WEEKLY_FILE = Path("weekly_losses.csv")
