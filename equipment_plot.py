@@ -1,29 +1,6 @@
 # ============================================================
 # WARSPOTTING — ACLED-STYLE EQUIPMENT LOSS CHART
 # ============================================================
-#
-# Interaction:
-#
-#   HOVER:
-#       - shows custom tooltip for the week under mouse
-#       - does NOT change selected week
-#       - does NOT change bar opacity
-#
-#   CLICK ON BAR:
-#       - selects / locks a week
-#       - selected week is highlighted
-#       - Equipment panel shows values for selected week
-#
-#   CLICK SELECTED BAR:
-#       - deselects the week
-#
-#   CLICK EMPTY AREA OF CHART:
-#       - deselects the week
-#
-#   CLICK OUTSIDE CHART:
-#       - deselects the week
-#
-# ============================================================
 
 from pathlib import Path
 import json
@@ -42,35 +19,38 @@ OUTPUT_FILE = Path("equipment_weekly.html")
 BASE_OPACITY = 0.42
 SELECTED_OPACITY = 1.0
 
+# Opacity of all other weeks when one week is selected.
+# This recreates the stronger fading from the earlier version.
+SELECTED_OTHER_OPACITY = 0.16
+
 
 # ============================================================
 # CATEGORY COLORS
 # ============================================================
 #
-# Original softer palette.
-# This is the palette used in the preferred version.
+# Colors matched to the ACLED screenshot.
 #
 # ============================================================
 
 CATEGORY_COLORS = {
-    "Tanks": "#4C78A8",
-    "Infantry fighting vehicles": "#59A14F",
-    "Infantry mobility vehicles": "#F28E2B",
-    "Command posts, communication": "#B279A2",
-    "Anti-tank systems": "#E15759",
-    "Anti-aircraft systems": "#9C755F",
-    "Towed artillery": "#76B7B2",
-    "Self-propelled artillery": "#E15759",
-    "Rocket and missile artillery": "#59A14F",
-    "Radars, jammers": "#B07AA1",
-    "Engineering": "#8CD17D",
-    "Ambulances, medical vehicles": "#4E79A7",
-    "Transport": "#F28E2B",
+    "Tanks": "#54A24B",
+    "Infantry fighting vehicles": "#4C78A8",
+    "Infantry mobility vehicles": "#9D755D",
+    "Command posts, communication": "#EDC949",
+    "Anti-tank systems": "#8CD17D",
+    "Anti-aircraft systems": "#BAB0AC",
+    "Towed artillery": "#59A14F",
+    "Self-propelled artillery": "#E45756",
+    "Rocket and missile artillery": "#FF9DA6",
+    "Radars, jammers": "#AF7AA1",
+    "Engineering": "#B279A2",
+    "Ambulances, medical vehicles": "#5DA5DA",
+    "Transport": "#F58518",
     "Airplanes": "#E15759",
     "Helicopters": "#F28E2B",
-    "Drones": "#59A14F",
-    "Vessels": "#B79A2E",
-    "Other": "#7F8C8D",
+    "Drones": "#72B7B2",
+    "Vessels": "#B6992D",
+    "Other": "#76B7B2",
 }
 
 
@@ -114,10 +94,6 @@ def load_data():
             f"Missing columns: {missing_columns}"
         )
 
-    # --------------------------------------------------------
-    # Convert date
-    # --------------------------------------------------------
-
     df["date"] = pd.to_datetime(
         df["date"],
         errors="coerce"
@@ -129,19 +105,11 @@ def load_data():
             "Invalid dates found in raw dataset."
         )
 
-    # --------------------------------------------------------
-    # Equipment category
-    # --------------------------------------------------------
-
     if df["type"].isna().any():
 
         raise ValueError(
             "Missing equipment categories found."
         )
-
-    # --------------------------------------------------------
-    # Russian losses
-    # --------------------------------------------------------
 
     unexpected_lost_by = (
         df["lost_by"]
@@ -180,10 +148,6 @@ def create_weekly_dataset(df):
 
     data = df.copy()
 
-    # --------------------------------------------------------
-    # Monday-based week
-    # --------------------------------------------------------
-
     data["week"] = (
         data["date"]
         - pd.to_timedelta(
@@ -191,10 +155,6 @@ def create_weekly_dataset(df):
             unit="D"
         )
     )
-
-    # --------------------------------------------------------
-    # Aggregate by week and equipment type
-    # --------------------------------------------------------
 
     weekly = (
         data
@@ -240,10 +200,6 @@ def validate_weekly_data(
     print("WEEKLY DATA VALIDATION")
     print("=" * 60)
 
-    # --------------------------------------------------------
-    # Total
-    # --------------------------------------------------------
-
     raw_total = len(raw_df)
 
     weekly_total = (
@@ -272,10 +228,6 @@ def validate_weekly_data(
         "Raw vs weekly total: OK"
     )
 
-    # --------------------------------------------------------
-    # Duplicate combinations
-    # --------------------------------------------------------
-
     duplicates = (
         weekly_df
         .duplicated(
@@ -295,10 +247,6 @@ def validate_weekly_data(
         "Duplicate week/category combinations: 0"
     )
 
-    # --------------------------------------------------------
-    # Negative values
-    # --------------------------------------------------------
-
     negative_values = (
         weekly_df["losses"] < 0
     ).sum()
@@ -313,10 +261,6 @@ def validate_weekly_data(
     print(
         "Negative loss values: 0"
     )
-
-    # --------------------------------------------------------
-    # Categories
-    # --------------------------------------------------------
 
     categories = (
         weekly_df["type"].nunique()
@@ -385,10 +329,6 @@ def prepare_week_data(weekly):
             }
         )
 
-    # --------------------------------------------------------
-    # Sort each week by number of losses
-    # --------------------------------------------------------
-
     for week in week_data:
 
         week_data[week].sort(
@@ -415,10 +355,6 @@ def create_chart(weekly):
         weekly
     )
 
-    # --------------------------------------------------------
-    # Check colors
-    # --------------------------------------------------------
-
     missing_colors = [
         category
         for category in categories
@@ -433,6 +369,7 @@ def create_chart(weekly):
         )
 
     fig = go.Figure()
+
 
     # ========================================================
     # STACKED BAR TRACES
@@ -488,17 +425,11 @@ def create_chart(weekly):
                     },
                 },
 
-                # ------------------------------------------------
-                # We keep hover events active,
-                # but make Plotly's own label invisible.
-                #
-                # Our custom tooltip is used instead.
-                # ------------------------------------------------
-
                 hovertemplate=
                     "<extra></extra>",
             )
         )
+
 
     # ========================================================
     # JAVASCRIPT DATA
@@ -526,6 +457,7 @@ def create_chart(weekly):
         categories,
         ensure_ascii=False,
     )
+
 
     # ========================================================
     # JAVASCRIPT
@@ -557,38 +489,17 @@ def create_chart(weekly):
     const selectedOpacity =
         SELECTED_OPACITY_PLACEHOLDER;
 
+    const selectedOtherOpacity =
+        SELECTED_OTHER_OPACITY_PLACEHOLDER;
+
 
     // ========================================================
     // STATE
-    // ========================================================
-    //
-    // selectedWeek:
-    //     Week locked by clicking a bar.
-    //
-    // hoverWeek:
-    //     Week currently under mouse.
-    //
-    // They are independent.
     // ========================================================
 
     let selectedWeek = null;
 
     let hoverWeek = null;
-
-
-    // ========================================================
-    // CLICK STATE
-    // ========================================================
-    //
-    // Used to distinguish:
-    //
-    //   click on bar
-    //
-    // from:
-    //
-    //   click on empty chart area
-    //
-    // ========================================================
 
     let plotlyBarClickHandled = false;
 
@@ -773,12 +684,6 @@ def create_chart(weekly):
     // ========================================================
     // RENDER EQUIPMENT PANEL
     // ========================================================
-    //
-    // ONLY selectedWeek controls this panel.
-    //
-    // Hovering over another week does not affect it.
-    //
-    // ========================================================
 
     function renderPanel(week) {
 
@@ -795,7 +700,7 @@ def create_chart(weekly):
             );
 
         header.style.background =
-            '#17365d';
+            '#28547A';
 
         header.style.color =
             '#ffffff';
@@ -1102,9 +1007,16 @@ def create_chart(weekly):
     // HIGHLIGHT SELECTED WEEK
     // ========================================================
     //
-    // Called ONLY after click.
+    // IMPORTANT:
     //
-    // NEVER called during hover.
+    // When no week is selected:
+    //     all bars = BASE_OPACITY
+    //
+    // When a week is selected:
+    //     selected week = SELECTED_OPACITY
+    //     all other weeks = SELECTED_OTHER_OPACITY
+    //
+    // This function is called ONLY after a click.
     //
     // ========================================================
 
@@ -1139,19 +1051,28 @@ def create_chart(weekly):
                     ).slice(0, 10);
 
 
-                if (
-                    week &&
+                if (!week) {
+
+                    // No selection.
+                    opacities.push(
+                        baseOpacity
+                    );
+
+                } else if (
                     pointWeek === week
                 ) {
 
+                    // Selected week.
                     opacities.push(
                         selectedOpacity
                     );
 
                 } else {
 
+                    // Everything else becomes
+                    // more faded.
                     opacities.push(
-                        baseOpacity
+                        selectedOtherOpacity
                     );
                 }
             }
@@ -1176,12 +1097,12 @@ def create_chart(weekly):
     // HOVER
     // ========================================================
     //
-    // Hover ONLY changes tooltip.
+    // Hover ONLY changes the tooltip.
     //
-    // It does NOT:
-    //   - change selectedWeek
-    //   - change opacity
-    //   - update Equipment panel
+    // No opacity changes here.
+    //
+    // The Plotly spike line is handled automatically
+    // by the x-axis configuration below.
     //
     // ========================================================
 
@@ -1218,10 +1139,6 @@ def create_chart(weekly):
                 return;
             }
 
-
-            // ------------------------------------------------
-            // Build tooltip
-            // ------------------------------------------------
 
             let html = '';
 
@@ -1325,7 +1242,6 @@ def create_chart(weekly):
             tooltip.innerHTML =
                 html;
 
-
             tooltip.style.display =
                 'block';
 
@@ -1425,7 +1341,6 @@ def create_chart(weekly):
             tooltip.style.display =
                 'none';
 
-            // selectedWeek remains untouched.
         }
     );
 
@@ -1447,8 +1362,6 @@ def create_chart(weekly):
             }
 
 
-            // Tell the DOM click handler that this
-            // was a real bar click.
             plotlyBarClickHandled = true;
 
 
@@ -1463,8 +1376,7 @@ def create_chart(weekly):
 
 
             // ------------------------------------------------
-            // Click selected week again
-            // = unlock
+            // Click selected week again = unlock
             // ------------------------------------------------
 
             if (
@@ -1483,8 +1395,7 @@ def create_chart(weekly):
 
 
             // ------------------------------------------------
-            // Click another week
-            // = select it
+            // Select another week
             // ------------------------------------------------
 
             selectedWeek =
@@ -1504,15 +1415,7 @@ def create_chart(weekly):
 
 
     // ========================================================
-    // CLICK INSIDE CHART
-    // ========================================================
-    //
-    // If the user clicks somewhere inside the Plotly chart
-    // but NOT on a bar, unlock the selected week.
-    //
-    // We use setTimeout so that plotly_click gets a chance
-    // to mark an actual bar click first.
-    //
+    // CLICK EMPTY AREA OF CHART
     // ========================================================
 
     gd.addEventListener(
@@ -1521,10 +1424,6 @@ def create_chart(weekly):
 
             setTimeout(
                 function() {
-
-                    // ----------------------------------------
-                    // A bar click was already processed.
-                    // ----------------------------------------
 
                     if (
                         plotlyBarClickHandled
@@ -1536,10 +1435,6 @@ def create_chart(weekly):
                         return;
                     }
 
-
-                    // ----------------------------------------
-                    // Empty chart area.
-                    // ----------------------------------------
 
                     if (selectedWeek) {
 
@@ -1581,10 +1476,6 @@ def create_chart(weekly):
                     event.target
                 );
 
-
-            // ------------------------------------------------
-            // Click outside both chart and panel.
-            // ------------------------------------------------
 
             if (
                 !clickedInsideChart &&
@@ -1635,6 +1526,11 @@ def create_chart(weekly):
             "SELECTED_OPACITY_PLACEHOLDER",
             str(SELECTED_OPACITY)
         )
+
+        .replace(
+            "SELECTED_OTHER_OPACITY_PLACEHOLDER",
+            str(SELECTED_OTHER_OPACITY)
+        )
     )
 
 
@@ -1659,13 +1555,12 @@ def create_chart(weekly):
         barmode="stack",
 
 
-        # Important:
-        # hover only provides information.
-        # It does not trigger any visual restyling.
+        # Keep hover behaviour unchanged.
         hovermode="closest",
 
 
         xaxis={
+
             "title":
                 "Date",
 
@@ -1677,6 +1572,31 @@ def create_chart(weekly):
 
             "type":
                 "date",
+
+            # =================================================
+            # ACLED-STYLE VERTICAL HOVER LINE
+            # =================================================
+            #
+            # Dotted vertical line follows mouse position.
+            # This does not restyle the bars.
+            #
+            "showspikes":
+                True,
+
+            "spikemode":
+                "across",
+
+            "spikesnap":
+                "cursor",
+
+            "spikethickness":
+                1,
+
+            "spikedash":
+                "dot",
+
+            "spikecolor":
+                "rgba(80,80,80,0.65)",
         },
 
 
@@ -1689,7 +1609,6 @@ def create_chart(weekly):
         },
 
 
-        # Native legend disabled.
         showlegend=False,
 
 
@@ -1703,13 +1622,6 @@ def create_chart(weekly):
             "b": 70,
         },
 
-
-        # ----------------------------------------------------
-        # Make Plotly's own hover label transparent.
-        #
-        # This removes the yellow number/arrow while keeping
-        # plotly_hover events available for our custom tooltip.
-        # ----------------------------------------------------
 
         hoverlabel={
             "bgcolor":
@@ -1739,6 +1651,15 @@ def create_chart(weekly):
     )
 
 
+    # ========================================================
+    # ADD SELECTED-WEEK VERTICAL LINE
+    # ========================================================
+    #
+    # The actual line is controlled by JavaScript after click.
+    # The initial layout contains no selected line.
+    #
+    # ========================================================
+
     return fig, post_script
 
 
@@ -1754,7 +1675,6 @@ def main():
 
     print()
 
-
     # --------------------------------------------------------
     # Load raw data
     # --------------------------------------------------------
@@ -1763,7 +1683,7 @@ def main():
 
 
     # --------------------------------------------------------
-    # Create weekly equipment dataset
+    # Weekly aggregation
     # --------------------------------------------------------
 
     weekly_df = create_weekly_dataset(
@@ -1772,7 +1692,7 @@ def main():
 
 
     # --------------------------------------------------------
-    # Validate
+    # Validation
     # --------------------------------------------------------
 
     validate_weekly_data(
@@ -1790,9 +1710,221 @@ def main():
     )
 
 
+    # ========================================================
+    # ADD SOLID SELECTED LINE LOGIC
+    # ========================================================
+    #
+    # This is inserted into the existing JavaScript.
+    #
+    # It changes ONLY when a week is clicked.
+    #
+    # ========================================================
+
+    selected_line_js = r"""
+    
+    // ========================================================
+    // SELECTED WEEK SOLID LINE
+    // ========================================================
+
+    function updateSelectedLine(week) {
+
+        if (!week) {
+
+            Plotly.relayout(
+                gd,
+                {
+                    shapes: []
+                }
+            );
+
+            return;
+        }
+
+
+        Plotly.relayout(
+            gd,
+            {
+                shapes: [
+                    {
+                        type: 'line',
+
+                        x0: week,
+
+                        x1: week,
+
+                        y0: 0,
+
+                        y1: 1,
+
+                        yref: 'paper',
+
+                        line: {
+                            color:
+                                'rgba(60,60,60,0.90)',
+
+                            width: 2,
+
+                            dash: 'solid'
+                        }
+                    }
+                ]
+            }
+        );
+    }
+
+    """
+
     # --------------------------------------------------------
-    # Save HTML
+    # Insert function before click handling.
     # --------------------------------------------------------
+
+    post_script = post_script.replace(
+        """
+    // ========================================================
+    // CLICK ON BAR
+    // ========================================================
+    """,
+        selected_line_js
+        + """
+    // ========================================================
+    // CLICK ON BAR
+    // ========================================================
+    """
+    )
+
+
+    # --------------------------------------------------------
+    # Update selected line when selecting a week.
+    # --------------------------------------------------------
+
+    post_script = post_script.replace(
+        """
+                selectedWeek = null;
+
+                highlightWeek(null);
+
+                renderPanel(null);
+
+                return;
+        """,
+        """
+                selectedWeek = null;
+
+                highlightWeek(null);
+
+                updateSelectedLine(null);
+
+                renderPanel(null);
+
+                return;
+        """,
+        1
+    )
+
+
+    post_script = post_script.replace(
+        """
+            selectedWeek =
+                clickedWeek;
+
+
+            highlightWeek(
+                selectedWeek
+            );
+
+
+            renderPanel(
+                selectedWeek
+            );
+        """,
+        """
+            selectedWeek =
+                clickedWeek;
+
+
+            highlightWeek(
+                selectedWeek
+            );
+
+
+            updateSelectedLine(
+                selectedWeek
+            );
+
+
+            renderPanel(
+                selectedWeek
+            );
+        """,
+        1
+    )
+
+
+    # --------------------------------------------------------
+    # Empty chart click.
+    # --------------------------------------------------------
+
+    post_script = post_script.replace(
+        """
+                        selectedWeek = null;
+
+                        highlightWeek(null);
+
+                        renderPanel(null);
+        """,
+        """
+                        selectedWeek = null;
+
+                        highlightWeek(null);
+
+                        updateSelectedLine(null);
+
+                        renderPanel(null);
+        """,
+        1
+    )
+
+
+    # --------------------------------------------------------
+    # Outside click.
+    # --------------------------------------------------------
+
+    post_script = post_script.replace(
+        """
+                selectedWeek = null;
+
+                highlightWeek(null);
+
+                renderPanel(null);
+            }
+        }
+    );
+
+
+})();
+""",
+        """
+                selectedWeek = null;
+
+                highlightWeek(null);
+
+                updateSelectedLine(null);
+
+                renderPanel(null);
+            }
+        }
+    );
+
+
+})();
+""",
+        1
+    )
+
+
+    # ========================================================
+    # SAVE HTML
+    # ========================================================
 
     fig.write_html(
         OUTPUT_FILE,
