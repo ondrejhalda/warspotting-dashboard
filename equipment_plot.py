@@ -14,7 +14,9 @@
 #   - total height = total documented losses
 #   - each segment = WarSpotting equipment category
 #   - hover = sorted breakdown of categories for the selected week
-#   - click = highlight selected week and show weekly totals in legend
+#   - hover = highlight the week under the mouse
+#   - click = lock the selected week
+#   - legend = shows weekly equipment counts after selection
 #
 # Output:
 #   equipment_weekly.html
@@ -56,7 +58,9 @@ def load_data():
 
     df = pd.read_csv(INPUT_FILE)
 
-    print(f"Raw records loaded: {len(df):,}")
+    print(
+        f"Raw records loaded: {len(df):,}"
+    )
 
     required_columns = [
         "id",
@@ -76,7 +80,10 @@ def load_data():
             f"Missing columns: {missing_columns}"
         )
 
-    # Convert date.
+    # --------------------------------------------------------
+    # Convert date
+    # --------------------------------------------------------
+
     df["date"] = pd.to_datetime(
         df["date"],
         errors="coerce"
@@ -87,13 +94,19 @@ def load_data():
             "Invalid dates found in raw dataset."
         )
 
-    # Check equipment category.
+    # --------------------------------------------------------
+    # Check equipment category
+    # --------------------------------------------------------
+
     if df["type"].isna().any():
         raise ValueError(
             "Missing equipment categories found."
         )
 
-    # Make sure we are analysing Russian losses.
+    # --------------------------------------------------------
+    # Make sure we are analysing Russian losses
+    # --------------------------------------------------------
+
     unexpected_lost_by = (
         df["lost_by"]
         .dropna()
@@ -370,7 +383,7 @@ def create_chart(weekly):
         base_color = colors[category]
 
         # ----------------------------------------------------
-        # Faded ACLED-style colour
+        # Convert HEX to RGB
         # ----------------------------------------------------
 
         rgb = tuple(
@@ -380,6 +393,10 @@ def create_chart(weekly):
             )
             for i in (1, 3, 5)
         )
+
+        # ----------------------------------------------------
+        # Faded ACLED-style colour
+        # ----------------------------------------------------
 
         faded_color = (
             f"rgba("
@@ -435,7 +452,6 @@ def create_chart(weekly):
 
         barmode="stack",
 
-        # Custom JavaScript handles hover.
         hovermode="closest",
 
         xaxis={
@@ -468,10 +484,10 @@ def create_chart(weekly):
     )
 
     # ========================================================
-    # CUSTOM HTML / JAVASCRIPT
+    # CUSTOM JAVASCRIPT
     # ========================================================
 
-    post_script = """
+    post_script = r"""
     (function() {
 
         const gd =
@@ -487,6 +503,7 @@ def create_chart(weekly):
             __WEEKLY_DATA__;
 
         let selectedWeek = null;
+        let hoveredWeek = null;
 
 
         // ====================================================
@@ -536,7 +553,6 @@ def create_chart(weekly):
             function(row) {
 
                 if (!weekLookup[row.week]) {
-
                     weekLookup[row.week] = [];
                 }
 
@@ -553,8 +569,9 @@ def create_chart(weekly):
         );
 
 
-        // Sort each week by losses,
-        // largest first.
+        // ----------------------------------------------------
+        // Sort every week by number of losses
+        // ----------------------------------------------------
 
         Object.keys(
             weekLookup
@@ -751,7 +768,7 @@ def create_chart(weekly):
 
 
             // ------------------------------------------------
-            // No selected week
+            // Default state
             // ------------------------------------------------
 
             if (!week) {
@@ -977,7 +994,7 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // CUSTOM HOVER TOOLTIP
+        // CUSTOM TOOLTIP
         // ====================================================
 
         const tooltip =
@@ -1020,7 +1037,7 @@ def create_chart(weekly):
             "none";
 
         tooltip.style.minWidth =
-            "190px";
+            "210px";
 
         document.body.appendChild(
             tooltip
@@ -1039,9 +1056,7 @@ def create_chart(weekly):
             const rows =
                 weekLookup[week] || [];
 
-
             let total = 0;
-
 
             let html =
                 "<div style='" +
@@ -1074,7 +1089,8 @@ def create_chart(weekly):
                             item.type
                         ] +
                         ";display:inline-block;" +
-                        "margin-right:7px;'>" +
+                        "margin-right:7px;" +
+                        "flex:0 0 auto;'>" +
 
                         "</span>" +
 
@@ -1192,50 +1208,68 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // HIGHLIGHT SELECTED WEEK
+        // GET RGB
         // ====================================================
 
-        function setWeekHighlight(
-            week
+        function hexToRgb(
+            hex
         ) {
 
-            selectedWeek =
-                week;
+            const clean =
+                hex.replace(
+                    "#",
+                    ""
+                );
 
+            return [
+                parseInt(
+                    clean.substring(
+                        0,
+                        2
+                    ),
+                    16
+                ),
+                parseInt(
+                    clean.substring(
+                        2,
+                        4
+                    ),
+                    16
+                ),
+                parseInt(
+                    clean.substring(
+                        4,
+                        6
+                    ),
+                    16
+                )
+            ];
+        }
+
+
+        // ====================================================
+        // APPLY VISUAL HIGHLIGHT
+        // ====================================================
+
+        function applyHighlight(
+            activeWeek
+        ) {
 
             gd.data.forEach(
                 function(trace, traceIndex) {
-
-                    const colorsForTrace =
-                        trace.marker.color;
-
 
                     const baseColor =
                         categoryColors[
                             trace.name
                         ];
 
-
-                    // ----------------------------------------
-                    // Convert base colour to RGB
-                    // ----------------------------------------
-
                     const rgb =
-                        baseColor
-                            .replace("#", "")
-                            .match(/.{2}/g)
-                            .map(
-                                function(hex) {
-
-                                    return parseInt(
-                                        hex,
-                                        16
-                                    );
-                                }
-                            );
+                        hexToRgb(
+                            baseColor
+                        );
 
 
-                    const faded =
+                    const normalColor =
                         "rgba(" +
                         rgb[0] +
                         "," +
@@ -1245,7 +1279,7 @@ def create_chart(weekly):
                         ",0.40)";
 
 
-                    const veryFaded =
+                    const fadedColor =
                         "rgba(" +
                         rgb[0] +
                         "," +
@@ -1255,7 +1289,7 @@ def create_chart(weekly):
                         ",0.15)";
 
 
-                    const selected =
+                    const highlightedColor =
                         "rgba(" +
                         rgb[0] +
                         "," +
@@ -1277,21 +1311,34 @@ def create_chart(weekly):
                                         );
 
 
-                                if (!week) {
+                                // --------------------------------
+                                // Nothing selected / hovered
+                                // --------------------------------
 
-                                    return faded;
+                                if (!activeWeek) {
+
+                                    return normalColor;
                                 }
 
+
+                                // --------------------------------
+                                // Active week
+                                // --------------------------------
 
                                 if (
-                                    xString === week
+                                    xString ===
+                                    activeWeek
                                 ) {
 
-                                    return selected;
+                                    return highlightedColor;
                                 }
 
 
-                                return veryFaded;
+                                // --------------------------------
+                                // Everything else
+                                // --------------------------------
+
+                                return fadedColor;
                             }
                         );
 
@@ -1307,11 +1354,24 @@ def create_chart(weekly):
                     );
                 }
             );
+        }
 
 
-            updateLegend(
-                week
-            );
+        // ====================================================
+        // DETERMINE ACTIVE WEEK
+        // ====================================================
+
+        function getActiveWeek() {
+
+            if (hoveredWeek) {
+                return hoveredWeek;
+            }
+
+            if (selectedWeek) {
+                return selectedWeek;
+            }
+
+            return null;
         }
 
 
@@ -1342,6 +1402,20 @@ def create_chart(weekly):
                     );
 
 
+                hoveredWeek =
+                    week;
+
+
+                // Highlight the week
+                // currently under mouse.
+
+                applyHighlight(
+                    getActiveWeek()
+                );
+
+
+                // Show tooltip.
+
                 showTooltip(
                     week,
                     data.event
@@ -1350,9 +1424,28 @@ def create_chart(weekly):
         );
 
 
+        // ====================================================
+        // UNHOVER
+        // ====================================================
+
         gd.on(
             "plotly_unhover",
             function() {
+
+                hoveredWeek =
+                    null;
+
+
+                // If a week was clicked,
+                // return to the selected week.
+                //
+                // Otherwise return all weeks
+                // to the faded state.
+
+                applyHighlight(
+                    getActiveWeek()
+                );
+
 
                 hideTooltip();
             }
@@ -1386,20 +1479,85 @@ def create_chart(weekly):
                     );
 
 
+                // ------------------------------------------------
+                // Clicking the currently selected week
+                // removes the selection.
+                // ------------------------------------------------
+
                 if (
                     selectedWeek === week
                 ) {
 
-                    setWeekHighlight(
-                        null
-                    );
+                    selectedWeek =
+                        null;
 
                 } else {
 
-                    setWeekHighlight(
-                        week
-                    );
+                    selectedWeek =
+                        week;
                 }
+
+
+                // ------------------------------------------------
+                // Legend follows the selected week.
+                // ------------------------------------------------
+
+                updateLegend(
+                    selectedWeek
+                );
+
+
+                // ------------------------------------------------
+                // While mouse is still over the bar,
+                // hover should remain visually dominant.
+                // ------------------------------------------------
+
+                applyHighlight(
+                    getActiveWeek()
+                );
+            }
+        );
+
+
+        // ====================================================
+        // CLICK OUTSIDE THE GRAPH
+        // ====================================================
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target === gd
+                    ||
+                    gd.contains(
+                        event.target
+                    )
+                    ||
+                    legend.contains(
+                        event.target
+                    )
+                ) {
+
+                    return;
+                }
+
+
+                selectedWeek =
+                    null;
+
+                hoveredWeek =
+                    null;
+
+
+                updateLegend(
+                    null
+                );
+
+
+                applyHighlight(
+                    null
+                );
             }
         );
 
