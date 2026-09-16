@@ -165,7 +165,6 @@ def create_weekly_dataset(df):
     )
 
     print(f"Weekly rows: {len(weekly):,}")
-
     print(
         f"Equipment categories: "
         f"{weekly['type'].nunique()}"
@@ -193,7 +192,6 @@ def validate_weekly_data(raw_df, weekly_df):
     weekly_total = weekly_df["losses"].sum()
 
     print(f"Raw records: {raw_total:,}")
-
     print(
         f"Weekly aggregated records: "
         f"{weekly_total:,}"
@@ -293,7 +291,6 @@ def get_category_colors(categories):
 
     # Muted ACLED-inspired palette.
     # The chart initially uses a faded version of these colours.
-
     palette = [
         "#4C78A8",
         "#F58518",
@@ -335,11 +332,7 @@ def create_chart(weekly):
     categories = get_category_order(weekly)
     colors = get_category_colors(categories)
 
-    # --------------------------------------------------------
-    # Requested adjustment:
-    # Towed artillery slightly less prominent.
-    # --------------------------------------------------------
-
+    # Towed artillery: slightly less prominent.
     if "Towed artillery" in colors:
         colors["Towed artillery"] = "#777777"
 
@@ -361,18 +354,8 @@ def create_chart(weekly):
         base_color = colors[category]
 
         # Faded colours in the initial state.
-        rgb = tuple(
-            int(base_color[i:i + 2], 16)
-            for i in (1, 3, 5)
-        )
-
-        faded_color = (
-            f"rgba("
-            f"{rgb[0]},"
-            f"{rgb[1]},"
-            f"{rgb[2]},"
-            f"0.40)"
-        )
+        rgb = tuple(int(base_color[i:i+2], 16) for i in (1, 3, 5))
+        faded_color = f"rgba({rgb[0]},{rgb[1]},{rgb[2]},0.40)"
 
         faded_colors = [
             faded_color
@@ -384,7 +367,6 @@ def create_chart(weekly):
                 x=category_data["week"],
                 y=category_data["losses"],
                 name=category,
-
                 marker={
                     "color": faded_colors,
                     "line": {
@@ -392,7 +374,6 @@ def create_chart(weekly):
                         "width": 0.5,
                     },
                 },
-
                 hovertemplate="<extra></extra>",
             )
         )
@@ -402,7 +383,6 @@ def create_chart(weekly):
     # --------------------------------------------------------
 
     fig.update_layout(
-
         title={
             "text": "Russian Equipment Losses — Weekly",
             "x": 0.5,
@@ -418,14 +398,6 @@ def create_chart(weekly):
             "title": "Date",
             "tickformat": "%m/%d/%y",
             "dtick": "M2",
-
-            # Hover spike line.
-            "showspikes": True,
-            "spikemode": "across",
-            "spikesnap": "cursor",
-            "spikethickness": 1,
-            "spikedash": "dot",
-            "spikecolor": "rgba(80,80,80,0.65)",
         },
 
         yaxis={
@@ -448,7 +420,6 @@ def create_chart(weekly):
         },
 
         plot_bgcolor="#E5ECF6",
-
         paper_bgcolor="white",
     )
 
@@ -458,58 +429,27 @@ def create_chart(weekly):
 
     post_script = """
     (function() {
+        const gd = document.getElementById('{plot_id}');
 
-        const gd =
-            document.getElementById('{plot_id}');
+        const categoryNames = __CATEGORY_NAMES__;
+        const categoryColors = __CATEGORY_COLORS__;
 
-        const categoryNames =
-            __CATEGORY_NAMES__;
-
-        const categoryColors =
-            __CATEGORY_COLORS__;
-
-        const weeklyData =
-            __WEEKLY_DATA__;
+        const weeklyData = __WEEKLY_DATA__;
 
         let selectedWeek = null;
-
 
         // ----------------------------------------------------
         // Helper: format date
         // ----------------------------------------------------
 
         function formatWeek(dateString) {
+            const d = new Date(dateString + "T00:00:00");
+            const day = String(d.getDate()).padStart(2, "0");
+            const month = String(d.getMonth() + 1).padStart(2, "0");
+            const year = String(d.getFullYear()).slice(-2);
 
-            const d =
-                new Date(
-                    dateString + "T00:00:00"
-                );
-
-            const day =
-                String(
-                    d.getDate()
-                ).padStart(2, "0");
-
-            const month =
-                String(
-                    d.getMonth() + 1
-                ).padStart(2, "0");
-
-            const year =
-                String(
-                    d.getFullYear()
-                ).slice(-2);
-
-            return (
-                "Week of " +
-                day +
-                "/" +
-                month +
-                "/" +
-                year
-            );
+            return "Week of " + day + "/" + month + "/" + year;
         }
-
 
         // ----------------------------------------------------
         // Build weekly lookup
@@ -517,150 +457,67 @@ def create_chart(weekly):
 
         const weekLookup = {};
 
-        weeklyData.forEach(
-            function(row) {
-
-                if (!weekLookup[row.week]) {
-
-                    weekLookup[row.week] = [];
-                }
-
-                weekLookup[row.week].push(
-                    {
-                        type: row.type,
-                        losses: Number(row.losses)
-                    }
-                );
+        weeklyData.forEach(function(row) {
+            if (!weekLookup[row.week]) {
+                weekLookup[row.week] = [];
             }
-        );
 
+            weekLookup[row.week].push({
+                type: row.type,
+                losses: Number(row.losses)
+            });
+        });
 
-        Object.keys(
-            weekLookup
-        ).forEach(
-            function(week) {
-
-                weekLookup[week].sort(
-                    function(a, b) {
-
-                        return (
-                            b.losses -
-                            a.losses
-                        );
-                    }
-                );
-            }
-        );
-
+        Object.keys(weekLookup).forEach(function(week) {
+            weekLookup[week].sort(function(a, b) {
+                return b.losses - a.losses;
+            });
+        });
 
         // ----------------------------------------------------
         // Custom legend
         // ----------------------------------------------------
 
-        const legend =
-            document.createElement(
-                "div"
-            );
+        const legend = document.createElement("div");
 
-        legend.id =
-            "equipment-legend";
+        legend.id = "equipment-legend";
 
-        legend.style.position =
-            "absolute";
+        legend.style.position = "absolute";
+        legend.style.right = "18px";
+        legend.style.top = "78px";
+        legend.style.width = "275px";
+        legend.style.background = "rgba(255,255,255,0.97)";
+        legend.style.border = "1px solid #D0D0D0";
+        legend.style.boxSizing = "border-box";
+        legend.style.fontFamily = "Arial, sans-serif";
+        legend.style.fontSize = "13px";
+        legend.style.color = "#222";
+        legend.style.zIndex = "20";
+        legend.style.boxShadow = "0 1px 3px rgba(0,0,0,0.10)";
 
-        legend.style.right =
-            "18px";
+        const header = document.createElement("div");
 
-        legend.style.top =
-            "78px";
+        header.textContent = "Equipment";
 
-        legend.style.width =
-            "275px";
+        header.style.background = "#28547A";
+        header.style.color = "white";
+        header.style.fontWeight = "bold";
+        header.style.padding = "7px 10px";
+        header.style.fontSize = "14px";
 
-        legend.style.background =
-            "rgba(255,255,255,0.97)";
+        legend.appendChild(header);
 
-        legend.style.border =
-            "1px solid #D0D0D0";
+        const content = document.createElement("div");
 
-        legend.style.boxSizing =
-            "border-box";
+        content.id = "equipment-legend-content";
+        content.style.padding = "8px 10px 9px 10px";
+        content.style.maxHeight = "560px";
+        content.style.overflowY = "auto";
 
-        legend.style.fontFamily =
-            "Arial, sans-serif";
+        legend.appendChild(content);
 
-        legend.style.fontSize =
-            "13px";
-
-        legend.style.color =
-            "#222";
-
-        legend.style.zIndex =
-            "20";
-
-        legend.style.boxShadow =
-            "0 1px 3px rgba(0,0,0,0.10)";
-
-
-        const header =
-            document.createElement(
-                "div"
-            );
-
-        header.textContent =
-            "Equipment";
-
-        header.style.background =
-            "#28547A";
-
-        header.style.color =
-            "white";
-
-        header.style.fontWeight =
-            "bold";
-
-        header.style.padding =
-            "7px 10px";
-
-        header.style.fontSize =
-            "14px";
-
-
-        legend.appendChild(
-            header
-        );
-
-
-        const content =
-            document.createElement(
-                "div"
-            );
-
-        content.id =
-            "equipment-legend-content";
-
-        content.style.padding =
-            "8px 10px 9px 10px";
-
-        content.style.maxHeight =
-            "560px";
-
-        content.style.overflowY =
-            "auto";
-
-
-        legend.appendChild(
-            content
-        );
-
-
-        gd.parentElement.style.position =
-            "relative";
-
-        gd.parentElement.appendChild(
-            legend
-        );
-
+        gd.parentElement.style.position = "relative";
+        gd.parentElement.appendChild(legend);
 
         // ----------------------------------------------------
         // Update legend
@@ -670,434 +527,201 @@ def create_chart(weekly):
 
             content.innerHTML = "";
 
-
             if (!week) {
 
-                categoryNames.forEach(
-                    function(category) {
+                categoryNames.forEach(function(category) {
 
-                        const row =
-                            document.createElement(
-                                "div"
-                            );
+                    const row = document.createElement("div");
 
-                        row.style.display =
-                            "flex";
+                    row.style.display = "flex";
+                    row.style.alignItems = "center";
+                    row.style.marginBottom = "5px";
+                    row.style.lineHeight = "16px";
 
-                        row.style.alignItems =
-                            "center";
+                    const square = document.createElement("span");
 
-                        row.style.marginBottom =
-                            "5px";
+                    square.style.width = "10px";
+                    square.style.height = "10px";
+                    square.style.background = categoryColors[category];
+                    square.style.display = "inline-block";
+                    square.style.marginRight = "8px";
+                    square.style.flex = "0 0 auto";
 
-                        row.style.lineHeight =
-                            "16px";
+                    const label = document.createElement("span");
 
+                    label.textContent = category;
 
-                        const square =
-                            document.createElement(
-                                "span"
-                            );
+                    row.appendChild(square);
+                    row.appendChild(label);
 
-                        square.style.width =
-                            "10px";
-
-                        square.style.height =
-                            "10px";
-
-                        square.style.background =
-                            categoryColors[
-                                category
-                            ];
-
-                        square.style.display =
-                            "inline-block";
-
-                        square.style.marginRight =
-                            "8px";
-
-                        square.style.flex =
-                            "0 0 auto";
-
-
-                        const label =
-                            document.createElement(
-                                "span"
-                            );
-
-                        label.textContent =
-                            category;
-
-
-                        row.appendChild(
-                            square
-                        );
-
-                        row.appendChild(
-                            label
-                        );
-
-                        content.appendChild(
-                            row
-                        );
-                    }
-                );
+                    content.appendChild(row);
+                });
 
                 return;
             }
 
+            const rows = weekLookup[week] || [];
 
-            const rows =
-                weekLookup[week] || [];
-
-
-            const total =
-                rows.reduce(
-                    function(sum, row) {
-
-                        return (
-                            sum +
-                            row.losses
-                        );
-                    },
-                    0
-                );
-
-
-            rows.forEach(
-                function(item) {
-
-                    const row =
-                        document.createElement(
-                            "div"
-                        );
-
-                    row.style.display =
-                        "flex";
-
-                    row.style.alignItems =
-                        "center";
-
-                    row.style.marginBottom =
-                        "5px";
-
-                    row.style.lineHeight =
-                        "16px";
-
-
-                    const square =
-                        document.createElement(
-                            "span"
-                        );
-
-                    square.style.width =
-                        "10px";
-
-                    square.style.height =
-                        "10px";
-
-                    square.style.background =
-                        categoryColors[
-                            item.type
-                        ];
-
-                    square.style.display =
-                        "inline-block";
-
-                    square.style.marginRight =
-                        "8px";
-
-                    square.style.flex =
-                        "0 0 auto";
-
-
-                    const label =
-                        document.createElement(
-                            "span"
-                        );
-
-                    label.textContent =
-                        item.type;
-
-                    label.style.flex =
-                        "1";
-
-
-                    const value =
-                        document.createElement(
-                            "span"
-                        );
-
-                    value.textContent =
-                        item.losses;
-
-                    value.style.fontWeight =
-                        "bold";
-
-                    value.style.marginLeft =
-                        "8px";
-
-
-                    row.appendChild(
-                        square
-                    );
-
-                    row.appendChild(
-                        label
-                    );
-
-                    row.appendChild(
-                        value
-                    );
-
-
-                    content.appendChild(
-                        row
-                    );
-                }
+            const total = rows.reduce(
+                function(sum, row) {
+                    return sum + row.losses;
+                },
+                0
             );
 
+            rows.forEach(function(item) {
 
-            const separator =
-                document.createElement(
-                    "div"
-                );
+                const row = document.createElement("div");
 
-            separator.style.borderTop =
-                "1px solid #D0D0D0";
+                row.style.display = "flex";
+                row.style.alignItems = "center";
+                row.style.marginBottom = "5px";
+                row.style.lineHeight = "16px";
 
-            separator.style.margin =
-                "7px 0 6px 0";
+                const square = document.createElement("span");
 
+                square.style.width = "10px";
+                square.style.height = "10px";
+                square.style.background =
+                    categoryColors[item.type];
+                square.style.display = "inline-block";
+                square.style.marginRight = "8px";
+                square.style.flex = "0 0 auto";
 
-            content.appendChild(
-                separator
-            );
+                const label = document.createElement("span");
 
+                label.textContent = item.type;
+                label.style.flex = "1";
 
-            const totalRow =
-                document.createElement(
-                    "div"
-                );
+                const value = document.createElement("span");
 
-            totalRow.style.display =
-                "flex";
+                value.textContent = item.losses;
+                value.style.fontWeight = "bold";
+                value.style.marginLeft = "8px";
 
-            totalRow.style.fontWeight =
-                "bold";
+                row.appendChild(square);
+                row.appendChild(label);
+                row.appendChild(value);
 
-            totalRow.style.lineHeight =
-                "18px";
+                content.appendChild(row);
+            });
 
+            const separator = document.createElement("div");
 
-            const totalLabel =
-                document.createElement(
-                    "span"
-                );
+            separator.style.borderTop = "1px solid #D0D0D0";
+            separator.style.margin = "7px 0 6px 0";
 
-            totalLabel.textContent =
-                "Total";
+            content.appendChild(separator);
 
-            totalLabel.style.flex =
-                "1";
+            const totalRow = document.createElement("div");
 
+            totalRow.style.display = "flex";
+            totalRow.style.fontWeight = "bold";
+            totalRow.style.lineHeight = "18px";
 
-            const totalValue =
-                document.createElement(
-                    "span"
-                );
+            const totalLabel = document.createElement("span");
 
-            totalValue.textContent =
-                total;
+            totalLabel.textContent = "Total";
+            totalLabel.style.flex = "1";
 
+            const totalValue = document.createElement("span");
 
-            totalRow.appendChild(
-                totalLabel
-            );
+            totalValue.textContent = total;
 
-            totalRow.appendChild(
-                totalValue
-            );
+            totalRow.appendChild(totalLabel);
+            totalRow.appendChild(totalValue);
 
-
-            content.appendChild(
-                totalRow
-            );
+            content.appendChild(totalRow);
         }
 
-
         updateLegend(null);
-
 
         // ----------------------------------------------------
         // Custom hover tooltip
         // ----------------------------------------------------
 
-        const tooltip =
-            document.createElement(
-                "div"
-            );
+        const tooltip = document.createElement("div");
 
-        tooltip.id =
-            "equipment-tooltip";
+        tooltip.id = "equipment-tooltip";
 
-        tooltip.style.position =
-            "fixed";
+        tooltip.style.position = "fixed";
+        tooltip.style.display = "none";
+        tooltip.style.background = "rgba(255,255,255,0.98)";
+        tooltip.style.border = "1px solid #777";
+        tooltip.style.padding = "8px 10px";
+        tooltip.style.fontFamily = "Arial, sans-serif";
+        tooltip.style.fontSize = "12px";
+        tooltip.style.color = "#222";
+        tooltip.style.zIndex = "1000";
+        tooltip.style.boxShadow = "0 1px 4px rgba(0,0,0,0.20)";
+        tooltip.style.pointerEvents = "none";
+        tooltip.style.minWidth = "190px";
 
-        tooltip.style.display =
-            "none";
+        document.body.appendChild(tooltip);
 
-        tooltip.style.background =
-            "rgba(255,255,255,0.98)";
+        function showTooltip(week, event) {
 
-        tooltip.style.border =
-            "1px solid #777";
-
-        tooltip.style.padding =
-            "8px 10px";
-
-        tooltip.style.fontFamily =
-            "Arial, sans-serif";
-
-        tooltip.style.fontSize =
-            "12px";
-
-        tooltip.style.color =
-            "#222";
-
-        tooltip.style.zIndex =
-            "1000";
-
-        tooltip.style.boxShadow =
-            "0 1px 4px rgba(0,0,0,0.20)";
-
-        tooltip.style.pointerEvents =
-            "none";
-
-        tooltip.style.minWidth =
-            "190px";
-
-
-        document.body.appendChild(
-            tooltip
-        );
-
-
-        function showTooltip(
-            week,
-            event
-        ) {
-
-            const rows =
-                weekLookup[week] || [];
-
+            const rows = weekLookup[week] || [];
 
             let total = 0;
 
-
             let html =
-                "<div " +
-                "style='font-weight:bold;" +
-                "margin-bottom:7px;'>" +
+                "<div style='font-weight:bold;margin-bottom:7px;'>" +
                 formatWeek(week) +
                 "</div>";
 
+            rows.forEach(function(item) {
 
-            rows.forEach(
-                function(item) {
+                total += item.losses;
 
-                    total +=
-                        item.losses;
+                html +=
+                    "<div style='display:flex;align-items:center;" +
+                    "margin-bottom:4px;'>" +
 
+                    "<span style='width:10px;height:10px;" +
+                    "background:" +
+                    categoryColors[item.type] +
+                    ";display:inline-block;" +
+                    "margin-right:7px;'></span>" +
 
-                    html +=
-                        "<div " +
-                        "style='display:flex;" +
-                        "align-items:center;" +
-                        "margin-bottom:4px;'>" +
+                    "<span style='flex:1;'>" +
+                    item.type +
+                    "</span>" +
 
+                    "<span style='font-weight:bold;" +
+                    "margin-left:10px;'>" +
+                    item.losses +
+                    "</span>" +
 
-                        "<span " +
-                        "style='width:10px;" +
-                        "height:10px;" +
-                        "background:" +
-                        categoryColors[
-                            item.type
-                        ] +
-                        ";display:inline-block;" +
-                        "margin-right:7px;'>" +
-                        "</span>" +
-
-
-                        "<span " +
-                        "style='flex:1;'>" +
-                        item.type +
-                        "</span>" +
-
-
-                        "<span " +
-                        "style='font-weight:bold;" +
-                        "margin-left:10px;'>" +
-                        item.losses +
-                        "</span>" +
-
-
-                        "</div>";
-                }
-            );
-
+                    "</div>";
+            });
 
             html +=
-                "<div " +
-                "style='border-top:1px solid #ccc;" +
-                "margin-top:6px;" +
-                "padding-top:6px;" +
-                "display:flex;" +
-                "font-weight:bold;'>" +
+                "<div style='border-top:1px solid #ccc;" +
+                "margin-top:6px;padding-top:6px;" +
+                "display:flex;font-weight:bold;'>" +
 
-
-                "<span " +
-                "style='flex:1;'>" +
-                "Total" +
-                "</span>" +
-
+                "<span style='flex:1;'>Total</span>" +
 
                 "<span>" +
                 total +
                 "</span>" +
 
-
                 "</div>";
 
+            tooltip.innerHTML = html;
+            tooltip.style.display = "block";
 
-            tooltip.innerHTML =
-                html;
+            const x = event.clientX + 14;
+            const y = event.clientY + 14;
 
-            tooltip.style.display =
-                "block";
-
-
-            const x =
-                event.clientX + 14;
-
-            const y =
-                event.clientY + 14;
-
-
-            tooltip.style.left =
-                x + "px";
-
-            tooltip.style.top =
-                y + "px";
+            tooltip.style.left = x + "px";
+            tooltip.style.top = y + "px";
         }
-
 
         function hideTooltip() {
-
-            tooltip.style.display =
-                "none";
+            tooltip.style.display = "none";
         }
-
 
         // ----------------------------------------------------
         // Highlight selected week
@@ -1107,54 +731,54 @@ def create_chart(weekly):
 
             selectedWeek = week;
 
+            gd.data.forEach(function(trace, traceIndex) {
 
-            gd.data.forEach(
-                function(
-                    trace,
-                    traceIndex
-                ) {
+                const opacities = trace.x.map(function(x) {
 
-                    const opacities =
-                        trace.x.map(
-                            function(x) {
+                    const xString =
+                        String(x).slice(0, 10);
 
-                                const xString =
-                                    String(x)
-                                    .slice(0, 10);
+                    if (!week) {
+                        return 0.40;
+                    }
 
+                    return xString === week
+                        ? 1.0
+                        : 0.18;
+                });
 
-                                if (!week) {
-
-                                    return 0.40;
-                                }
-
-
-                                return (
-                                    xString === week
-                                    ? 1.0
-                                    : 0.18
-                                );
-                            }
-                        );
-
-
-                    Plotly.restyle(
-                        gd,
-                        {
-                            "marker.opacity":
-                                [opacities]
-                        },
-                        [traceIndex]
-                    );
-                }
-            );
-
+                Plotly.restyle(
+                    gd,
+                    {
+                        "marker.opacity": [opacities]
+                    },
+                    [traceIndex]
+                );
+            });
 
             updateLegend(week);
-
             updateSelectedLine(week);
         }
 
+        // ----------------------------------------------------
+        // Hover
+        // ----------------------------------------------------
+
+        gd.on("plotly_hover", function(data) {
+
+            if (!data.points || !data.points.length) {
+                return;
+            }
+
+            const week =
+                String(data.points[0].x).slice(0, 10);
+
+            showTooltip(week, data.event);
+        });
+
+        gd.on("plotly_unhover", function() {
+            hideTooltip();
+        });
 
         // ----------------------------------------------------
         // Selected week vertical line
@@ -1174,36 +798,20 @@ def create_chart(weekly):
                 return;
             }
 
-
-            const selectedDate =
-                new Date(
-                    week + "T00:00:00"
-                );
-
-
             Plotly.relayout(
                 gd,
                 {
                     shapes: [
                         {
                             type: "line",
-
-                            x0: selectedDate,
-
-                            x1: selectedDate,
-
+                            x0: week,
+                            x1: week,
                             y0: 0,
-
                             y1: 1,
-
                             yref: "paper",
-
                             line: {
-                                color:
-                                    "rgba(60,60,60,0.90)",
-
+                                color: "rgba(60,60,60,0.90)",
                                 width: 2,
-
                                 dash: "solid"
                             }
                         }
@@ -1214,181 +822,83 @@ def create_chart(weekly):
 
 
         // ----------------------------------------------------
-        // Hover
-        // ----------------------------------------------------
-
-        gd.on(
-            "plotly_hover",
-            function(data) {
-
-                if (
-                    !data.points ||
-                    !data.points.length
-                ) {
-                    return;
-                }
-
-
-                const week =
-                    String(
-                        data.points[0].x
-                    ).slice(0, 10);
-
-
-                showTooltip(
-                    week,
-                    data.event
-                );
-            }
-        );
-
-
-        gd.on(
-            "plotly_unhover",
-            function() {
-
-                hideTooltip();
-            }
-        );
-
-
-        // ----------------------------------------------------
         // Click
         // ----------------------------------------------------
 
-        gd.on(
-            "plotly_click",
-            function(data) {
+        gd.on("plotly_click", function(data) {
 
-                if (
-                    !data.points ||
-                    !data.points.length
-                ) {
-                    return;
-                }
-
-
-                const week =
-                    String(
-                        data.points[0].x
-                    ).slice(0, 10);
-
-
-                // Clicking the selected bar again
-                // unlocks it immediately.
-
-                if (
-                    selectedWeek === week
-                ) {
-
-                    setWeekHighlight(
-                        null
-                    );
-
-                } else {
-
-                    setWeekHighlight(
-                        week
-                    );
-                }
+            if (!data.points || !data.points.length) {
+                return;
             }
-        );
 
+            const week =
+                String(data.points[0].x).slice(0, 10);
+
+            if (selectedWeek === week) {
+                setWeekHighlight(null);
+            } else {
+                setWeekHighlight(week);
+            }
+        });
 
         // ----------------------------------------------------
         // Click empty chart area -> unlock
         // ----------------------------------------------------
-        //
-        // Capture phase is intentional:
-        // it detects empty-area clicks without
-        // interfering with Plotly bar clicks.
-        // ----------------------------------------------------
 
-        gd.addEventListener(
-            "click",
-            function(event) {
+        gd.addEventListener("click", function(event) {
 
-                const barPoint =
-                    event.target.closest(
-                        ".point"
-                    );
+            const barPoint =
+                event.target.closest(".point");
 
-
-                // Bar click is handled by
-                // Plotly's plotly_click event.
-                if (barPoint) {
-                    return;
-                }
-
-
-                if (!selectedWeek) {
-                    return;
-                }
-
-
-                setWeekHighlight(
-                    null
-                );
-            },
-            true
-        );
-
-
-        // ----------------------------------------------------
-        // Click outside chart -> unlock
-        // ----------------------------------------------------
-
-        document.addEventListener(
-            "click",
-            function(event) {
-
-                if (!selectedWeek) {
-                    return;
-                }
-
-
-                const clickedInsideChart =
-                    gd.contains(
-                        event.target
-                    );
-
-
-                const legendElement =
-                    document.getElementById(
-                        "equipment-legend"
-                    );
-
-
-                const clickedInsideLegend =
-                    legendElement &&
-                    legendElement.contains(
-                        event.target
-                    );
-
-
-                if (
-                    !clickedInsideChart &&
-                    !clickedInsideLegend
-                ) {
-
-                    setWeekHighlight(
-                        null
-                    );
-                }
+            if (barPoint) {
+                return;
             }
-        );
+
+            if (!selectedWeek) {
+                return;
+            }
+
+            setWeekHighlight(null);
+
+        }, true);
+
+
+        // ----------------------------------------------------
+        // Click outside chart / legend -> unlock
+        // ----------------------------------------------------
+
+        document.addEventListener("click", function(event) {
+
+            if (!selectedWeek) {
+                return;
+            }
+
+            const clickedInsideChart =
+                gd.contains(event.target);
+
+            const legendElement =
+                document.getElementById(
+                    "equipment-legend"
+                );
+
+            const clickedInsideLegend =
+                legendElement &&
+                legendElement.contains(event.target);
+
+            if (
+                !clickedInsideChart &&
+                !clickedInsideLegend
+            ) {
+                setWeekHighlight(null);
+            }
+
+        });
 
     })();
     """
 
-
-    # --------------------------------------------------------
     # Replace placeholders with JSON-safe Python data.
-    # --------------------------------------------------------
-
-    category_names_json =
-        json.dumps(categories)
-
+    category_names_json = json.dumps(categories)
 
     weekly_json = (
         weekly[
@@ -1396,31 +906,25 @@ def create_chart(weekly):
         ]
         .assign(
             week=lambda x:
-                x["week"].dt.strftime(
-                    "%Y-%m-%d"
-                )
+                x["week"].dt.strftime("%Y-%m-%d")
         )
         .to_dict("records")
     )
-
 
     post_script = post_script.replace(
         "__CATEGORY_NAMES__",
         category_names_json
     )
 
-
     post_script = post_script.replace(
         "__CATEGORY_COLORS__",
         json.dumps(colors)
     )
 
-
     post_script = post_script.replace(
         "__WEEKLY_DATA__",
         json.dumps(weekly_json)
     )
-
 
     return fig, post_script
 
@@ -1443,7 +947,6 @@ def main():
 
     raw_df = load_data()
 
-
     # --------------------------------------------------------
     # 2. Create weekly equipment aggregation
     # --------------------------------------------------------
@@ -1451,7 +954,6 @@ def main():
     weekly_df = create_weekly_dataset(
         raw_df
     )
-
 
     # --------------------------------------------------------
     # 3. Validate aggregation
@@ -1462,7 +964,6 @@ def main():
         weekly_df
     )
 
-
     # --------------------------------------------------------
     # 4. Create chart
     # --------------------------------------------------------
@@ -1470,7 +971,6 @@ def main():
     fig, post_script = create_chart(
         weekly_df
     )
-
 
     # --------------------------------------------------------
     # 5. Save HTML
@@ -1482,16 +982,13 @@ def main():
         post_script=post_script
     )
 
-
     print()
-
     print(
         f"Interactive chart saved: "
         f"{OUTPUT_FILE}"
     )
 
     print()
-
     print("=" * 60)
     print("ANALYSIS COMPLETE")
     print("=" * 60)
