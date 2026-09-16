@@ -13,10 +13,12 @@
 #   - one bar = one week
 #   - total height = total documented losses
 #   - each segment = WarSpotting equipment category
-#   - hover = sorted breakdown of categories for the selected week
-#   - hover = highlight the week under the mouse
-#   - click = lock the selected week
-#   - legend = shows weekly equipment counts after selection
+#   - hover = sorted breakdown of categories
+#   - hover = temporary visual highlight
+#   - click = lock selected week
+#   - click selected week again = unlock
+#   - click outside chart = unlock
+#   - legend = shows weekly counts after click
 #
 # Output:
 #   equipment_weekly.html
@@ -52,6 +54,7 @@ def load_data():
     print("=" * 60)
 
     if not INPUT_FILE.exists():
+
         raise FileNotFoundError(
             f"Input file not found: {INPUT_FILE}"
         )
@@ -76,6 +79,7 @@ def load_data():
     ]
 
     if missing_columns:
+
         raise ValueError(
             f"Missing columns: {missing_columns}"
         )
@@ -90,6 +94,7 @@ def load_data():
     )
 
     if df["date"].isna().any():
+
         raise ValueError(
             "Invalid dates found in raw dataset."
         )
@@ -99,6 +104,7 @@ def load_data():
     # --------------------------------------------------------
 
     if df["type"].isna().any():
+
         raise ValueError(
             "Missing equipment categories found."
         )
@@ -122,6 +128,7 @@ def load_data():
     ]
 
     if unexpected_lost_by:
+
         raise ValueError(
             "Unexpected lost_by values: "
             f"{unexpected_lost_by}"
@@ -156,7 +163,7 @@ def create_weekly_dataset(df):
     )
 
     # --------------------------------------------------------
-    # Aggregate by week and WarSpotting equipment type
+    # Aggregate by week and equipment type
     # --------------------------------------------------------
 
     weekly = (
@@ -193,7 +200,10 @@ def create_weekly_dataset(df):
 # VALIDATION
 # ============================================================
 
-def validate_weekly_data(raw_df, weekly_df):
+def validate_weekly_data(
+    raw_df,
+    weekly_df
+):
 
     print()
     print("=" * 60)
@@ -201,12 +211,14 @@ def validate_weekly_data(raw_df, weekly_df):
     print("=" * 60)
 
     # --------------------------------------------------------
-    # 1. Overall total
+    # Overall total
     # --------------------------------------------------------
 
     raw_total = len(raw_df)
 
-    weekly_total = weekly_df["losses"].sum()
+    weekly_total = (
+        weekly_df["losses"].sum()
+    )
 
     print(
         f"Raw records: {raw_total:,}"
@@ -231,13 +243,16 @@ def validate_weekly_data(raw_df, weekly_df):
     )
 
     # --------------------------------------------------------
-    # 2. Duplicate week/category combinations
+    # Duplicate week/category combinations
     # --------------------------------------------------------
 
     duplicates = (
         weekly_df
         .duplicated(
-            subset=["week", "type"]
+            subset=[
+                "week",
+                "type"
+            ]
         )
         .sum()
     )
@@ -254,7 +269,7 @@ def validate_weekly_data(raw_df, weekly_df):
     )
 
     # --------------------------------------------------------
-    # 3. Negative values
+    # Negative values
     # --------------------------------------------------------
 
     negative_values = (
@@ -273,10 +288,12 @@ def validate_weekly_data(raw_df, weekly_df):
     )
 
     # --------------------------------------------------------
-    # 4. Categories
+    # Categories
     # --------------------------------------------------------
 
-    categories = weekly_df["type"].nunique()
+    categories = (
+        weekly_df["type"].nunique()
+    )
 
     if categories == 0:
 
@@ -300,9 +317,6 @@ def validate_weekly_data(raw_df, weekly_df):
 
 def get_category_order(df):
 
-    # Order categories by their total number
-    # of documented losses across the entire dataset.
-
     category_totals = (
         df
         .groupby("type")["losses"]
@@ -321,9 +335,8 @@ def get_category_order(df):
 
 def get_category_colors(categories):
 
-    # Muted ACLED-inspired palette.
-
     palette = [
+
         "#4C78A8",
         "#F58518",
         "#54A24B",
@@ -345,13 +358,17 @@ def get_category_colors(categories):
     ]
 
     return {
-        category: palette[index % len(palette)]
-        for index, category in enumerate(categories)
+
+        category:
+            palette[index % len(palette)]
+
+        for index, category
+        in enumerate(categories)
     }
 
 
 # ============================================================
-# CREATE ACLED-STYLE CHART
+# CREATE CHART
 # ============================================================
 
 def create_chart(weekly):
@@ -361,14 +378,20 @@ def create_chart(weekly):
     print("CREATING INTERACTIVE CHART")
     print("=" * 60)
 
-    categories = get_category_order(weekly)
+    categories = (
+        get_category_order(weekly)
+    )
 
-    colors = get_category_colors(categories)
+    colors = (
+        get_category_colors(
+            categories
+        )
+    )
 
     fig = go.Figure()
 
     # --------------------------------------------------------
-    # One stacked bar trace per equipment category
+    # Create stacked bar traces
     # --------------------------------------------------------
 
     for category in categories:
@@ -380,52 +403,22 @@ def create_chart(weekly):
             .sort_values("week")
         )
 
-        base_color = colors[category]
-
-        # ----------------------------------------------------
-        # Convert HEX to RGB
-        # ----------------------------------------------------
-
-        rgb = tuple(
-            int(
-                base_color[i:i + 2],
-                16
-            )
-            for i in (1, 3, 5)
-        )
-
-        # ----------------------------------------------------
-        # Faded ACLED-style colour
-        # ----------------------------------------------------
-
-        faded_color = (
-            f"rgba("
-            f"{rgb[0]},"
-            f"{rgb[1]},"
-            f"{rgb[2]},"
-            f"0.40)"
-        )
-
-        faded_colors = [
-            faded_color
-            for _ in range(
-                len(category_data)
-            )
-        ]
-
         fig.add_trace(
             go.Bar(
+
                 x=category_data["week"],
+
                 y=category_data["losses"],
+
                 name=category,
 
                 marker={
-                    "color": faded_colors,
+                    "color": (
+                        "rgba(0,0,0,0.40)"
+                    ),
                     "line": {
-                        "color": (
-                            "rgba("
-                            "255,255,255,0.55)"
-                        ),
+                        "color":
+                            "rgba(255,255,255,0.55)",
                         "width": 0.5,
                     },
                 },
@@ -443,10 +436,11 @@ def create_chart(weekly):
     fig.update_layout(
 
         title={
-            "text": (
-                "Russian Equipment Losses — Weekly"
-            ),
+            "text":
+                "Russian Equipment Losses — Weekly",
+
             "x": 0.5,
+
             "xanchor": "center",
         },
 
@@ -456,30 +450,37 @@ def create_chart(weekly):
 
         xaxis={
             "title": "Date",
+
             "tickformat": "%m/%d/%y",
+
             "dtick": "M2",
         },
 
         yaxis={
-            "title": "Documented losses",
-            "rangemode": "tozero",
-        },
+            "title":
+                "Documented losses",
 
-        # Native Plotly legend is replaced
-        # by the custom ACLED-style legend.
+            "rangemode":
+                "tozero",
+        },
 
         showlegend=False,
 
         height=750,
 
         margin={
+
             "l": 70,
+
             "r": 310,
+
             "t": 90,
+
             "b": 70,
         },
 
         plot_bgcolor="#E5ECF6",
+
         paper_bgcolor="white",
     )
 
@@ -493,16 +494,25 @@ def create_chart(weekly):
         const gd =
             document.getElementById('{plot_id}');
 
+
         const categoryNames =
             __CATEGORY_NAMES__;
+
 
         const categoryColors =
             __CATEGORY_COLORS__;
 
+
         const weeklyData =
             __WEEKLY_DATA__;
 
+
+        // ----------------------------------------------------
+        // State
+        // ----------------------------------------------------
+
         let selectedWeek = null;
+
         let hoveredWeek = null;
 
 
@@ -514,23 +524,28 @@ def create_chart(weekly):
 
             const d =
                 new Date(
-                    dateString + "T00:00:00"
+                    dateString +
+                    "T00:00:00"
                 );
+
 
             const day =
                 String(
                     d.getDate()
                 ).padStart(2, "0");
 
+
             const month =
                 String(
                     d.getMonth() + 1
                 ).padStart(2, "0");
 
+
             const year =
                 String(
                     d.getFullYear()
                 ).slice(-2);
+
 
             return (
                 "Week of "
@@ -544,21 +559,28 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // BUILD WEEKLY LOOKUP
+        // BUILD WEEK LOOKUP
         // ====================================================
 
         const weekLookup = {};
 
+
         weeklyData.forEach(
             function(row) {
 
-                if (!weekLookup[row.week]) {
-                    weekLookup[row.week] = [];
+                if (
+                    !weekLookup[row.week]
+                ) {
+
+                    weekLookup[row.week] =
+                        [];
                 }
+
 
                 weekLookup[row.week].push({
 
-                    type: row.type,
+                    type:
+                        row.type,
 
                     losses:
                         Number(
@@ -570,7 +592,7 @@ def create_chart(weekly):
 
 
         // ----------------------------------------------------
-        // Sort every week by number of losses
+        // Sort categories inside every week
         // ----------------------------------------------------
 
         Object.keys(
@@ -597,43 +619,58 @@ def create_chart(weekly):
         // ====================================================
 
         const legend =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         legend.id =
             "equipment-legend";
 
+
         legend.style.position =
             "absolute";
+
 
         legend.style.right =
             "18px";
 
+
         legend.style.top =
             "78px";
+
 
         legend.style.width =
             "275px";
 
+
         legend.style.background =
             "rgba(255,255,255,0.97)";
+
 
         legend.style.border =
             "1px solid #D0D0D0";
 
+
         legend.style.boxSizing =
             "border-box";
+
 
         legend.style.fontFamily =
             "Arial, sans-serif";
 
+
         legend.style.fontSize =
             "13px";
+
 
         legend.style.color =
             "#222";
 
+
         legend.style.zIndex =
             "20";
+
 
         legend.style.boxShadow =
             "0 1px 3px rgba(0,0,0,0.10)";
@@ -644,53 +681,74 @@ def create_chart(weekly):
         // ----------------------------------------------------
 
         const header =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         header.textContent =
             "Equipment";
 
+
         header.style.background =
             "#28547A";
+
 
         header.style.color =
             "white";
 
+
         header.style.fontWeight =
             "bold";
+
 
         header.style.padding =
             "7px 10px";
 
+
         header.style.fontSize =
             "14px";
 
-        legend.appendChild(header);
+
+        legend.appendChild(
+            header
+        );
 
 
         // ----------------------------------------------------
-        // Legend content
+        // Content
         // ----------------------------------------------------
 
         const content =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         content.id =
             "equipment-legend-content";
 
+
         content.style.padding =
             "8px 10px 9px 10px";
+
 
         content.style.maxHeight =
             "560px";
 
+
         content.style.overflowY =
             "auto";
 
-        legend.appendChild(content);
+
+        legend.appendChild(
+            content
+        );
 
 
         gd.parentElement.style.position =
             "relative";
+
 
         gd.parentElement.appendChild(
             legend
@@ -698,7 +756,7 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // CREATE DEFAULT LEGEND ROW
+        // DEFAULT LEGEND ROW
         // ====================================================
 
         function createDefaultRow(
@@ -706,53 +764,78 @@ def create_chart(weekly):
         ) {
 
             const row =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             row.style.display =
                 "flex";
 
+
             row.style.alignItems =
                 "center";
 
+
             row.style.marginBottom =
                 "5px";
+
 
             row.style.lineHeight =
                 "16px";
 
 
             const square =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
+
 
             square.style.width =
                 "10px";
 
+
             square.style.height =
                 "10px";
 
+
             square.style.background =
-                categoryColors[category];
+                categoryColors[
+                    category
+                ];
+
 
             square.style.display =
                 "inline-block";
 
+
             square.style.marginRight =
                 "8px";
+
 
             square.style.flex =
                 "0 0 auto";
 
 
             const label =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
+
 
             label.textContent =
                 category;
 
 
-            row.appendChild(square);
+            row.appendChild(
+                square
+            );
 
-            row.appendChild(label);
+
+            row.appendChild(
+                label
+            );
+
 
             return row;
         }
@@ -762,13 +845,16 @@ def create_chart(weekly):
         // UPDATE LEGEND
         // ====================================================
 
-        function updateLegend(week) {
+        function updateLegend(
+            week
+        ) {
 
-            content.innerHTML = "";
+            content.innerHTML =
+                "";
 
 
             // ------------------------------------------------
-            // Default state
+            // No selected week
             // ------------------------------------------------
 
             if (!week) {
@@ -793,7 +879,8 @@ def create_chart(weekly):
             // ------------------------------------------------
 
             const rows =
-                weekLookup[week] || [];
+                weekLookup[week] ||
+                [];
 
 
             const total =
@@ -811,26 +898,34 @@ def create_chart(weekly):
 
 
             // ------------------------------------------------
-            // Week header
+            // Week label
             // ------------------------------------------------
 
             const weekLabel =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             weekLabel.textContent =
                 formatWeek(week);
 
+
             weekLabel.style.fontWeight =
                 "bold";
+
 
             weekLabel.style.marginBottom =
                 "7px";
 
+
             weekLabel.style.paddingBottom =
                 "5px";
 
+
             weekLabel.style.borderBottom =
                 "1px solid #D0D0D0";
+
 
             content.appendChild(
                 weekLabel
@@ -845,61 +940,86 @@ def create_chart(weekly):
                 function(item) {
 
                     const row =
-                        document.createElement("div");
+                        document.createElement(
+                            "div"
+                        );
+
 
                     row.style.display =
                         "flex";
 
+
                     row.style.alignItems =
                         "center";
 
+
                     row.style.marginBottom =
                         "5px";
+
 
                     row.style.lineHeight =
                         "16px";
 
 
                     const square =
-                        document.createElement("span");
+                        document.createElement(
+                            "span"
+                        );
+
 
                     square.style.width =
                         "10px";
 
+
                     square.style.height =
                         "10px";
 
+
                     square.style.background =
-                        categoryColors[item.type];
+                        categoryColors[
+                            item.type
+                        ];
+
 
                     square.style.display =
                         "inline-block";
 
+
                     square.style.marginRight =
                         "8px";
+
 
                     square.style.flex =
                         "0 0 auto";
 
 
                     const label =
-                        document.createElement("span");
+                        document.createElement(
+                            "span"
+                        );
+
 
                     label.textContent =
                         item.type;
+
 
                     label.style.flex =
                         "1";
 
 
                     const value =
-                        document.createElement("span");
+                        document.createElement(
+                            "span"
+                        );
+
 
                     value.textContent =
                         item.losses;
 
+
                     value.style.fontWeight =
                         "bold";
+
 
                     value.style.marginLeft =
                         "8px";
@@ -909,13 +1029,16 @@ def create_chart(weekly):
                         square
                     );
 
+
                     row.appendChild(
                         label
                     );
 
+
                     row.appendChild(
                         value
                     );
+
 
                     content.appendChild(
                         row
@@ -929,13 +1052,18 @@ def create_chart(weekly):
             // ------------------------------------------------
 
             const separator =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             separator.style.borderTop =
                 "1px solid #D0D0D0";
 
+
             separator.style.margin =
                 "7px 0 6px 0";
+
 
             content.appendChild(
                 separator
@@ -947,30 +1075,42 @@ def create_chart(weekly):
             // ------------------------------------------------
 
             const totalRow =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             totalRow.style.display =
                 "flex";
 
+
             totalRow.style.fontWeight =
                 "bold";
+
 
             totalRow.style.lineHeight =
                 "18px";
 
 
             const totalLabel =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
+
 
             totalLabel.textContent =
                 "Total";
+
 
             totalLabel.style.flex =
                 "1";
 
 
             const totalValue =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
+
 
             totalValue.textContent =
                 total;
@@ -980,15 +1120,19 @@ def create_chart(weekly):
                 totalLabel
             );
 
+
             totalRow.appendChild(
                 totalValue
             );
+
 
             content.appendChild(
                 totalRow
             );
         }
 
+
+        // Initial legend.
 
         updateLegend(null);
 
@@ -998,46 +1142,62 @@ def create_chart(weekly):
         // ====================================================
 
         const tooltip =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         tooltip.id =
             "equipment-tooltip";
 
+
         tooltip.style.position =
             "fixed";
+
 
         tooltip.style.display =
             "none";
 
+
         tooltip.style.background =
             "rgba(255,255,255,0.98)";
+
 
         tooltip.style.border =
             "1px solid #777";
 
+
         tooltip.style.padding =
             "8px 10px";
+
 
         tooltip.style.fontFamily =
             "Arial, sans-serif";
 
+
         tooltip.style.fontSize =
             "12px";
+
 
         tooltip.style.color =
             "#222";
 
+
         tooltip.style.zIndex =
             "1000";
+
 
         tooltip.style.boxShadow =
             "0 1px 4px rgba(0,0,0,0.20)";
 
+
         tooltip.style.pointerEvents =
             "none";
 
+
         tooltip.style.minWidth =
             "210px";
+
 
         document.body.appendChild(
             tooltip
@@ -1054,9 +1214,12 @@ def create_chart(weekly):
         ) {
 
             const rows =
-                weekLookup[week] || [];
+                weekLookup[week] ||
+                [];
+
 
             let total = 0;
+
 
             let html =
                 "<div style='" +
@@ -1136,6 +1299,7 @@ def create_chart(weekly):
             tooltip.innerHTML =
                 html;
 
+
             tooltip.style.display =
                 "block";
 
@@ -1147,12 +1311,14 @@ def create_chart(weekly):
             let x =
                 event.clientX + 14;
 
+
             let y =
                 event.clientY + 14;
 
 
             const tooltipWidth =
                 tooltip.offsetWidth;
+
 
             const tooltipHeight =
                 tooltip.offsetHeight;
@@ -1191,6 +1357,7 @@ def create_chart(weekly):
             tooltip.style.left =
                 x + "px";
 
+
             tooltip.style.top =
                 y + "px";
         }
@@ -1208,98 +1375,21 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // GET RGB
-        // ====================================================
-
-        function hexToRgb(
-            hex
-        ) {
-
-            const clean =
-                hex.replace(
-                    "#",
-                    ""
-                );
-
-            return [
-                parseInt(
-                    clean.substring(
-                        0,
-                        2
-                    ),
-                    16
-                ),
-                parseInt(
-                    clean.substring(
-                        2,
-                        4
-                    ),
-                    16
-                ),
-                parseInt(
-                    clean.substring(
-                        4,
-                        6
-                    ),
-                    16
-                )
-            ];
-        }
-
-
-        // ====================================================
-        // APPLY VISUAL HIGHLIGHT
+        // APPLY HIGHLIGHT
         // ====================================================
 
         function applyHighlight(
             activeWeek
         ) {
 
+            const opacityArrays =
+                [];
+
+
             gd.data.forEach(
-                function(trace, traceIndex) {
+                function(trace) {
 
-                    const baseColor =
-                        categoryColors[
-                            trace.name
-                        ];
-
-                    const rgb =
-                        hexToRgb(
-                            baseColor
-                        );
-
-
-                    const normalColor =
-                        "rgba(" +
-                        rgb[0] +
-                        "," +
-                        rgb[1] +
-                        "," +
-                        rgb[2] +
-                        ",0.40)";
-
-
-                    const fadedColor =
-                        "rgba(" +
-                        rgb[0] +
-                        "," +
-                        rgb[1] +
-                        "," +
-                        rgb[2] +
-                        ",0.15)";
-
-
-                    const highlightedColor =
-                        "rgba(" +
-                        rgb[0] +
-                        "," +
-                        rgb[1] +
-                        "," +
-                        rgb[2] +
-                        ",1.0)";
-
-
-                    const newColors =
+                    const opacities =
                         trace.x.map(
                             function(x) {
 
@@ -1312,12 +1402,14 @@ def create_chart(weekly):
 
 
                                 // --------------------------------
-                                // Nothing selected / hovered
+                                // Normal state
                                 // --------------------------------
 
-                                if (!activeWeek) {
+                                if (
+                                    !activeWeek
+                                ) {
 
-                                    return normalColor;
+                                    return 0.40;
                                 }
 
 
@@ -1330,46 +1422,72 @@ def create_chart(weekly):
                                     activeWeek
                                 ) {
 
-                                    return highlightedColor;
+                                    return 1.0;
                                 }
 
 
                                 // --------------------------------
-                                // Everything else
+                                // Other weeks
                                 // --------------------------------
 
-                                return fadedColor;
+                                return 0.18;
                             }
                         );
 
 
-                    Plotly.restyle(
-                        gd,
-                        {
-                            "marker.color": [
-                                newColors
-                            ]
-                        },
-                        [traceIndex]
+                    opacityArrays.push(
+                        opacities
                     );
                 }
+            );
+
+
+            // ------------------------------------------------
+            // IMPORTANT:
+            // Update all traces together.
+            // ------------------------------------------------
+
+            const traceIndices =
+                gd.data.map(
+                    function(_, index) {
+
+                        return index;
+                    }
+                );
+
+
+            Plotly.restyle(
+                gd,
+                {
+                    "marker.opacity":
+                        opacityArrays
+                },
+                traceIndices
             );
         }
 
 
         // ====================================================
-        // DETERMINE ACTIVE WEEK
+        // ACTIVE VISUAL WEEK
         // ====================================================
 
         function getActiveWeek() {
 
+            // Hover has priority.
+
             if (hoveredWeek) {
+
                 return hoveredWeek;
             }
 
+
+            // Otherwise selected week.
+
             if (selectedWeek) {
+
                 return selectedWeek;
             }
+
 
             return null;
         }
@@ -1402,19 +1520,18 @@ def create_chart(weekly):
                     );
 
 
+                // IMPORTANT:
+                // This changes ONLY hoveredWeek.
+                // It does not lock anything.
+
                 hoveredWeek =
                     week;
 
 
-                // Highlight the week
-                // currently under mouse.
-
                 applyHighlight(
-                    getActiveWeek()
+                    hoveredWeek
                 );
 
-
-                // Show tooltip.
 
                 showTooltip(
                     week,
@@ -1436,11 +1553,10 @@ def create_chart(weekly):
                     null;
 
 
-                // If a week was clicked,
-                // return to the selected week.
+                // If a week is selected,
+                // restore selected week.
                 //
-                // Otherwise return all weeks
-                // to the faded state.
+                // Otherwise return to normal.
 
                 applyHighlight(
                     getActiveWeek()
@@ -1480,8 +1596,7 @@ def create_chart(weekly):
 
 
                 // ------------------------------------------------
-                // Clicking the currently selected week
-                // removes the selection.
+                // Clicking selected week again = unlock
                 // ------------------------------------------------
 
                 if (
@@ -1499,7 +1614,7 @@ def create_chart(weekly):
 
 
                 // ------------------------------------------------
-                // Legend follows the selected week.
+                // Legend changes ONLY after click
                 // ------------------------------------------------
 
                 updateLegend(
@@ -1508,8 +1623,8 @@ def create_chart(weekly):
 
 
                 // ------------------------------------------------
-                // While mouse is still over the bar,
-                // hover should remain visually dominant.
+                // While mouse remains over the bar,
+                // hover has priority.
                 // ------------------------------------------------
 
                 applyHighlight(
@@ -1520,20 +1635,28 @@ def create_chart(weekly):
 
 
         // ====================================================
-        // CLICK OUTSIDE THE GRAPH
+        // CLICK OUTSIDE
         // ====================================================
 
         document.addEventListener(
             "click",
             function(event) {
 
+                // Ignore clicks inside the chart.
+
                 if (
-                    event.target === gd
-                    ||
                     gd.contains(
                         event.target
                     )
-                    ||
+                ) {
+
+                    return;
+                }
+
+
+                // Ignore clicks inside legend.
+
+                if (
                     legend.contains(
                         event.target
                     )
@@ -1543,17 +1666,24 @@ def create_chart(weekly):
                 }
 
 
+                // Unlock selected week.
+
                 selectedWeek =
                     null;
+
 
                 hoveredWeek =
                     null;
 
 
+                // Reset legend.
+
                 updateLegend(
                     null
                 );
 
+
+                // Reset chart.
 
                 applyHighlight(
                     null
@@ -1561,12 +1691,13 @@ def create_chart(weekly):
             }
         );
 
+
     })();
     """
 
 
     # ========================================================
-    # INSERT PYTHON DATA INTO JAVASCRIPT
+    # INSERT DATA INTO JAVASCRIPT
     # ========================================================
 
     category_names_json = json.dumps(
@@ -1636,7 +1767,7 @@ def main():
 
 
     # --------------------------------------------------------
-    # 2. Create weekly equipment aggregation
+    # 2. Create weekly aggregation
     # --------------------------------------------------------
 
     weekly_df = create_weekly_dataset(
@@ -1645,7 +1776,7 @@ def main():
 
 
     # --------------------------------------------------------
-    # 3. Validate aggregation
+    # 3. Validate
     # --------------------------------------------------------
 
     validate_weekly_data(
