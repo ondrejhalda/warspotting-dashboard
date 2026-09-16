@@ -1,3 +1,4 @@
+
 from pathlib import Path
 import json
 
@@ -428,43 +429,43 @@ html = fig.to_html(
 # INSERT CUSTOM UI + JAVASCRIPT
 # ============================================================
 
-insertion = f"""
+insertion = """
 
 <style>
 
-html, body {{
+html, body {
     margin:0;
     padding:0;
     background:white;
-}}
+}
 
-.equipment-item {{
+.equipment-item {
     display:flex;
     align-items:center;
     margin-bottom:8px;
     line-height:1.2;
-}}
+}
 
-.equipment-color {{
+.equipment-color {
     width:12px;
     height:12px;
     min-width:12px;
     margin-right:8px;
     display:inline-block;
-}}
+}
 
-.equipment-name {{
+.equipment-name {
     font-size:13px;
     color:#333;
-}}
+}
 
-.equipment-value {{
+.equipment-value {
     margin-left:auto;
     font-weight:bold;
     color:#222;
-}}
+}
 
-.equipment-total {{
+.equipment-total {
     border-top:1px solid #CCCCCC;
     margin-top:10px;
     padding-top:10px;
@@ -472,20 +473,20 @@ html, body {{
     justify-content:space-between;
     font-weight:bold;
     font-size:14px;
-}}
+}
 
 </style>
 
-{panel_html}
+""" + panel_html + """
 
-{tooltip_html}
+""" + tooltip_html + """
 
 
 <script>
 
 document.addEventListener(
     "DOMContentLoaded",
-    function() {{
+    function() {
 
         const gd =
             document.querySelector(
@@ -509,7 +510,7 @@ document.addEventListener(
 
 
         const weekData =
-            {week_data_json};
+            """ + week_data_json + """;
 
 
         let selectedWeek = null;
@@ -521,11 +522,11 @@ document.addEventListener(
         // GET WEEK DATA
         // ====================================================
 
-        function getWeekItems(week) {{
+        function getWeekItems(week) {
 
-            if (!weekData[week]) {{
+            if (!weekData[week]) {
                 return [];
-            }}
+            }
 
             return weekData[week].items
                 .slice()
@@ -533,31 +534,31 @@ document.addEventListener(
                     (a, b) =>
                         b.losses - a.losses
                 );
-        }}
+        }
 
 
         // ====================================================
         // RENDER EQUIPMENT PANEL
         // ====================================================
 
-        function renderPanel(week) {{
+        function renderPanel(week) {
 
-            if (!week) {{
+            if (!week) {
 
                 panelContent.innerHTML =
-                    {json.dumps("".join(panel_items))};
+                    """ + json.dumps("".join(panel_items)) + """;
 
                 return;
-            }}
+            }
 
 
             const data =
                 weekData[week];
 
 
-            if (!data) {{
+            if (!data) {
                 return;
-            }}
+            }
 
 
             const items =
@@ -568,22 +569,22 @@ document.addEventListener(
 
 
             items.forEach(
-                function(item) {{
+                function(item) {
 
                     html += `
                         <div class="equipment-item">
 
                             <span
                                 class="equipment-color"
-                                style="background:${{item.color}}"
+                                style="background:${item.color}"
                             ></span>
 
                             <span class="equipment-name">
-                                ${{item.type}}
+                                ${item.type}
                             </span>
 
                             <span class="equipment-value">
-                                ${{item.losses}}
+                                ${item.losses}
                             </span>
 
                         </div>
@@ -595,21 +596,21 @@ document.addEventListener(
             html += `
                 <div class="equipment-total">
                     <span>Total</span>
-                    <span>${{data.total}}</span>
+                    <span>${data.total}</span>
                 </div>
             `;
 
 
             panelContent.innerHTML =
                 html;
-        }}
+        }
 
 
         // ====================================================
         // HIGHLIGHT SELECTED WEEK
         // ====================================================
 
-        function highlightWeek(week) {{
+        function highlightWeek(week) {
 
             const opacityValues = [];
 
@@ -618,7 +619,7 @@ document.addEventListener(
                 let traceIndex = 0;
                 traceIndex < gd.data.length;
                 traceIndex++
-            ) {{
+            ) {
 
                 const trace =
                     gd.data[traceIndex];
@@ -632,7 +633,7 @@ document.addEventListener(
                     let i = 0;
                     i < trace.x.length;
                     i++
-                ) {{
+                ) {
 
                     const currentWeek =
                         String(
@@ -640,33 +641,33 @@ document.addEventListener(
                         ).slice(0, 10);
 
 
-                    if (!week) {{
+                    if (!week) {
 
                         values.push(
-                            {BASE_OPACITY}
+                            """ + str(BASE_OPACITY) + """
                         );
 
-                    }} else if (
+                    } else if (
                         currentWeek === week
-                    ) {{
+                    ) {
 
                         values.push(
-                            {SELECTED_OPACITY}
+                            """ + str(SELECTED_OPACITY) + """
                         );
 
-                    }} else {{
+                    } else {
 
                         values.push(
-                            {SELECTED_OTHER_OPACITY}
+                            """ + str(SELECTED_OTHER_OPACITY) + """
                         );
-                    }}
-                }}
+                    }
+                }
 
 
                 opacityValues.push(
                     values
                 );
-            }}
+            }
 
 
             Plotly.restyle(
@@ -676,26 +677,26 @@ document.addEventListener(
                         opacityValues
                 }
             );
-        }}
+        }
 
 
         // ====================================================
         // SELECTED WEEK LINE
         // ====================================================
 
-        function updateSelectedLine(week) {{
+        function updateSelectedLine(week) {
 
-            if (!week) {{
+            if (!week) {
 
                 Plotly.relayout(
                     gd,
-                    {{
+                    {
                         shapes: []
-                    }}
+                    }
                 );
 
                 return;
-            }}
+            }
 
 
             const selectedDate =
@@ -706,9 +707,9 @@ document.addEventListener(
 
             Plotly.relayout(
                 gd,
-                {{
+                {
                     shapes: [
-                        {{
+                        {
                             type: "line",
 
                             x0: selectedDate,
@@ -721,19 +722,19 @@ document.addEventListener(
 
                             yref: "paper",
 
-                            line: {{
+                            line: {
                                 color:
                                     "rgba(60,60,60,0.90)",
 
                                 width: 2,
 
                                 dash: "solid"
-                            }}
-                        }}
+                            }
+                        }
                     ]
-                }}
+                }
             );
-        }}
+        }
 
 
         // ====================================================
@@ -744,15 +745,15 @@ document.addEventListener(
             week,
             clientX,
             clientY
-        ) {{
+        ) {
 
             const data =
                 weekData[week];
 
 
-            if (!data) {{
+            if (!data) {
                 return;
-            }}
+            }
 
 
             const items =
@@ -767,13 +768,13 @@ document.addEventListener(
                         font-size:14px;
                     "
                 >
-                    ${{week}}
+                    ${week}
                 </div>
             `;
 
 
             items.forEach(
-                function(item) {{
+                function(item) {
 
                     html += `
                         <div
@@ -788,14 +789,14 @@ document.addEventListener(
                                 style="
                                     width:10px;
                                     height:10px;
-                                    background:${{item.color}};
+                                    background:${item.color};
                                     display:inline-block;
                                     margin-right:7px;
                                 "
                             ></span>
 
                             <span>
-                                ${{item.type}}
+                                ${item.type}
                             </span>
 
                             <span
@@ -805,7 +806,7 @@ document.addEventListener(
                                     font-weight:bold;
                                 "
                             >
-                                ${{item.losses}}
+                                ${item.losses}
                             </span>
 
                         </div>
@@ -826,7 +827,7 @@ document.addEventListener(
                     "
                 >
                     <span>Total</span>
-                    <span>${{data.total}}</span>
+                    <span>${data.total}</span>
                 </div>
             `;
 
@@ -854,25 +855,25 @@ document.addEventListener(
             if (
                 left + rect.width >
                 window.innerWidth - 10
-            ) {{
+            ) {
 
                 left =
                     clientX -
                     rect.width -
                     15;
-            }}
+            }
 
 
             if (
                 top + rect.height >
                 window.innerHeight - 10
-            ) {{
+            ) {
 
                 top =
                     clientY -
                     rect.height -
                     15;
-            }}
+            }
 
 
             tooltip.style.left =
@@ -881,14 +882,14 @@ document.addEventListener(
 
             tooltip.style.top =
                 top + "px";
-        }}
+        }
 
 
-        function hideTooltip() {{
+        function hideTooltip() {
 
             tooltip.style.display =
                 "none";
-        }}
+        }
 
 
         // ====================================================
@@ -897,15 +898,15 @@ document.addEventListener(
 
         gd.on(
             "plotly_hover",
-            function(eventData) {{
+            function(eventData) {
 
                 if (
                     !eventData ||
                     !eventData.points ||
                     !eventData.points.length
-                ) {{
+                ) {
                     return;
-                }}
+                }
 
 
                 const point =
@@ -923,15 +924,15 @@ document.addEventListener(
 
                 if (
                     eventData.event
-                ) {{
+                ) {
 
                     showTooltip(
                         week,
                         eventData.event.clientX,
                         eventData.event.clientY
                     );
-                }}
-            }}
+                }
+            }
         );
 
 
@@ -941,12 +942,12 @@ document.addEventListener(
 
         gd.on(
             "plotly_unhover",
-            function() {{
+            function() {
 
                 hoveredWeek = null;
 
                 hideTooltip();
-            }}
+            }
         );
 
 
@@ -956,15 +957,15 @@ document.addEventListener(
 
         gd.on(
             "plotly_click",
-            function(eventData) {{
+            function(eventData) {
 
                 if (
                     !eventData ||
                     !eventData.points ||
                     !eventData.points.length
-                ) {{
+                ) {
                     return;
-                }}
+                }
 
 
                 const point =
@@ -983,7 +984,7 @@ document.addEventListener(
                 if (
                     selectedWeek ===
                     clickedWeek
-                ) {{
+                ) {
 
                     selectedWeek =
                         null;
@@ -1001,7 +1002,7 @@ document.addEventListener(
                     );
 
                     return;
-                }}
+                }
 
 
                 // --------------------------------------------
@@ -1025,7 +1026,7 @@ document.addEventListener(
                 renderPanel(
                     selectedWeek
                 );
-            }}
+            }
         );
 
 
@@ -1035,7 +1036,7 @@ document.addEventListener(
 
         gd.addEventListener(
             "click",
-            function(event) {{
+            function(event) {
 
                 const barPoint =
                     event.target.closest(
@@ -1045,14 +1046,14 @@ document.addEventListener(
 
                 // Clicking a bar is handled
                 // by plotly_click.
-                if (barPoint) {{
+                if (barPoint) {
                     return;
-                }}
+                }
 
 
-                if (!selectedWeek) {{
+                if (!selectedWeek) {
                     return;
-                }}
+                }
 
 
                 selectedWeek =
@@ -1072,7 +1073,7 @@ document.addEventListener(
                 renderPanel(
                     null
                 );
-            }},
+            },
             true
         );
 
@@ -1083,11 +1084,11 @@ document.addEventListener(
 
         document.addEventListener(
             "click",
-            function(event) {{
+            function(event) {
 
-                if (!selectedWeek) {{
+                if (!selectedWeek) {
                     return;
-                }}
+                }
 
 
                 const clickedInsideChart =
@@ -1105,7 +1106,7 @@ document.addEventListener(
                 if (
                     !clickedInsideChart &&
                     !clickedInsidePanel
-                ) {{
+                ) {
 
                     selectedWeek =
                         null;
@@ -1124,7 +1125,7 @@ document.addEventListener(
                     renderPanel(
                         null
                     );
-                }}
+                }
             }
         );
 
@@ -1135,19 +1136,19 @@ document.addEventListener(
 
         gd.addEventListener(
             "mousemove",
-            function(event) {{
+            function(event) {
 
                 if (
                     tooltip.style.display !==
                     "block"
-                ) {{
+                ) {
                     return;
-                }}
+                }
 
 
-                if (!hoveredWeek) {{
+                if (!hoveredWeek) {
                     return;
-                }}
+                }
 
 
                 const rect =
@@ -1165,25 +1166,25 @@ document.addEventListener(
                 if (
                     left + rect.width >
                     window.innerWidth - 10
-                ) {{
+                ) {
 
                     left =
                         event.clientX -
                         rect.width -
                         15;
-                }}
+                }
 
 
                 if (
                     top + rect.height >
                     window.innerHeight - 10
-                ) {{
+                ) {
 
                     top =
                         event.clientY -
                         rect.height -
                         15;
-                }}
+                }
 
 
                 tooltip.style.left =
@@ -1192,11 +1193,10 @@ document.addEventListener(
 
                 tooltip.style.top =
                     top + "px";
-            }}
+            }
         );
 
-
-    }}
+    }
 );
 
 </script>
