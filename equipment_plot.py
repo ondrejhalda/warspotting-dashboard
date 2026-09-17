@@ -1422,33 +1422,29 @@ def create_chart(weekly):
         'click',
         function(event) {
 
-            setTimeout(
-                function() {
+            // If the click landed on a Plotly bar,
+            // let plotly_click handle it.
+            if (
+                event.target &&
+                event.target.closest &&
+                event.target.closest('.point')
+            ) {
+                plotlyBarClickHandled = true;
+                return;
+            }
 
-                    if (
-                        plotlyBarClickHandled
-                    ) {
+            if (selectedWeek) {
 
-                        plotlyBarClickHandled =
-                            false;
+                selectedWeek = null;
 
-                        return;
-                    }
+                highlightWeek(null);
 
+                updateSelectedLine(null);
 
-                    if (selectedWeek) {
-
-                        selectedWeek = null;
-
-                        highlightWeek(null);
-
-                        renderPanel(null);
-                    }
-
-                },
-                0
-            );
-        }
+                renderPanel(null);
+            }
+        },
+        true
     );
 
 
