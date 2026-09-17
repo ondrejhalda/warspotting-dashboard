@@ -1644,7 +1644,6 @@ def create_chart(weekly):
             "family":
                 "Arial, sans-serif",
         },
-
     )
 
 
@@ -1744,21 +1743,23 @@ def main():
                 shapes: [
                     {
                         type: 'line',
-                        xref: 'x',
-                        x0: new Date(
-                            week + 'T00:00:00'
-                        ).toISOString(),
-                        x1: new Date(
-                            week + 'T00:00:00'
-                        ).toISOString(),
+
+                        x0: week,
+
+                        x1: week,
+
                         y0: 0,
+
                         y1: 1,
+
                         yref: 'paper',
-                        layer: 'above',
+
                         line: {
                             color:
                                 'rgba(60,60,60,0.90)',
+
                             width: 2,
+
                             dash: 'solid'
                         }
                     }
