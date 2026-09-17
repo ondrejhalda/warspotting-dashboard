@@ -1746,9 +1746,9 @@ def main():
 
                         xref: 'x',
 
-                        x0: week,
+                        x0: new Date(week + 'T00:00:00Z').getTime(),
 
-                        x1: week,
+                        x1: new Date(week + 'T00:00:00Z').getTime(),
 
                         y0: 0,
 
