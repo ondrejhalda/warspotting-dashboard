@@ -1,4 +1,4 @@
-name: Update WarSpotting Dashboard
+name: Update WarSpotting Analytics
 
 on:
   schedule:
@@ -8,8 +8,12 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: warspotting-update
+  cancel-in-progress: false
+
 jobs:
-  update-dashboard:
+  update-project:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,13 +28,27 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run dashboard
+      - name: Update WarSpotting data and dashboard
         run: python dashboard.py
 
-      - name: Commit updated data
+      - name: Verify shared raw dataset
+        run: test -f warspotting_raw.csv
+
+      - name: Generate equipment Plotly chart
+        run: python equipment_plot.py
+
+      - name: Verify equipment chart
+        run: test -f equipment_weekly.html
+
+      - name: Commit updated data and outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Update WarSpotting data"
+
+          git add warspotting_raw.csv
+          git add weekly_losses.csv
+          git add equipment_weekly.html
+          git add dashboard.png
+
+          git diff --cached --quiet || git commit -m "Update WarSpotting data and equipment plot"
           git push
