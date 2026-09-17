@@ -1645,26 +1645,6 @@ def create_chart(weekly):
                 "Arial, sans-serif",
         },
 
-        # Hidden placeholder for the selected-week line.
-        # It is only moved/shown after a click.
-        shapes=[
-            {
-                "type": "line",
-                "xref": "x",
-                "x0": weekly["week"].min().strftime("%Y-%m-%d"),
-                "x1": weekly["week"].min().strftime("%Y-%m-%d"),
-                "y0": 0,
-                "y1": 1,
-                "yref": "paper",
-                "layer": "above",
-                "visible": False,
-                "line": {
-                    "color": "rgba(60,60,60,0.90)",
-                    "width": 2,
-                    "dash": "solid",
-                },
-            }
-        ],
     )
 
 
@@ -1750,7 +1730,7 @@ def main():
             Plotly.relayout(
                 gd,
                 {
-                    'shapes[0].visible': false
+                    shapes: []
                 }
             );
 
@@ -1761,9 +1741,28 @@ def main():
         Plotly.relayout(
             gd,
             {
-                'shapes[0].x0': week,
-                'shapes[0].x1': week,
-                'shapes[0].visible': true
+                shapes: [
+                    {
+                        type: 'line',
+                        xref: 'x',
+                        x0: new Date(
+                            week + 'T00:00:00'
+                        ).toISOString(),
+                        x1: new Date(
+                            week + 'T00:00:00'
+                        ).toISOString(),
+                        y0: 0,
+                        y1: 1,
+                        yref: 'paper',
+                        layer: 'above',
+                        line: {
+                            color:
+                                'rgba(60,60,60,0.90)',
+                            width: 2,
+                            dash: 'solid'
+                        }
+                    }
+                ]
             }
         );
     }
