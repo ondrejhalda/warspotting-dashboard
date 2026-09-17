@@ -1422,28 +1422,33 @@ def create_chart(weekly):
         'click',
         function(event) {
 
-            // If the click landed on a Plotly bar,
-            // let plotly_click handle it.
-            if (
-                event.target &&
-                event.target.closest &&
-                event.target.closest('.point')
-            ) {
-                plotlyBarClickHandled = true;
-                return;
-            }
+            setTimeout(
+                function() {
 
-            if (selectedWeek) {
+                    if (
+                        plotlyBarClickHandled
+                    ) {
 
-                selectedWeek = null;
+                        plotlyBarClickHandled =
+                            false;
 
-                highlightWeek(null);
+                        return;
+                    }
 
 
-                renderPanel(null);
-            }
-        },
-        true
+                    if (selectedWeek) {
+
+                        selectedWeek = null;
+
+                        highlightWeek(null);
+
+                        renderPanel(null);
+                    }
+
+                },
+                0
+            );
+        }
     );
 
 
@@ -1807,6 +1812,7 @@ def main():
 
                 highlightWeek(null);
 
+                updateSelectedLine(null);
 
                 renderPanel(null);
 
@@ -1841,6 +1847,9 @@ def main():
             );
 
 
+            updateSelectedLine(
+                selectedWeek
+            );
 
 
             renderPanel(
@@ -1868,6 +1877,7 @@ def main():
 
                         highlightWeek(null);
 
+                        updateSelectedLine(null);
 
                         renderPanel(null);
         """,
@@ -1898,6 +1908,7 @@ def main():
 
                 highlightWeek(null);
 
+                updateSelectedLine(null);
 
                 renderPanel(null);
             }
