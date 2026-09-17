@@ -1812,7 +1812,6 @@ def main():
 
                 highlightWeek(null);
 
-                updateSelectedLine(null);
 
                 renderPanel(null);
 
@@ -1847,9 +1846,6 @@ def main():
             );
 
 
-            updateSelectedLine(
-                selectedWeek
-            );
 
 
             renderPanel(
@@ -1877,7 +1873,6 @@ def main():
 
                         highlightWeek(null);
 
-                        updateSelectedLine(null);
 
                         renderPanel(null);
         """,
@@ -1908,7 +1903,6 @@ def main():
 
                 highlightWeek(null);
 
-                updateSelectedLine(null);
 
                 renderPanel(null);
             }
