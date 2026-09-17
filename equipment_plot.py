@@ -1754,6 +1754,8 @@ def main():
 
                         yref: 'paper',
 
+                        layer: 'above',
+
                         line: {
                             color:
                                 'rgba(60,60,60,0.90)',
