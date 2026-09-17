@@ -23669,10 +23669,11 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46988,Transport,KrAZ-255B,Destroyed,Russia,2026-09-10,"Valuyki raion, Belgorod oblast",,,
 46989,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-10,Donetsk oblast,,,"Cope cage, Jammer"
 47008,Transport,ZiL-131,Destroyed,Russia,2026-09-10,"Chuhuiv raion, Kharkiv oblast",,,Cope cage
-47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,
+47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,"◇, ✕"
 47006,Transport,Ural-4320,Destroyed,Russia,2026-09-11,"Chervonopopivka, Siverskodonetsk raion","49.100729,38.088392",,Cope cage
+47056,Engineering,BREM-L 'Beglyanka' armoured recovery vehicle,Destroyed,Russia,2026-09-11,Donetsk oblast,,,"Cope cage, Jammer"
 47043,Transport,ZiL-131,Destroyed,Russia,2026-09-12,"Polohy raion, Zaporizhzhia oblast",,,"Shattered, Cope cage, Additional armour"
-47039,Transport,Ural-4320,Destroyed,Russia,2026-09-13,"Siabry, Skadovsk raion","46.108453,32.652330",,"∆, ▲"
+47039,Transport,Ural-4320,Destroyed,Russia,2026-09-13,"Volodymyrivka, Skadovsk raion","46.108453,32.652330",,"∆, ▲"
 47040,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-09-13,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Additional armour"
 47041,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2026-09-13,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Additional armour"
 47042,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-13,"Kupiansk raion, Kharkiv oblast",,,Jammer
@@ -23682,3 +23683,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47038,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-09-14,"Kherson raion, Kherson oblast",,,
 47032,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-15,South Ukraine,,,Loitering
 47034,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-09-15,Belgorod oblast,,,
+47055,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-09-16,Kursk oblast,,,Additional armour
