@@ -1744,6 +1744,8 @@ def main():
                     {
                         type: 'line',
 
+                        xref: 'x',
+
                         x0: week,
 
                         x1: week,
