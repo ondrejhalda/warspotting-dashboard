@@ -1346,6 +1346,39 @@ def create_chart(weekly):
 
 
     // ========================================================
+    // NORMALIZE CLICKED WEEK
+    // ========================================================
+
+    function normalizeWeek(value) {
+
+        const text =
+            String(value);
+
+        const isoMatch =
+            text.match(
+                /^\\d{4}-\\d{2}-\\d{2}/
+            );
+
+        if (isoMatch) {
+            return isoMatch[0];
+        }
+
+        const date =
+            new Date(value);
+
+        if (!Number.isNaN(
+            date.getTime()
+        )) {
+            return date
+                .toISOString()
+                .slice(0, 10);
+        }
+
+        return text.slice(0, 10);
+    }
+
+
+    // ========================================================
     // CLICK ON BAR
     // ========================================================
 
@@ -1370,9 +1403,9 @@ def create_chart(weekly):
 
 
             const clickedWeek =
-                String(
+                normalizeWeek(
                     point.x
-                ).slice(0, 10);
+                );
 
 
             // ------------------------------------------------
