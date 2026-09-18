@@ -868,7 +868,7 @@ def create_chart(weekly, quality_data):
         'absolute';
 
     panel.style.top =
-        '240px';
+        '260px';
 
     panel.style.right =
         '10px';
