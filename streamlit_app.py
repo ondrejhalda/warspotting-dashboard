@@ -1,7 +1,9 @@
 from pathlib import Path
 import json
+import textwrap
 
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 
 
@@ -20,7 +22,36 @@ st.set_page_config(
 # ---------------------------------------------------------
 WEEKLY_FILE = Path("weekly_equipment_losses.csv")
 QUALITY_FILE = Path("data_quality.json")
-HTML_FILE = Path("equipment_weekly.html")
+
+
+# ---------------------------------------------------------
+# Equipment colors
+#
+# These colors are copied from the original
+# equipment_weekly.html / equipment_plot.py.
+# ---------------------------------------------------------
+CATEGORY_COLORS = {
+    "Tanks": "#54A24B",
+    "Infantry fighting vehicles": "#4C78A8",
+    "Infantry mobility vehicles": "#9D755D",
+    "Command posts, communication": "#EDC949",
+    "Anti-tank systems": "#8CD17D",
+    "Anti-aircraft systems": "#BAB0AC",
+    "Towed artillery": "#59A14F",
+    "Self-propelled artillery": "#E45756",
+    "Rocket and missile artillery": "#FF9DA6",
+    "Radars, jammers": "#AF7AA1",
+    "Engineering": "#B279A2",
+    "Ambulances, medical vehicles": "#5DA5DA",
+    "Transport": "#F58518",
+    "Airplanes": "#E15759",
+    "Helicopters": "#F28E2B",
+    "Drones": "#72B7B2",
+    "Vessels": "#B6992D",
+    "Other": "#76B7B2",
+}
+
+BASE_OPACITY = 0.42
 
 
 # ---------------------------------------------------------
@@ -69,37 +100,11 @@ def load_quality_data():
 
 
 # ---------------------------------------------------------
-# Load original interactive Plotly HTML
-# ---------------------------------------------------------
-def load_plotly_html():
-    if not HTML_FILE.exists():
-        raise FileNotFoundError(
-            f"Required file not found: {HTML_FILE}"
-        )
-
-    html = HTML_FILE.read_text(encoding="utf-8")
-
-    # st.html() is designed for an HTML fragment.
-    # Keep the original Plotly markup and scripts, but remove
-    # the outer <html>, <head>, and <body> document wrapper.
-    body_start = html.find("<body>")
-    body_end = html.rfind("</body>")
-
-    if body_start == -1 or body_end == -1 or body_end <= body_start:
-        raise ValueError(
-            "equipment_weekly.html does not contain a valid <body> section."
-        )
-
-    return html[body_start + len("<body>"):body_end]
-
-
-# ---------------------------------------------------------
 # Load data
 # ---------------------------------------------------------
 try:
     weekly = load_weekly_data()
     quality = load_quality_data()
-    plotly_html = load_plotly_html()
 
 except Exception as exc:
     st.error("The dashboard could not load its data.")
@@ -119,10 +124,16 @@ analytical_records = quality.get("analytical_records", "—")
 excluded_records = quality.get("excluded_lost_by", "—")
 weekly_rows = quality.get("weekly_rows", len(weekly))
 
+category_totals = (
+    weekly.groupby("type")["losses"]
+    .sum()
+    .sort_values(ascending=False)
+)
+
+categories = category_totals.index.tolist()
+
 unique_weeks = weekly["week"].nunique()
 total_losses = int(weekly["losses"].sum())
-category_count = weekly["type"].nunique(dropna=True)
-
 average_weekly_losses = (
     total_losses / unique_weeks if unique_weeks else 0
 )
@@ -157,7 +168,7 @@ with kpi2:
 with kpi3:
     st.metric(
         "Equipment categories",
-        f"{category_count:,}",
+        f"{len(categories):,}",
     )
 
 with kpi4:
@@ -168,44 +179,217 @@ with kpi4:
 
 
 # ---------------------------------------------------------
-# Data quality
+# Main content: chart + information panels
 # ---------------------------------------------------------
-st.subheader("Data quality")
-
-quality_col1, quality_col2, quality_col3, quality_col4 = st.columns(4)
-
-with quality_col1:
-    st.write("**Status**")
-    st.write(validation_status)
-
-with quality_col2:
-    st.write("**Last update (UTC)**")
-    st.write(quality.get("last_update", "—"))
-
-with quality_col3:
-    st.write("**Raw / analytical**")
-    st.write(f"{raw_records:,} / {analytical_records:,}")
-
-with quality_col4:
-    st.write("**Excluded records**")
-    st.write(f"{excluded_records:,}")
+chart_col, side_col = st.columns([5.4, 1.5], gap="medium")
 
 
 # ---------------------------------------------------------
-# Original Plotly HTML component
+# Main Plotly chart
+# ---------------------------------------------------------
+with chart_col:
+    st.subheader("Equipment losses by week")
+
+    # TEMPORARY PERFORMANCE TEST:
+    # render only the four largest categories.
+    # All other dashboard data remains unchanged.
+    chart_categories = categories[:4]
+
+    fig = go.Figure()
+
+    for category in chart_categories:
+        category_data = (
+            weekly[weekly["type"] == category]
+            .sort_values("week")
+        )
+
+        color = CATEGORY_COLORS.get(category)
+
+        # Keep the dashboard robust if a new category appears.
+        if color is None:
+            color = "#999999"
+
+        fig.add_trace(
+            go.Bar(
+                x=category_data["week"],
+                y=category_data["losses"],
+                name=category,
+                marker={
+                    "color": color,
+                    "opacity": BASE_OPACITY,
+                    "line": {
+                        "color": "rgba(255,255,255,0.55)",
+                        "width": 0.5,
+                    },
+                },
+                hovertemplate=(
+                    "<b>%{x|%d/%m/%y}</b><br>"
+                    f"{category}: "
+                    "%{y:,}"
+                    "<extra></extra>"
+                ),
+            )
+        )
+
+    fig.update_layout(
+        barmode="stack",
+        hovermode="closest",
+        showlegend=False,
+        height=750,
+        margin={
+            "l": 70,
+            "r": 20,
+            "t": 20,
+            "b": 70,
+        },
+        xaxis={
+            "title": "Date",
+            "tickformat": "%m/%d/%y",
+            "dtick": "M2",
+            "type": "date",
+            "showspikes": True,
+            "spikemode": "across",
+            "spikesnap": "cursor",
+            "spikethickness": 1,
+            "spikedash": "dot",
+            "spikecolor": "rgba(80,80,80,0.65)",
+        },
+        yaxis={
+            "title": "Documented losses",
+            "rangemode": "tozero",
+        },
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        theme=None,
+        config={
+            "scrollZoom": False,
+        },
+    )
+
+
+# ---------------------------------------------------------
+# Data quality panel
+# ---------------------------------------------------------
+with side_col:
+    quality_color = "#2E7D32"
+
+    if validation_status == "WARNING":
+        quality_color = "#C77700"
+    elif validation_status not in {"OK", "WARNING"}:
+        quality_color = "#B3261E"
+
+    st.html(
+        textwrap.dedent(
+            f"""
+            <div style="
+            border: 1px solid #c7cdd4;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            background: #ffffff;
+            margin-bottom: 16px;
+        ">
+            <div style="
+                background: #2f5d84;
+                color: #ffffff;
+                padding: 8px 10px;
+                font-weight: 700;
+            ">
+                Data quality
+            </div>
+
+            <div style="
+                padding: 10px;
+                font-size: 13px;
+                line-height: 1.55;
+                color: #222222;
+            ">
+                <div style="font-size: 14px; font-weight: 700;">
+                    <span style="
+                        display:inline-block;
+                        width:10px;
+                        height:10px;
+                        border-radius:50%;
+                        background:{quality_color};
+                        margin-right:6px;
+                    "></span>
+                    {validation_status}
+                </div>
+                <div>Last update (UTC): <b>{quality.get("last_update", "—")}</b></div>
+                <div>Raw records: <b>{raw_records:,}</b></div>
+                <div>Analytical records: <b>{analytical_records:,}</b></div>
+                <div>Excluded records: <b>{excluded_records:,}</b></div>
+                <div>Equipment categories: <b>{len(categories):,}</b></div>
+                <div>Weekly rows: <b>{weekly_rows:,}</b></div>
+            </div>
+            </div>
+            """
+        ).strip()
+    )
+
+
+# ---------------------------------------------------------
+# Equipment panel
 #
-# This is a performance test and a functional-preservation
-# test. It reuses the exact HTML generated by
-# equipment_plot.py, including its custom tooltip,
-# dotted hover line, selected-week opacity and Equipment
-# panel.
+# Static version for this step.
+# Selection behaviour will be added in the next step.
 # ---------------------------------------------------------
-st.subheader("Equipment losses by week")
+with side_col:
+    equipment_rows = []
 
-st.html(
-    plotly_html,
-    unsafe_allow_javascript=True,
-)
+    for category in categories:
+        color = CATEGORY_COLORS.get(category, "#999999")
+
+        equipment_rows.append(
+            f"""
+            <div style="
+                display:flex;
+                align-items:center;
+                margin:5px 0;
+                font-size:13px;
+                line-height:1.15;
+            ">
+                <span style="
+                    display:inline-block;
+                    width:10px;
+                    height:10px;
+                    background:{color};
+                    margin-right:8px;
+                    flex:0 0 10px;
+                "></span>
+                <span>{category}</span>
+            </div>
+            """
+        )
+
+    equipment_html = "".join(equipment_rows)
+
+    st.html(
+        textwrap.dedent(
+            f"""
+            <div style="
+                border: 1px solid #c7cdd4;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+                background: #ffffff;
+            ">
+                <div style="
+                    background: #2f5d84;
+                    color: #ffffff;
+                    padding: 8px 10px;
+                    font-weight: 700;
+                ">
+                    Equipment
+                </div>
+                <div style="
+                    padding: 8px 10px;
+                ">
+                    {equipment_html}
+                </div>
+            </div>
+            """
+        ).strip()
+    )
 
 
 # ---------------------------------------------------------
@@ -213,14 +397,18 @@ st.html(
 # ---------------------------------------------------------
 with st.expander("Technical data"):
     st.write(
-        f"Source dataset: `weekly_equipment_losses.csv`"
+        f"Loaded **{len(weekly):,} rows** from "
+        "`weekly_equipment_losses.csv`."
     )
-    st.write(f"Rows: **{len(weekly):,}**")
-    st.write(f"Weeks: **{unique_weeks:,}**")
-    st.write(f"Equipment categories: **{category_count:,}**")
+
+    st.dataframe(
+        weekly.head(10),
+        use_container_width=True,
+    )
+
     st.write(
-        f"Coverage: **{weekly['week'].min().date()} – "
-        f"{weekly['week'].max().date()}**"
+        f"Coverage: **{unique_weeks:,} weeks** | "
+        f"**{len(categories):,} equipment categories**"
     )
 
 
@@ -229,11 +417,10 @@ with st.expander("Technical data"):
 # ---------------------------------------------------------
 with st.expander("Methodology and limitations"):
     st.write(
-        "The dashboard uses documented WarSpotting equipment-loss "
-        "records aggregated by week and equipment category."
+        "The dashboard uses documented WarSpotting equipment-loss records "
+        "aggregated by week and equipment category."
     )
     st.write(
-        "The dataset represents documented/visually confirmed records "
-        "and should not be interpreted as a complete count of actual "
-        "military losses."
+        "The dataset represents documented/visually confirmed records and "
+        "should not be interpreted as a complete count of actual military losses."
     )
