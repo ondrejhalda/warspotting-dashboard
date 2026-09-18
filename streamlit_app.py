@@ -185,6 +185,27 @@ chart_col, side_col = st.columns([5.4, 1.5], gap="medium")
 
 
 # ---------------------------------------------------------
+# TEMPORARY SCROLL DIAGNOSTIC
+#
+# Disable pointer events on the Plotly element.
+# This removes mouse interaction with the chart and lets
+# wheel events pass directly to the page.
+#
+# Diagnostic only — NOT a final setting.
+# ---------------------------------------------------------
+st.markdown(
+    """
+    <style>
+    .stPlotlyChart {
+        pointer-events: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# ---------------------------------------------------------
 # Main Plotly chart
 # ---------------------------------------------------------
 with chart_col:
