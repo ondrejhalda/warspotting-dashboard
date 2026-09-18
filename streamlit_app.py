@@ -185,27 +185,6 @@ chart_col, side_col = st.columns([5.4, 1.5], gap="medium")
 
 
 # ---------------------------------------------------------
-# TEMPORARY SCROLL DIAGNOSTIC
-#
-# Disable pointer events on the Plotly element.
-# This removes mouse interaction with the chart and lets
-# wheel events pass directly to the page.
-#
-# Diagnostic only — NOT a final setting.
-# ---------------------------------------------------------
-st.markdown(
-    """
-    <style>
-    .stPlotlyChart {
-        pointer-events: none !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-
-# ---------------------------------------------------------
 # Main Plotly chart
 # ---------------------------------------------------------
 with chart_col:
@@ -256,7 +235,8 @@ with chart_col:
         barmode="stack",
         hovermode="closest",
         showlegend=False,
-        height=750,
+        width=1250,
+        height=600,
         margin={
             "l": 70,
             "r": 20,
@@ -283,10 +263,12 @@ with chart_col:
 
     st.plotly_chart(
         fig,
-        use_container_width=True,
+        width=1250,
+        height=600,
         theme=None,
         config={
             "scrollZoom": False,
+            "responsive": False,
         },
     )
 
