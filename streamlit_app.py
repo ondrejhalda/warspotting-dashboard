@@ -25,7 +25,6 @@ QUALITY_FILE = Path("data_quality.json")
 # ---------------------------------------------------------
 # Load weekly analytical data
 # ---------------------------------------------------------
-@st.cache_data
 def load_weekly_data():
     if not WEEKLY_FILE.exists():
         raise FileNotFoundError(
@@ -50,7 +49,6 @@ def load_weekly_data():
 # ---------------------------------------------------------
 # Load data quality information
 # ---------------------------------------------------------
-@st.cache_data
 def load_quality_data():
     if not QUALITY_FILE.exists():
         raise FileNotFoundError(
