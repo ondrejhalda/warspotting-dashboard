@@ -77,7 +77,20 @@ def load_plotly_html():
             f"Required file not found: {HTML_FILE}"
         )
 
-    return HTML_FILE.read_text(encoding="utf-8")
+    html = HTML_FILE.read_text(encoding="utf-8")
+
+    # st.html() is designed for an HTML fragment.
+    # Keep the original Plotly markup and scripts, but remove
+    # the outer <html>, <head>, and <body> document wrapper.
+    body_start = html.find("<body>")
+    body_end = html.rfind("</body>")
+
+    if body_start == -1 or body_end == -1 or body_end <= body_start:
+        raise ValueError(
+            "equipment_weekly.html does not contain a valid <body> section."
+        )
+
+    return html[body_start + len("<body>"):body_end]
 
 
 # ---------------------------------------------------------
@@ -190,7 +203,7 @@ with quality_col4:
 st.subheader("Equipment losses by week")
 
 st.html(
-    Path(HTML_FILE),
+    plotly_html,
     unsafe_allow_javascript=True,
 )
 
