@@ -593,8 +593,9 @@ def create_chart(weekly, quality_data):
     qualityPanel.style.position =
         'absolute';
 
+    # Keep the panel below the Plotly modebar.
     qualityPanel.style.top =
-        '10px';
+        '48px';
 
     qualityPanel.style.right =
         '10px';
