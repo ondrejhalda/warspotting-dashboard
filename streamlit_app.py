@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
 
@@ -95,7 +96,7 @@ if invalid_dates or invalid_losses:
 # Header
 # ---------------------------------------------------------
 st.title("WarSpotting Equipment Dashboard")
-st.caption("Initial data layer – no visualization yet.")
+st.caption("Interactive weekly equipment-loss visualization.")
 
 
 # ---------------------------------------------------------
@@ -180,6 +181,43 @@ with detail_col2:
         "**New equipment categories:**",
         quality.get("new_equipment_categories", []),
     )
+
+
+# ---------------------------------------------------------
+# Plotly chart
+# ---------------------------------------------------------
+st.subheader("Russian Equipment Losses — Weekly")
+
+chart_data = (
+    weekly
+    .dropna(subset=["week", "type", "losses"])
+    .sort_values(["week", "type"])
+)
+
+fig = px.bar(
+    chart_data,
+    x="week",
+    y="losses",
+    color="type",
+    barmode="stack",
+    labels={
+        "week": "Date",
+        "losses": "Documented losses",
+        "type": "Equipment type",
+    },
+)
+
+fig.update_layout(
+    height=650,
+    hovermode="x unified",
+    legend_title_text="Equipment",
+    margin=dict(l=20, r=20, t=20, b=20),
+)
+
+st.plotly_chart(
+    fig,
+    use_container_width=True,
+)
 
 
 # ---------------------------------------------------------
