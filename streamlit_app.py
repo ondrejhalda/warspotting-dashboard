@@ -191,7 +191,6 @@ st.subheader("Equipment losses by week")
 
 st.html(
     Path(HTML_FILE),
-    height=820,
     unsafe_allow_javascript=True,
 )
 
