@@ -3,7 +3,6 @@ import json
 
 import pandas as pd
 import streamlit as st
-import streamlit.components.v1 as components
 
 
 # ---------------------------------------------------------
@@ -190,10 +189,10 @@ with quality_col4:
 # ---------------------------------------------------------
 st.subheader("Equipment losses by week")
 
-components.html(
-    plotly_html,
+st.html(
+    Path(HTML_FILE),
     height=820,
-    scrolling=False,
+    unsafe_allow_javascript=True,
 )
 
 
