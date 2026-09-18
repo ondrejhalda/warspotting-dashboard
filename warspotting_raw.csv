@@ -23684,3 +23684,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47032,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-15,South Ukraine,,,Loitering
 47034,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-09-15,Belgorod oblast,,,
 47055,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-09-16,Kursk oblast,,,Additional armour
+47114,Transport,Ural-4320,Destroyed,Russia,2026-09-17,"Pisky, Pokrovsk raion","48.072276,37.652642",,"Cope cage, Jammer"
