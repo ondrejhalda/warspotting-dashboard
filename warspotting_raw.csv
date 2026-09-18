@@ -23684,4 +23684,8 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47032,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-15,South Ukraine,,,Loitering
 47034,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-09-15,Belgorod oblast,,,
 47055,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-09-16,Kursk oblast,,,Additional armour
+47117,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,"Kulykivske, Berdiansk raion","46.915054,37.001196",,Loitering
+47118,Transport,KamAZ-65117,Destroyed,Russia,2026-09-16,"Berdiansk raion, Zaporizhzhia oblast",,,Loitering
+47120,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,Luhansk oblast,,,Loitering
 47114,Transport,Ural-4320,Destroyed,Russia,2026-09-17,"Pisky, Pokrovsk raion","48.072276,37.652642",,"Cope cage, Jammer"
+47119,Tanks,Unknown tank,Destroyed,Russia,2026-09-17,,,,Turtle
