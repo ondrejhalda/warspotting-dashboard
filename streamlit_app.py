@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 
 import pandas as pd
-import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 
 
@@ -24,6 +24,36 @@ QUALITY_FILE = Path("data_quality.json")
 
 
 # ---------------------------------------------------------
+# Equipment colors
+#
+# These colors are copied from the original
+# equipment_weekly.html / equipment_plot.py.
+# ---------------------------------------------------------
+CATEGORY_COLORS = {
+    "Tanks": "#54A24B",
+    "Infantry fighting vehicles": "#4C78A8",
+    "Infantry mobility vehicles": "#9D755D",
+    "Command posts, communication": "#EDC949",
+    "Anti-tank systems": "#8CD17D",
+    "Anti-aircraft systems": "#BAB0AC",
+    "Towed artillery": "#59A14F",
+    "Self-propelled artillery": "#E45756",
+    "Rocket and missile artillery": "#FF9DA6",
+    "Radars, jammers": "#AF7AA1",
+    "Engineering": "#B279A2",
+    "Ambulances, medical vehicles": "#5DA5DA",
+    "Transport": "#F58518",
+    "Airplanes": "#E15759",
+    "Helicopters": "#F28E2B",
+    "Drones": "#72B7B2",
+    "Vessels": "#B6992D",
+    "Other": "#76B7B2",
+}
+
+BASE_OPACITY = 0.42
+
+
+# ---------------------------------------------------------
 # Load weekly analytical data
 # ---------------------------------------------------------
 def load_weekly_data():
@@ -35,7 +65,6 @@ def load_weekly_data():
     df = pd.read_csv(WEEKLY_FILE)
 
     required_columns = {"week", "type", "losses"}
-
     missing_columns = required_columns - set(df.columns)
 
     if missing_columns:
@@ -43,6 +72,15 @@ def load_weekly_data():
             "weekly_equipment_losses.csv is missing required "
             f"columns: {', '.join(sorted(missing_columns))}"
         )
+
+    df["week"] = pd.to_datetime(df["week"], errors="coerce")
+    df["losses"] = pd.to_numeric(df["losses"], errors="coerce")
+
+    if df["week"].isna().any():
+        raise ValueError("Invalid week values found.")
+
+    if df["losses"].isna().any():
+        raise ValueError("Invalid losses values found.")
 
     return df
 
@@ -57,9 +95,7 @@ def load_quality_data():
         )
 
     with QUALITY_FILE.open("r", encoding="utf-8") as file:
-        quality = json.load(file)
-
-    return quality
+        return json.load(file)
 
 
 # ---------------------------------------------------------
@@ -76,187 +112,302 @@ except Exception as exc:
 
 
 # ---------------------------------------------------------
-# Basic data validation for the dashboard
-# ---------------------------------------------------------
-weekly["week"] = pd.to_datetime(weekly["week"], errors="coerce")
-weekly["losses"] = pd.to_numeric(weekly["losses"], errors="coerce")
-
-invalid_dates = int(weekly["week"].isna().sum())
-invalid_losses = int(weekly["losses"].isna().sum())
-
-if invalid_dates or invalid_losses:
-    st.warning(
-        "The analytical dataset contains invalid values. "
-        f"Invalid dates: {invalid_dates}; "
-        f"invalid losses: {invalid_losses}."
-    )
-
-
-# ---------------------------------------------------------
-# Header
-# ---------------------------------------------------------
-st.title("WarSpotting Equipment Dashboard")
-st.caption("Interactive weekly equipment-loss visualization.")
-
-
-# ---------------------------------------------------------
-# Data quality status
+# Basic quality values
 # ---------------------------------------------------------
 validation_status = str(
     quality.get("validation_status", "UNKNOWN")
 ).upper()
 
-if validation_status == "OK":
-    st.success("Data quality: OK")
-elif validation_status == "WARNING":
-    st.warning("Data quality: WARNING – review the details below.")
-else:
-    st.error(
-        f"Data quality: {validation_status} – "
-        "the dataset requires attention."
-    )
-
-
-# ---------------------------------------------------------
-# KPI cards
-# ---------------------------------------------------------
 raw_records = quality.get("raw_records", "—")
 analytical_records = quality.get("analytical_records", "—")
-equipment_categories = quality.get("equipment_categories", "—")
+excluded_records = quality.get("excluded_lost_by", "—")
 weekly_rows = quality.get("weekly_rows", len(weekly))
 
-col1, col2, col3, col4 = st.columns(4)
+category_totals = (
+    weekly.groupby("type")["losses"]
+    .sum()
+    .sort_values(ascending=False)
+)
 
-with col1:
-    st.metric("Raw records", f"{raw_records:,}" if isinstance(raw_records, int) else raw_records)
+categories = category_totals.index.tolist()
 
-with col2:
+unique_weeks = weekly["week"].nunique()
+total_losses = int(weekly["losses"].sum())
+average_weekly_losses = (
+    total_losses / unique_weeks if unique_weeks else 0
+)
+
+
+# ---------------------------------------------------------
+# Header
+# ---------------------------------------------------------
+st.title("Russian Equipment Losses — Weekly")
+st.caption(
+    "Documented Russian equipment losses based on WarSpotting data."
+)
+
+
+# ---------------------------------------------------------
+# KPI row
+# ---------------------------------------------------------
+kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+
+with kpi1:
     st.metric(
-        "Analytical records",
-        f"{analytical_records:,}"
-        if isinstance(analytical_records, int)
-        else analytical_records,
+        "Documented losses",
+        f"{total_losses:,}",
     )
 
-with col3:
+with kpi2:
+    st.metric(
+        "Average per week",
+        f"{average_weekly_losses:,.1f}",
+    )
+
+with kpi3:
     st.metric(
         "Equipment categories",
-        f"{equipment_categories:,}"
-        if isinstance(equipment_categories, int)
-        else equipment_categories,
+        f"{len(categories):,}",
     )
 
-with col4:
+with kpi4:
     st.metric(
-        "Weekly rows",
-        f"{weekly_rows:,}"
-        if isinstance(weekly_rows, int)
-        else weekly_rows,
+        "Data quality",
+        validation_status,
     )
 
 
 # ---------------------------------------------------------
-# Update information
+# Main content: chart + information panels
 # ---------------------------------------------------------
-st.subheader("Data quality details")
+chart_col, side_col = st.columns([5.4, 1.5], gap="medium")
 
-detail_col1, detail_col2 = st.columns(2)
 
-with detail_col1:
+# ---------------------------------------------------------
+# Main Plotly chart
+# ---------------------------------------------------------
+with chart_col:
+    st.subheader("Equipment losses by week")
+
+    fig = go.Figure()
+
+    for category in categories:
+        category_data = (
+            weekly[weekly["type"] == category]
+            .sort_values("week")
+        )
+
+        color = CATEGORY_COLORS.get(category)
+
+        # Keep the dashboard robust if a new category appears.
+        if color is None:
+            color = "#999999"
+
+        fig.add_trace(
+            go.Bar(
+                x=category_data["week"],
+                y=category_data["losses"],
+                name=category,
+                marker={
+                    "color": color,
+                    "opacity": BASE_OPACITY,
+                    "line": {
+                        "color": "rgba(255,255,255,0.55)",
+                        "width": 0.5,
+                    },
+                },
+                hovertemplate=(
+                    "<b>%{x|%d/%m/%y}</b><br>"
+                    f"{category}: "
+                    "%{y:,}"
+                    "<extra></extra>"
+                ),
+            )
+        )
+
+    fig.update_layout(
+        barmode="stack",
+        hovermode="closest",
+        showlegend=False,
+        height=750,
+        margin={
+            "l": 70,
+            "r": 20,
+            "t": 20,
+            "b": 70,
+        },
+        xaxis={
+            "title": "Date",
+            "tickformat": "%m/%d/%y",
+            "dtick": "M2",
+            "type": "date",
+            "showspikes": True,
+            "spikemode": "across",
+            "spikesnap": "cursor",
+            "spikethickness": 1,
+            "spikedash": "dot",
+            "spikecolor": "rgba(80,80,80,0.65)",
+        },
+        yaxis={
+            "title": "Documented losses",
+            "rangemode": "tozero",
+        },
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+    )
+
+
+# ---------------------------------------------------------
+# Data quality panel
+# ---------------------------------------------------------
+with side_col:
+    quality_color = "#2E7D32"
+
+    if validation_status == "WARNING":
+        quality_color = "#C77700"
+    elif validation_status not in {"OK", "WARNING"}:
+        quality_color = "#B3261E"
+
+    st.markdown(
+        f"""
+        <div style="
+            border: 1px solid #c7cdd4;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            background: #ffffff;
+            margin-bottom: 16px;
+        ">
+            <div style="
+                background: #2f5d84;
+                color: #ffffff;
+                padding: 8px 10px;
+                font-weight: 700;
+            ">
+                Data quality
+            </div>
+
+            <div style="
+                padding: 10px;
+                font-size: 13px;
+                line-height: 1.55;
+                color: #222222;
+            ">
+                <div style="font-size: 14px; font-weight: 700;">
+                    <span style="
+                        display:inline-block;
+                        width:10px;
+                        height:10px;
+                        border-radius:50%;
+                        background:{quality_color};
+                        margin-right:6px;
+                    "></span>
+                    {validation_status}
+                </div>
+                <div>Last update (UTC): <b>{quality.get("last_update", "—")}</b></div>
+                <div>Raw records: <b>{raw_records:,}</b></div>
+                <div>Analytical records: <b>{analytical_records:,}</b></div>
+                <div>Excluded records: <b>{excluded_records:,}</b></div>
+                <div>Equipment categories: <b>{len(categories):,}</b></div>
+                <div>Weekly rows: <b>{weekly_rows:,}</b></div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+# ---------------------------------------------------------
+# Equipment panel
+#
+# Static version for this step.
+# Selection behaviour will be added in the next step.
+# ---------------------------------------------------------
+equipment_rows = []
+
+for category in categories:
+    color = CATEGORY_COLORS.get(category, "#999999")
+
+    equipment_rows.append(
+        f"""
+        <div style="
+            display:flex;
+            align-items:center;
+            margin:5px 0;
+            font-size:13px;
+            line-height:1.15;
+        ">
+            <span style="
+                display:inline-block;
+                width:10px;
+                height:10px;
+                background:{color};
+                margin-right:8px;
+                flex:0 0 10px;
+            "></span>
+            <span>{category}</span>
+        </div>
+        """
+    )
+
+equipment_html = "".join(equipment_rows)
+
+st.markdown(
+    f"""
+    <div style="
+        border: 1px solid #c7cdd4;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        background: #ffffff;
+    ">
+        <div style="
+            background: #2f5d84;
+            color: #ffffff;
+            padding: 8px 10px;
+            font-weight: 700;
+        ">
+            Equipment
+        </div>
+        <div style="
+            padding: 8px 10px;
+        ">
+            {equipment_html}
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# ---------------------------------------------------------
+# Technical data
+# ---------------------------------------------------------
+with st.expander("Technical data"):
     st.write(
-        "**Last update (UTC):**",
-        quality.get("last_update", "—"),
+        f"Loaded **{len(weekly):,} rows** from "
+        "`weekly_equipment_losses.csv`."
+    )
+
+    st.dataframe(
+        weekly.head(10),
+        use_container_width=True,
+    )
+
+    st.write(
+        f"Coverage: **{unique_weeks:,} weeks** | "
+        f"**{len(categories):,} equipment categories**"
+    )
+
+
+# ---------------------------------------------------------
+# Methodology
+# ---------------------------------------------------------
+with st.expander("Methodology and limitations"):
+    st.write(
+        "The dashboard uses documented WarSpotting equipment-loss records "
+        "aggregated by week and equipment category."
     )
     st.write(
-        "**Excluded records:**",
-        quality.get("excluded_lost_by", "—"),
-    )
-
-with detail_col2:
-    st.write(
-        "**Validation:**",
-        quality.get("validation_detail", "—"),
-    )
-    st.write(
-        "**New equipment categories:**",
-        quality.get("new_equipment_categories", []),
-    )
-
-
-# ---------------------------------------------------------
-# Plotly chart
-# ---------------------------------------------------------
-st.subheader("Russian Equipment Losses — Weekly")
-
-chart_data = (
-    weekly
-    .dropna(subset=["week", "type", "losses"])
-    .sort_values(["week", "type"])
-)
-
-fig = px.bar(
-    chart_data,
-    x="week",
-    y="losses",
-    color="type",
-    barmode="stack",
-    labels={
-        "week": "Date",
-        "losses": "Documented losses",
-        "type": "Equipment type",
-    },
-)
-
-fig.update_layout(
-    height=650,
-    hovermode="x unified",
-    legend_title_text="Equipment",
-    margin=dict(l=20, r=20, t=20, b=20),
-)
-
-st.plotly_chart(
-    fig,
-    use_container_width=True,
-)
-
-
-# ---------------------------------------------------------
-# Analytical dataset preview
-# ---------------------------------------------------------
-st.subheader("Weekly analytical data")
-
-st.write(
-    f"Loaded **{len(weekly):,} rows** from "
-    "`weekly_equipment_losses.csv`."
-)
-
-st.dataframe(
-    weekly.head(10),
-    use_container_width=True,
-)
-
-
-# ---------------------------------------------------------
-# Current dataset summary
-# ---------------------------------------------------------
-st.subheader("Current dataset summary")
-
-summary_col1, summary_col2, summary_col3 = st.columns(3)
-
-with summary_col1:
-    st.metric(
-        "Categories in weekly data",
-        weekly["type"].nunique(dropna=True),
-    )
-
-with summary_col2:
-    st.metric(
-        "Weeks in weekly data",
-        weekly["week"].nunique(dropna=True),
-    )
-
-with summary_col3:
-    st.metric(
-        "Documented losses in weekly data",
-        f"{weekly['losses'].sum():,.0f}",
+        "The dataset represents documented/visually confirmed records and "
+        "should not be interpreted as a complete count of actual military losses."
     )
