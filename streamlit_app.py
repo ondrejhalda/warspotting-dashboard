@@ -259,6 +259,9 @@ with chart_col:
         fig,
         use_container_width=True,
         theme=None,
+        config={
+            "scrollZoom": False,
+        },
     )
 
 
@@ -273,7 +276,7 @@ with side_col:
     elif validation_status not in {"OK", "WARNING"}:
         quality_color = "#B3261E"
 
-    st.markdown(
+    st.html(
         textwrap.dedent(
             f"""
             <div style="
@@ -358,7 +361,7 @@ with side_col:
 
     equipment_html = "".join(equipment_rows)
 
-    st.markdown(
+    st.html(
         textwrap.dedent(
             f"""
             <div style="
