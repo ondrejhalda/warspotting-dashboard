@@ -17,6 +17,7 @@ import plotly.graph_objects as go
 INPUT_FILE = Path("warspotting_raw.csv")
 OUTPUT_FILE = Path("equipment_weekly.html")
 QUALITY_FILE = Path("data_quality.json")
+WEEKLY_EQUIPMENT_FILE = Path("weekly_equipment_losses.csv")
 
 BASE_OPACITY = 0.42
 SELECTED_OPACITY = 1.0
@@ -2097,6 +2098,24 @@ def main():
     fig, post_script = create_chart(
         weekly_df,
         quality
+    )
+
+
+    # --------------------------------------------------------
+    # Save the current weekly analytical dataset.
+    #
+    # This is a derived dataset generated from the same
+    # validated raw data used for the Plotly chart.
+    # --------------------------------------------------------
+
+    weekly_df.to_csv(
+        WEEKLY_EQUIPMENT_FILE,
+        index=False
+    )
+
+    print(
+        f"Weekly equipment data saved: "
+        f"{WEEKLY_EQUIPMENT_FILE}"
     )
 
 
