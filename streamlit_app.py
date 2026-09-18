@@ -255,9 +255,14 @@ with chart_col:
         },
     )
 
-    st.info(
-        "SCROLL TEST: Plotly is temporarily disabled. "
-        "Use the mouse wheel to test page scrolling."
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        theme=None,
+        config={
+            "staticPlot": True,
+            "scrollZoom": False,
+        },
     )
 
 
