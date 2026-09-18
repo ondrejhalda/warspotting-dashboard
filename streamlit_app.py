@@ -320,8 +320,7 @@ with side_col:
             </div>
             </div>
             """
-        ).strip(),
-        unsafe_allow_html=True,
+        ).strip()
     )
 
 
@@ -384,8 +383,7 @@ with side_col:
                 </div>
             </div>
             """
-        ).strip(),
-        unsafe_allow_html=True,
+        ).strip()
     )
 
 
