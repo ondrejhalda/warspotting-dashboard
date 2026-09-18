@@ -1,0 +1,12 @@
+{
+  "raw_records": 23686,
+  "analytical_records": 23686,
+  "excluded_lost_by": 0,
+  "excluded_ids": [],
+  "last_update": "2026-09-18 07:42:19",
+  "equipment_categories": 18,
+  "weekly_rows": 2580,
+  "new_equipment_categories": [],
+  "validation_status": "OK",
+  "validation_detail": "OK"
+}
