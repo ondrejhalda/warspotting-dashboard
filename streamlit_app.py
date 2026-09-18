@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import textwrap
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -257,6 +258,7 @@ with chart_col:
     st.plotly_chart(
         fig,
         use_container_width=True,
+        theme=None,
     )
 
 
@@ -272,8 +274,9 @@ with side_col:
         quality_color = "#B3261E"
 
     st.markdown(
-        f"""
-        <div style="
+        textwrap.dedent(
+            f"""
+            <div style="
             border: 1px solid #c7cdd4;
             box-shadow: 0 1px 4px rgba(0,0,0,0.12);
             background: #ffffff;
@@ -312,8 +315,9 @@ with side_col:
                 <div>Equipment categories: <b>{len(categories):,}</b></div>
                 <div>Weekly rows: <b>{weekly_rows:,}</b></div>
             </div>
-        </div>
-        """,
+            </div>
+            """
+        ).strip(),
         unsafe_allow_html=True,
     )
 
@@ -324,59 +328,62 @@ with side_col:
 # Static version for this step.
 # Selection behaviour will be added in the next step.
 # ---------------------------------------------------------
-equipment_rows = []
+with side_col:
+    equipment_rows = []
 
-for category in categories:
-    color = CATEGORY_COLORS.get(category, "#999999")
+    for category in categories:
+        color = CATEGORY_COLORS.get(category, "#999999")
 
-    equipment_rows.append(
-        f"""
-        <div style="
-            display:flex;
-            align-items:center;
-            margin:5px 0;
-            font-size:13px;
-            line-height:1.15;
-        ">
-            <span style="
-                display:inline-block;
-                width:10px;
-                height:10px;
-                background:{color};
-                margin-right:8px;
-                flex:0 0 10px;
-            "></span>
-            <span>{category}</span>
-        </div>
-        """
+        equipment_rows.append(
+            f"""
+            <div style="
+                display:flex;
+                align-items:center;
+                margin:5px 0;
+                font-size:13px;
+                line-height:1.15;
+            ">
+                <span style="
+                    display:inline-block;
+                    width:10px;
+                    height:10px;
+                    background:{color};
+                    margin-right:8px;
+                    flex:0 0 10px;
+                "></span>
+                <span>{category}</span>
+            </div>
+            """
+        )
+
+    equipment_html = "".join(equipment_rows)
+
+    st.markdown(
+        textwrap.dedent(
+            f"""
+            <div style="
+                border: 1px solid #c7cdd4;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+                background: #ffffff;
+            ">
+                <div style="
+                    background: #2f5d84;
+                    color: #ffffff;
+                    padding: 8px 10px;
+                    font-weight: 700;
+                ">
+                    Equipment
+                </div>
+                <div style="
+                    padding: 8px 10px;
+                ">
+                    {equipment_html}
+                </div>
+            </div>
+            """
+        ).strip(),
+        unsafe_allow_html=True,
     )
-
-equipment_html = "".join(equipment_rows)
-
-st.markdown(
-    f"""
-    <div style="
-        border: 1px solid #c7cdd4;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-        background: #ffffff;
-    ">
-        <div style="
-            background: #2f5d84;
-            color: #ffffff;
-            padding: 8px 10px;
-            font-weight: 700;
-        ">
-            Equipment
-        </div>
-        <div style="
-            padding: 8px 10px;
-        ">
-            {equipment_html}
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
 
 # ---------------------------------------------------------
