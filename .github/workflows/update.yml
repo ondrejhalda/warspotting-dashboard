@@ -40,6 +40,9 @@ jobs:
       - name: Verify equipment chart
         run: test -f equipment_weekly.html
 
+      - name: Verify weekly equipment data
+        run: test -f weekly_equipment_losses.csv
+
       - name: Verify data quality report
         run: test -f data_quality.json
 
@@ -50,6 +53,7 @@ jobs:
 
           git add warspotting_raw.csv
           git add weekly_losses.csv
+          git add weekly_equipment_losses.csv
           git add equipment_weekly.html
           git add data_quality.json
           git add dashboard.png
