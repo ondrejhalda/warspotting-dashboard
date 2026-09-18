@@ -623,6 +623,14 @@ def create_chart(weekly, quality_data):
     qualityPanel.style.zIndex =
         '21';
 
+    // Keep the quality panel compact so it never overlaps
+    // the equipment panel below it. Extra details can scroll.
+    qualityPanel.style.maxHeight =
+        '220px';
+
+    qualityPanel.style.overflowY =
+        'auto';
+
     wrapper.appendChild(qualityPanel);
 
 
@@ -859,7 +867,7 @@ def create_chart(weekly, quality_data):
         'absolute';
 
     panel.style.top =
-        '90px';
+        '240px';
 
     panel.style.right =
         '10px';
