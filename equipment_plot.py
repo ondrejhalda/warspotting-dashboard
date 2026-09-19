@@ -873,10 +873,13 @@ def create_chart(weekly, quality_data):
         'absolute';
 
     filterPanel.style.top =
-        '670px';
+        '677px';
 
     filterPanel.style.right =
         '10px';
+
+    filterPanel.style.width =
+        '245px';
 
     filterPanel.style.background =
         '#ffffff';
@@ -888,7 +891,7 @@ def create_chart(weekly, quality_data):
         '0 1px 4px rgba(0,0,0,0.12)';
 
     filterPanel.style.padding =
-        '8px 10px';
+        '0';
 
     filterPanel.style.fontFamily =
         'Arial, sans-serif';
@@ -902,22 +905,28 @@ def create_chart(weekly, quality_data):
     filterPanel.style.zIndex =
         '22';
 
-    const filterLabel =
-        document.createElement('label');
+    const filterHeader =
+        document.createElement('div');
 
-    filterLabel.textContent =
-        'Equipment category';
+    filterHeader.style.background =
+        '#28547A';
 
-    filterLabel.style.fontWeight =
+    filterHeader.style.color =
+        '#ffffff';
+
+    filterHeader.style.fontWeight =
         'bold';
 
-    filterLabel.style.display =
-        'block';
+    filterHeader.style.padding =
+        '8px 10px';
 
-    filterLabel.style.marginBottom =
-        '5px';
+    filterHeader.style.fontSize =
+        '14px';
 
-    filterPanel.appendChild(filterLabel);
+    filterHeader.textContent =
+        'Equipment category';
+
+    filterPanel.appendChild(filterHeader);
 
     const filterSelect =
         document.createElement('select');
@@ -926,7 +935,7 @@ def create_chart(weekly, quality_data):
         'equipment-category-filter';
 
     filterSelect.style.width =
-        '190px';
+        'calc(100% - 20px)';
 
     filterSelect.style.padding =
         '3px 5px';
@@ -936,6 +945,12 @@ def create_chart(weekly, quality_data):
 
     filterSelect.style.fontSize =
         '12px';
+
+    filterSelect.style.boxSizing =
+        'border-box';
+
+    filterSelect.style.margin =
+        '8px 10px 10px 10px';
 
     const allOption =
         document.createElement('option');
