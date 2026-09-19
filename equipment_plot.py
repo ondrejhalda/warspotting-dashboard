@@ -2756,7 +2756,7 @@ def add_page_footer(html, weekly_df):
         #warspotting-page-footer {{
             box-sizing: border-box;
             width: 100%;
-            padding: 0 32px 28px 32px;
+            padding: 37px 32px 28px 32px;
             font-family: Arial, sans-serif;
             background: #ffffff;
         }}
