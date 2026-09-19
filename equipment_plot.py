@@ -565,8 +565,8 @@ def create_chart(weekly, quality_data):
     let hoverWeek = null;
 
     // Category filter state.
-    // "__ALL__" keeps the original full-chart behaviour.
-    let selectedCategory = "__ALL__";
+    // An empty list keeps the original full-chart behaviour.
+    let selectedCategories = [];
 
     let plotlyBarClickHandled = false;
 
@@ -928,58 +928,212 @@ def create_chart(weekly, quality_data):
 
     filterPanel.appendChild(filterHeader);
 
-    const filterSelect =
-        document.createElement('select');
 
-    filterSelect.id =
-        'equipment-category-filter';
+    const filterButton =
+        document.createElement('button');
 
-    filterSelect.style.width =
+    filterButton.type =
+        'button';
+
+    filterButton.id =
+        'equipment-category-filter-button';
+
+    filterButton.style.width =
         'calc(100% - 20px)';
 
-    filterSelect.style.padding =
-        '3px 5px';
+    filterButton.style.height =
+        '30px';
 
-    filterSelect.style.fontFamily =
+    filterButton.style.padding =
+        '3px 8px';
+
+    filterButton.style.margin =
+        '8px 10px 6px 10px';
+
+    filterButton.style.fontFamily =
         'Arial, sans-serif';
 
-    filterSelect.style.fontSize =
+    filterButton.style.fontSize =
         '12px';
 
-    filterSelect.style.boxSizing =
+    filterButton.style.textAlign =
+        'left';
+
+    filterButton.style.background =
+        '#ffffff';
+
+    filterButton.style.border =
+        '1px solid #767676';
+
+    filterButton.style.cursor =
+        'pointer';
+
+    filterButton.style.boxSizing =
         'border-box';
 
-    filterSelect.style.margin =
-        '8px 10px 10px 10px';
-
-    const allOption =
-        document.createElement('option');
-
-    allOption.value =
-        '__ALL__';
-
-    allOption.textContent =
+    filterButton.textContent =
         'All equipment';
 
-    filterSelect.appendChild(allOption);
+    filterPanel.appendChild(filterButton);
+
+
+    const filterOptions =
+        document.createElement('div');
+
+    filterOptions.id =
+        'equipment-category-filter-options';
+
+    filterOptions.style.display =
+        'none';
+
+    filterOptions.style.margin =
+        '0 10px 6px 10px';
+
+    filterOptions.style.border =
+        '1px solid #c7cdd4';
+
+    filterOptions.style.maxHeight =
+        '220px';
+
+    filterOptions.style.overflowY =
+        'auto';
+
+    filterOptions.style.background =
+        '#ffffff';
+
+
+    const allCheckboxRow =
+        document.createElement('label');
+
+    allCheckboxRow.style.display =
+        'flex';
+
+    allCheckboxRow.style.alignItems =
+        'center';
+
+    allCheckboxRow.style.padding =
+        '4px 6px';
+
+    allCheckboxRow.style.cursor =
+        'pointer';
+
+    allCheckboxRow.style.borderBottom =
+        '1px solid #d5d9de';
+
+    const allCheckbox =
+        document.createElement('input');
+
+    allCheckbox.type =
+        'checkbox';
+
+    allCheckbox.checked =
+        true;
+
+    allCheckbox.style.margin =
+        '0 7px 0 0';
+
+    const allCheckboxText =
+        document.createElement('span');
+
+    allCheckboxText.textContent =
+        'All equipment';
+
+    allCheckboxRow.appendChild(allCheckbox);
+    allCheckboxRow.appendChild(allCheckboxText);
+    filterOptions.appendChild(allCheckboxRow);
+
+
+    const categoryCheckboxes =
+        {};
 
     categories.forEach(
         function(category) {
 
-            const option =
-                document.createElement('option');
+            const row =
+                document.createElement('label');
 
-            option.value =
+            row.style.display =
+                'flex';
+
+            row.style.alignItems =
+                'center';
+
+            row.style.padding =
+                '4px 6px';
+
+            row.style.cursor =
+                'pointer';
+
+            const checkbox =
+                document.createElement('input');
+
+            checkbox.type =
+                'checkbox';
+
+            checkbox.value =
                 category;
 
-            option.textContent =
+            checkbox.style.margin =
+                '0 7px 0 0';
+
+            categoryCheckboxes[category] =
+                checkbox;
+
+            const text =
+                document.createElement('span');
+
+            text.textContent =
                 category;
 
-            filterSelect.appendChild(option);
+            row.appendChild(checkbox);
+            row.appendChild(text);
+            filterOptions.appendChild(row);
         }
     );
 
-    filterPanel.appendChild(filterSelect);
+    filterPanel.appendChild(filterOptions);
+
+
+    const resetButton =
+        document.createElement('button');
+
+    resetButton.type =
+        'button';
+
+    resetButton.id =
+        'equipment-filter-reset';
+
+    resetButton.textContent =
+        'Reset filters';
+
+    resetButton.style.display =
+        'block';
+
+    resetButton.style.width =
+        'calc(100% - 20px)';
+
+    resetButton.style.height =
+        '30px';
+
+    resetButton.style.margin =
+        '0 10px 10px 10px';
+
+    resetButton.style.fontFamily =
+        'Arial, sans-serif';
+
+    resetButton.style.fontSize =
+        '12px';
+
+    resetButton.style.cursor =
+        'pointer';
+
+    resetButton.style.background =
+        '#f7f7f7';
+
+    resetButton.style.border =
+        '1px solid #b8b8b8';
+
+    filterPanel.appendChild(resetButton);
 
     wrapper.appendChild(filterPanel);
 
@@ -1136,19 +1290,21 @@ def create_chart(weekly, quality_data):
 
 
     // Return only the equipment categories currently selected
-    // in the filter. "__ALL__" keeps the original behaviour.
+    // in the filter. An empty list keeps the original behaviour.
     function getVisibleWeekItems(week) {
 
         const items =
             getWeekItems(week);
 
-        if (selectedCategory === "__ALL__") {
+        if (!selectedCategories.length) {
             return items;
         }
 
         return items.filter(
             function(item) {
-                return item.type === selectedCategory;
+                return selectedCategories.includes(
+                    item.type
+                );
             }
         );
     }
@@ -1156,11 +1312,17 @@ def create_chart(weekly, quality_data):
 
     function getVisibleCategories() {
 
-        if (selectedCategory === "__ALL__") {
+        if (!selectedCategories.length) {
             return categories;
         }
 
-        return [selectedCategory];
+        return categories.filter(
+            function(category) {
+                return selectedCategories.includes(
+                    category
+                );
+            }
+        );
     }
 
 
@@ -1189,8 +1351,8 @@ def create_chart(weekly, quality_data):
             categories.map(
                 function(category) {
                     return (
-                        selectedCategory === "__ALL__" ||
-                        category === selectedCategory
+                        !selectedCategories.length ||
+                        selectedCategories.includes(category)
                     );
                 }
             );
@@ -1528,15 +1690,148 @@ def create_chart(weekly, quality_data):
     // FILTER CHANGE
     // ========================================================
 
-    filterSelect.addEventListener(
+    function updateFilterButton() {
+
+        if (!selectedCategories.length) {
+
+            filterButton.textContent =
+                'All equipment';
+
+            return;
+        }
+
+        if (selectedCategories.length === 1) {
+
+            filterButton.textContent =
+                selectedCategories[0];
+
+            return;
+        }
+
+        filterButton.textContent =
+            selectedCategories.length +
+            ' selected';
+    }
+
+
+    function syncFilterCheckboxes() {
+
+        const allSelected =
+            !selectedCategories.length;
+
+        allCheckbox.checked =
+            allSelected;
+
+        categories.forEach(
+            function(category) {
+                categoryCheckboxes[category].checked =
+                    selectedCategories.includes(
+                        category
+                    );
+            }
+        );
+
+        updateFilterButton();
+    }
+
+
+    function changeSelectedCategories(categoriesToSelect) {
+
+        selectedCategories =
+            categoriesToSelect.filter(
+                function(category, index, values) {
+                    return (
+                        categories.includes(category) &&
+                        values.indexOf(category) === index
+                    );
+                }
+            );
+
+        // Changing the filter starts a fresh view.
+        // This prevents a selected week from becoming stale.
+        selectedWeek = null;
+
+        hoverWeek = null;
+
+        tooltip.style.display =
+            'none';
+
+        highlightWeek(null);
+
+        applyCategoryFilter();
+
+        renderPanel(null);
+
+        syncFilterCheckboxes();
+    }
+
+
+    filterButton.addEventListener(
+        'click',
+        function() {
+
+            filterOptions.style.display =
+                filterOptions.style.display === 'none'
+                    ? 'block'
+                    : 'none';
+        }
+    );
+
+
+    allCheckbox.addEventListener(
         'change',
         function() {
 
-            selectedCategory =
-                filterSelect.value;
+            if (allCheckbox.checked) {
+                changeSelectedCategories([]);
+            }
+        }
+    );
 
-            // Changing the filter starts a fresh view.
-            // This prevents a selected week from becoming stale.
+
+    categories.forEach(
+        function(category) {
+
+            categoryCheckboxes[category].addEventListener(
+                'change',
+                function() {
+
+                    const nextSelection =
+                        selectedCategories.slice();
+
+                    if (
+                        categoryCheckboxes[category].checked
+                    ) {
+
+                        if (!nextSelection.includes(category)) {
+                            nextSelection.push(category);
+                        }
+
+                    } else {
+
+                        const index =
+                            nextSelection.indexOf(category);
+
+                        if (index !== -1) {
+                            nextSelection.splice(index, 1);
+                        }
+                    }
+
+                    changeSelectedCategories(
+                        nextSelection
+                    );
+                }
+            );
+        }
+    );
+
+
+    resetButton.addEventListener(
+        'click',
+        function() {
+
+            selectedCategories = [];
+
             selectedWeek = null;
 
             hoverWeek = null;
@@ -1549,6 +1844,11 @@ def create_chart(weekly, quality_data):
             applyCategoryFilter();
 
             renderPanel(null);
+
+            syncFilterCheckboxes();
+
+            filterOptions.style.display =
+                'none';
         }
     );
 
@@ -1558,6 +1858,8 @@ def create_chart(weekly, quality_data):
     // ========================================================
 
     applyCategoryFilter();
+
+    syncFilterCheckboxes();
 
 
     // ========================================================
@@ -2038,11 +2340,17 @@ def create_chart(weekly, quality_data):
                     event.target
                 );
 
+            const clickedInsideFilterPanel =
+                filterPanel.contains(
+                    event.target
+                );
+
 
             if (
                 !clickedInsideChart &&
                 !clickedInsidePanel &&
-                !clickedInsideQualityPanel
+                !clickedInsideQualityPanel &&
+                !clickedInsideFilterPanel
             ) {
 
                 selectedWeek = null;
