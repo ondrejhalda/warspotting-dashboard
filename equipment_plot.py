@@ -873,9 +873,9 @@ def create_chart(weekly, quality_data):
         'absolute';
 
     filterPanel.style.top =
-        '48px';
+        '670px';
 
-    filterPanel.style.left =
+    filterPanel.style.right =
         '10px';
 
     filterPanel.style.background =
