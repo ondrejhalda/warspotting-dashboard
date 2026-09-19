@@ -2539,6 +2539,189 @@ def create_chart(weekly, quality_data):
     return fig, post_script
 
 
+
+# ============================================================
+# PAGE PRESENTATION
+# ============================================================
+
+def add_page_header(
+    html,
+    weekly_df
+):
+
+    # --------------------------------------------------------
+    # Presentation-only KPIs.
+    # These values are derived from the same validated weekly
+    # dataset already used by the chart.
+    # --------------------------------------------------------
+
+    total_losses = int(
+        weekly_df["losses"].sum()
+    )
+
+    weeks_covered = int(
+        weekly_df["week"].nunique()
+    )
+
+    average_per_week = (
+        total_losses / weeks_covered
+        if weeks_covered
+        else 0
+    )
+
+    equipment_categories = int(
+        weekly_df["type"].nunique()
+    )
+
+    page_header = f"""
+    <style>
+        #warspotting-page-header {{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 26px 32px 18px 32px;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+        }}
+
+        #warspotting-page-header .page-title {{
+            margin: 0;
+            color: #28547A;
+            font-size: 28px;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }}
+
+        #warspotting-page-header .page-subtitle {{
+            margin-top: 7px;
+            color: #5b6570;
+            font-size: 15px;
+            line-height: 1.4;
+        }}
+
+        #warspotting-page-header .kpi-grid {{
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }}
+
+        #warspotting-page-header .kpi-card {{
+            box-sizing: border-box;
+            min-width: 0;
+            padding: 14px 16px 13px 16px;
+            background: #ffffff;
+            border: 1px solid #c7cdd4;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+        }}
+
+        #warspotting-page-header .kpi-label {{
+            color: #5b6570;
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.55px;
+        }}
+
+        #warspotting-page-header .kpi-value {{
+            margin-top: 7px;
+            color: #222222;
+            font-size: 24px;
+            line-height: 1.1;
+            font-weight: 700;
+        }}
+
+        @media (max-width: 900px) {{
+            #warspotting-page-header .kpi-grid {{
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }}
+        }}
+
+        @media (max-width: 560px) {{
+            #warspotting-page-header {{
+                padding: 20px 16px 14px 16px;
+            }}
+
+            #warspotting-page-header .page-title {{
+                font-size: 23px;
+            }}
+
+            #warspotting-page-header .page-subtitle {{
+                font-size: 14px;
+            }}
+
+            #warspotting-page-header .kpi-grid {{
+                grid-template-columns: 1fr;
+            }}
+        }}
+    </style>
+
+    <div id="warspotting-page-header">
+        <h1 class="page-title">
+            RUSSIAN EQUIPMENT LOSSES
+        </h1>
+
+        <div class="page-subtitle">
+            Weekly documented equipment losses based on WarSpotting data
+        </div>
+
+        <div class="kpi-grid">
+
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    Documented losses
+                </div>
+                <div class="kpi-value">
+                    {total_losses:,}
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    Weeks covered
+                </div>
+                <div class="kpi-value">
+                    {weeks_covered:,}
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    Avg. per week
+                </div>
+                <div class="kpi-value">
+                    {average_per_week:,.1f}
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    Equipment categories
+                </div>
+                <div class="kpi-value">
+                    {equipment_categories:,}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    """
+
+    body_marker = "<body>"
+
+    if body_marker not in html:
+        raise ValueError(
+            "Generated HTML does not contain a <body> element."
+        )
+
+    return html.replace(
+        body_marker,
+        body_marker + page_header,
+        1
+    )
+
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -2668,6 +2851,24 @@ def main():
         include_plotlyjs=True,
 
         post_script=post_script
+    )
+
+
+    # Add the page title and KPI header after Plotly HTML
+    # generation so the existing chart and JavaScript remain
+    # unchanged.
+    html = OUTPUT_FILE.read_text(
+        encoding="utf-8"
+    )
+
+    html = add_page_header(
+        html,
+        weekly_df
+    )
+
+    OUTPUT_FILE.write_text(
+        html,
+        encoding="utf-8"
     )
 
 
