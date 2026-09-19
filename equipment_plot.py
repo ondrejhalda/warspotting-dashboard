@@ -564,6 +564,10 @@ def create_chart(weekly, quality_data):
 
     let hoverWeek = null;
 
+    // Category filter state.
+    // "__ALL__" keeps the original full-chart behaviour.
+    let selectedCategory = "__ALL__";
+
     let plotlyBarClickHandled = false;
 
 
@@ -856,6 +860,116 @@ def create_chart(weekly, quality_data):
 
 
     // ========================================================
+    // EQUIPMENT CATEGORY FILTER
+    // ========================================================
+
+    const filterPanel =
+        document.createElement('div');
+
+    filterPanel.id =
+        'equipment-filter-panel';
+
+    filterPanel.style.position =
+        'absolute';
+
+    filterPanel.style.top =
+        '48px';
+
+    filterPanel.style.left =
+        '10px';
+
+    filterPanel.style.background =
+        '#ffffff';
+
+    filterPanel.style.border =
+        '1px solid #c7cdd4';
+
+    filterPanel.style.boxShadow =
+        '0 1px 4px rgba(0,0,0,0.12)';
+
+    filterPanel.style.padding =
+        '8px 10px';
+
+    filterPanel.style.fontFamily =
+        'Arial, sans-serif';
+
+    filterPanel.style.fontSize =
+        '12px';
+
+    filterPanel.style.color =
+        '#222';
+
+    filterPanel.style.zIndex =
+        '22';
+
+    const filterLabel =
+        document.createElement('label');
+
+    filterLabel.textContent =
+        'Equipment category';
+
+    filterLabel.style.fontWeight =
+        'bold';
+
+    filterLabel.style.display =
+        'block';
+
+    filterLabel.style.marginBottom =
+        '5px';
+
+    filterPanel.appendChild(filterLabel);
+
+    const filterSelect =
+        document.createElement('select');
+
+    filterSelect.id =
+        'equipment-category-filter';
+
+    filterSelect.style.width =
+        '190px';
+
+    filterSelect.style.padding =
+        '3px 5px';
+
+    filterSelect.style.fontFamily =
+        'Arial, sans-serif';
+
+    filterSelect.style.fontSize =
+        '12px';
+
+    const allOption =
+        document.createElement('option');
+
+    allOption.value =
+        '__ALL__';
+
+    allOption.textContent =
+        'All equipment';
+
+    filterSelect.appendChild(allOption);
+
+    categories.forEach(
+        function(category) {
+
+            const option =
+                document.createElement('option');
+
+            option.value =
+                category;
+
+            option.textContent =
+                category;
+
+            filterSelect.appendChild(option);
+        }
+    );
+
+    filterPanel.appendChild(filterSelect);
+
+    wrapper.appendChild(filterPanel);
+
+
+    // ========================================================
     // EQUIPMENT PANEL
     // ========================================================
 
@@ -1006,18 +1120,70 @@ def create_chart(weekly, quality_data):
     }
 
 
+    // Return only the equipment categories currently selected
+    // in the filter. "__ALL__" keeps the original behaviour.
+    function getVisibleWeekItems(week) {
+
+        const items =
+            getWeekItems(week);
+
+        if (selectedCategory === "__ALL__") {
+            return items;
+        }
+
+        return items.filter(
+            function(item) {
+                return item.type === selectedCategory;
+            }
+        );
+    }
+
+
+    function getVisibleCategories() {
+
+        if (selectedCategory === "__ALL__") {
+            return categories;
+        }
+
+        return [selectedCategory];
+    }
+
+
     // ========================================================
     // GET WEEK TOTAL
     // ========================================================
 
     function getWeekTotal(week) {
 
-        return getWeekItems(week)
+        return getVisibleWeekItems(week)
             .reduce(
                 (sum, item) =>
                     sum + item.losses,
                 0
             );
+    }
+
+
+    // ========================================================
+    // APPLY CATEGORY FILTER
+    // ========================================================
+
+    function applyCategoryFilter() {
+
+        const visibility =
+            categories.map(
+                function(category) {
+                    return (
+                        selectedCategory === "__ALL__" ||
+                        category === selectedCategory
+                    );
+                }
+            );
+
+        Plotly.restyle(
+            gd,
+            { visible: visibility }
+        );
     }
 
 
@@ -1096,7 +1262,7 @@ def create_chart(weekly, quality_data):
 
         if (!week) {
 
-            categories.forEach(
+            getVisibleCategories().forEach(
                 function(category) {
 
                     const row =
@@ -1172,7 +1338,7 @@ def create_chart(weekly, quality_data):
         // ----------------------------------------------------
 
         const items =
-            getWeekItems(week);
+            getVisibleWeekItems(week);
 
 
         items.forEach(
@@ -1344,6 +1510,42 @@ def create_chart(weekly, quality_data):
 
 
     // ========================================================
+    // FILTER CHANGE
+    // ========================================================
+
+    filterSelect.addEventListener(
+        'change',
+        function() {
+
+            selectedCategory =
+                filterSelect.value;
+
+            // Changing the filter starts a fresh view.
+            // This prevents a selected week from becoming stale.
+            selectedWeek = null;
+
+            hoverWeek = null;
+
+            tooltip.style.display =
+                'none';
+
+            highlightWeek(null);
+
+            applyCategoryFilter();
+
+            renderPanel(null);
+        }
+    );
+
+
+    // ========================================================
+    // INITIAL FILTER
+    // ========================================================
+
+    applyCategoryFilter();
+
+
+    // ========================================================
     // HIGHLIGHT SELECTED WEEK
     // ========================================================
     //
@@ -1470,7 +1672,7 @@ def create_chart(weekly, quality_data):
 
 
             const items =
-                getWeekItems(
+                getVisibleWeekItems(
                     hoverWeek
                 );
 
