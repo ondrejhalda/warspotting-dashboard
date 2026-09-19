@@ -23653,6 +23653,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47050,Transport,ZiL-131,Destroyed,Russia,2026-09-04,"Polohy raion, Zaporizhzhia oblast",,,Cope cage
 47051,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-04,"Polohy raion, Zaporizhzhia oblast",,,"Turretless, V, ☐, Expanded cabin"
 47052,Transport,ZiL-131,Destroyed,Russia,2026-09-04,"Polohy raion, Zaporizhzhia oblast",,,
+47135,Engineering,EOV-3523 (KamAZ 6x6) excavator,Destroyed,Russia,2026-09-04,Belgorod oblast,,,Loitering
 46944,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,
 46945,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,Jammer
 46909,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2026-09-07,Kursk oblast,,,
@@ -23687,5 +23688,11 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47117,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,"Kulykivske, Berdiansk raion","46.915054,37.001196",,Loitering
 47118,Transport,KamAZ-65117,Destroyed,Russia,2026-09-16,"Berdiansk raion, Zaporizhzhia oblast",,,Loitering
 47120,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,Luhansk oblast,,,Loitering
+47121,Transport,KamAZ 6x6 tanker,Destroyed,Russia,2026-09-16,Luhansk oblast,,,"Cope cage, Loitering"
 47114,Transport,Ural-4320,Destroyed,Russia,2026-09-17,"Pisky, Pokrovsk raion","48.072276,37.652642",,"Cope cage, Jammer"
 47119,Tanks,Unknown tank,Destroyed,Russia,2026-09-17,,,,Turtle
+47123,Anti-aircraft systems,51P6 TEL (for 40R6 S-400 'Triumf'),Destroyed,Russia,2026-09-17,"Poroshino, Vygonichi raion","53.134224,33.944510",,Loitering
+47147,Helicopters,Unknown helicopter,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.276371,39.643380",,
+47148,Helicopters,Mi-8*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.276367,39.641588",,
+47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,
+47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,
