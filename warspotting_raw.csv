@@ -23673,6 +23673,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,"◇, ✕"
 47006,Transport,Ural-4320,Destroyed,Russia,2026-09-11,"Chervonopopivka, Siverskodonetsk raion","49.100729,38.088392",,Cope cage
 47056,Engineering,BREM-L 'Beglyanka' armoured recovery vehicle,Destroyed,Russia,2026-09-11,Donetsk oblast,,,"Cope cage, Jammer"
+47154,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2026-09-11,"Dorozhnianka, Polohy raion",,,"Loitering, Turtle, Hedgehog"
 47043,Transport,ZiL-131,Destroyed,Russia,2026-09-12,"Polohy raion, Zaporizhzhia oblast",,,"Shattered, Cope cage, Additional armour"
 47039,Transport,Ural-4320,Destroyed,Russia,2026-09-13,"Volodymyrivka, Skadovsk raion","46.108453,32.652330",,"∆, ▲"
 47040,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-09-13,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Additional armour"
