@@ -2721,6 +2721,240 @@ def add_page_header(
         1
     )
 
+# ============================================================
+# TECHNICAL DATA + METHODOLOGY
+# ============================================================
+
+def add_page_footer(html, weekly_df):
+
+    unique_weeks = int(
+        weekly_df["week"].nunique()
+    )
+
+    equipment_categories = int(
+        weekly_df["type"].nunique()
+    )
+
+    weekly_records = int(
+        len(weekly_df)
+    )
+
+    documented_losses = int(
+        weekly_df["losses"].sum()
+    )
+
+    start_date = (
+        weekly_df["week"].min().strftime("%d/%m/%Y")
+    )
+
+    end_date = (
+        weekly_df["week"].max().strftime("%d/%m/%Y")
+    )
+
+    footer = f"""
+    <style>
+        #warspotting-page-footer {{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0 32px 28px 32px;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+        }}
+
+        #warspotting-page-footer .info-section {{
+            margin-top: 18px;
+            border: 1px solid #c7cdd4;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #ffffff;
+        }}
+
+        #warspotting-page-footer .info-summary {{
+            padding: 10px 12px;
+            color: #28547A;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            background: #ffffff;
+        }}
+
+        #warspotting-page-footer .info-body {{
+            padding: 14px 14px 16px 14px;
+            color: #333333;
+            font-size: 13px;
+            line-height: 1.55;
+        }}
+
+        #warspotting-page-footer .technical-grid {{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px 28px;
+        }}
+
+        #warspotting-page-footer .technical-item {{
+            min-width: 0;
+        }}
+
+        #warspotting-page-footer .technical-label {{
+            color: #5b6570;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.45px;
+        }}
+
+        #warspotting-page-footer .technical-value {{
+            margin-top: 3px;
+            color: #222222;
+            font-size: 13px;
+            font-weight: 700;
+        }}
+
+        #warspotting-page-footer .methodology-text {{
+            margin: 0 0 8px 0;
+        }}
+
+        #warspotting-page-footer .methodology-text:last-child {{
+            margin-bottom: 0;
+        }}
+
+        @media (max-width: 900px) {{
+            #warspotting-page-footer .technical-grid {{
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }}
+        }}
+
+        @media (max-width: 560px) {{
+            #warspotting-page-footer {{
+                padding: 0 16px 20px 16px;
+            }}
+
+            #warspotting-page-footer .technical-grid {{
+                grid-template-columns: 1fr;
+            }}
+        }}
+    </style>
+
+    <div id="warspotting-page-footer">
+
+        <details class="info-section" open>
+            <summary class="info-summary">
+                Technical data
+            </summary>
+
+            <div class="info-body">
+                <div class="technical-grid">
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Source
+                        </div>
+                        <div class="technical-value">
+                            WarSpotting API
+                        </div>
+                    </div>
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Weekly records
+                        </div>
+                        <div class="technical-value">
+                            {weekly_records:,}
+                        </div>
+                    </div>
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Unique weeks
+                        </div>
+                        <div class="technical-value">
+                            {unique_weeks:,}
+                        </div>
+                    </div>
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Equipment categories
+                        </div>
+                        <div class="technical-value">
+                            {equipment_categories:,}
+                        </div>
+                    </div>
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Documented losses
+                        </div>
+                        <div class="technical-value">
+                            {documented_losses:,}
+                        </div>
+                    </div>
+
+                    <div class="technical-item">
+                        <div class="technical-label">
+                            Coverage
+                        </div>
+                        <div class="technical-value">
+                            {start_date} – {end_date}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </details>
+
+
+        <details class="info-section" open>
+            <summary class="info-summary">
+                Methodology and limitations
+            </summary>
+
+            <div class="info-body">
+                <p class="methodology-text">
+                    The dashboard uses documented equipment-loss records
+                    from WarSpotting.
+                </p>
+
+                <p class="methodology-text">
+                    Raw records are collected through the API and stored
+                    in the project's raw dataset.
+                </p>
+
+                <p class="methodology-text">
+                    The data is validated, transformed and aggregated into
+                    weekly equipment-loss statistics.
+                </p>
+
+                <p class="methodology-text">
+                    The resulting dataset is visualized as an interactive
+                    Plotly chart.
+                </p>
+
+                <p class="methodology-text">
+                    The dataset represents documented/visually confirmed
+                    equipment-loss records and should not be interpreted as
+                    a complete count of actual military losses.
+                </p>
+            </div>
+        </details>
+
+    </div>
+    """
+
+    body_end_marker = "</body>"
+
+    if body_end_marker not in html:
+        raise ValueError(
+            "Generated HTML does not contain a </body> element."
+        )
+
+    return html.replace(
+        body_end_marker,
+        footer + body_end_marker,
+        1
+    )
+
+
 
 # ============================================================
 # MAIN
@@ -2862,6 +3096,11 @@ def main():
     )
 
     html = add_page_header(
+        html,
+        weekly_df
+    )
+
+    html = add_page_footer(
         html,
         weekly_df
     )
