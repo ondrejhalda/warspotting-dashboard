@@ -23697,3 +23697,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47148,Helicopters,Mi-8*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.276367,39.641588",,Loitering
 47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,Loitering
 47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,Loitering
+47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,Zaporizhzhia oblast,,,"Loitering, Additional armour"
