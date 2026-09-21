@@ -56,7 +56,7 @@ FULL_SOURCE_RECONCILIATION = True
 # Safety switch for the first production verification run.
 # Missing source records are added automatically, while local-only
 # records are preserved until the source snapshot behaviour is confirmed.
-REMOVE_LOCAL_ONLY_RECORDS = False
+REMOVE_LOCAL_ONLY_RECORDS = True
 
 SYNC_QUALITY_FILE = Path("sync_quality.json")
 
@@ -906,6 +906,15 @@ def reconcile_with_source(df):
     # --------------------------------------------------------
 
     if REMOVE_LOCAL_ONLY_RECORDS:
+
+        if extra_ids:
+            print(
+                f"  Removing local-only records: {extra_ids}"
+            )
+        else:
+            print(
+                "  No local-only records to remove."
+            )
 
         reconciled_df = (
             source_in_scope
