@@ -4038,9 +4038,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 869,Transport,Unknown truck,Destroyed,Russia,2022-05-20,"Izium, Izium raion","49.238605,37.230196",,
 870,Transport,Unknown truck,Destroyed,Russia,2022-05-20,"Izium, Izium raion","49.238277,37.230097",,
 1088,Transport,TZM-T reloader vehicle (for TOS-1A 'Solntsepek'),Destroyed,Russia,2022-05-20,Kharkiv oblast,,,
-1216,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2022-05-20,"Volodymyrivka, Bakhmut raion","48.663060,38.196723",,
-1217,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2022-05-20,"Volodymyrivka, Bakhmut raion","48.663060,38.196723",,
-1218,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2022-05-20,"Volodymyrivka, Bakhmut raion","48.663060,38.196723",,
 2731,Self-propelled artillery,120mm 2S9 'Nona-S',Destroyed,Russia,2022-05-20,"Siverskodonetsk raion, Luhansk oblast",,VDV (Russian Airborne Forces),O
 3210,Drones,'Eleron-3' reconnaissance UAV,Captured,Russia,2022-05-20,"Yampil, Kramatorsk raion",,,
 3215,Drones,ZALA Z-16 (421-16Е) reconnaissance UAV,Destroyed,Russia,2022-05-20,East Ukraine,,,
@@ -8827,7 +8824,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 15097,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2023-02-11,"Novoselivka Druha, Pokrovsk raion","48.22750,37.78164",,Turretless
 15747,Engineering,KamAZ 8x8 (for PP-2005 floating bridge system),Destroyed,Russia,2023-02-11,,,,
 12065,Infantry fighting vehicles,BMP-1(P),Captured,Russia,2023-02-12,"Nevelske, Pokrovsk raion","48.055444,37.588694",,"Z, Damaged"
-14067,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2023-02-12,"Zarichne, Kramatorsk raion",,,
 14077,Tanks,T-80BV,Damaged,Russia,2023-02-12,"Mykilske, Volnovakha raion","47.764871,37.328775",,"V, Damaged, ☐"
 14078,Tanks,T-80BV,Destroyed,Russia,2023-02-12,"Mykilske, Volnovakha raion","47.765070,37.328560",,"V, ☐"
 14094,Transport,Ural-4320,Damaged,Russia,2023-02-12,Luhansk oblast,,,
@@ -9723,7 +9719,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 16278,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2023-05-13,"Suretskii Muravei, Klintsy raion","52.746068,32.435838",159th Guards Fighter Aviation Regiment,
 16281,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2023-05-13,"Donetsk, Donetsk raion","48.0168,37.70584",,
 16303,Drones,'Orlan-10' reconnaissance UAV,Destroyed,Russia,2023-05-13,"Bakhmut raion, Donetsk oblast",,,
-16310,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2023-05-13,"Volnovakha raion, Donetsk oblast",,,V
 16313,Drones,'Eleron-3SV' reconnaissance UAV,Captured,Russia,2023-05-13,"Kreminna, Siverskodonetsk raion",,,Damaged
 16324,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Damaged,Russia,2023-05-13,"Kodema, Bakhmut raion","48.473611,38.078917",,
 16360,Tanks,Unknown tank,Destroyed,Russia,2023-05-13,"Spirne, Bakhmut raion","48.807889,38.265389",,"Cope cage, Stuhna"
