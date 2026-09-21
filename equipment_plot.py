@@ -624,16 +624,6 @@ def create_chart(weekly, quality_data):
     qualityPanel.id =
         'data-quality-panel';
 
-    qualityPanel.style.position =
-        'absolute';
-
-    // Keep the panel below the Plotly modebar.
-    qualityPanel.style.top =
-        '48px';
-
-    qualityPanel.style.right =
-        '10px';
-
     qualityPanel.style.width =
         '245px';
 
@@ -661,7 +651,6 @@ def create_chart(weekly, quality_data):
     // Let the Data quality panel expand to show all validation
     // information without an internal scrollbar.
 
-    wrapper.appendChild(qualityPanel);
 
 
     function renderQualityPanel() {
@@ -970,15 +959,6 @@ def create_chart(weekly, quality_data):
     filterPanel.id =
         'equipment-filter-panel';
 
-    filterPanel.style.position =
-        'absolute';
-
-    filterPanel.style.top =
-        '677px';
-
-    filterPanel.style.right =
-        '10px';
-
     filterPanel.style.width =
         '245px';
 
@@ -1236,7 +1216,6 @@ def create_chart(weekly, quality_data):
 
     filterPanel.appendChild(resetButton);
 
-    wrapper.appendChild(filterPanel);
 
 
     // ========================================================
@@ -1248,15 +1227,6 @@ def create_chart(weekly, quality_data):
 
     panel.id =
         'equipment-panel';
-
-    panel.style.position =
-        'absolute';
-
-    panel.style.top =
-        '350px';
-
-    panel.style.right =
-        '10px';
 
     panel.style.width =
         '245px';
@@ -1286,40 +1256,61 @@ def create_chart(weekly, quality_data):
 
 
     // ========================================================
-    // PANEL POSITIONING
+    // RIGHT-SIDE PANEL STACK
     // ========================================================
     //
-    // Keep the three right-side panels separated by a consistent
-    // gap. Positions are calculated from the actual rendered
-    // heights so the Data quality panel can expand without
-    // overlapping Equipment or Equipment category.
+    // Keep Data quality, Equipment and Equipment category in a
+    // single vertical flex container. This removes the need for
+    // manual height/offset calculations and prevents overlap when
+    // panel contents change after rendering.
     //
     // ========================================================
 
-    const PANEL_GAP = 10;
+    const rightPanelStack =
+        document.createElement('div');
 
-    function positionPanels() {
+    rightPanelStack.id =
+        'right-panel-stack';
 
-        const qualityTop =
-            48;
+    rightPanelStack.style.position =
+        'absolute';
 
-        qualityPanel.style.top =
-            qualityTop + 'px';
+    rightPanelStack.style.top =
+        '48px';
 
-        panel.style.top =
-            (
-                qualityTop
-                + qualityPanel.offsetHeight
-                + PANEL_GAP
-            ) + 'px';
+    rightPanelStack.style.right =
+        '10px';
 
-        filterPanel.style.top =
-            (
-                panel.offsetTop
-                + panel.offsetHeight
-                + PANEL_GAP
-            ) + 'px';
-    }
+    rightPanelStack.style.width =
+        '245px';
+
+    rightPanelStack.style.display =
+        'flex';
+
+    rightPanelStack.style.flexDirection =
+        'column';
+
+    rightPanelStack.style.gap =
+        '10px';
+
+    rightPanelStack.style.zIndex =
+        '30';
+
+    rightPanelStack.appendChild(
+        qualityPanel
+    );
+
+    rightPanelStack.appendChild(
+        panel
+    );
+
+    rightPanelStack.appendChild(
+        filterPanel
+    );
+
+    wrapper.appendChild(
+        rightPanelStack
+    );
 
     // ========================================================
     // CUSTOM TOOLTIP
@@ -1814,18 +1805,7 @@ def create_chart(weekly, quality_data):
             totalRow
         );
 
-        // Recalculate panel positions whenever the Equipment
-        // panel is rendered, keeping the requested gap even
-        // when its height changes after a week/filter action.
-        positionPanels();
     }
-
-
-    // Keep the right-side layout responsive.
-    window.addEventListener(
-        'resize',
-        positionPanels
-    );
 
 
     // ========================================================
