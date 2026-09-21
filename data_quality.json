@@ -3,10 +3,16 @@
   "analytical_records": 23707,
   "excluded_lost_by": 0,
   "excluded_ids": [],
-  "last_update": "2026-09-21 11:49:41",
+  "last_update": "2026-09-21 12:16:14",
   "equipment_categories": 18,
   "weekly_rows": 2589,
   "new_equipment_categories": [],
   "validation_status": "OK",
-  "validation_detail": "OK"
+  "validation_detail": "OK",
+  "sync_available": true,
+  "sync_source_scope": 23707,
+  "sync_local_records": 23707,
+  "sync_missing": 0,
+  "sync_local_only": 0,
+  "sync_status": "OK"
 }
