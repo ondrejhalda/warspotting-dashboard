@@ -830,6 +830,7 @@ def create_chart(weekly, quality_data):
             body.appendChild(syncLabel);
 
             const syncRows = [
+                ['Last full sync (UTC)', qualityData.sync_last_full_sync || 'Not available'],
                 ['Source scope', formatNumber(qualityData.sync_source_scope)],
                 ['Local records', formatNumber(qualityData.sync_local_records)],
                 ['Missing source', formatNumber(qualityData.sync_missing)],
@@ -3166,6 +3167,9 @@ def main():
 
         quality.update({
             "sync_available": True,
+            "sync_last_full_sync": sync_quality.get(
+                "last_update"
+            ),
             "sync_source_scope": int(
                 sync_quality.get("source_records_in_scope", 0)
             ),
