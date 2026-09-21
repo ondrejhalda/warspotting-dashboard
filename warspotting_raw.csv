@@ -2348,6 +2348,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 42936,Transport,KamAZ 6x6,Destroyed,Russia,2022-03-31,"Yusupivka, Sumy raion",,,Shattered
 43237,Transport,KamAZ 6x6,Destroyed,Russia,2022-03-31,"Hostomel, Bucha raion",,,
 44083,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2022-03-31,"Trostianets, Okhtyrka raion","50.47954,34.97182",27th Separate Guards Motor Rifle Brigade,
+47161,Engineering,IMR-2(M) combat engineering vehicle,Captured,Russia,2022-03-31,Chernihiv oblast,,,V
 98,Tanks,T-72B(1),Destroyed,Russia,2022-04-01,"Nova Basan, Nizhyn raion","50.56337,31.49213",,Turretless
 174,Tanks,T-72B(1),Captured,Russia,2022-04-01,"Mala Rohan, Kharkiv raion",,59th Guards Tank Regiment,"Z, Mine plow/roller"
 175,Tanks,T-72B(1),Captured,Russia,2022-04-01,"Velyka Doroha, Nizhyn raion","50.87703,32.00834",239th Tank Regiment,
@@ -4053,7 +4054,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 6099,Transport,KamAZ 6x6,Destroyed,Russia,2022-05-20,"Komyshuvakha, Siverskodonetsk raion","48.69389,38.38448",,"Shattered, Flipped"
 6100,Transport,Ural-4320,Destroyed,Russia,2022-05-20,"Komyshuvakha, Siverskodonetsk raion","48.69415,38.38437",Leningrad Military District,
 6834,Transport,KamAZ 6x6 with MM-501 armoured module,Captured,Russia,2022-05-20,Kyiv oblast,,Rosgvardiya,"V, Damaged"
-7771,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2022-05-20,Luhansk oblast,,,"Turretless, Shattered"
+7771,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2022-05-20,"Volodymyrivka, Bakhmut raion","48.654692,38.170549",,"Turretless, Shattered"
 17237,Infantry fighting vehicles,MT-LBVM(K),Captured,Russia,2022-05-20,Kharkiv oblast,,,Z
 20269,Transport,KamAZ 6x6,Destroyed,Russia,2022-05-20,"Komyshuvakha, Siverskodonetsk raion","48.69323,38.3847",,Flipped
 33936,Transport,KamAZ 6x6,Destroyed,Russia,2022-05-20,"Komyshuvakha, Siverskodonetsk raion","48.69548,38.38376",,O
@@ -4120,9 +4121,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 130,Tanks,T-72B(1),Destroyed,Russia,2022-05-26,Donetsk oblast,,,"Z, O"
 131,Tanks,T-72B(1),Destroyed,Russia,2022-05-26,"Mykolaivka (Chkalovske hromada), Chuhuiv raion","49.758108,36.944677",,
 1549,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2022-05-26,"Storozheve, Volnovakha raion","47.80994,36.77195",,"Turretless, Shattered, Z"
-6487,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2022-05-26,"Siverskodonetsk raion, Luhansk oblast",,VDV (Russian Airborne Forces),"Turretless, V"
+6487,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2022-05-26,"Druzhba, Siverskodonetsk raion","48.651233,38.320423",VDV (Russian Airborne Forces),"Turretless, V"
 8739,"Command posts, communication",R-149MA1 command and staff vehicle,Destroyed,Russia,2022-05-26,"Popasna, Siverskodonetsk raion",,,
-9451,Infantry fighting vehicles,BTR-D,Destroyed,Russia,2022-05-26,"Popasna, Siverskodonetsk raion",,VDV (Russian Airborne Forces),
+9451,Infantry fighting vehicles,BTR-D,Destroyed,Russia,2022-05-26,"Druzhba, Siverskodonetsk raion","48.651306,38.320160",VDV (Russian Airborne Forces),
 1360,Infantry fighting vehicles,BMP-1AM 'Basurmanin',Destroyed,Russia,2022-05-27,"Dibrivne, Izium raion","48.982340,37.226830",,V
 1672,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2022-05-27,"Dibrivne, Izium raion","48.997500,37.201600",,Turretless
 1673,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2022-05-27,"Dolomitne, Bakhmut raion","48.424668,38.132120",51st Guards Combined Arms Army (ex-1st Army Corps DNR),
@@ -4142,6 +4143,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 4255,Transport,Unknown truck,Destroyed,Russia,2022-05-30,Kharkiv oblast,,,Stuhna
 6324,Tanks,T-72B3 Obr. 2016,Destroyed,Russia,2022-05-30,"Brazhkivka, Izium raion","49.037797,37.192688",,Turretless
 7146,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2022-05-30,"Pravdyne, Kherson raion","46.751444,32.164333",VDV (Russian Airborne Forces),
+7507,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2022-05-30,"Volodymyrivka, Bakhmut raion","48.664116,38.169518",,"Turretless, Flipped"
 7839,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2022-05-30,"Dorozhnianka, Polohy raion","47.599876,36.255672",,"Turretless, ⧸"
 8094,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2022-05-30,,,,Z
 8516,Tanks,T-72B3,Destroyed,Russia,2022-05-30,"Sukha Kamianka, Izium raion","49.072331,37.337564",,"Turretless, Z"
@@ -4173,6 +4175,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 33860,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2022-05-30,"Lypove, Bakhmut raion","48.723701,38.304107",76th Guards Air Assault Division,Turretless
 33861,Infantry fighting vehicles,BMD-4M,Destroyed,Russia,2022-05-30,"Lypove, Bakhmut raion","48.723682,38.303921",76th Guards Air Assault Division,Turretless
 33862,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2022-05-30,"Lypove, Bakhmut raion","48.723695,38.304035",76th Guards Air Assault Division,"Turretless, Shattered"
+47031,Infantry fighting vehicles,BMD-4M,Destroyed,Russia,2022-05-30,"Volodymyrivka, Bakhmut raion","48.664029,38.170798",VDV (Russian Airborne Forces),Turretless
+47064,Infantry fighting vehicles,BTR-D or BMD-2,Destroyed,Russia,2022-05-30,"Volodymyrivka, Bakhmut raion","48.663089,38.198807",VDV (Russian Airborne Forces),"Turretless, Shattered"
+47133,Infantry fighting vehicles,BMD-4M,Destroyed,Russia,2022-05-30,"Volodymyrivka, Bakhmut raion","48.664112,38.216778",VDV (Russian Airborne Forces),"Turretless, Shattered"
 882,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2022-05-31,Kharkiv oblast,,,Z
 1237,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2022-05-31,"Novodarivka, Polohy raion","47.777945,36.638771",,Turretless
 1855,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2022-05-31,"Nyrkove, Siverskodonetsk raion","48.73809,38.29725",VDV (Russian Airborne Forces),Shattered
@@ -4262,6 +4267,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 15530,Transport,KamAZ 6x6,Destroyed,Russia,2022-06-04,"Polohy, Polohy raion","47.462234,36.247580",,
 15531,Transport,KamAZ 6x6,Destroyed,Russia,2022-06-04,"Polohy, Polohy raion","47.460811456213904,36.246489330069124",,
 17947,Infantry fighting vehicles,BTR-MDM 'Rakushka',Destroyed,Russia,2022-06-04,"Bilohorivka, Bakhmut raion","48.730399,38.234814",VDV (Russian Airborne Forces),V
+22092,Transport,KamAZ-63501AT 'Medved' artillery tractor,Destroyed,Russia,2022-06-04,"Popasna, Siverskodonetsk raion","48.648995,38.325986",,
 29416,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2022-06-04,"Sereda, Shebekino raion","50.239598,36.648865",,
 40558,Tanks,Unknown tank,Destroyed,Russia,2022-06-04,"Viktorivka, Siverskodonetsk raion","48.714071,38.348790",,Turretless
 40559,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2022-06-04,"Viktorivka, Siverskodonetsk raion","48.713545,38.349032",,Turretless
@@ -4287,6 +4293,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 13718,Drones,'Orlan-10' electronic warfare UAV,Captured,Russia,2022-06-06,East Ukraine,,,
 16017,Tanks,T-72B(1),Destroyed,Russia,2022-06-06,"Terny, Kramatorsk raion","49.07387,38.06403",,"Turretless, Mine plow/roller"
 17991,Infantry fighting vehicles,BRM-1(K) reconnaissance vehicle,Destroyed,Russia,2022-06-06,"Chervonopopivka, Siverskodonetsk raion","49.12768,38.16733",123rd Separate Guards Motor Rifle Brigade (ex-2nd Brigade LNR),Z
+22562,Engineering,BREM-2 armoured recovery vehicle,Destroyed,Russia,2022-06-06,"Yampolivka, Kramatorsk raion","49.065005,37.945778",,
 27546,Transport,Unknown truck,Destroyed,Russia,2022-06-06,"Kreminna, Siverskodonetsk raion","49.043799,38.203803",,
 47017,Transport,Ural-4320,Destroyed,Russia,2022-06-06,"Torske (Lyman hromada), Kramatorsk raion","49.021529,37.952432",,Flipped
 1243,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2022-06-07,"Sviatohirsk, Kramatorsk raion","49.045537,37.579705",,
@@ -4362,7 +4369,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 13661,Transport,Ural-4320,Destroyed,Russia,2022-06-10,"Sukha Kamianka, Izium raion","49.08439,37.35079",,Shattered
 14727,Tanks,T-80BVM,Destroyed,Russia,2022-06-10,"Vuhledar, Volnovakha raion","47.77082,37.32225",,
 638,Tanks,T-90A,Destroyed,Russia,2022-06-11,"Novopokrovka, Polohy raion","47.48691328404014,35.98403574786517",,"Turretless, Z"
-808,Tanks,Unknown tank,Destroyed,Russia,2022-06-11,"Toshkivka, Siverskodonetsk raion","48.788419,38.548784",,Turretless
+808,Tanks,T-64BV,Destroyed,Russia,2022-06-11,"Toshkivka, Siverskodonetsk raion","48.788419,38.548784",,Turretless
 1247,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2022-06-11,"Hrakove, Chuhuiv raion","49.71929,36.80833",,
 4266,Transport,Unknown truck,Destroyed,Russia,2022-06-11,"Nova Hnylytsia, Chuhuiv raion","49.718375,36.899175",,
 4267,Transport,Unknown truck,Destroyed,Russia,2022-06-11,"Nova Hnylytsia, Chuhuiv raion","49.718111,36.898070",,
@@ -4389,6 +4396,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 1322,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2022-06-13,"Toshkivka, Siverskodonetsk raion","48.79233549545084,38.53635845608946",3rd Guards Combined Arms Army (ex-2nd Army Corps LNR),Turretless
 1323,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2022-06-13,"Toshkivka, Siverskodonetsk raion","48.79235551353179,38.53637034142081",3rd Guards Combined Arms Army (ex-2nd Army Corps LNR),
 1754,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2022-06-13,Kherson oblast,,,"Turretless, Z"
+2231,Infantry fighting vehicles,BTR-MDM 'Rakushka',Destroyed,Russia,2022-06-13,"Druzhba, Siverskodonetsk raion","48.645838,38.303118",VDV (Russian Airborne Forces),V
 2892,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2022-06-13,"Borovenky, Siverskodonetsk raion","49.053390,38.530539",,
 2893,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2022-06-13,"Borovenky, Siverskodonetsk raion","49.053563,38.529858",,
 2894,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2022-06-13,"Borovenky, Siverskodonetsk raion","49.053734,38.529500",,
@@ -4461,7 +4469,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 1038,Infantry fighting vehicles,MT-LBVM(K),Captured,Russia,2022-06-17,East Ukraine,,,Z
 1356,Infantry fighting vehicles,BMP-1(P),Captured,Russia,2022-06-17,"Novopil, Volnovakha raion",,,Z
 1649,Infantry fighting vehicles,BMP-2(K),Captured,Russia,2022-06-17,"Dibrivne, Izium raion",,37th Separate Guards Motor Rifle Brigade,V
-2231,Infantry fighting vehicles,BTR-MDM 'Rakushka',Destroyed,Russia,2022-06-17,Luhansk oblast,,VDV (Russian Airborne Forces),V
 3065,Airplanes,Su-25SM close air support aircraft,Destroyed,Russia,2022-06-17,"Novaya Slobodka, Korocha raion","50.83373,37.03761",18th Guards Assault Aviation Regiment,"Shattered, V"
 3229,Vessels,Project 22870 rescue tug,Destroyed,Russia,2022-06-17,Black Sea,"45.197500,30.615278",145th Lifeboat Detachment,Underwater
 5594,Transport,9T452 transloader (for 9K57 'Uragan'),Destroyed,Russia,2022-06-17,"Sosnove, Kramatorsk raion","49.070358,37.553545",,Shattered
@@ -4735,7 +4742,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 7734,Tanks,T-72B3 Obr. 2016,Destroyed,Russia,2022-07-05,,,,"Turretless, Mine plow/roller"
 9597,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2022-07-05,"Beryslav raion, Kherson oblast",,,PL-1
 12841,Tanks,T-72B3 Obr. 2016,Captured,Russia,2022-07-05,Kherson oblast,,,Z
-22562,Engineering,BREM-2 armoured recovery vehicle,Destroyed,Russia,2022-07-05,"Terny, Kramatorsk raion",,,
 38990,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2022-07-05,"Beryslav raion, Kherson oblast",,,
 5879,Tanks,T-62M,Damaged,Russia,2022-07-06,Kherson oblast,,,Z
 6013,Tanks,T-72B(1),Destroyed,Russia,2022-07-06,Donetsk oblast,,,Z
@@ -4833,7 +4839,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 6133,Transport,Unknown truck,Destroyed,Russia,2022-07-14,"Khrustalnyi, Rovenky raion","48.112783,38.958538",,Shattered
 6134,Transport,Unknown truck,Destroyed,Russia,2022-07-14,"Khrustalnyi, Rovenky raion","48.112783,38.958538",,Shattered
 6735,"Command posts, communication",R-166-0.5 'Artek' radio station based on BTR-80,Destroyed,Russia,2022-07-14,"Lyman, Kramatorsk raion",,,
-7657,Infantry fighting vehicles,BMD-4M,Destroyed,Russia,2022-07-14,"Volodymyrivka, Bakhmut raion","48.66361,38.20252",VDV (Russian Airborne Forces),"Turretless, Shattered"
+7657,Infantry fighting vehicles,BMD-4M,Destroyed,Russia,2022-07-14,"Volodymyrivka, Bakhmut raion","48.663649,38.202531",VDV (Russian Airborne Forces),"Turretless, Shattered"
 12435,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2022-07-14,"Shevchenkove (Velyka Dymerka hromada), Brovary raion","50.64121,31.03157",,
 13460,Transport,Ural-4320,Destroyed,Russia,2022-07-14,East Ukraine,,,
 13768,Drones,'Orlan-10' reconnaissance UAV,Destroyed,Russia,2022-07-14,Donetsk oblast,,,
@@ -4978,7 +4984,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 6736,"Command posts, communication",R-431AM antenna module (for P-260T 'Redut-2US' communications system),Destroyed,Russia,2022-07-30,"Nova Kakhovka, Kakhovka raion","46.77468,33.37446",,
 6738,Transport,Ural-4320,Destroyed,Russia,2022-07-30,"Izium, Izium raion","49.233069,37.253217",,
 6919,Drones,'Forpost' reconnaissance UAV,Destroyed,Russia,2022-07-30,Black Sea,,,
-7507,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2022-07-30,"Volodymyrivka, Bakhmut raion","48.664116,38.169518",,"Turretless, Flipped"
 13327,Infantry fighting vehicles,RKhM-6 'Povozka',Destroyed,Russia,2022-07-30,"Rakivka, Beryslav raion","46.939840,33.253146",,O
 17960,Transport,Ural-63706-0122 'Tornado-U',Destroyed,Russia,2022-07-30,"Rakivka, Beryslav raion","46.939417,33.253137",,
 18493,Transport,UAZ Patriot jeep,Destroyed,Russia,2022-07-30,Belgorod oblast,,,"Z, ☐"
@@ -9723,6 +9728,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 16324,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Damaged,Russia,2023-05-13,"Kodema, Bakhmut raion","48.473611,38.078917",,
 16360,Tanks,Unknown tank,Destroyed,Russia,2023-05-13,"Spirne, Bakhmut raion","48.807889,38.265389",,"Cope cage, Stuhna"
 16379,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2023-05-13,"Rivnopil (Velyka Novosilka hromada), Volnovakha raion","47.8039,36.6815",,
+24008,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2023-05-13,"Volodymyrivka, Volnovakha raion","47.758420,37.408774",,V
 26841,Drones,ZALA Z-16 (421-16Е) reconnaissance UAV,Destroyed,Russia,2023-05-13,,,,
 16343,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2023-05-14,"Klishchiivka, Bakhmut raion","48.533611,37.915556",,"Turretless, V, Cope cage"
 16362,Infantry fighting vehicles,BMP-3,Damaged,Russia,2023-05-14,"Yehorivka, Volnovakha raion","47.725858,37.266089",,
@@ -11984,7 +11990,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 21156,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2023-10-31,"Vodiane, Pokrovsk raion","48.1032924986,37.626059575",,Jammer
 21158,Tanks,T-72B Obr. 2022,Destroyed,Russia,2023-10-31,"Avdiivske (Pervomaiske), Pokrovsk raion","48.1036599923,37.6239370381",35th Separate Guards Motor Rifle Brigade,"Turretless, Mine plow/roller"
 21159,Tanks,T-72B(1),Damaged,Russia,2023-10-31,"Avdiivske (Pervomaiske), Pokrovsk raion","48.1036599923,37.6239370381",,Cope cage
-21161,Infantry fighting vehicles,MT-LB(V),Abandoned,Russia,2023-10-31,"Avdiivske (Pervomaiske), Pokrovsk raion","48.10354227010613,37.624090868917015",,"Z, O, Damaged, ◇"
+21161,Infantry fighting vehicles,MT-LB(V),Abandoned,Russia,2023-10-31,"Avdiivske (Pervomaiske), Pokrovsk raion","48.10354227010613,37.624090868917015",,"Z, O, Damaged"
 21165,Tanks,T-64BV,Destroyed,Russia,2023-10-31,"Pivnichne (Sieverne), Pokrovsk raion","48.11242917254184,37.68059681746301",1st Separate Guards Motor Rifle Brigade (ex-DNR),Turretless
 21167,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2023-10-31,"Pivnichne (Sieverne), Pokrovsk raion","48.112425,37.680703",1st Separate Guards Motor Rifle Brigade (ex-DNR),"Turretless, Shattered"
 21177,Infantry fighting vehicles,MT-LB(V),Damaged,Russia,2023-10-31,"Opytne, Pokrovsk raion","48.102948,37.700726",,Cope cage
@@ -12187,7 +12193,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 21606,Transport,KamAZ 6x6,Destroyed,Russia,2023-11-14,East Ukraine,,,"Z, ◇"
 21654,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2023-11-14,,,,
 21725,Transport,Ural-43206,Damaged,Russia,2023-11-14,Luhansk oblast,,,
-22092,Transport,KamAZ-63501AT 'Medved' artillery tractor,Destroyed,Russia,2023-11-14,Luhansk oblast,,,
 22246,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2023-11-14,"Bakhmut raion, Donetsk oblast",,,
 17059,Infantry fighting vehicles,BTR-D,Captured,Russia,2023-11-15,"Klishchiivka, Bakhmut raion","48.50345,37.93467",VDV (Russian Airborne Forces),"V, Damaged"
 21604,Infantry mobility vehicles,AMN-590951 'VPK-Ural',Destroyed,Russia,2023-11-15,"Soledar, Bakhmut raion","48.69075,38.05324",,
@@ -14039,7 +14044,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 25267,Tanks,T-72*,Destroyed,Russia,2024-03-25,"Pryiutne, Polohy raion","47.743968,36.658512",,Cope cage
 25372,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2024-03-25,"Novomykhailivka, Pokrovsk raion","47.86774,37.515",,
 25539,Drones,'Orlan-10' reconnaissance UAV,Destroyed,Russia,2024-03-25,,,,
-36239,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2024-03-25,"Pryiutne, Polohy raion","47.74416,36.65193",,Z
+36239,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2024-03-25,"Pryiutne, Polohy raion","47.74416,36.65193",,"Z, Cope cage"
 23771,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2024-03-26,"Novomykhailivka, Pokrovsk raion","47.85577,37.51891",,Expanded cabin
 25104,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2024-03-26,"Terny, Kramatorsk raion","49.09139,37.99495",,"Cope cage, Additional armour"
 25105,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2024-03-26,"Terny, Kramatorsk raion","49.09148898942662,37.99359810707293",,
@@ -17430,7 +17435,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 30319,Infantry fighting vehicles,BMD-2,Destroyed,Russia,2024-09-29,"Veseloe, Glushkovo raion","51.26853,34.57744",234th Guards Air Assault Regiment,"V, Cope cage, Jammer"
 30322,Infantry fighting vehicles,BMD-2,Damaged,Russia,2024-09-29,"Veseloe, Glushkovo raion","51.274924,34.567267",234th Guards Air Assault Regiment,Cope cage
 30376,Infantry fighting vehicles,BMP-3,Abandoned,Russia,2024-09-29,"Maksymilianivka, Pokrovsk raion","47.969048,37.421189",102nd Motor Rifle Regiment,"Cope cage, Additional armour"
-30450,Tanks,Unknown T-80 Obr. 2022,Damaged,Russia,2024-09-29,"Veseloe, Glushkovo raion","51.29652,34.6036",,"Z, Cope cage, ◇, ✕"
+30450,Tanks,Unknown T-80 Obr. 2022,Damaged,Russia,2024-09-29,"Veseloe, Glushkovo raion","51.29652,34.6036",106th Guards Airborne Division,"Z, Cope cage, ◇, ✕"
 30482,Infantry fighting vehicles,BMP-1 675-sb3KDZ,Destroyed,Russia,2024-09-29,"Vesele, Bakhmut raion","48.76117,38.15800",88th Motor Rifle Brigade,"Cope cage, Jammer"
 30500,Tanks,T-72*,Abandoned,Russia,2024-09-29,"Vesele, Bakhmut raion","48.75970,38.15603",,Cope cage
 31182,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2024-09-29,"Heorhiivka, Pokrovsk raion","47.967333,37.424278",,
@@ -18922,7 +18927,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 33657,Other,Unknown vehicle,Destroyed,Russia,2024-12-22,"Zahryzove, Izium raion","49.509278,37.730222",,Shattered
 32801,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2024-12-23,Kursk oblast,,,
 32802,Tanks,T-72*,Destroyed,Russia,2024-12-23,Kursk oblast,,,"Cope cage, Turtle"
-32805,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2024-12-23,"Pokrovsk raion, Donetsk oblast",,,Cope cage
+32805,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2024-12-23,"Pokrovsk raion, Donetsk oblast",,27th Guards Motor Rifle Division (ex-21st Brigade),Cope cage
 32807,Drones,ZALA Z-16 (421-16Е) reconnaissance UAV,Destroyed,Russia,2024-12-23,,,,
 32814,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2024-12-23,"Novohrodivka, Pokrovsk raion","48.190056,37.320111",,Cope cage
 32815,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2024-12-23,"Novohrodivka, Pokrovsk raion","48.192694,37.326",,"Cope cage, Jammer"
@@ -18947,7 +18952,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 35714,Tanks,T-72B(1),Destroyed,Russia,2024-12-24,"Bakhmut, Bakhmut raion",,,Cope cage
 39209,Drones,'Orlan-10' reconnaissance UAV,Captured,Russia,2024-12-24,Donetsk oblast,,,
 40110,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2024-12-24,"Pishchane (Petropavlivka hromada), Kupiansk raion","49.576822,37.792071",,"Cope cage, Expanded cabin"
-44446,Tanks,Unknown tank,Abandoned,Russia,2024-12-24,"Pishchane (Petropavlivka hromada), Kupiansk raion","49.573574,37.771126",,"Cope cage, Damaged, Jammer"
+44446,Tanks,Unknown tank,Abandoned,Russia,2024-12-24,"Pishchane (Petropavlivka hromada), Kupiansk raion","49.573574,37.771126",,"Cope cage, Jammer, Damaged"
 44447,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2024-12-24,"Pishchane (Petropavlivka hromada), Kupiansk raion","49.573533,37.771192",,
 32851,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2024-12-25,,,,"Cope cage, ☐"
 35791,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2024-12-25,,,,"Turretless, Cope cage, Additional armour, Removed turret"
@@ -22010,7 +22015,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 40105,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2025-10-21,"Kolodiazi, Kramatorsk raion","49.080238,37.839132",254th Motor Rifle Regiment,"Turretless, Cope cage, Jammer"
 40120,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2025-10-21,"Malynivka, Pokrovsk raion","48.33826,37.44706",,Expanded cabin
 40683,Infantry fighting vehicles,BMP-1AM 'Basurmanin',Destroyed,Russia,2025-10-21,"Bohdanivka, Pokrovsk raion",,,"Turretless, Shattered, Flipped, Additional armour"
-43740,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2025-10-21,"Polohy raion, Zaporizhzhia oblast",,,"Cope cage, Additional armour"
+43740,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2025-10-21,"Polohy raion, Zaporizhzhia oblast",,,"Additional armour, Cope cage"
 40137,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2025-10-22,"Chuhuiv raion, Kharkiv oblast",,,Cope cage
 40179,Transport,KamAZ 8x8 with armoured cabin,Destroyed,Russia,2025-10-22,Kursk oblast,,,
 40180,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2025-10-22,Kursk oblast,,,Armour kit missing
@@ -22390,7 +22395,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 41643,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2025-12-22,"Fedorivka, Pokrovsk raion","48.384771,37.299315",Pacific Fleet,"Cope cage, Jammer, Additional armour"
 41644,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2025-12-22,"Fedorivka, Pokrovsk raion","48.384800,37.298757",Pacific Fleet,"Cope cage, Jammer, Additional armour"
 41647,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2025-12-22,"Zatyshok, Pokrovsk raion","48.378219,37.260126",Pacific Fleet,"Cope cage, Jammer, Additional armour"
-41651,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2025-12-22,"Zatyshok, Pokrovsk raion","48.376644,37.260179",Pacific Fleet,
+41651,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2025-12-22,"Zatyshok, Pokrovsk raion","48.376644,37.260179",Pacific Fleet,"Cope cage, Additional armour"
 41658,Tanks,Unknown T-80 Obr. 2022,Abandoned,Russia,2025-12-22,"Razine, Pokrovsk raion","48.364138,37.319575",40th Separate Naval Infantry Brigade,"Mine plow/roller, Damaged, ☐, Turtle"
 41659,Tanks,T-80BVM Obr. 2022,Abandoned,Russia,2025-12-22,"Razine, Pokrovsk raion","48.364197,37.319557",40th Separate Naval Infantry Brigade,"Mine plow/roller, Damaged, Turtle"
 41660,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2025-12-22,"Fedorivka, Pokrovsk raion","48.375220,37.263715",Pacific Fleet,"Cope cage, Jammer, Additional armour"
@@ -22405,6 +22410,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 41689,Transport,Ural-4320,Destroyed,Russia,2025-12-22,"Balka Zhuravka (Nevske), Svatove raion",,,"Z, Cope cage, ◇"
 41690,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2025-12-22,"Balka Zhuravka (Nevske), Svatove raion",,,
 41693,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2025-12-22,"Boikivka, Pokrovsk raion","48.393479,37.304243",Pacific Fleet,
+41771,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2025-12-22,"Zatyshok, Pokrovsk raion","48.376644,37.260179",Pacific Fleet,"Turretless, Cope cage, Additional armour"
 41942,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2025-12-22,"Razine, Pokrovsk raion","48.365220,37.331020",Pacific Fleet,"Mine plow/roller, Jammer, Turtle, Additional armour"
 41943,Tanks,Unknown tank,Destroyed,Russia,2025-12-22,"Novoekonomichne, Pokrovsk raion","48.343003,37.322584",,Turtle
 42440,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2025-12-22,"Serebrianka reserve, Siverskodonetsk raion","48.964770,38.055290",,Cope cage
@@ -22522,7 +22528,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 42143,Tanks,T-62MV Obr. 2022,Destroyed,Russia,2026-01-09,"Nove, Kramatorsk raion","49.155510,37.880390",59th Guards Tank Regiment,"Cope cage, Additional armour"
 42659,Infantry fighting vehicles,BMP-1 or -2 675-sb3KDZ,Damaged,Russia,2026-01-09,"Pokrovsk, Pokrovsk raion","48.253234,37.189574",,Cope cage
 43394,Tanks,T-80BV,Destroyed,Russia,2026-01-09,"Novovasylivka, Pokrovsk raion","48.207140,37.045020",,Turtle
-45132,Engineering,TMM-3 bridge layer,Destroyed,Russia,2026-01-09,"Hatyshche, Chuhuiv raion","50.294798,36.886634",,"Mine plow/roller, Cope cage, Jammer, Improvised, Additional armour"
+45132,Engineering,TMM-3 bridge layer,Destroyed,Russia,2026-01-09,"Hatyshche, Chuhuiv raion","50.294798,36.886634",,"Cope cage, Jammer, Additional armour, Mine plow/roller, Improvised"
 42147,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-01-10,"Oleksandro-Shultyne, Kramatorsk raion","48.487162,37.835310",,Turtle
 42148,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-01-10,"Oleksandro-Shultyne, Kramatorsk raion","48.487068,37.835178",,"Jammer, Turtle"
 42822,Transport,KamAZ 8x8 with armoured cabin,Destroyed,Russia,2026-01-10,,,,Jammer
@@ -22615,7 +22621,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 42668,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-02-05,"Polohy raion, Zaporizhzhia oblast",,,
 42671,Transport,KamAZ 8x8,Destroyed,Russia,2026-02-05,"Shamino, Shebekino raion","50.361471,36.731825",,
 42880,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-02-05,"Polohy raion, Zaporizhzhia oblast",,,Jammer
-45171,Engineering,TMM-3 bridge layer,Damaged,Russia,2026-02-05,"Chuhuiv raion, Kharkiv oblast",,,"Mine plow/roller, Cope cage, Improvised, Armour kit missing"
+45171,Engineering,TMM-3 bridge layer,Damaged,Russia,2026-02-05,"Chuhuiv raion, Kharkiv oblast",,,"Cope cage, Improvised, Armour kit missing, Mine plow/roller"
 42686,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-02-06,"Bakhmut, Bakhmut raion","48.610818,37.984871",,"Shattered, Cope cage, Additional armour"
 43124,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-02-06,,,,Cope cage
 42680,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-02-07,"Novomykhailivka, Berdiansk raion","47.337193,36.049704",,"Shattered, Cope cage"
@@ -22648,13 +22654,13 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45756,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-02-14,"Serebrianka reserve, Siverskodonetsk raion",,,Cope cage
 42881,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-02-15,"Zatyshshia, Polohy raion","47.674575,36.359029",,"Shattered, Cope cage"
 43113,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2026-02-15,Donetsk oblast,,,
-44991,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2026-02-15,Belgorod oblast,,,"Cope cage, ◇, ✕, Additional armour, Hedgehog"
+44991,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2026-02-15,Belgorod oblast,,,"Cope cage, Additional armour, Hedgehog, ✕, ◇"
 42918,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-02-16,"Pokrovsk raion, Donetsk oblast",,,Flipped
 42971,Transport,UAZ-452,Destroyed,Russia,2026-02-17,"Rostov-on-Don, Rostov oblast","47.2456650,39.699806",Southern Military District,Cope cage
 43071,Tanks,T-62*,Destroyed,Russia,2026-02-17,"Novovasylivka, Pokrovsk raion","48.186386,37.048030",,Cope cage
 42950,Transport,ZiL-131,Destroyed,Russia,2026-02-18,"Dobropillia, Polohy raion","47.78577,36.197019",,
 42999,Self-propelled artillery,152mm 2S3(M) 'Akatsiya',Destroyed,Russia,2026-02-18,"Rivnopillia, Polohy raion",,,
-44066,Tanks,T-72B3 Obr. 2025,Abandoned,Russia,2026-02-18,"Shandryholove, Kramatorsk raion","49.116871,37.762552",488th Motor Rifle Regiment,"Cope cage, Damaged, Jammer, Hedgehog"
+44066,Tanks,T-72B3 Obr. 2025,Abandoned,Russia,2026-02-18,"Shandryholove, Kramatorsk raion","49.116871,37.762552",488th Motor Rifle Regiment,"Cope cage, Jammer, Hedgehog, Damaged"
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Abandoned,Russia,2026-02-18,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, Damaged, ◇, Jammer, Additional armour, Hedgehog"
 42975,Transport,Ural-4320,Destroyed,Russia,2026-02-19,Donetsk oblast,,,
 42976,Transport,ZiL-131,Destroyed,Russia,2026-02-19,Donetsk oblast,,,
@@ -22709,6 +22715,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43154,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-03-02,"Kramatorsk raion, Donetsk oblast",,,"Jammer, Turtle, Hedgehog"
 43205,Helicopters,Mi-8AMTSh transport helicopter,Destroyed,Russia,2026-03-03,"Dudki, Millerovo raion","48.935539,40.351220",16th Army Aviation Brigade,
 43443,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-03-03,"Novovasylivka, Pokrovsk raion","48.201286,37.031726",,Cope cage
+43457,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-03-03,"Novouspenivske, Polohy raion","47.714251,36.381825",,"Turretless, Cope cage"
 43560,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-03-03,"Zhuravka, Pokrovsk raion","48.222583,37.367794",,Shattered
 43976,Tanks,T-64BV,Destroyed,Russia,2026-03-03,"Rivnopillia, Polohy raion","47.726760,36.269190",,Cope cage
 43225,Transport,ZiL-131,Destroyed,Russia,2026-03-04,"Kalynivske (Velykomykhailivka hromada), Synelnykove raion","47.869818,36.441067",,
@@ -22809,7 +22816,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43536,Anti-aircraft systems,9A34M/35M TELAR (for 9K35 'Strela-10'),Damaged,Russia,2026-03-18,"Kairka, Kakhovka raion","46.291099,33.593010",,Loitering
 43555,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-03-18,"Lyman Pershyi, Kupiansk raion",,,"Cope cage, Additional armour"
 43587,Tanks,T-62MV Obr. 2022,Destroyed,Russia,2026-03-18,,,,"Mine plow/roller, Cope cage, Additional armour"
-43597,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2026-03-18,,,,"Cope cage, Jammer, Expanded cabin, Removed turret"
+43597,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2026-03-18,,,,"Cope cage, Expanded cabin, Removed turret, Jammer"
 41622,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-03-19,"Shandryholove, Kramatorsk raion","49.09473,37.72663",423rd Motor Rifle Regiment,"Cope cage, Additional armour"
 43553,Transport,ZiL-131,Destroyed,Russia,2026-03-19,"Novohryhorivka, Polohy raion","47.809387,36.437046",,
 43556,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-03-19,"Zelena Dolyna, Kramatorsk raion","49.11991,37.77181",,"Z, Cope cage, ◇, Additional armour, Hedgehog"
@@ -22825,15 +22832,15 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43570,Infantry fighting vehicles,BMP-3 688A-sb6-2KP,Destroyed,Russia,2026-03-19,"Serednie, Kramatorsk raion","49.130364,37.675244",,"Cope cage, Jammer"
 43571,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2026-03-19,"Shandryholove, Kramatorsk raion","49.095012,37.727428",,"Cope cage, Jammer, Additional armour"
 43593,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-03-19,"Derylove, Kramatorsk raion","49.068675,37.776970",,"Cope cage, Jammer, Hedgehog"
-43594,Tanks,Unknown T-72 Obr. 2022,Abandoned,Russia,2026-03-19,"Derylove, Kramatorsk raion","49.068579,37.776788",488th Motor Rifle Regiment,"Z, Mine plow/roller, Cope cage, Damaged, ◇, Jammer, Additional armour, Hedgehog"
+43594,Tanks,Unknown T-72 Obr. 2022,Abandoned,Russia,2026-03-19,"Derylove, Kramatorsk raion","49.068579,37.776788",488th Motor Rifle Regiment,"Mine plow/roller, Cope cage, Additional armour, Hedgehog, Z, ◇, Damaged, Jammer"
 43598,Other,'Kuryer' mine-laying UGV,Destroyed,Russia,2026-03-19,"Shandryholove, Kramatorsk raion",,,
 43599,Infantry fighting vehicles,BTR-70 or -80,Destroyed,Russia,2026-03-19,"Zelena Dolyna, Kramatorsk raion","49.096429,37.805120",,"Cope cage, Jammer, Additional armour"
 43886,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-03-19,"Zelena Dolyna, Kramatorsk raion","49.095792,37.803918",,"Cope cage, Jammer, Additional armour"
-43887,Tanks,Unknown tank,Destroyed,Russia,2026-03-19,"Zelena Dolyna, Kramatorsk raion","49.095792,37.803918",,"Mine plow/roller, Cope cage, Jammer, Hedgehog"
+43887,Tanks,Unknown tank,Destroyed,Russia,2026-03-19,"Zelena Dolyna, Kramatorsk raion","49.095792,37.803918",,"Cope cage, Jammer, Hedgehog, Mine plow/roller"
 45748,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-03-19,"Shandryholove, Kramatorsk raion",,,"Cope cage, Jammer, Hedgehog"
 43576,Infantry fighting vehicles,BTR-82AT,Abandoned,Russia,2026-03-20,"Staroukrainka, Polohy raion","47.662406,36.143404",,"V, Cope cage, Jammer, Additional armour"
-43577,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-03-20,"Staroukrainka, Polohy raion","47.660727,36.142455",,"Cope cage, Additional armour"
-43580,Helicopters,Ka-52M 'Alligator' attack helicopter,Destroyed,Russia,2026-03-20,"Nadiivka, Pokrovsk raion","48.152942,36.988857",17th Guards Army Aviation Brigade,"Shattered, Loitering"
+43577,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-03-20,"Staroukrainka, Polohy raion","47.660727,36.142455",,"Additional armour, Cope cage"
+43580,Helicopters,Ka-52M 'Alligator' attack helicopter,Destroyed,Russia,2026-03-20,"Nadiivka, Pokrovsk raion","48.152942,36.988857",17th Guards Army Aviation Brigade,"Loitering, Shattered"
 43583,Anti-aircraft systems,9A331 TLAR (for 9K331 'Tor-M1'),Damaged,Russia,2026-03-20,Zaporizhzhia oblast,,,Loitering
 43585,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-03-20,"Kramatorsk raion, Donetsk oblast",,,
 43610,Transport,Unknown truck,Destroyed,Russia,2026-03-21,"Nyzhni Torhai, Henichesk raion","46.783453,34.243162",,Loitering
@@ -22842,7 +22849,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43607,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-03-22,"Pervoe Maya, Klintsy raion","52.748437,32.177750",,Loitering
 43727,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2026-03-22,"Okhotnyche, Polohy raion","47.752862,36.443238",,
 44057,Tanks,Unknown T-72 Obr. 2022,Damaged,Russia,2026-03-22,"Volnovakha raion, Donetsk oblast",,,Jammer
-45747,Transport,Ural-4320,Destroyed,Russia,2026-03-22,"Terny, Kramatorsk raion","49.114940,37.965510",,"Z, Flipped, ◇"
+45747,Transport,Ural-4320,Destroyed,Russia,2026-03-22,"Terny, Kramatorsk raion","49.114940,37.965510",,"Flipped, Z, ◇"
 46164,Transport,Ural-4320,Destroyed,Russia,2026-03-22,"Terny, Kramatorsk raion","49.115003,37.965356",,"Shattered, Flipped"
 43622,Anti-aircraft systems,9A331M TLAR (for 9K332 'Tor-M2'),Destroyed,Russia,2026-03-23,"Kurakhivka, Pokrovsk raion","48.031356,37.375167",,Loitering
 43655,Rocket and missile artillery,3S55 K-340P TEL (for 3K55 K300P 'Bastion-P'),Destroyed,Russia,2026-03-24,"Aktachy, Bakhchysarai raion","44.779553,33.758501",,Loitering
@@ -22854,7 +22861,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43711,Tanks,Unknown tank,Destroyed,Russia,2026-03-26,"Volnovakha raion, Donetsk oblast",,,Cope cage
 43712,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,Jammer
 43714,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-03-26,,,,
-43716,Transport,KamAZ 4x4,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,"Z, Cope cage, ◇, KUNG"
+43716,Transport,KamAZ 4x4,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,"KUNG, ◇, Z, Cope cage"
 43717,Transport,KamAZ 6x6,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,
 43718,Transport,Ural-4320,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,Cope cage
 43719,Transport,Ural-4320,Destroyed,Russia,2026-03-26,"Svatove raion, Luhansk oblast",,,Additional armour
@@ -22872,9 +22879,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43746,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-03-28,"Robotyne, Polohy raion",,,"Cope cage, Jammer"
 43747,Tanks,T-72*,Destroyed,Russia,2026-03-28,"Robotyne, Polohy raion","47.456841,35.819507",,"Turretless, Z, Mine plow/roller, ☐, Turtle, Hedgehog"
 43749,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-03-28,"Robotyne, Polohy raion","47.481005,35.812007",,"Cope cage, Jammer"
-43750,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.507790,35.991684",,"Cope cage, Jammer, Additional armour"
-43751,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.508327,35.993045",,"Mine plow/roller, Jammer, Turtle, Hedgehog"
-43752,Infantry fighting vehicles,BMP-3 688A-sb6-2KP,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.508642,35.992251",,"Turretless, Shattered, ∆, ▲, Hedgehog"
+43750,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.507790,35.991684",,"Cope cage, Additional armour, Jammer"
+43751,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.508327,35.993045",,"Mine plow/roller, Jammer, Hedgehog, Turtle"
+43752,Infantry fighting vehicles,BMP-3 688A-sb6-2KP,Destroyed,Russia,2026-03-28,"Novopokrovka, Polohy raion","47.508642,35.992251",,"Turretless, Shattered, Hedgehog, ▲, ∆"
 43753,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-03-28,"Volodymyrivka, Pokrovsk raion","48.442759,37.355041",,Cope cage
 43795,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-03-28,"Myrne (Komar hromada), Volnovakha raion","47.986378,36.686978",,Cope cage
 43812,Tanks,Unknown tank,Destroyed,Russia,2026-03-28,"Myrne (Komar hromada), Volnovakha raion","47.986604,36.688939",,Cope cage
@@ -22887,7 +22894,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 43760,Transport,9T234-2 transloader (for 9K58 'Smerch'),Destroyed,Russia,2026-03-29,"Karakul, Perekop raion","45.953717,33.752520",,Loitering
 43784,Tanks,Unknown tank,Destroyed,Russia,2026-03-29,"Novoukrainka (Velyka Novosilka hromada), Volnovakha raion","48.042920,36.866510",90th Guards Tank Division,"Turretless, Cope cage, Jammer"
 43815,Transport,KamAZ 6x6 tractor unit,Destroyed,Russia,2026-03-29,"Hrushivka, Skadovsk raion","46.23063,33.1025",,
-43975,Engineering,BREM-1(M) armoured recovery vehicle,Destroyed,Russia,2026-03-29,"Hrushivka, Skadovsk raion","46.23063,33.1025",,"Cope cage, Jammer, Additional armour"
+43975,Engineering,BREM-1(M) armoured recovery vehicle,Destroyed,Russia,2026-03-29,"Hrushivka, Skadovsk raion","46.23063,33.1025",,"Cope cage, Additional armour, Jammer"
 44860,Transport,Ural-4320,Destroyed,Russia,2026-03-29,"Zelena Dolyna, Kramatorsk raion","49.117899,37.824387",,"Z, ◇"
 43883,Tanks,T-72B3,Destroyed,Russia,2026-03-30,Belgorod oblast,,,Turretless
 43912,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-03-30,"Maliivka, Synelnykove raion","47.937374,36.622662",,"Cope cage, Jammer"
@@ -22961,11 +22968,11 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45710,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-04-17,"Uspenivka (Pokrovsk hromada), Pokrovsk raion","48.189330,37.033450",,"Cope cage, Additional armour"
 44173,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2026-04-18,"Vesele (Huliaipole hromada), Polohy raion","47.708367,36.407461",,"V, Cope cage, ☐, Jammer"
 44174,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-04-18,"Ziborovka, Shebekino raion","50.341528,36.657318",,Turtle
-44175,Rocket and missile artillery,220mm BM-1 (for TOS-1A 'Solntsepek'),Destroyed,Russia,2026-04-18,"Stepanivka, Polohy raion","47.633990,36.435087",,"Cope cage, Loitering, Jammer, Additional armour, Hedgehog"
+44175,Rocket and missile artillery,220mm BM-1 (for TOS-1A 'Solntsepek'),Destroyed,Russia,2026-04-18,"Stepanivka, Polohy raion","47.633990,36.435087",,"Cope cage, Jammer, Additional armour, Loitering, Hedgehog"
 44180,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-04-18,"Kucherov, Belovsk raion","51.036228,35.410333",,"Cope cage, Hedgehog"
-44181,Infantry fighting vehicles,BMP-1 or -2,Abandoned,Russia,2026-04-18,"Kucherov, Belovsk raion","51.036228,35.410333",,"Cope cage, Damaged, Expanded cabin, Removed turret, Hedgehog"
-44185,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-04-18,,,,"Turretless, Cope cage"
-44192,Engineering,BREM-1(M) armoured recovery vehicle,Destroyed,Russia,2026-04-18,"Bakhmut, Bakhmut raion","48.57297,37.95237",,"Cope cage, Hedgehog"
+44181,Infantry fighting vehicles,BMP-1 or -2,Abandoned,Russia,2026-04-18,"Kucherov, Belovsk raion","51.036228,35.410333",,"Cope cage, Damaged, Hedgehog, Expanded cabin, Removed turret"
+44185,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-04-18,,,,"Cope cage, Turretless"
+44192,Engineering,BREM-1(M) armoured recovery vehicle,Destroyed,Russia,2026-04-18,"Bakhmut, Bakhmut raion","48.57297,37.95237",,"Hedgehog, Cope cage"
 44193,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-04-18,"Ivanivske, Bakhmut raion","48.567467,37.907003",,
 44194,Infantry fighting vehicles,Unknown IFV,Abandoned,Russia,2026-04-18,"Ivanivske, Bakhmut raion","48.577913,37.916888",,"Jammer, Turtle"
 44269,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-04-18,"Belovsk raion, Kursk oblast",,,"Cope cage, ◇, ✕, Additional armour"
@@ -22979,7 +22986,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45713,Tanks,Unknown tank,Destroyed,Russia,2026-04-22,"Zatyshshia, Polohy raion","47.680610,36.343360",,Turretless
 45714,Tanks,Unknown tank,Destroyed,Russia,2026-04-22,"Zatyshshia, Polohy raion","47.679530,36.344390",,Turtle
 44316,Anti-aircraft systems,9A331M TLAR (for 9K332 'Tor-M2'),Damaged,Russia,2026-04-23,Zaporizhzhia oblast,,,Loitering
-44317,Anti-aircraft systems,9A33BM TELAR (for 9K33M3 'Osa-AKM'),Destroyed,Russia,2026-04-23,"Kermenchyk, Volnovakha raion","47.698670,36.930990",,"Loitering, Improvised, Additional armour"
+44317,Anti-aircraft systems,9A33BM TELAR (for 9K33M3 'Osa-AKM'),Destroyed,Russia,2026-04-23,"Kermenchyk, Volnovakha raion","47.698670,36.930990",,"Loitering, Additional armour, Improvised"
 44318,Tanks,Unknown tank,Destroyed,Russia,2026-04-23,"Shebekino raion, Belgorod oblast",,,"V, Cope cage, Additional armour, Hedgehog"
 44319,Tanks,T-62M Obr. 2022,Destroyed,Russia,2026-04-23,Kharkiv oblast,,,"Cope cage, Additional armour"
 44320,Transport,GAZ-3308 'Sadko',Destroyed,Russia,2026-04-23,Kharkiv oblast,,,"◇, ✕"
@@ -22991,7 +22998,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44418,Tanks,T-55A Obr. 1974,Destroyed,Russia,2026-04-24,"Yablukove, Polohy raion","47.71267,36.31604",,"V, Mine plow/roller, Cope cage"
 44689,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Damaged,Russia,2026-04-24,"Niu-York, Bakhmut raion",,,"Z, Turtle, Hedgehog"
 44449,Self-propelled artillery,152mm 2S44 'Giatsint-K',Destroyed,Russia,2026-04-25,"Kupiansk raion, Kharkiv oblast",,34th Guards Artillery Division,"Cope cage, Additional armour"
-44674,Transport,KamAZ 8x8 with armoured cabin,Destroyed,Russia,2026-04-25,"Verkhnokamianka, Siverskodonetsk raion","48.830390,38.292863",,"Jammer, Additional armour"
+44674,Transport,KamAZ 8x8 with armoured cabin,Destroyed,Russia,2026-04-25,"Verkhnokamianka, Siverskodonetsk raion","48.830390,38.292863",,"Additional armour, Jammer"
 44407,Drones,ZALA-Kub reconnaissance UAV,Captured,Russia,2026-04-26,,,,Loitering
 44555,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-04-26,"Belovsk raion, Kursk oblast",,,Turretless
 46095,Transport,ZiL-131,Destroyed,Russia,2026-04-26,"Huliaipole, Polohy raion","47.653943,36.277046",,
@@ -23005,9 +23012,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44437,Helicopters,Mi-8MTV-5M transport helicopter,Damaged,Russia,2026-04-29,"Babki, Rossosh raion","50.237431,39.748959",,Loitering
 44438,Helicopters,Mi-28 attack helicopter,Damaged,Russia,2026-04-29,"Babki, Rossosh raion","50.237219,39.748170",,Loitering
 44445,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2026-04-30,"Pokrovsk, Pokrovsk raion","48.26982,37.16905",,Cope cage
-44462,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-04-30,"Kramatorsk raion, Donetsk oblast",,,"Turretless, Mine plow/roller, Armour kit missing, Turtle"
+44462,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-04-30,"Kramatorsk raion, Donetsk oblast",,,"Turretless, Armour kit missing, Turtle, Mine plow/roller"
 44541,Transport,Ural-4320,Destroyed,Russia,2026-04-30,"Tavrovo, Belgorod raion","50.490681,36.575205",,"◇, Jammer, ✕"
-44593,Transport,KamAZ 6x6,Destroyed,Russia,2026-04-30,"Polkove, Mariupol raion","47.459164,37.524992",,"Cope cage, Loitering, Additional armour"
+44593,Transport,KamAZ 6x6,Destroyed,Russia,2026-04-30,"Polkove, Mariupol raion","47.459164,37.524992",,"Cope cage, Additional armour, Loitering"
 44596,Transport,9T452 transloader (for 9K57 'Uragan'),Destroyed,Russia,2026-04-30,Luhansk oblast,,,Shattered
 44464,Transport,Ural-63706-0011 'Tornado-U',Destroyed,Russia,2026-05-01,Donetsk oblast,,,Shattered
 44477,Self-propelled artillery,240mm 2S4 'Tyulpan',Destroyed,Russia,2026-05-01,"Arkhangelskoe, Shebekino raion","50.358982,36.789102",,"Shattered, Cope cage"
@@ -23021,9 +23028,10 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44468,Transport,ZiL-131,Destroyed,Russia,2026-05-03,Donetsk oblast,,,
 44469,Transport,Ural-4320,Destroyed,Russia,2026-05-03,Donetsk oblast,,,
 44480,Transport,Ural-4320,Destroyed,Russia,2026-05-03,Kherson oblast,,,Cope cage
-44712,Tanks,T-72B3 Obr. 2025,Destroyed,Russia,2026-05-03,"Kolodiazi, Kramatorsk raion","49.11805,37.86974",254th Motor Rifle Regiment,"Cope cage, Loitering"
+44712,Tanks,T-72B3 Obr. 2025,Destroyed,Russia,2026-05-03,"Kolodiazi, Kramatorsk raion","49.11805,37.86974",254th Motor Rifle Regiment,"Loitering, Cope cage"
 45551,Transport,Ural-4320,Destroyed,Russia,2026-05-03,"Svatove raion, Luhansk oblast",,,Jammer
 46440,Transport,Ural-4320,Destroyed,Russia,2026-05-03,,,,"Cope cage, Jammer"
+47116,Vessels,Project 10410B 'Svetlyak-MN' class patrol boat,Damaged,Russia,2026-05-03,"Moshchny Island, Kingisepp raion",,BOKhR-PS-FSB (Russian Coast Guard),Loitering
 44466,Transport,UAZ-452,Destroyed,Russia,2026-05-04,Belgorod oblast,,,
 44470,Transport,UAZ-3303 'Golovastik',Destroyed,Russia,2026-05-04,"Shebekino raion, Belgorod oblast",,,
 44510,"Radars, jammers",Antenna vehicle based on KamAZ 6x6 (for 35N6 'Kasta' surveillance radar),Destroyed,Russia,2026-05-04,"Yelyseivka, Berdiansk raion","46.982794,36.417490",,Loitering
@@ -23034,7 +23042,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44490,Rocket and missile artillery,107mm Type 75 towed MRL,Damaged,Russia,2026-05-05,"Kramatorsk raion, Donetsk oblast",,,
 44512,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2026-05-06,"Volodymyrivka, Svatove raion","49.607679,37.977073",,
 44529,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-05-06,,,,"Cope cage, Additional armour"
-44538,Transport,Ural-4320,Destroyed,Russia,2026-05-06,"Pryvilne, Mariupol raion","47.388389,37.539778",Southern Military District,"Cope cage, Loitering, Jammer"
+44538,Transport,Ural-4320,Destroyed,Russia,2026-05-06,"Pryvilne, Mariupol raion","47.388389,37.539778",Southern Military District,"Loitering, Cope cage, Jammer"
 44542,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-05-06,"Novoekonomichne, Pokrovsk raion",,,"Cope cage, Jammer"
 45705,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-05-06,"Torske (Lyman hromada), Kramatorsk raion","48.972960,38.014940",,
 44554,Transport,ZiL-131,Destroyed,Russia,2026-05-07,"Pokrovsk raion, Donetsk oblast",,,
@@ -23059,7 +23067,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44612,Transport,ZiL-131,Destroyed,Russia,2026-05-11,"Polohy raion, Zaporizhzhia oblast",,,Cope cage
 44613,Transport,Ural-4320,Destroyed,Russia,2026-05-11,"Polohy raion, Zaporizhzhia oblast",,,
 44640,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-11,"Preobrazhenka, Pokrovsk raion","48.11577,36.98906",,"Cope cage, Additional armour"
-45298,Engineering,IMR-2(M) combat engineering vehicle,Destroyed,Russia,2026-05-11,"Yablunivka, Kramatorsk raion","48.415681,37.662556",,"Cope cage, Jammer, Additional armour"
+45298,Engineering,IMR-2(M) combat engineering vehicle,Destroyed,Russia,2026-05-11,"Yablunivka, Kramatorsk raion","48.415681,37.662556",,"Cope cage, Additional armour, Jammer"
 44641,"Radars, jammers",1RL131-2 P-18-2 'Prima' early warning radar based on Ural-4320,Destroyed,Russia,2026-05-12,"Zakharivka, Mariupol raion","47.16824,37.02295",,Loitering
 44642,Transport,Ural-4320,Destroyed,Russia,2026-05-12,"Balka Zhuravka (Nevske), Svatove raion","49.131177,38.040278",,
 44667,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-12,"Kupiansk raion, Kharkiv oblast",,,Cope cage
@@ -23068,9 +23076,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44776,Transport,Ural-4320 tanker,Destroyed,Russia,2026-05-14,"Shyroka Balka, Mariupol raion","47.038588,37.425920",,"Shattered, Loitering"
 45649,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-05-14,"Torske (Lyman hromada), Kramatorsk raion","48.978170,37.986350",,
 46153,Transport,Ural-4320,Destroyed,Russia,2026-05-14,"Pokrovsk raion, Donetsk oblast",,,
-44681,Airplanes,Be-200 'Altair' amphibious flying boat,Destroyed,Russia,2026-05-15,"Yeysk airbase, Yeysk","46.684577,38.233368",,"Shattered, Loitering"
+44681,Airplanes,Be-200 'Altair' amphibious flying boat,Destroyed,Russia,2026-05-15,"Yeysk airbase, Yeysk","46.684577,38.233368",,"Loitering, Shattered"
 44684,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-05-15,"Synelnykove raion, Dnipropetrovsk oblast",,,"Cope cage, Additional armour"
-44930,Vessels,Project 21630 'Buyan' class corvette,Destroyed,Russia,2026-05-15,Caspian Sea,,Caspian Flotilla,"Turretless, Loitering"
+44930,Vessels,Project 21630 'Buyan' class corvette,Destroyed,Russia,2026-05-15,Caspian Sea,,Caspian Flotilla,"Loitering, Turretless"
 44692,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-05-16,"Sumy raion, Sumy oblast",,,"◇, ✕"
 44693,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-05-16,"Kupiansk raion, Kharkiv oblast",,,
 44694,Transport,Ural-4320,Destroyed,Russia,2026-05-16,"Kashtanove, Donetsk raion","48.125293,37.815441",Southern Military District,"Z, Cope cage, ☐, Jammer"
@@ -23104,7 +23112,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44794,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-05-19,"Kupiansk raion, Kharkiv oblast",,,
 44798,Transport,KrAZ-256B,Destroyed,Russia,2026-05-19,"Sumy raion, Sumy oblast",,,Cope cage
 44920,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-19,"Samsonove, Kalmiuske raion","47.102412,38.004404",Moskva (ex-Western) Military District,Loitering
-44921,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-19,"Samsonove, Kalmiuske raion",,Moskva (ex-Western) Military District,"Cope cage, Loitering, Jammer, ∆, ▲"
+44921,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-19,"Samsonove, Kalmiuske raion",,Moskva (ex-Western) Military District,"Cope cage, Jammer, ∆, Loitering, ▲"
 46201,Transport,UAZ Patriot jeep,Destroyed,Russia,2026-05-19,"Horlivka raion, Donetsk oblast",,VPVSRF (Russian Military Police),
 44770,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-05-20,"Svatove raion, Luhansk oblast",,,"Cope cage, Jammer"
 44773,Transport,Ural-43206,Destroyed,Russia,2026-05-20,"Popasna, Siverskodonetsk raion","48.636649,38.421269",,Loitering
@@ -23120,7 +23128,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45076,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-05-21,"Kupiansk raion, Kharkiv oblast",,,
 44793,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-22,"Novoazovsk, Kalmiuske raion","47.133800,38.116143",,Loitering
 44827,Anti-aircraft systems,9A33BM TELAR (for 9K33M3 'Osa-AKM'),Destroyed,Russia,2026-05-22,"Donetsk, Donetsk raion",,,"Turretless, Loitering"
-46896,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-05-22,"Novoekonomichne, Pokrovsk raion",,,"Cope cage, Additional armour, Hedgehog"
+46896,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-05-22,"Novoekonomichne, Pokrovsk raion",,,"Cope cage, Hedgehog, Additional armour"
 46948,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-05-22,"Novoekonomichne, Pokrovsk raion","48.337386,37.322678",,Flipped
 46984,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-05-22,"Novoekonomichne, Pokrovsk raion","48.337386,37.322678",,"Turretless, Shattered, Cope cage"
 44828,Transport,KamAZ 6x6 tanker,Destroyed,Russia,2026-05-23,"Preslav, Berdiansk raion","46.733885,36.206204",,"Cope cage, Loitering"
@@ -23129,7 +23137,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44850,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-23,,,,"Cope cage, Additional armour"
 45704,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-23,"Torske (Lyman hromada), Kramatorsk raion","48.977620,38.011700",,Additional armour
 44851,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-24,"Lebedynske, Mariupol raion","47.110970,37.767208",,Loitering
-44852,Transport,KamAZ 4x4,Destroyed,Russia,2026-05-24,"Lebedynske, Mariupol raion","47.111251,37.766083",,"Loitering, Jammer, ∆, ▲"
+44852,Transport,KamAZ 4x4,Destroyed,Russia,2026-05-24,"Lebedynske, Mariupol raion","47.111251,37.766083",,"Loitering, ∆, ▲, Jammer"
 44853,Engineering,MTO-AT maintenance vehicle,Destroyed,Russia,2026-05-24,"Novoivanivka, Melitopol raion","46.795432,35.531971",,"Loitering, KUNG"
 44854,Rocket and missile artillery,220mm 9P140-1 combat vehicle (for 9K57-1 'Uragan-1'),Destroyed,Russia,2026-05-24,Kursk oblast,,,
 44857,"Radars, jammers",5N63S target acquisition radar (for 75R6 S-300PS),Destroyed,Russia,2026-05-24,,,,Loitering
@@ -23138,9 +23146,9 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44881,Transport,ZiL-131,Destroyed,Russia,2026-05-24,"Polohy raion, Zaporizhzhia oblast",,,
 44882,Transport,Ural-4320,Destroyed,Russia,2026-05-24,"Polohy raion, Zaporizhzhia oblast",,,Cope cage
 44911,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-24,"Novoazovsk, Kalmiuske raion",,,"Flipped, Loitering"
-44996,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-24,"Osypenko, Berdiansk raion","46.942057,36.884686",,"V, Loitering"
+44996,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-24,"Osypenko, Berdiansk raion","46.942057,36.884686",,"Loitering, V"
 44883,Transport,Ural-4320,Destroyed,Russia,2026-05-25,"Hrozne, Horlivka raion","48.30436,38.31625",,"Cope cage, Jammer"
-44919,Engineering,REM-KL recovery vehicle,Destroyed,Russia,2026-05-25,"Khartsyzk, Donetsk raion","48.02933,38.11686",Central Military District,"O, ☐, Loitering, Jammer"
+44919,Engineering,REM-KL recovery vehicle,Destroyed,Russia,2026-05-25,"Khartsyzk, Donetsk raion","48.02933,38.11686",Central Military District,"Loitering, ☐, O, Jammer"
 44997,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-05-25,"Ivanivka (Lyman hromada), Kramatorsk raion","49.121330,37.916450",,
 44999,Transport,GAZ-66,Destroyed,Russia,2026-05-25,"Polohy raion, Zaporizhzhia oblast",,,
 45267,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2026-05-25,"Vysoke, Polohy raion","47.660081,36.405242",,"Turretless, Jammer"
@@ -23154,7 +23162,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44936,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-05-27,"Polohy raion, Zaporizhzhia oblast",,,Jammer
 44937,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-05-27,"Kadiivka, Alchevsk raion","48.553583,38.727259",,Loitering
 44938,Transport,Ural-63706-0122 'Tornado-U',Damaged,Russia,2026-05-27,"Debaltseve, Horlivka raion","48.35345,38.472052",Southern Military District,"Flipped, Loitering"
-44939,Transport,Ural-4320,Destroyed,Russia,2026-05-27,"Debaltseve, Horlivka raion","48.35318,38.471169",,"Cope cage, Loitering, Jammer"
+44939,Transport,Ural-4320,Destroyed,Russia,2026-05-27,"Debaltseve, Horlivka raion","48.35318,38.471169",,"Cope cage, Jammer, Loitering"
 45036,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-05-27,,,,Jammer
 45037,Transport,ZiL-131,Destroyed,Russia,2026-05-27,,,,Cope cage
 45038,Tanks,T-62 Obr. 1967,Destroyed,Russia,2026-05-27,,,,Additional armour
@@ -23167,7 +23175,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45006,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-05-29,"Polohy raion, Zaporizhzhia oblast",,,Jammer
 45007,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-05-29,"Saky airbase, Yevpatoriia raion","45.101203,33.604541",,Loitering
 45008,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-29,"Smolianynove, Siverskodonetsk raion","48.939519,38.707465",,"Z, ☐, Loitering"
-45013,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-29,Zaporizhzhia oblast,,,"Z, ☐, Loitering"
+45013,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-29,Zaporizhzhia oblast,,,"Loitering, Z, ☐"
 45018,"Radars, jammers",Antenna vehicle (for 48Ya6-K1 'Podlet-K1' surveillance radar),Damaged,Russia,2026-05-29,,,,
 45104,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-29,"Yampolivka, Kramatorsk raion","49.076000,37.998010",,"Cope cage, Jammer"
 45128,Tanks,T-72*,Destroyed,Russia,2026-05-29,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Additional armour"
@@ -23184,7 +23192,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45039,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-05-31,"Sribne, Pokrovsk raion","48.119508,37.009183",,"Cope cage, Jammer"
 45125,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-05-31,,,,Flipped
 45168,"Radars, jammers",1RL131-2 P-18-2 'Prima' early warning radar based on Ural-4320,Damaged,Russia,2026-05-31,,,,Loitering
-45225,Transport,GAZ-3308 'Sadko',Destroyed,Russia,2026-05-31,"Kupiansk raion, Kharkiv oblast",,,"Z, Cope cage, ◇, Jammer"
+45225,Transport,GAZ-3308 'Sadko',Destroyed,Russia,2026-05-31,"Kupiansk raion, Kharkiv oblast",,,"Cope cage, Jammer, Z, ◇"
 45434,Transport,KamAZ 6x6,Destroyed,Russia,2026-05-31,South Ukraine,,,Loitering
 45435,Transport,Ural-5323,Destroyed,Russia,2026-05-31,South Ukraine,,,"Loitering, Jammer"
 46442,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-05-31,Donetsk oblast,,,"Mine plow/roller, Cope cage, Jammer, Additional armour, Hedgehog"
@@ -23196,14 +23204,14 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45078,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.092028,37.819745",5th Separate Control Battalion,"Loitering, KUNG"
 45079,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.092054,37.819794",5th Separate Control Battalion,Loitering
 45080,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.092528,37.819761",5th Separate Control Battalion,"Loitering, KUNG"
-45081,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.091677,37.818941",5th Separate Control Battalion,"Cope cage, Loitering"
-45082,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.091946,37.819548",5th Separate Control Battalion,"Cope cage, Loitering"
+45081,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.091677,37.818941",5th Separate Control Battalion,"Loitering, Cope cage"
+45082,Transport,Unknown truck,Destroyed,Russia,2026-06-02,"Shyrokyne, Mariupol raion","47.091946,37.819548",5th Separate Control Battalion,"Loitering, Cope cage"
 45087,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-02,"Polohy raion, Zaporizhzhia oblast",,,
 45090,Transport,Ural-4320 fuel tanker,Destroyed,Russia,2026-06-02,"Tarasivka, Berdiansk raion","47.038979,36.181204",,Loitering
-45192,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-06-02,"Terny, Kramatorsk raion","49.090468,38.040709",,"Z, Cope cage, ◇"
+45192,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-06-02,"Terny, Kramatorsk raion","49.090468,38.040709",,"Cope cage, Z, ◇"
 45092,Vessels,Project 20380 'Steregushchiy' class corvette,Damaged,Russia,2026-06-03,"Kronstadt naval base, Saint Petersburg","59.981242,29.790271",Baltic Fleet,Loitering
 45097,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-06-03,Donetsk oblast,,,Jammer
-45127,Transport,KrAZ-260-based vehicle,Destroyed,Russia,2026-06-03,"Vovchansk, Chuhuiv raion","50.292920,36.945975",,"Mine plow/roller, Cope cage, ◇, Jammer, Improvised, ✕"
+45127,Transport,KrAZ-260-based vehicle,Destroyed,Russia,2026-06-03,"Vovchansk, Chuhuiv raion","50.292920,36.945975",,"Mine plow/roller, Cope cage, Jammer, Improvised, ✕, ◇"
 45240,Infantry fighting vehicles,BMP-1AM 'Basurmanin',Destroyed,Russia,2026-06-03,,,,"Cope cage, Jammer, Additional armour"
 45241,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-06-03,,,,
 45630,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-06-03,"Novoekonomichne, Pokrovsk raion","48.340135,37.325420",,Cope cage
@@ -23212,7 +23220,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45134,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-04,"Solntsevka, Belgorod raion","50.285477,36.588139",,Jammer
 45648,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-06-04,"Lyman Pershyi, Kupiansk raion","49.808580,37.720430",,
 45131,Transport,KrAZ-260-based vehicle,Destroyed,Russia,2026-06-05,"Vovchansk, Chuhuiv raion","50.291872,36.937116",,"Cope cage, ◇, Jammer, Improvised, ✕"
-45193,Transport,ATS-59G artillery tractor,Destroyed,Russia,2026-06-05,"Balka Zhuravka (Nevske), Svatove raion","49.153750,38.030550",,"Cope cage, Jammer, Expanded cabin"
+45193,Transport,ATS-59G artillery tractor,Destroyed,Russia,2026-06-05,"Balka Zhuravka (Nevske), Svatove raion","49.153750,38.030550",,"Jammer, Expanded cabin, Cope cage"
 45338,Other,'Omich(-2)' multifunctional UGV,Destroyed,Russia,2026-06-05,"Balka Zhuravka (Nevske), Svatove raion","49.153650,38.030314",,
 46010,Transport,GAZ-66,Destroyed,Russia,2026-06-05,,,,
 46218,Transport,KamAZ 6x6,Damaged,Russia,2026-06-05,South Ukraine,,,"∆, ▲"
@@ -23243,7 +23251,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45330,Tanks,T-62*,Destroyed,Russia,2026-06-10,"Pokrovsk raion, Donetsk oblast",,,"Mine plow/roller, Cope cage"
 45830,Transport,GAZ-66,Destroyed,Russia,2026-06-10,"Kramatorsk raion, Donetsk oblast",,164th Motor Rifle Brigade,"Z, Cope cage, ◇, Jammer"
 45226,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-06-11,"Kupiansk raion, Kharkiv oblast",,,
-45238,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-06-11,Kherson oblast,,70th Motor Rifle Division,"Cope cage, Additional armour"
+45238,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-06-11,Kherson oblast,,70th Motor Rifle Division,"Additional armour, Cope cage"
 45239,Transport,Ural-4320,Destroyed,Russia,2026-06-11,"Berezove, Volnovakha raion","47.769117,37.590483",,Cope cage
 45429,Tanks,T-62M,Destroyed,Russia,2026-06-11,"Nove, Kramatorsk raion","49.146760,37.848250",59th Guards Tank Regiment,"Cope cage, Jammer, Additional armour"
 45646,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-06-11,"Kolomyichykha, Svatove raion","49.429540,38.033430",,Cope cage
@@ -23263,7 +23271,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45259,Transport,ZiL-131,Destroyed,Russia,2026-06-14,"Temyrivka, Polohy raion",,,
 45261,Transport,KrAZ-255B,Destroyed,Russia,2026-06-14,"Malynivka, Pokrovsk raion","48.330684,37.460961",,"Cope cage, Jammer"
 45262,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-14,"Malynivka, Pokrovsk raion","48.332177,37.458748",,Jammer
-45263,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-14,"Malynivka, Pokrovsk raion","48.331567,37.458690",,"Cope cage, Flipped, Jammer"
+45263,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-14,"Malynivka, Pokrovsk raion","48.331567,37.458690",,"Cope cage, Jammer, Flipped"
 45264,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-14,"Vysoke, Polohy raion","47.640438,36.417206",,Jammer
 45265,Transport,ZiL-131,Destroyed,Russia,2026-06-14,"Vysoke, Polohy raion","47.660211,36.406988",,Cope cage
 45266,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-06-14,"Vysoke, Polohy raion","47.660211,36.406988",,Jammer
@@ -23309,7 +23317,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45439,Transport,Ural-4320,Destroyed,Russia,2026-06-21,,,,Cope cage
 45440,Transport,Ural-4320,Destroyed,Russia,2026-06-21,,,,
 45445,Transport,Ural-4320,Destroyed,Russia,2026-06-21,Luhansk oblast,,,"Z, Cope cage, ☐"
-45611,Transport,KamAZ 6x6,Damaged,Russia,2026-06-21,Kherson oblast,,,"Cope cage, Jammer, Additional armour"
+45611,Transport,KamAZ 6x6,Damaged,Russia,2026-06-21,Kherson oblast,,,"Cope cage, Additional armour, Jammer"
 45624,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-06-21,"Novoekonomichne, Pokrovsk raion","48.333700,37.324900",,Cope cage
 45625,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-06-21,"Novoekonomichne, Pokrovsk raion","48.333700,37.324900",,"Z, Cope cage"
 45820,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-06-21,"Pokrovsk raion, Donetsk oblast",,,Jammer
@@ -23322,7 +23330,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45451,Transport,KamAZ-65117,Destroyed,Russia,2026-06-23,"Chonhar, Henichesk raion","45.987420,34.553633",,Loitering
 45452,Drones,Orion UCAV,Destroyed,Russia,2026-06-23,"Kerch airport, Kerch","45.370047,36.402677",,Loitering
 45530,Tanks,T-72*,Destroyed,Russia,2026-06-23,Belgorod oblast,,,"Cope cage, Jammer"
-45531,Transport,KrAZ-255-based vehicle,Destroyed,Russia,2026-06-23,"Vovchansk, Chuhuiv raion","50.295148,36.939199",,"Improvised, Additional armour"
+45531,Transport,KrAZ-255-based vehicle,Destroyed,Russia,2026-06-23,"Vovchansk, Chuhuiv raion","50.295148,36.939199",,"Additional armour, Improvised"
 45541,Drones,Orion UCAV,Destroyed,Russia,2026-06-23,"Kerch airport, Kerch","45.365891,36.409181",,Loitering
 45542,Drones,Orion UCAV,Destroyed,Russia,2026-06-23,"Kerch airport, Kerch","45.365200,36.414459",,Loitering
 45957,Towed artillery,Unknown towed artillery,Destroyed,Russia,2026-06-23,"Kolodiazi, Kramatorsk raion","49.118600,37.867600",,
@@ -23426,6 +23434,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45831,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-10,"Kramatorsk raion, Donetsk oblast",,,Jammer
 45841,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-07-10,"Vovchansk, Chuhuiv raion","50.302250,36.928444",,"Mine plow/roller, Cope cage, Expanded cabin, Hedgehog"
 46307,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-07-10,"Inzivka, Berdiansk raion",,,
+40782,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-07-11,"Novopavlivka, Synelnykove raion","48.134353,36.796447",80th Guards Tank Regiment,"Cope cage, Additional armour, Hedgehog"
 45842,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-11,"Polohy raion, Zaporizhzhia oblast",,,
 45889,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-07-11,"Yampil, Kramatorsk raion","48.948869,38.030128",,
 46145,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-07-11,"Fedorivka, Volnovakha raion","47.943841,36.776824",,"Cope cage, Jammer, Hedgehog"
@@ -23435,7 +23444,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 45849,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-07-12,"Vodiane Druhe, Kramatorsk raion","48.327204,37.482871",,Cope cage
 45850,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-07-12,"Vodiane Druhe, Kramatorsk raion","48.326410,37.480929",,Jammer
 45852,Rocket and missile artillery,MT-LB(V) with Type-75 MRL,Destroyed,Russia,2026-07-12,,,,"Cope cage, Improvised, Additional armour"
-40782,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-07-13,"Novopavlivka, Synelnykove raion","48.134353,36.796447",80th Guards Tank Regiment,"Cope cage, Hedgehog"
 45884,Anti-aircraft systems,5P85SM2-01 TEL (for 40R6 S-400 'Triumf'),Destroyed,Russia,2026-07-13,"Cheliadinove, Kerch raion","45.221111,36.367278",,Loitering
 45886,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-07-13,"Kramatorsk raion, Donetsk oblast",,,Loitering
 45888,Tanks,T-80BV,Destroyed,Russia,2026-07-13,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Additional armour"
@@ -23461,9 +23469,10 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46092,Drones,'Orlan-10' reconnaissance UAV,Captured,Russia,2026-07-17,,,,Damaged
 46437,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-17,"Alchevsk raion, Luhansk oblast",,,Loitering
 46787,Transport,Ural-4320,Damaged,Russia,2026-07-17,,,,"Loitering, Jammer, Additional armour"
+47077,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-07-17,"Izium raion, Kharkiv oblast",,,"Turretless, PL-1, Armour kit missing"
 46023,Other,'Omich(-2)' multifunctional UGV,Damaged,Russia,2026-07-18,"Serebrianka reserve, Siverskodonetsk raion",,,
 46370,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-07-18,,,,Flipped
-46081,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-07-19,Kursk oblast,,,"Cope cage, ◇, Jammer, ✕"
+46081,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-07-19,Kursk oblast,,,"Cope cage, ◇, ✕, Jammer"
 46099,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-07-19,"Shevchenko Pershe, Pokrovsk raion","48.381137,37.420216",,Shattered
 46132,Transport,ZiL-131,Destroyed,Russia,2026-07-19,Donetsk oblast,,,Cope cage
 46024,Anti-aircraft systems,9A331M TLAR (for 9K332 'Tor-M2'),Destroyed,Russia,2026-07-20,"Beregovoy, Yeysk raion","46.682171,38.117693",,Loitering
@@ -23508,7 +23517,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46216,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-28,"Vremivka, Volnovakha raion","47.839090,36.789580",,"Cope cage, Jammer"
 46224,Tanks,T-72B3 Obr. 2025,Destroyed,Russia,2026-07-28,Belgorod oblast,,,"Turtle, Hedgehog"
 46229,Infantry mobility vehicles,GAZ-233014 'Tigr',Destroyed,Russia,2026-07-28,,,119th Guards Airborne Regiment,"Cope cage, Jammer, Additional armour"
-46223,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-07-29,Belgorod oblast,,,"Cope cage, ◇, ✕, Hedgehog"
+46223,Tanks,Unknown T-72 Obr. 2022,Destroyed,Russia,2026-07-29,Belgorod oblast,,,"Cope cage, Hedgehog, ◇, ✕"
 46225,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-07-30,,,,Loitering
 46226,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-07-30,,,,Cope cage
 46230,Self-propelled artillery,152mm 2S44 'Giatsint-K',Destroyed,Russia,2026-07-30,"Tavilzhanka, Kupiansk raion","49.851859,37.755541",,"Cope cage, Additional armour"
@@ -23522,7 +23531,8 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46255,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-31,"Yablunivka, Kramatorsk raion",,,Jammer
 46309,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-07-31,"Polohy raion, Zaporizhzhia oblast",,,"Cope cage, Expanded cabin, Removed turret"
 46938,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-07-31,"Malynivka, Pokrovsk raion",,,
-46248,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-02,"Prymorsk, Berdiansk raion","46.746152,36.355262",,"Z, ☐, Flipped"
+47059,Engineering,IMR-2(M) combat engineering vehicle,Destroyed,Russia,2026-08-01,"Pokrovsk raion, Donetsk oblast",,,
+46248,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-02,"Prymorsk, Berdiansk raion","46.746152,36.355262",,"Flipped, ☐, Z"
 46250,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2026-08-02,"Balka Zhuravka (Nevske), Svatove raion","49.167659,37.972762",,Cope cage
 46251,Transport,ZiL-131,Destroyed,Russia,2026-08-02,"Polohy raion, Zaporizhzhia oblast",,,
 46252,Transport,Ural-4320,Destroyed,Russia,2026-08-02,"Bakhmut raion, Donetsk oblast",,,"Cope cage, Jammer"
@@ -23544,7 +23554,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46533,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-08-07,Zaporizhzhia oblast,,,Cope cage
 46534,Towed artillery,122mm 2A18 D-30 howitzer,Damaged,Russia,2026-08-07,Zaporizhzhia oblast,,,
 46696,Transport,KrAZ-255-based vehicle,Damaged,Russia,2026-08-07,South Ukraine,,,"Cope cage, Loitering"
-46380,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-08-08,"Grafovka, Shebekino raion","50.384797,36.722793",,"Turretless, Cope cage, ◇, ✕"
+46380,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-08-08,"Grafovka, Shebekino raion","50.384797,36.722793",,"Turretless, Cope cage, ✕, ◇"
 46381,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-08-08,"Grafovka, Shebekino raion","50.384797,36.722793",,"Cope cage, Additional armour"
 46393,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-08-08,Kursk oblast,,,"Cope cage, Jammer"
 46394,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-08-08,Kursk oblast,,,
@@ -23563,17 +23573,19 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46686,Tanks,Unknown tank,Destroyed,Russia,2026-08-12,"Komar, Volnovakha raion","47.964581,36.797255",,Cope cage
 46499,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-13,"Siverskodonetsk, Siverskodonetsk raion","48.945005,38.543592",,Cope cage
 46503,Transport,UAZ-452,Destroyed,Russia,2026-08-13,"Brianka, Alchevsk raion","48.499222,38.691028",,"Cope cage, Loitering, Jammer"
-46504,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-08-13,"Vozdvyzhivka, Polohy raion","47.733305,36.080376",,"Jammer, Turtle, Hedgehog"
+46504,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-08-13,"Vozdvyzhivka, Polohy raion","47.733305,36.080376",,"Jammer, Hedgehog, Turtle"
 46505,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-08-13,"Vozdvyzhivka, Polohy raion","47.734320,36.072162",,"Turtle, Hedgehog"
 46768,Transport,9T243M transloader (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-08-13,"Yuriivka, Alchevsk raion","48.491093,39.002735",,Cope cage
 46501,Transport,Ural-4320,Destroyed,Russia,2026-08-14,"Stroitel, Yakovlevo raion","50.789538,36.454491",,Loitering
 46502,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-14,"Sofiivka (Sofiivka hromada), Berdiansk raion","46.906740,36.361460",,Loitering
 46690,Transport,Ural-4320,Destroyed,Russia,2026-08-14,,,,Loitering
 47009,Anti-aircraft systems,9A83M2 TELAR (for 9K81M2 S-300V4),Destroyed,Russia,2026-08-14,"Volnukhyne, Luhansk raion","48.349400,39.268720",,Loitering
+47057,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-15,Donetsk oblast,,,
+47058,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-08-15,Donetsk oblast,,,"Turretless, Additional armour"
 46506,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-08-16,"Novoielyzavetivka, Pokrovsk raion","48.122985,37.060316",,
 46507,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-08-16,"Kalynove, Pokrovsk raion","48.139018,37.450828",,Jammer
 46509,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-08-16,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Jammer"
-46510,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-08-16,South Ukraine,,,"Cope cage, Loitering"
+46510,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-08-16,South Ukraine,,,"Loitering, Cope cage"
 46511,Transport,Ural-4320,Destroyed,Russia,2026-08-16,"Cherkasskaya Konopelka, Sudzha raion","51.137509,35.324460",,"Cope cage, Additional armour"
 46512,Tanks,T-72B3 Obr. 2025,Destroyed,Russia,2026-08-16,"Kramatorsk raion, Donetsk oblast",,,Cope cage
 46924,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-16,Donetsk oblast,,Central Military District,"Cope cage, KUNG"
@@ -23610,7 +23622,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46679,Drones,ZALA Z-16 (421-16Е) reconnaissance UAV,Captured,Russia,2026-08-25,,,,
 46687,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-25,"Novonykanorivka, Svatove raion","49.649383,38.233286",,"Cope cage, Loitering"
 46702,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-25,"Bilokurakyne, Svatove raion","49.551644,38.724849",,"Cope cage, Flipped, Loitering, Jammer"
-46688,Rocket and missile artillery,220mm 9P140 BM-27 (for 9K57 'Uragan'),Destroyed,Russia,2026-08-26,"Serebrianka reserve, Siverskodonetsk raion","48.967999,38.183149",,"Cope cage, Loitering, Jammer"
+46688,Rocket and missile artillery,220mm 9P140 BM-27 (for 9K57 'Uragan'),Destroyed,Russia,2026-08-26,"Serebrianka reserve, Siverskodonetsk raion","48.967999,38.183149",,"Loitering, Cope cage, Jammer"
 46781,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-08-26,,,,
 46919,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-08-26,"Samsonove, Kalmiuske raion","47.104034,37.978997",,"Cope cage, Loitering"
 46684,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-08-27,"Polohy raion, Zaporizhzhia oblast",,,
@@ -23618,7 +23630,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46712,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-08-28,"Pokrovsk raion, Donetsk oblast",,,
 46763,Transport,GAZ-66,Destroyed,Russia,2026-08-28,"Pokrovsk raion, Donetsk oblast",,,Cope cage
 46716,Anti-aircraft systems,72V6M-E combat vehicle (for 96K6ME 'Pantsir-S1M'),Destroyed,Russia,2026-08-29,"Kerch, Kerch raion",,,Loitering
-46762,Tanks,T-62*,Destroyed,Russia,2026-08-29,,,,"Cope cage, Jammer, Additional armour"
+46762,Tanks,T-62*,Destroyed,Russia,2026-08-29,,,,"Cope cage, Additional armour, Jammer"
 46922,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-08-29,Donetsk oblast,,Southern Military District,
 46706,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-30,"Sumy raion, Sumy oblast",,30th Motor Rifle Regiment,
 46707,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2026-08-30,Kursk oblast,,,"Z, Cope cage, Hedgehog"
@@ -23626,23 +23638,23 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46709,Transport,Ural-4320,Destroyed,Russia,2026-08-30,"Svatove raion, Luhansk oblast",,,Cope cage
 46710,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-08-30,"Svatove raion, Luhansk oblast",,,"Z, Cope cage, ◇, Jammer"
 46711,Transport,Ural-4320,Destroyed,Russia,2026-08-30,"Svatove raion, Luhansk oblast",,,Jammer
-46715,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-30,"Yeysk airbase, Yeysk","46.674547,38.166688",,"Turretless, V, Cope cage, ☐, Loitering"
+46715,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-30,"Yeysk airbase, Yeysk","46.674547,38.166688",,"Cope cage, Loitering, V, ☐, Turretless"
 46777,Other,'Impuls-M' Obr. 2026 universal tracked platform,Destroyed,Russia,2026-08-31,"Kupiansk raion, Kharkiv oblast",,,
 46855,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-08-31,"Bakhmut raion, Donetsk oblast",,,Cope cage
 46875,"Radars, jammers",R-330Zh 'Zhytel' electronic warfare station,Destroyed,Russia,2026-08-31,"Rubizhne, Siverskodonetsk raion",,,
 46951,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-31,"Chaltyr, Myasnikov raion",,,Loitering
-46952,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-31,"Saint Petersburg, Leningrad oblast",,,"Turretless, Loitering"
+46952,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-31,"Saint Petersburg, Leningrad oblast",,,"Loitering, Turretless"
 47001,Tanks,T-72*,Destroyed,Russia,2026-08-31,"Zaporizhzhia nuclear power plant, Enerhodar",,,"Cope cage, Additional armour"
 47002,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-08-31,"Zaporizhzhia nuclear power plant, Enerhodar",,Central Military District,
 47003,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-08-31,"Zaporizhzhia nuclear power plant, Enerhodar",,,
 47004,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-08-31,"Zaporizhzhia nuclear power plant, Enerhodar",,,
 46798,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-02,,,,
 46933,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Damaged,Russia,2026-09-02,"Baranykivka, Svatove raion","49.245280,38.355740",,
-47010,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-02,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Expanded cabin, Additional armour, Removed turret, Hedgehog"
+47010,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-02,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Expanded cabin, Additional armour, Hedgehog, Removed turret"
 46794,Self-propelled artillery,152mm 2S43 'Malva',Destroyed,Russia,2026-09-03,"Shirokii, Belgorod raion","50.484194,36.293750",,Jammer
 46797,Anti-aircraft systems,9A316 TEL (for 9K317 'Buk-M2'),Destroyed,Russia,2026-09-03,"Ivanivka, Svatove raion","49.291490,38.338270",,Cope cage
 46804,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-03,South Ukraine,,,
-46806,Anti-aircraft systems,5P85D or S TEL (for 75R6 S-300PS),Destroyed,Russia,2026-09-03,"Sirius, Krasnodar krai","43.388299,40.005066",1721st Anti-Aircraft Missile Regiment,"Shattered, Loitering"
+46806,Anti-aircraft systems,5P85D or S TEL (for 75R6 S-300PS),Destroyed,Russia,2026-09-03,"Sirius, Krasnodar krai","43.388299,40.005066",1721st Anti-Aircraft Missile Regiment,"Loitering, Shattered"
 46877,Helicopters,Unknown helicopter,Destroyed,Russia,2026-09-03,"Sochi airport, Sochi","43.437940,39.937694",,Loitering
 46947,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-03,"Pokrovsk raion, Donetsk oblast",,,"Cope cage, Jammer"
 46807,Tanks,T-90M 'Proryv',Destroyed,Russia,2026-09-04,,,,
@@ -23660,7 +23672,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion","51.266600,34.889770",,Cope cage
 46946,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-07,"Pokrovsk raion, Donetsk oblast",,,
 46934,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Pokrovsk raion, Donetsk oblast",,,Cope cage
-46950,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-09-08,"Chervonopopivka, Siverskodonetsk raion","49.134156,38.082890",,"Turretless, Z, ◇, Turtle, Additional armour"
+46950,Infantry fighting vehicles,BMP-2(K),Destroyed,Russia,2026-09-08,"Chervonopopivka, Siverskodonetsk raion","49.134156,38.082890",,"Z, ◇, Turtle, Additional armour, Turretless"
 46953,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-08,"Zaoleshenka, Sudzha raion","51.222043,35.240041",,Cope cage
 46490,Vessels,Project 11356R 'Burevestnik' class frigate,Damaged,Russia,2026-09-09,"Novorossiysk, Novorossiysk okrug","44.715252,37.832764",30th Surface Ship Division,Loitering
 46990,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-09,"Kupiansk raion, Kharkiv oblast",,,
@@ -23670,7 +23682,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46988,Transport,KrAZ-255B,Destroyed,Russia,2026-09-10,"Valuyki raion, Belgorod oblast",,,
 46989,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-10,Donetsk oblast,,,"Cope cage, Jammer"
 47008,Transport,ZiL-131,Destroyed,Russia,2026-09-10,"Chuhuiv raion, Kharkiv oblast",,,Cope cage
-47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,"◇, ✕"
+47000,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-11,Kursk oblast,,,"✕, ◇"
 47006,Transport,Ural-4320,Destroyed,Russia,2026-09-11,"Chervonopopivka, Siverskodonetsk raion","49.100729,38.088392",,Cope cage
 47056,Engineering,BREM-L 'Beglyanka' armoured recovery vehicle,Destroyed,Russia,2026-09-11,Donetsk oblast,,,"Cope cage, Jammer"
 47154,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2026-09-11,"Dorozhnianka, Polohy raion",,,"Loitering, Turtle, Hedgehog"
@@ -23699,4 +23711,3 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,Loitering
 47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,Loitering
 47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,"Vesele (Molochansk hromada), Polohy raion","47.171928,35.708875",,"Loitering, Additional armour"
-47160,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-09-20,,,,

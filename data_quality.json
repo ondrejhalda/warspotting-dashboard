@@ -1,11 +1,11 @@
 {
-  "raw_records": 23701,
-  "analytical_records": 23701,
+  "raw_records": 23712,
+  "analytical_records": 23712,
   "excluded_lost_by": 0,
   "excluded_ids": [],
-  "last_update": "2026-09-21 06:23:13",
+  "last_update": "2026-09-21 10:42:34",
   "equipment_categories": 18,
-  "weekly_rows": 2588,
+  "weekly_rows": 2589,
   "new_equipment_categories": [],
   "validation_status": "OK",
   "validation_detail": "OK"
