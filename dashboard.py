@@ -30,6 +30,7 @@
 from datetime import date, timedelta
 from pathlib import Path
 import time
+import json
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -46,7 +47,18 @@ START_DATE = date(2022, 2, 24)
 
 REFRESH_DAYS = 10
 
-REQUEST_DELAY = 1.5
+REQUEST_DELAY = 1.1
+
+# Full source reconciliation is enabled to detect historical
+# records added after their original loss date.
+FULL_SOURCE_RECONCILIATION = True
+
+# Safety switch for the first production verification run.
+# Missing source records are added automatically, while local-only
+# records are preserved until the source snapshot behaviour is confirmed.
+REMOVE_LOCAL_ONLY_RECORDS = False
+
+SYNC_QUALITY_FILE = Path("sync_quality.json")
 
 RAW_FILE = Path("warspotting_raw.csv")
 WEEKLY_FILE = Path("weekly_losses.csv")
@@ -492,24 +504,559 @@ def update_existing_dataset(df):
     return combined
 
 
+
+# ============================================================
+# SOURCE RECONCILIATION
+# ============================================================
+
+def get_full_source_snapshot():
+    """
+    Download the complete current Russian-loss snapshot using
+    WarSpotting's ID-based endpoint.
+
+    The endpoint returns batches of up to 100 records. The next
+    request starts at max(returned_id) + 1.
+
+    The result is used as a reconciliation source only after
+    basic integrity checks have passed.
+    """
+
+    print()
+    print("=" * 60)
+    print("FULL SOURCE RECONCILIATION")
+    print("=" * 60)
+
+    records = []
+    cursor = 1
+    batch_number = 0
+
+    while True:
+
+        batch_number += 1
+
+        url = f"{BASE_URL}/losses/russia/{cursor}"
+
+        print(
+            f"  Source batch {batch_number:03d} | "
+            f"starting ID {cursor}"
+        )
+
+        data = api_get(url)
+
+        losses = data.get("losses", [])
+
+        if not losses:
+            break
+
+        records.extend(losses)
+
+        ids = [
+            int(record["id"])
+            for record in losses
+            if record.get("id") is not None
+        ]
+
+        if not ids:
+            raise RuntimeError(
+                "Source batch contains records but no valid IDs."
+            )
+
+        batch_min_id = min(ids)
+        batch_max_id = max(ids)
+
+        print(
+            f"    Received: {len(losses):,} | "
+            f"ID range: {batch_min_id} -> {batch_max_id}"
+        )
+
+        if batch_max_id < cursor:
+            raise RuntimeError(
+                "Source ID pagination did not advance."
+            )
+
+        if len(losses) < 100:
+            break
+
+        cursor = batch_max_id + 1
+
+        time.sleep(REQUEST_DELAY)
+
+    source_df = pd.DataFrame(records)
+
+    if source_df.empty:
+        raise RuntimeError(
+            "Full source reconciliation returned zero records."
+        )
+
+    required_columns = [
+        "id",
+        "date",
+        "type",
+        "model",
+        "status",
+        "lost_by",
+        "nearest_location",
+    ]
+
+    missing_columns = [
+        column
+        for column in required_columns
+        if column not in source_df.columns
+    ]
+
+    if missing_columns:
+        raise RuntimeError(
+            "Source reconciliation is missing columns: "
+            f"{missing_columns}"
+        )
+
+    source_df["id"] = pd.to_numeric(
+        source_df["id"],
+        errors="coerce"
+    )
+
+    if source_df["id"].isna().any():
+        raise RuntimeError(
+            "Source reconciliation contains invalid IDs."
+        )
+
+    source_df["id"] = source_df["id"].astype("int64")
+
+    duplicate_ids = int(
+        source_df["id"].duplicated().sum()
+    )
+
+    if duplicate_ids > 0:
+        raise RuntimeError(
+            "Source reconciliation returned duplicate IDs: "
+            f"{duplicate_ids}"
+        )
+
+    source_df["date"] = pd.to_datetime(
+        source_df["date"],
+        errors="coerce"
+    )
+
+    invalid_dates = int(
+        source_df["date"].isna().sum()
+    )
+
+    if invalid_dates > 0:
+        raise RuntimeError(
+            "Source reconciliation contains invalid dates: "
+            f"{invalid_dates}"
+        )
+
+    return source_df
+
+
+def save_sync_quality(
+    source_df,
+    source_in_scope,
+    local_in_scope,
+    missing_ids,
+    extra_ids,
+    final_df,
+    status,
+    detail,
+):
+    """
+    Save reconciliation metadata separately from data_quality.json.
+
+    equipment_plot.py currently owns data_quality.json, so this file
+    intentionally remains separate for this controlled change.
+    """
+
+    payload = {
+        "source_all_records": int(len(source_df)),
+        "source_records_in_scope": int(len(source_in_scope)),
+        "raw_records_before_sync": int(len(local_in_scope)),
+        "raw_records_after_sync": int(len(final_df)),
+        "missing_source_ids": [
+            int(value)
+            for value in missing_ids
+        ],
+        "extra_local_ids": [
+            int(value)
+            for value in extra_ids
+        ],
+        "missing_source_count": int(len(missing_ids)),
+        "extra_local_count": int(len(extra_ids)),
+        "sync_difference_before": int(
+            len(source_in_scope) - len(local_in_scope)
+        ),
+        "sync_difference_after": int(
+            len(source_in_scope) - len(final_df)
+        ),
+        "source_max_id": int(source_df["id"].max()),
+        "raw_max_id_before": (
+            int(local_in_scope["id"].max())
+            if not local_in_scope.empty
+            else None
+        ),
+        "raw_max_id_after": (
+            int(final_df["id"].max())
+            if not final_df.empty
+            else None
+        ),
+        "last_date_in_source_scope": (
+            source_in_scope["date"].max()
+            .date()
+            .isoformat()
+            if not source_in_scope.empty
+            else None
+        ),
+        "validation_status": status,
+        "validation_detail": detail,
+        "last_update": pd.Timestamp.now(
+            tz="UTC"
+        ).strftime("%Y-%m-%d %H:%M:%S"),
+    }
+
+    SYNC_QUALITY_FILE.write_text(
+        json.dumps(
+            payload,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    return payload
+
+
+def reconcile_with_source(df):
+    """
+    Reconcile the current working dataset with a complete
+    WarSpotting source snapshot.
+
+    Project scope:
+        START_DATE <= date <= yesterday
+
+    Safety behaviour for the first verification run:
+      - missing source records are added
+      - local-only records are preserved unless
+        REMOVE_LOCAL_ONLY_RECORDS is explicitly enabled
+
+    A source snapshot is accepted only after basic integrity checks.
+    If the source max ID is below the local max ID, the pipeline stops
+    instead of replacing the dataset with an obviously incomplete
+    snapshot.
+    """
+
+    source_df = get_full_source_snapshot()
+
+    yesterday = date.today() - timedelta(days=1)
+
+    source_dates = source_df["date"].dt.date
+
+    source_in_scope = source_df[
+        (source_dates >= START_DATE)
+        & (source_dates <= yesterday)
+    ].copy()
+
+    if source_in_scope.empty:
+        raise RuntimeError(
+            "Source reconciliation produced no records "
+            "inside project scope."
+        )
+
+    lost_by_values = (
+        source_in_scope["lost_by"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .unique()
+    )
+
+    unexpected_lost_by = [
+        value
+        for value in lost_by_values
+        if value != "Russia"
+    ]
+
+    if unexpected_lost_by:
+        raise RuntimeError(
+            "Unexpected lost_by values in source scope: "
+            f"{unexpected_lost_by}"
+        )
+
+    working_df = df.copy()
+
+    working_df["id"] = pd.to_numeric(
+        working_df["id"],
+        errors="coerce"
+    )
+
+    if working_df["id"].isna().any():
+        raise RuntimeError(
+            "Working dataset contains invalid IDs."
+        )
+
+    working_df["id"] = working_df["id"].astype("int64")
+
+    working_df["date"] = pd.to_datetime(
+        working_df["date"],
+        errors="coerce"
+    )
+
+    if working_df["date"].isna().any():
+        raise RuntimeError(
+            "Working dataset contains invalid dates."
+        )
+
+    local_dates = working_df["date"].dt.date
+
+    local_in_scope = working_df[
+        (local_dates >= START_DATE)
+        & (local_dates <= yesterday)
+    ].copy()
+
+    source_ids = set(source_in_scope["id"])
+    local_ids = set(local_in_scope["id"])
+
+    missing_ids = sorted(
+        source_ids - local_ids
+    )
+
+    extra_ids = sorted(
+        local_ids - source_ids
+    )
+
+    source_max_id = int(
+        source_df["id"].max()
+    )
+
+    local_max_id = int(
+        local_in_scope["id"].max()
+    )
+
+    print()
+    print("SOURCE RECONCILIATION RESULT")
+    print(
+        f"  Source all records      : "
+        f"{len(source_df):,}"
+    )
+    print(
+        f"  Source in project scope: "
+        f"{len(source_in_scope):,}"
+    )
+    print(
+        f"  Local in project scope : "
+        f"{len(local_in_scope):,}"
+    )
+    print(
+        f"  Missing source IDs     : "
+        f"{len(missing_ids):,}"
+    )
+    print(
+        f"  Extra local IDs        : "
+        f"{len(extra_ids):,}"
+    )
+    print(
+        f"  Source max ID          : "
+        f"{source_max_id:,}"
+    )
+    print(
+        f"  Local max ID           : "
+        f"{local_max_id:,}"
+    )
+
+    if missing_ids:
+        print(
+            f"  Missing IDs: {missing_ids}"
+        )
+
+    if extra_ids:
+        print(
+            f"  Extra local IDs: {extra_ids}"
+        )
+
+    # --------------------------------------------------------
+    # Fail-safe against an obviously incomplete source crawl.
+    # --------------------------------------------------------
+
+    if source_max_id < local_max_id:
+
+        detail = (
+            "SOURCE MAX ID BELOW LOCAL MAX ID — "
+            "local dataset preserved"
+        )
+
+        save_sync_quality(
+            source_df,
+            source_in_scope,
+            local_in_scope,
+            missing_ids,
+            extra_ids,
+            local_in_scope,
+            "ERROR",
+            detail,
+        )
+
+        raise RuntimeError(
+            "Source reconciliation appears incomplete: "
+            f"source_max_id={source_max_id}, "
+            f"local_max_id={local_max_id}. "
+            "Existing dataset was NOT replaced."
+        )
+
+    # --------------------------------------------------------
+    # Build reconciled dataset.
+    # --------------------------------------------------------
+
+    if REMOVE_LOCAL_ONLY_RECORDS:
+
+        reconciled_df = (
+            source_in_scope
+            .copy()
+        )
+
+        status = (
+            "OK"
+            if not missing_ids and not extra_ids
+            else "SYNCED"
+        )
+
+        detail = (
+            "Source and local IDs matched"
+            if not missing_ids and not extra_ids
+            else
+            "Source reconciliation applied"
+        )
+
+    else:
+
+        # Add source records that are missing locally.
+        # Preserve local-only records during the first verification
+        # run so that potentially temporary source inconsistencies do
+        # not cause irreversible data loss.
+        local_only_df = local_in_scope[
+            local_in_scope["id"].isin(extra_ids)
+        ].copy()
+
+        reconciled_df = pd.concat(
+            [
+                source_in_scope,
+                local_only_df,
+            ],
+            ignore_index=True,
+        )
+
+        reconciled_df = (
+            reconciled_df
+            .drop_duplicates(
+                subset="id",
+                keep="last"
+            )
+            .sort_values(
+                by=["date", "id"]
+            )
+            .reset_index(drop=True)
+        )
+
+        status = (
+            "OK"
+            if not missing_ids and not extra_ids
+            else "WARNING"
+        )
+
+        if extra_ids:
+            detail = (
+                "Source records synchronized; "
+                "local-only records preserved for review"
+            )
+        else:
+            detail = (
+                "Source records synchronized"
+            )
+
+    # --------------------------------------------------------
+    # Final local/source comparison.
+    # --------------------------------------------------------
+
+    final_ids = set(
+        reconciled_df["id"]
+    )
+
+    remaining_missing_ids = sorted(
+        source_ids - final_ids
+    )
+
+    remaining_extra_ids = sorted(
+        final_ids - source_ids
+    )
+
+    if remaining_missing_ids:
+        save_sync_quality(
+            source_df,
+            source_in_scope,
+            local_in_scope,
+            missing_ids,
+            extra_ids,
+            reconciled_df,
+            "ERROR",
+            "Source records remain missing after reconciliation",
+        )
+
+        raise RuntimeError(
+            "Source reconciliation did not add all missing IDs: "
+            f"{remaining_missing_ids}"
+        )
+
+    print()
+    print(
+        f"  Final reconciled records: "
+        f"{len(reconciled_df):,}"
+    )
+    print(
+        f"  Missing after sync       : "
+        f"{len(remaining_missing_ids):,}"
+    )
+    print(
+        f"  Local-only after sync    : "
+        f"{len(remaining_extra_ids):,}"
+    )
+
+    save_sync_quality(
+        source_df,
+        source_in_scope,
+        local_in_scope,
+        missing_ids,
+        extra_ids,
+        reconciled_df,
+        status,
+        detail,
+    )
+
+    return reconciled_df
+
+
 # ============================================================
 # MASTER DATA UPDATE
 # ============================================================
 
 def update_raw_data(existing_df):
     """
-    Decide whether this is the first run or a normal update.
-    """
+    Update the raw dataset.
 
-    # --------------------------------------------------------
-    # FIRST RUN
-    # --------------------------------------------------------
+    The existing daily mechanism remains unchanged:
+      1. /recent
+      2. refresh recent dates
+      3. merge and deduplicate
+
+    A full source reconciliation is then performed as an additional
+    synchronization layer.
+
+    During the first verification run, source records that are present
+    in WarSpotting but missing locally are added automatically. Local-only
+    records are preserved for review and are not deleted automatically.
+    """
 
     if existing_df.empty:
 
         df = create_initial_dataset()
 
-        # Deduplicate historical import.
         df = (
             df
             .drop_duplicates(
@@ -521,13 +1068,17 @@ def update_raw_data(existing_df):
 
         return df
 
-    # --------------------------------------------------------
-    # NORMAL DAILY UPDATE
-    # --------------------------------------------------------
-
-    return update_existing_dataset(
+    df = update_existing_dataset(
         existing_df
     )
+
+    if FULL_SOURCE_RECONCILIATION:
+
+        df = reconcile_with_source(
+            df
+        )
+
+    return df
 
 
 # ============================================================
