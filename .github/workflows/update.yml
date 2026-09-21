@@ -2,8 +2,19 @@ name: Update WarSpotting Analytics
 
 on:
   schedule:
+    # Daily incremental update.
     - cron: "0 6 * * *"
+
+    # Weekly full source reconciliation.
+    - cron: "0 7 * * 0"
+
   workflow_dispatch:
+    inputs:
+      full_reconciliation:
+        description: "Run full source reconciliation"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -15,6 +26,9 @@ concurrency:
 jobs:
   update-project:
     runs-on: ubuntu-latest
+
+    env:
+      FULL_SOURCE_RECONCILIATION: ${{ (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 0') || (github.event_name == 'workflow_dispatch' && inputs.full_reconciliation) }}
 
     steps:
       - name: Checkout repository
@@ -46,6 +60,10 @@ jobs:
       - name: Verify data quality report
         run: test -f data_quality.json
 
+      - name: Verify sync quality report
+        if: env.FULL_SOURCE_RECONCILIATION == 'true'
+        run: test -f sync_quality.json
+
       - name: Commit updated data and outputs
         run: |
           git config user.name "github-actions[bot]"
@@ -57,6 +75,10 @@ jobs:
           git add equipment_weekly.html
           git add data_quality.json
           git add dashboard.png
+
+          if [ -f sync_quality.json ]; then
+            git add sync_quality.json
+          fi
 
           git diff --cached --quiet || git commit -m "Update WarSpotting data and equipment plot"
           git push
