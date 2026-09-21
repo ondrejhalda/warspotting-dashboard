@@ -17,6 +17,7 @@ import plotly.graph_objects as go
 INPUT_FILE = Path("warspotting_raw.csv")
 OUTPUT_FILE = Path("equipment_weekly.html")
 QUALITY_FILE = Path("data_quality.json")
+SYNC_QUALITY_FILE = Path("sync_quality.json")
 WEEKLY_EQUIPMENT_FILE = Path("weekly_equipment_losses.csv")
 
 BASE_OPACITY = 0.42
@@ -380,6 +381,34 @@ def prepare_week_data(weekly):
 
 
 # ============================================================
+# LOAD SYNC QUALITY
+# ============================================================
+
+def load_sync_quality():
+    """
+    Load source-reconciliation metadata created by dashboard.py.
+
+    The dashboard remains usable when the sync file is unavailable;
+    in that case the sync section is simply omitted from the panel.
+    """
+
+    if not SYNC_QUALITY_FILE.exists():
+        return None
+
+    try:
+        return json.loads(
+            SYNC_QUALITY_FILE.read_text(
+                encoding="utf-8"
+            )
+        )
+    except (OSError, json.JSONDecodeError) as error:
+        print(
+            f"WARNING: Could not read sync quality file: {error}"
+        )
+        return None
+
+
+# ============================================================
 # CREATE CHART
 # ============================================================
 
@@ -632,7 +661,7 @@ def create_chart(weekly, quality_data):
     // Keep the quality panel compact so it never overlaps
     // the equipment panel below it. Extra details can scroll.
     qualityPanel.style.maxHeight =
-        '220px';
+        '300px';
 
     qualityPanel.style.overflowY =
         'auto';
@@ -772,6 +801,82 @@ def create_chart(weekly, quality_data):
             row.appendChild(value);
             body.appendChild(row);
         });
+
+        if (qualityData.sync_available) {
+
+            const separator =
+                document.createElement('div');
+
+            separator.style.borderTop =
+                '1px solid #d5d9de';
+
+            separator.style.margin =
+                '8px 0 7px 0';
+
+            body.appendChild(separator);
+
+            const syncLabel =
+                document.createElement('div');
+
+            syncLabel.style.fontWeight =
+                'bold';
+
+            syncLabel.style.marginBottom =
+                '5px';
+
+            syncLabel.textContent =
+                'Source synchronization';
+
+            body.appendChild(syncLabel);
+
+            const syncRows = [
+                ['Source scope', formatNumber(qualityData.sync_source_scope)],
+                ['Local records', formatNumber(qualityData.sync_local_records)],
+                ['Missing source', formatNumber(qualityData.sync_missing)],
+                ['Local-only', formatNumber(qualityData.sync_local_only)],
+                ['Sync', qualityData.sync_status]
+            ];
+
+            syncRows.forEach(function(item) {
+
+                const row =
+                    document.createElement('div');
+
+                row.style.display =
+                    'flex';
+
+                row.style.marginBottom =
+                    '5px';
+
+                const label =
+                    document.createElement('span');
+
+                label.textContent =
+                    item[0];
+
+                label.style.flex =
+                    '1';
+
+                label.style.marginRight =
+                    '8px';
+
+                const value =
+                    document.createElement('span');
+
+                value.textContent =
+                    item[1];
+
+                value.style.fontWeight =
+                    'bold';
+
+                value.style.textAlign =
+                    'right';
+
+                row.appendChild(label);
+                row.appendChild(value);
+                body.appendChild(row);
+            });
+        }
 
         if (qualityData.new_equipment_categories.length) {
 
@@ -1152,7 +1257,7 @@ def create_chart(weekly, quality_data):
         'absolute';
 
     panel.style.top =
-        '260px';
+        '350px';
 
     panel.style.right =
         '10px';
@@ -3034,6 +3139,57 @@ def main():
             else "OK with exclusions + new categories"
         ),
     })
+
+
+    # --------------------------------------------------------
+    # Source synchronization metadata
+    # --------------------------------------------------------
+
+    sync_quality = load_sync_quality()
+
+    if sync_quality:
+
+        sync_missing = int(
+            sync_quality.get("missing_source_count", 0)
+        )
+
+        sync_local_only = int(
+            sync_quality.get("extra_local_count", 0)
+        )
+
+        sync_status = (
+            "OK"
+            if sync_missing == 0 and sync_local_only == 0
+            and sync_quality.get("sync_difference_after", 0) == 0
+            else "WARNING"
+        )
+
+        quality.update({
+            "sync_available": True,
+            "sync_source_scope": int(
+                sync_quality.get("source_records_in_scope", 0)
+            ),
+            "sync_local_records": int(
+                sync_quality.get("raw_records_after_sync", len(raw_df))
+            ),
+            "sync_missing": sync_missing,
+            "sync_local_only": sync_local_only,
+            "sync_status": sync_status,
+        })
+
+        if sync_status != "OK":
+            quality["validation_status"] = "WARNING"
+
+            if quality["validation_detail"] == "OK":
+                quality["validation_detail"] = (
+                    "OK with source sync warning"
+                )
+
+    else:
+
+        quality.update({
+            "sync_available": False
+        })
 
 
     # --------------------------------------------------------
