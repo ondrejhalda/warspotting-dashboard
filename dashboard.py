@@ -31,6 +31,7 @@ from datetime import date, timedelta
 from pathlib import Path
 import time
 import json
+import os
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -49,9 +50,15 @@ REFRESH_DAYS = 10
 
 REQUEST_DELAY = 1.1
 
-# Full source reconciliation is enabled to detect historical
-# records added after their original loss date.
-FULL_SOURCE_RECONCILIATION = True
+# Full source reconciliation is controlled by the workflow.
+# Daily runs keep the fast incremental update; the weekly scheduled
+# run enables the full source audit. A manual run can opt in as well.
+FULL_SOURCE_RECONCILIATION = (
+    os.getenv("FULL_SOURCE_RECONCILIATION", "false")
+    .strip()
+    .lower()
+    in {"1", "true", "yes", "y", "on"}
+)
 
 # Safety switch for the first production verification run.
 # Missing source records are added automatically, while local-only
@@ -1054,12 +1061,11 @@ def update_raw_data(existing_df):
       2. refresh recent dates
       3. merge and deduplicate
 
-    A full source reconciliation is then performed as an additional
-    synchronization layer.
+    A full source reconciliation is performed only when
+    FULL_SOURCE_RECONCILIATION is enabled by the workflow.
 
-    During the first verification run, source records that are present
-    in WarSpotting but missing locally are added automatically. Local-only
-    records are preserved for review and are not deleted automatically.
+    When enabled, source records missing locally are added and local-only
+    records are removed according to REMOVE_LOCAL_ONLY_RECORDS.
     """
 
     if existing_df.empty:
@@ -1732,6 +1738,11 @@ def main():
     print(
         f"Data scope starts: "
         f"{START_DATE.isoformat()}"
+    )
+
+    print(
+        f"Full source reconciliation: "
+        f"{'ON' if FULL_SOURCE_RECONCILIATION else 'OFF'}"
     )
 
     print()
