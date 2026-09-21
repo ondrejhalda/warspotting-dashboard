@@ -1,0 +1,32 @@
+name: WarSpotting Scope Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Run scope-aware audit
+        run: python sync_audit_scope.py
+
+      - name: Upload audit result
+        uses: actions/upload-artifact@v4
+        with:
+          name: warspotting-scope-audit
+          path: sync_audit_scope.csv
