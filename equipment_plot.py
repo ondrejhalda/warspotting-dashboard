@@ -1296,10 +1296,7 @@ def create_chart(weekly, quality_data):
     rightPanelStack.style.zIndex =
         '30';
 
-    rightPanelStack.appendChild(
-        qualityPanel
-    );
-
+    // Keep the primary interaction controls first.
     rightPanelStack.appendChild(
         panel
     );
@@ -1308,8 +1305,68 @@ def create_chart(weekly, quality_data):
         filterPanel
     );
 
+    rightPanelStack.appendChild(
+        qualityPanel
+    );
+
     wrapper.appendChild(
         rightPanelStack
+    );
+
+    // ========================================================
+    // RESERVE SPACE BELOW THE CHART FOR THE RIGHT PANEL STACK
+    // ========================================================
+    //
+    // The right-side controls are absolutely positioned, while
+    // Technical data and Methodology are normal-flow content
+    // below the Plotly chart. Reserve only the amount of extra
+    // vertical space needed so the stack can never overlap the
+    // footer sections, even when panel heights change.
+    //
+    // ========================================================
+
+    const RIGHT_STACK_FOOTER_GAP = 18;
+
+    function syncFooterSpacing() {
+
+        const stackBottom =
+            rightPanelStack.offsetTop +
+            rightPanelStack.offsetHeight;
+
+        const chartHeight =
+            gd.offsetHeight;
+
+        const extraSpace =
+            Math.max(
+                0,
+                stackBottom +
+                RIGHT_STACK_FOOTER_GAP -
+                chartHeight
+            );
+
+        wrapper.style.paddingBottom =
+            extraSpace + 'px';
+    }
+
+    if (typeof ResizeObserver !== 'undefined') {
+
+        const stackResizeObserver =
+            new ResizeObserver(
+                syncFooterSpacing
+            );
+
+        stackResizeObserver.observe(
+            rightPanelStack
+        );
+    }
+
+    window.addEventListener(
+        'resize',
+        syncFooterSpacing
+    );
+
+    requestAnimationFrame(
+        syncFooterSpacing
     );
 
     // ========================================================
