@@ -23685,6 +23685,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47038,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-09-14,"Kherson raion, Kherson oblast",,,
 47032,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-15,South Ukraine,,,Loitering
 47034,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-09-15,Belgorod oblast,,,
+47155,"Radars, jammers",Antenna vehicle based on KamAZ 6x6 (for 35N6 'Kasta' surveillance radar),Destroyed,Russia,2026-09-15,"Adrianopil, Alchevsk raion","48.372861,38.708444",,
 47055,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-09-16,Kursk oblast,,,Additional armour
 47117,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,"Kulykivske, Berdiansk raion","46.915054,37.001196",,Loitering
 47118,Transport,KamAZ-65117,Destroyed,Russia,2026-09-16,"Berdiansk raion, Zaporizhzhia oblast",,,Loitering
@@ -23697,4 +23698,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47148,Helicopters,Mi-8*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.276367,39.641588",,Loitering
 47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,Loitering
 47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,Loitering
-47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,Zaporizhzhia oblast,,,"Loitering, Additional armour"
+47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,"Vesele (Molochansk hromada), Polohy raion","47.171928,35.708875",,"Loitering, Additional armour"
+47160,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-09-20,,,,
