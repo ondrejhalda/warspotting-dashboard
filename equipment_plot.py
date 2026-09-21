@@ -658,13 +658,8 @@ def create_chart(weekly, quality_data):
     qualityPanel.style.zIndex =
         '21';
 
-    // Keep the quality panel compact so it never overlaps
-    // the equipment panel below it. Extra details can scroll.
-    qualityPanel.style.maxHeight =
-        '300px';
-
-    qualityPanel.style.overflowY =
-        'auto';
+    // Let the Data quality panel expand to show all validation
+    // information without an internal scrollbar.
 
     wrapper.appendChild(qualityPanel);
 
@@ -1291,6 +1286,42 @@ def create_chart(weekly, quality_data):
 
 
     // ========================================================
+    // PANEL POSITIONING
+    // ========================================================
+    //
+    // Keep the three right-side panels separated by a consistent
+    // gap. Positions are calculated from the actual rendered
+    // heights so the Data quality panel can expand without
+    // overlapping Equipment or Equipment category.
+    //
+    // ========================================================
+
+    const PANEL_GAP = 10;
+
+    function positionPanels() {
+
+        const qualityTop =
+            48;
+
+        qualityPanel.style.top =
+            qualityTop + 'px';
+
+        panel.style.top =
+            (
+                qualityTop
+                + qualityPanel.offsetHeight
+                + PANEL_GAP
+            ) + 'px';
+
+        filterPanel.style.top =
+            (
+                panel.offsetTop
+                + panel.offsetHeight
+                + PANEL_GAP
+            ) + 'px';
+    }
+
+    // ========================================================
     // CUSTOM TOOLTIP
     // ========================================================
 
@@ -1782,7 +1813,19 @@ def create_chart(weekly, quality_data):
         body.appendChild(
             totalRow
         );
+
+        // Recalculate panel positions whenever the Equipment
+        // panel is rendered, keeping the requested gap even
+        // when its height changes after a week/filter action.
+        positionPanels();
     }
+
+
+    // Keep the right-side layout responsive.
+    window.addEventListener(
+        'resize',
+        positionPanels
+    );
 
 
     // ========================================================
@@ -2865,7 +2908,7 @@ def add_page_footer(html, weekly_df, raw_df):
         #warspotting-page-footer {{
             box-sizing: border-box;
             width: 100%;
-            padding: 0 32px 28px 32px;
+            padding: 30px 32px 28px 32px;
             font-family: Arial, sans-serif;
             background: #ffffff;
         }}
@@ -2946,7 +2989,7 @@ def add_page_footer(html, weekly_df, raw_df):
 
     <div id="warspotting-page-footer">
 
-        <details class="info-section" open>
+        <details class="info-section">
             <summary class="info-summary">
                 Technical data
             </summary>
@@ -3013,7 +3056,7 @@ def add_page_footer(html, weekly_df, raw_df):
         </details>
 
 
-        <details class="info-section" open>
+        <details class="info-section">
             <summary class="info-summary">
                 Methodology and limitations
             </summary>
