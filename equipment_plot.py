@@ -2725,7 +2725,7 @@ def add_page_header(
 # TECHNICAL DATA + METHODOLOGY
 # ============================================================
 
-def add_page_footer(html, weekly_df):
+def add_page_footer(html, weekly_df, raw_df):
 
     unique_weeks = int(
         weekly_df["week"].nunique()
@@ -2743,12 +2743,15 @@ def add_page_footer(html, weekly_df):
         weekly_df["losses"].sum()
     )
 
+    # Coverage shows the actual first and last recorded dates
+    # in the raw dataset, not the Monday boundaries of the
+    # weekly aggregation buckets.
     start_date = (
-        weekly_df["week"].min().strftime("%d/%m/%Y")
+        raw_df["date"].min().strftime("%d/%m/%Y")
     )
 
     end_date = (
-        weekly_df["week"].max().strftime("%d/%m/%Y")
+        raw_df["date"].max().strftime("%d/%m/%Y")
     )
 
     footer = f"""
@@ -2756,7 +2759,7 @@ def add_page_footer(html, weekly_df):
         #warspotting-page-footer {{
             box-sizing: border-box;
             width: 100%;
-            padding: 37px 32px 28px 32px;
+            padding: 0 32px 28px 32px;
             font-family: Arial, sans-serif;
             background: #ffffff;
         }}
@@ -3102,7 +3105,8 @@ def main():
 
     html = add_page_footer(
         html,
-        weekly_df
+        weekly_df,
+        raw_df
     )
 
     OUTPUT_FILE.write_text(
