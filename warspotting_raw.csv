@@ -23706,3 +23706,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,Loitering
 47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,Loitering
 47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,"Vesele (Molochansk hromada), Polohy raion","47.171928,35.708875",,"Loitering, Additional armour"
+47210,Tanks,T-80BV,Destroyed,Russia,2026-09-21,"Novoukrainka (Velyka Novosilka hromada), Volnovakha raion","48.028679,36.87188",,"Cope cage, Jammer"
