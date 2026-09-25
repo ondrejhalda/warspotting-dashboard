@@ -25,7 +25,7 @@ SELECTED_OPACITY = 1.0
 
 # Opacity of the dominant equipment category in each unlocked week.
 # Kept slightly below full opacity so the chart remains visually balanced.
-DOMINANT_OPACITY = 0.82
+DOMINANT_OPACITY = 0.75
 
 # Opacity of all other weeks when one week is selected.
 # This recreates the stronger fading from the earlier version.
