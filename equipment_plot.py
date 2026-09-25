@@ -23,10 +23,6 @@ WEEKLY_EQUIPMENT_FILE = Path("weekly_equipment_losses.csv")
 BASE_OPACITY = 0.42
 SELECTED_OPACITY = 1.0
 
-# Opacity of the dominant equipment category in each unlocked week.
-# Kept slightly below full opacity so the chart remains visually balanced.
-DOMINANT_OPACITY = 0.75
-
 # Opacity of all other weeks when one week is selected.
 # This recreates the stronger fading from the earlier version.
 SELECTED_OTHER_OPACITY = 0.16
@@ -584,9 +580,6 @@ def create_chart(weekly, quality_data):
 
     const selectedOpacity =
         SELECTED_OPACITY_PLACEHOLDER;
-
-    const dominantOpacity =
-        DOMINANT_OPACITY_PLACEHOLDER;
 
     const selectedOtherOpacity =
         SELECTED_OTHER_OPACITY_PLACEHOLDER;
@@ -1553,12 +1546,6 @@ def create_chart(weekly, quality_data):
             gd,
             { visible: visibility }
         );
-
-        // Recalculate dominant-category highlighting after the
-        // filter changes so unlocked bars remain in sync.
-        highlightWeek(
-            selectedWeek
-        );
     }
 
 
@@ -2068,17 +2055,13 @@ def create_chart(weekly, quality_data):
     // IMPORTANT:
     //
     // When no week is selected:
-    //     the dominant equipment category in each week =
-    //     SELECTED_OPACITY
-    //     all other categories = BASE_OPACITY
+    //     all bars = BASE_OPACITY
     //
     // When a week is selected:
     //     selected week = SELECTED_OPACITY
     //     all other weeks = SELECTED_OTHER_OPACITY
     //
-    // Dominant category is recalculated from the currently
-    // visible equipment categories so the highlight stays in
-    // sync with the active filter.
+    // This function is called ONLY after a click.
     //
     // ========================================================
 
@@ -2087,39 +2070,6 @@ def create_chart(weekly, quality_data):
         const update = {
             'marker.opacity': []
         };
-
-        const dominantCategoriesByWeek = {};
-
-        if (!week) {
-
-            Object.keys(weekData).forEach(
-                function(weekKey) {
-
-                    const items =
-                        getVisibleWeekItems(weekKey);
-
-                    if (!items.length) {
-                        return;
-                    }
-
-                    const maxLosses =
-                        items[0].losses;
-
-                    dominantCategoriesByWeek[weekKey] =
-                        items
-                            .filter(
-                                function(item) {
-                                    return item.losses === maxLosses;
-                                }
-                            )
-                            .map(
-                                function(item) {
-                                    return item.type;
-                                }
-                            );
-                }
-            );
-        }
 
 
         for (
@@ -2148,15 +2098,9 @@ def create_chart(weekly, quality_data):
 
                 if (!week) {
 
-                    const dominantCategories =
-                        dominantCategoriesByWeek[pointWeek] || [];
-
+                    // No selection.
                     opacities.push(
-                        dominantCategories.includes(
-                            trace.name
-                        )
-                            ? dominantOpacity
-                            : baseOpacity
+                        baseOpacity
                     );
 
                 } else if (
@@ -2643,11 +2587,6 @@ def create_chart(weekly, quality_data):
         .replace(
             "SELECTED_OPACITY_PLACEHOLDER",
             str(SELECTED_OPACITY)
-        )
-
-        .replace(
-            "DOMINANT_OPACITY_PLACEHOLDER",
-            str(DOMINANT_OPACITY)
         )
 
         .replace(
