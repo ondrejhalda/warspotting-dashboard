@@ -23613,6 +23613,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46654,Transport,ZiL-131,Destroyed,Russia,2026-08-24,"Velyka Novosilka, Volnovakha raion","47.837363,36.836125",,Cope cage
 46657,Transport,Ural-4320,Destroyed,Russia,2026-08-24,Kursk oblast,,,"Cope cage, Additional armour"
 46705,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2026-08-24,"Pishchane, Siverskodonetsk raion","49.118824,38.176282",,"Shattered, Cope cage"
+47299,Engineering,'Zemledeliye' remote mine-laying system,Destroyed,Russia,2026-08-24,"Stepove (Rozdol hromada), Vasylivka raion","47.443743,35.606653",,"Cope cage, Jammer"
 46656,Tanks,T-80BVM Obr. 2022,Destroyed,Russia,2026-08-25,"Shebekino raion, Belgorod oblast",,,"Cope cage, Jammer"
 46679,Drones,ZALA Z-16 (421-16Е) reconnaissance UAV,Captured,Russia,2026-08-25,,,,
 46687,Transport,KamAZ 6x6,Destroyed,Russia,2026-08-25,"Novonykanorivka, Svatove raion","49.649383,38.233286",,"Cope cage, Loitering"
@@ -23706,6 +23707,8 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47149,Airplanes,An-26 transport aircraft,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.275593,39.644102",30th Separate Transport Mixed Aviation Regiment,Loitering
 47150,Airplanes,An-12*,Destroyed,Russia,2026-09-17,"Rostov airbase, Rostov-on-Don","47.271840,39.650735",30th Separate Transport Mixed Aviation Regiment,Loitering
 47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,"Vesele (Molochansk hromada), Polohy raion","47.171928,35.708875",,"Loitering, Additional armour"
+47296,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-19,,,Eastern Military District,"Cope cage, Jammer"
+47295,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-09-20,"Vovchansk, Chuhuiv raion","50.30709,36.92175",,Cope cage
 47210,Tanks,T-80BV,Destroyed,Russia,2026-09-21,"Novoukrainka (Velyka Novosilka hromada), Volnovakha raion","48.028679,36.87188",,"Cope cage, Jammer"
 47225,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-09-22,,,,Improvised
 47237,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-22,"Pokrovsk, Pokrovsk raion",,,
