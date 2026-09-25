@@ -23,6 +23,10 @@ WEEKLY_EQUIPMENT_FILE = Path("weekly_equipment_losses.csv")
 BASE_OPACITY = 0.42
 SELECTED_OPACITY = 1.0
 
+# Opacity of the dominant equipment category in each unlocked week.
+# Kept slightly below full opacity so the chart remains visually balanced.
+DOMINANT_OPACITY = 0.82
+
 # Opacity of all other weeks when one week is selected.
 # This recreates the stronger fading from the earlier version.
 SELECTED_OTHER_OPACITY = 0.16
@@ -580,6 +584,9 @@ def create_chart(weekly, quality_data):
 
     const selectedOpacity =
         SELECTED_OPACITY_PLACEHOLDER;
+
+    const dominantOpacity =
+        DOMINANT_OPACITY_PLACEHOLDER;
 
     const selectedOtherOpacity =
         SELECTED_OTHER_OPACITY_PLACEHOLDER;
@@ -2148,7 +2155,7 @@ def create_chart(weekly, quality_data):
                         dominantCategories.includes(
                             trace.name
                         )
-                            ? selectedOpacity
+                            ? dominantOpacity
                             : baseOpacity
                     );
 
@@ -2636,6 +2643,11 @@ def create_chart(weekly, quality_data):
         .replace(
             "SELECTED_OPACITY_PLACEHOLDER",
             str(SELECTED_OPACITY)
+        )
+
+        .replace(
+            "DOMINANT_OPACITY_PLACEHOLDER",
+            str(DOMINANT_OPACITY)
         )
 
         .replace(
