@@ -23713,3 +23713,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47225,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-09-22,,,,Improvised
 47237,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-22,"Pokrovsk, Pokrovsk raion",,,
 47238,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-22,"Myrnohrad, Pokrovsk raion",,,
+47312,Tanks,T-80BV,Destroyed,Russia,2026-09-22,Kursk oblast,,,"Turtle, Hedgehog"
+47315,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-09-25,"Terny, Kramatorsk raion","49.11313,37.99709",,Turtle
