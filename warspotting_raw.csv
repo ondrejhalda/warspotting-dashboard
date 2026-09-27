@@ -23664,6 +23664,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47135,Engineering,EOV-3523 (KamAZ 6x6) excavator,Destroyed,Russia,2026-09-04,Belgorod oblast,,,Loitering
 46944,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,
 46945,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-05,"Pokrovsk raion, Donetsk oblast",,,Jammer
+47323,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-05,"Huliaipole, Polohy raion","47.656657,36.269239",,
 46909,Airplanes,Su-35S multirole aircraft,Destroyed,Russia,2026-09-07,Kursk oblast,,,
 46932,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-07,"Byakhovo, Korenevo raion","51.266600,34.889770",,Cope cage
 46946,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-09-07,"Pokrovsk raion, Donetsk oblast",,,
@@ -23709,9 +23710,11 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47159,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Destroyed,Russia,2026-09-18,"Vesele (Molochansk hromada), Polohy raion","47.171928,35.708875",,"Loitering, Additional armour"
 47296,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-19,,,Eastern Military District,"Cope cage, Jammer"
 47295,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-09-20,"Vovchansk, Chuhuiv raion","50.30709,36.92175",,Cope cage
+47320,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-20,"Ivanivka (Hrodivka hromada), Pokrovsk raion","48.254275,37.458271",,"Cope cage, Hedgehog"
+47321,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-20,"Ivanivka (Hrodivka hromada), Pokrovsk raion","48.254275,37.458271",,"Cope cage, Additional armour"
 47210,Tanks,T-80BV,Destroyed,Russia,2026-09-21,"Novoukrainka (Velyka Novosilka hromada), Volnovakha raion","48.028679,36.87188",,"Cope cage, Jammer"
 47225,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-09-22,,,,Improvised
 47237,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-22,"Pokrovsk, Pokrovsk raion",,,
 47238,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-22,"Myrnohrad, Pokrovsk raion",,,
 47312,Tanks,T-80BV,Destroyed,Russia,2026-09-22,Kursk oblast,,,"Turtle, Hedgehog"
-47315,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-09-25,"Terny, Kramatorsk raion","49.11313,37.99709",,Turtle
+47315,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-09-25,"Terny, Kramatorsk raion","49.11313,37.99709",,"Cope cage, Hedgehog"
