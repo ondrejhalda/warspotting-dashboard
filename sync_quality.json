@@ -1,19 +1,27 @@
 {
-  "source_all_records": 23710,
-  "source_records_in_scope": 23707,
-  "raw_records_before_sync": 23707,
-  "raw_records_after_sync": 23707,
-  "missing_source_ids": [],
-  "extra_local_ids": [],
-  "missing_source_count": 0,
-  "extra_local_count": 0,
-  "sync_difference_before": 0,
+  "source_all_records": 23724,
+  "source_records_in_scope": 23721,
+  "raw_records_before_sync": 23719,
+  "raw_records_after_sync": 23721,
+  "missing_source_ids": [
+    24717,
+    47294,
+    47310,
+    47314
+  ],
+  "extra_local_ids": [
+    30180,
+    39201
+  ],
+  "missing_source_count": 4,
+  "extra_local_count": 2,
+  "sync_difference_before": 2,
   "sync_difference_after": 0,
-  "source_max_id": 47161,
-  "raw_max_id_before": 47161,
-  "raw_max_id_after": 47161,
-  "last_date_in_source_scope": "2026-09-18",
-  "validation_status": "OK",
-  "validation_detail": "Source and local IDs matched",
-  "last_update": "2026-09-21 12:32:08"
+  "source_max_id": 47323,
+  "raw_max_id_before": 47323,
+  "raw_max_id_after": 47323,
+  "last_date_in_source_scope": "2026-09-25",
+  "validation_status": "SYNCED",
+  "validation_detail": "Source reconciliation applied",
+  "last_update": "2026-09-27 07:29:38"
 }
