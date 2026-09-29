@@ -23637,6 +23637,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 46710,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-08-30,"Svatove raion, Luhansk oblast",,,"Z, Cope cage, ◇, Jammer"
 46711,Transport,Ural-4320,Destroyed,Russia,2026-08-30,"Svatove raion, Luhansk oblast",,,Jammer
 46715,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-08-30,"Yeysk airbase, Yeysk","46.674547,38.166688",,"Turretless, V, Cope cage, ☐, Loitering"
+47331,Airplanes,L-39 Albatros,Destroyed,Russia,2026-08-30,"Yeysk airbase, Yeysk","46.680370,38.210510",190th Training Composite Aviation Regiment,Loitering
 46777,Other,'Impuls-M' Obr. 2026 universal tracked platform,Destroyed,Russia,2026-08-31,"Kupiansk raion, Kharkiv oblast",,,
 46855,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-08-31,"Bakhmut raion, Donetsk oblast",,,Cope cage
 46875,"Radars, jammers",R-330Zh 'Zhytel' electronic warfare station,Destroyed,Russia,2026-08-31,"Rubizhne, Siverskodonetsk raion",,,
@@ -23719,4 +23720,10 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47237,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-09-22,"Pokrovsk, Pokrovsk raion",,,
 47238,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-09-22,"Myrnohrad, Pokrovsk raion",,,
 47312,Tanks,T-80BV,Destroyed,Russia,2026-09-22,Kursk oblast,,,"Turtle, Hedgehog"
+47334,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-24,"Novoekonomichne, Pokrovsk raion","48.325482,37.332857",,"Cope cage, Additional armour"
 47315,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-09-25,"Terny, Kramatorsk raion","49.11313,37.99709",,"Cope cage, Hedgehog"
+47332,Transport,KamAZ 6x6 with armoured cabin,Destroyed,Russia,2026-09-26,"Melitopol raion, Zaporizhzhia oblast",,,"Cope cage, Loitering, Jammer"
+47333,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-09-26,"Melitopol raion, Zaporizhzhia oblast",,Moskva (ex-Western) Military District,"Cope cage, Loitering"
+47335,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Expanded cabin, Additional armour, Hedgehog"
+47336,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Jammer, Additional armour"
+47337,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-27,"Bakhmut raion, Donetsk oblast",,,Cope cage
