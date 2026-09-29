@@ -676,7 +676,7 @@ def create_chart(weekly, quality_data):
             '14px';
 
         header.textContent =
-            'Data quality';
+            'Data quality & synchronization';
 
         qualityPanel.appendChild(header);
 
@@ -743,7 +743,7 @@ def create_chart(weekly, quality_data):
             ['Excluded records', formatNumber(qualityData.excluded_lost_by)],
             ['Equipment categories', formatNumber(qualityData.equipment_categories)],
             ['Weekly rows', formatNumber(qualityData.weekly_rows)],
-            ['Validation', qualityData.validation_detail]
+            ['Dataset validation', qualityData.validation_detail]
         ];
 
         rows.forEach(function(item) {
