@@ -817,8 +817,8 @@ def create_chart(weekly, quality_data):
                 ['Last full sync (UTC)', qualityData.sync_last_full_sync || 'Not available'],
                 ['Source scope', formatNumber(qualityData.sync_source_scope)],
                 ['Local records', formatNumber(qualityData.sync_local_records)],
-                ['Missing source', formatNumber(qualityData.sync_missing)],
-                ['Local-only', formatNumber(qualityData.sync_local_only)],
+                ['Missing detected', formatNumber(qualityData.sync_missing)],
+                ['Local-only detected', formatNumber(qualityData.sync_local_only)],
                 ['Sync', qualityData.sync_status]
             ];
 
@@ -3238,12 +3238,23 @@ def main():
             sync_quality.get("extra_local_count", 0)
         )
 
-        sync_status = (
-            "OK"
-            if sync_missing == 0 and sync_local_only == 0
-            and sync_quality.get("sync_difference_after", 0) == 0
-            else "WARNING"
+        sync_difference_after = int(
+            sync_quality.get("sync_difference_after", 0)
         )
+
+        sync_validation_status = str(
+            sync_quality.get("validation_status", "")
+        ).upper()
+
+        # The missing/local-only counts are findings from BEFORE
+        # reconciliation. The displayed Sync status describes the
+        # state AFTER reconciliation.
+        if sync_validation_status in ["OK", "SYNCED"] and sync_difference_after == 0:
+            sync_status = "OK"
+        elif sync_validation_status == "ERROR":
+            sync_status = "ERROR"
+        else:
+            sync_status = "WARNING"
 
         quality.update({
             "sync_available": True,
@@ -3261,7 +3272,16 @@ def main():
             "sync_status": sync_status,
         })
 
-        if sync_status != "OK":
+        if sync_status == "OK" and sync_validation_status == "SYNCED":
+
+            if quality["validation_detail"] == "OK with source sync warning":
+                quality["validation_status"] = "OK"
+                quality["validation_detail"] = (
+                    "OK; source synchronization reconciled"
+                )
+
+        elif sync_status != "OK":
+
             quality["validation_status"] = "WARNING"
 
             if quality["validation_detail"] == "OK":
