@@ -2585,6 +2585,7 @@ week,type,losses
 2026-09-07,Vessels,1
 2026-09-14,Airplanes,2
 2026-09-14,Anti-aircraft systems,2
+2026-09-14,"Command posts, communication",1
 2026-09-14,Helicopters,2
 2026-09-14,Infantry fighting vehicles,3
 2026-09-14,"Radars, jammers",1
@@ -2595,7 +2596,9 @@ week,type,losses
 2026-09-21,Infantry fighting vehicles,4
 2026-09-21,Other,1
 2026-09-21,Rocket and missile artillery,1
-2026-09-21,Tanks,2
+2026-09-21,Tanks,3
 2026-09-21,Transport,4
 2026-09-28,Airplanes,1
+2026-09-28,Anti-aircraft systems,1
 2026-09-28,Tanks,1
+2026-09-28,Transport,5

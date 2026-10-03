@@ -23698,6 +23698,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47032,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-15,South Ukraine,,,Loitering
 47034,Towed artillery,152mm 2A65 'Msta-B' howitzer,Destroyed,Russia,2026-09-15,Belgorod oblast,,,
 47155,"Radars, jammers",Antenna vehicle based on KamAZ 6x6 (for 35N6 'Kasta' surveillance radar),Destroyed,Russia,2026-09-15,"Adrianopil, Alchevsk raion","48.372861,38.708444",,
+47156,"Command posts, communication",Command post based on KamAZ 6x6 (for 35N6 'Kasta' surveillance radar),Destroyed,Russia,2026-09-15,"Adrianopil, Alchevsk raion","48.372997,38.708336",,
 47055,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-09-16,Kursk oblast,,,Additional armour
 47117,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-16,"Kulykivske, Berdiansk raion","46.915054,37.001196",,Loitering
 47118,Transport,KamAZ-65117,Destroyed,Russia,2026-09-16,"Berdiansk raion, Zaporizhzhia oblast",,,Loitering
@@ -23724,8 +23725,15 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47315,Infantry fighting vehicles,BMP-2M 675-sb3KDZ,Destroyed,Russia,2026-09-25,"Terny, Kramatorsk raion","49.11313,37.99709",,"Cope cage, Hedgehog"
 47332,Transport,KamAZ 6x6 with armoured cabin,Destroyed,Russia,2026-09-26,"Melitopol raion, Zaporizhzhia oblast",,,"Cope cage, Loitering, Jammer"
 47333,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-09-26,"Melitopol raion, Zaporizhzhia oblast",,Moskva (ex-Western) Military District,"Cope cage, Loitering"
+47406,Tanks,T-80BV,Destroyed,Russia,2026-09-26,"Zaporizhzhia, Pokrovsk raion","48.102290,36.981690",,"Z, Cope cage, Jammer, Additional armour"
 47335,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Expanded cabin, Additional armour, Hedgehog"
 47336,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Jammer, Additional armour"
 47337,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-27,"Bakhmut raion, Donetsk oblast",,,Cope cage
 47384,Airplanes,Tu-95MS strategic bomber,Destroyed,Russia,2026-09-29,"Krasnoyarovo, Mazanovo raion",,,
 47390,Tanks,T-54 or -55,Destroyed,Russia,2026-09-29,"Stepanivka, Polohy raion","47.632476,36.417136",,"V, Cope cage, Additional armour"
+47409,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Nova Poltavka, Kramatorsk raion","48.388757,37.452803",,Cope cage
+47410,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Nova Poltavka, Kramatorsk raion","48.395575,37.451526",,
+47401,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-10-02,,,,"Turretless, Loitering"
+47403,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
+47404,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
+47405,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-10-02,"Myrnohrad, Pokrovsk raion",,,
