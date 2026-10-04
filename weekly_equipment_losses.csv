@@ -109,7 +109,7 @@ week,type,losses
 2022-04-04,"Radars, jammers",2
 2022-04-04,Rocket and missile artillery,2
 2022-04-04,Self-propelled artillery,21
-2022-04-04,Tanks,65
+2022-04-04,Tanks,63
 2022-04-04,Towed artillery,2
 2022-04-04,Transport,128
 2022-04-11,Anti-aircraft systems,1
@@ -126,7 +126,7 @@ week,type,losses
 2022-04-11,Self-propelled artillery,6
 2022-04-11,Tanks,23
 2022-04-11,Towed artillery,2
-2022-04-11,Transport,69
+2022-04-11,Transport,70
 2022-04-11,Vessels,1
 2022-04-18,Airplanes,2
 2022-04-18,"Command posts, communication",2
@@ -212,7 +212,7 @@ week,type,losses
 2022-05-30,Other,1
 2022-05-30,Rocket and missile artillery,2
 2022-05-30,Self-propelled artillery,3
-2022-05-30,Tanks,20
+2022-05-30,Tanks,21
 2022-05-30,Towed artillery,1
 2022-05-30,Transport,37
 2022-06-06,Airplanes,1
@@ -353,7 +353,7 @@ week,type,losses
 2022-08-22,Self-propelled artillery,7
 2022-08-22,Tanks,13
 2022-08-22,Towed artillery,3
-2022-08-22,Transport,11
+2022-08-22,Transport,12
 2022-08-29,Anti-aircraft systems,2
 2022-08-29,"Command posts, communication",5
 2022-08-29,Drones,9
@@ -380,7 +380,7 @@ week,type,losses
 2022-09-05,"Radars, jammers",2
 2022-09-05,Rocket and missile artillery,10
 2022-09-05,Self-propelled artillery,20
-2022-09-05,Tanks,63
+2022-09-05,Tanks,62
 2022-09-05,Towed artillery,9
 2022-09-05,Transport,81
 2022-09-12,Airplanes,1
@@ -399,7 +399,7 @@ week,type,losses
 2022-09-12,Self-propelled artillery,22
 2022-09-12,Tanks,78
 2022-09-12,Towed artillery,5
-2022-09-12,Transport,80
+2022-09-12,Transport,79
 2022-09-19,Airplanes,1
 2022-09-19,Anti-aircraft systems,5
 2022-09-19,"Command posts, communication",11
@@ -576,7 +576,7 @@ week,type,losses
 2022-12-19,Towed artillery,1
 2022-12-19,Transport,6
 2022-12-26,Anti-aircraft systems,1
-2022-12-26,"Command posts, communication",1
+2022-12-26,"Command posts, communication",2
 2022-12-26,Drones,3
 2022-12-26,Engineering,1
 2022-12-26,Infantry fighting vehicles,42
@@ -636,7 +636,7 @@ week,type,losses
 2023-01-30,"Radars, jammers",1
 2023-01-30,Rocket and missile artillery,1
 2023-01-30,Self-propelled artillery,8
-2023-01-30,Tanks,14
+2023-01-30,Tanks,13
 2023-01-30,Towed artillery,3
 2023-01-30,Transport,9
 2023-02-06,Airplanes,1
@@ -840,7 +840,7 @@ week,type,losses
 2023-06-05,Infantry fighting vehicles,23
 2023-06-05,Rocket and missile artillery,4
 2023-06-05,Self-propelled artillery,8
-2023-06-05,Tanks,16
+2023-06-05,Tanks,15
 2023-06-05,Towed artillery,5
 2023-06-05,Transport,9
 2023-06-12,Anti-aircraft systems,4
@@ -982,7 +982,7 @@ week,type,losses
 2023-08-28,"Command posts, communication",1
 2023-08-28,Drones,2
 2023-08-28,Engineering,4
-2023-08-28,Infantry fighting vehicles,41
+2023-08-28,Infantry fighting vehicles,40
 2023-08-28,Infantry mobility vehicles,3
 2023-08-28,Other,2
 2023-08-28,"Radars, jammers",3
@@ -1180,7 +1180,7 @@ week,type,losses
 2023-12-25,"Radars, jammers",2
 2023-12-25,Rocket and missile artillery,2
 2023-12-25,Self-propelled artillery,4
-2023-12-25,Tanks,31
+2023-12-25,Tanks,32
 2023-12-25,Transport,10
 2023-12-25,Vessels,3
 2024-01-01,Anti-aircraft systems,5
@@ -2061,7 +2061,7 @@ week,type,losses
 2025-07-21,Other,1
 2025-07-21,Rocket and missile artillery,1
 2025-07-21,Self-propelled artillery,2
-2025-07-21,Tanks,10
+2025-07-21,Tanks,9
 2025-07-21,Towed artillery,6
 2025-07-21,Transport,10
 2025-07-28,"Command posts, communication",1
@@ -2189,7 +2189,7 @@ week,type,losses
 2025-10-27,Infantry fighting vehicles,25
 2025-10-27,Other,3
 2025-10-27,"Radars, jammers",1
-2025-10-27,Tanks,6
+2025-10-27,Tanks,7
 2025-10-27,Transport,6
 2025-11-03,"Command posts, communication",1
 2025-11-03,Engineering,1
@@ -2394,7 +2394,7 @@ week,type,losses
 2026-04-20,Self-propelled artillery,1
 2026-04-20,Tanks,6
 2026-04-20,Towed artillery,1
-2026-04-20,Transport,8
+2026-04-20,Transport,9
 2026-04-27,Anti-aircraft systems,2
 2026-04-27,Helicopters,2
 2026-04-27,Infantry fighting vehicles,4
@@ -2449,7 +2449,7 @@ week,type,losses
 2026-05-25,Transport,24
 2026-06-01,Infantry fighting vehicles,2
 2026-06-01,Other,1
-2026-06-01,Rocket and missile artillery,2
+2026-06-01,Rocket and missile artillery,3
 2026-06-01,Towed artillery,2
 2026-06-01,Transport,23
 2026-06-01,Vessels,1
