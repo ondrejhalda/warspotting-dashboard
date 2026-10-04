@@ -23731,8 +23731,8 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47337,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-27,"Bakhmut raion, Donetsk oblast",,,Cope cage
 47384,Airplanes,Tu-95MS strategic bomber,Destroyed,Russia,2026-09-29,"Krasnoyarovo, Mazanovo raion",,,
 47390,Tanks,T-54 or -55,Destroyed,Russia,2026-09-29,"Stepanivka, Polohy raion","47.632476,36.417136",,"V, Cope cage, Additional armour"
-47409,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Nova Poltavka, Kramatorsk raion","48.388757,37.452803",,Cope cage
-47410,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Nova Poltavka, Kramatorsk raion","48.395575,37.451526",,
+47409,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Popiv Yar, Kramatorsk raion","48.388757,37.452803",,Cope cage
+47410,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-01,"Popiv Yar, Kramatorsk raion","48.395575,37.451526",,
 47401,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-10-02,,,,"Turretless, Loitering"
 47403,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
 47404,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
