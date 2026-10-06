@@ -23738,5 +23738,10 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47403,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
 47404,Transport,Ural-4320,Destroyed,Russia,2026-10-02,,,,Shattered
 47405,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-10-02,"Myrnohrad, Pokrovsk raion",,,
-47430,Airplanes,Unknown fighter aircraft,Destroyed,Russia,2026-10-04,"Khanskaya airbase, Maykop urban okrug","44.675072,40.025891",,
-47431,Airplanes,Unknown fighter aircraft,Destroyed,Russia,2026-10-04,"Khanskaya airbase, Maykop urban okrug","44.673169,40.023171",,
+47442,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2026-10-02,Donetsk oblast,,,Cope cage
+47448,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-03,,,,Jammer
+47449,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2026-10-03,,,,"Turretless, Shattered"
+47430,Airplanes,Unknown fighter aircraft,Destroyed,Russia,2026-10-04,"Khanskaya airbase, Adygea","44.675072,40.025891",,Shattered
+47431,Airplanes,Unknown fighter aircraft,Destroyed,Russia,2026-10-04,"Khanskaya airbase, Adygea","44.673169,40.023171",,Shattered
+47445,Transport,Ural*,Destroyed,Russia,2026-10-05,Donetsk oblast,,,Loitering
+47446,Transport,KamAZ 6x6 with MM-501 armoured module,Destroyed,Russia,2026-10-05,,,,"Z, ∆, ▲"
