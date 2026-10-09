@@ -23745,3 +23745,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47431,Airplanes,Unknown fighter aircraft,Destroyed,Russia,2026-10-04,"Khanskaya airbase, Adygea","44.673169,40.023171",,Shattered
 47445,Transport,Ural*,Destroyed,Russia,2026-10-05,Donetsk oblast,,,Loitering
 47446,Transport,KamAZ 6x6 with MM-501 armoured module,Destroyed,Russia,2026-10-05,,,,"Z, ∆, ▲"
+47455,Infantry mobility vehicles,AMN-590951 'VPK-Ural',Destroyed,Russia,2026-10-06,"Kulbaki, Glushkovo raion","51.247253,34.811713",,"Jammer, Additional armour"
