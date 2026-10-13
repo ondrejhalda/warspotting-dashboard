@@ -22653,7 +22653,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 42950,Transport,ZiL-131,Destroyed,Russia,2026-02-18,"Dobropillia, Polohy raion","47.78577,36.197019",,
 42999,Self-propelled artillery,152mm 2S3(M) 'Akatsiya',Destroyed,Russia,2026-02-18,"Rivnopillia, Polohy raion",,,
 44066,Tanks,T-72B3 Obr. 2025,Abandoned,Russia,2026-02-18,"Shandryholove, Kramatorsk raion","49.116871,37.762552",488th Motor Rifle Regiment,"Cope cage, Jammer, Hedgehog, Damaged"
-44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Abandoned,Russia,2026-02-18,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, Damaged, ◇, Jammer, Additional armour, Hedgehog"
 42975,Transport,Ural-4320,Destroyed,Russia,2026-02-19,Donetsk oblast,,,
 42976,Transport,ZiL-131,Destroyed,Russia,2026-02-19,Donetsk oblast,,,
 42988,Transport,ZiL-131,Destroyed,Russia,2026-02-19,Donetsk oblast,,,Cope cage
@@ -23756,4 +23755,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47466,Transport,KamAZ 6x6,Destroyed,Russia,2026-10-07,,,,
 47464,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-08,Luhansk oblast,,,
 47472,Transport,KamAZ-65117,Destroyed,Russia,2026-10-08,Luhansk oblast,,,Loitering
+47502,Transport,KamAZ 6x6,Destroyed,Russia,2026-10-08,Donetsk oblast,,,Cope cage
 47461,Transport,KrAZ-255B fuel tanker,Destroyed,Russia,2026-10-09,"Shyrokyi, Shchastia raion","48.808095,39.622352",Moskva (ex-Western) Military District,Loitering
+44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
