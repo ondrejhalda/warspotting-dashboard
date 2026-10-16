@@ -23759,3 +23759,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47461,Transport,KrAZ-255B fuel tanker,Destroyed,Russia,2026-10-09,"Shyrokyi, Shchastia raion","48.808095,39.622352",Moskva (ex-Western) Military District,Loitering
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
 47513,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-10-14,"Shebekino raion, Belgorod oblast",,,
+47526,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.363196,42.185548",,
+47529,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.362794,42.186639",,
