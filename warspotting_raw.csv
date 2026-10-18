@@ -23761,3 +23761,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47513,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-10-14,"Shebekino raion, Belgorod oblast",,,
 47526,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.363196,42.185548",,
 47529,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.362794,42.186639",,
+47539,Rocket and missile artillery,300mm 9A52 BM-30 (for 9K58 'Smerch'),Destroyed,Russia,2026-10-17,"Shyroke, Skadovsk raion","46.187163,32.9382465",,
+47540,Transport,9T234-2 transloader (for 9K58 'Smerch'),Destroyed,Russia,2026-10-17,"Shyroke, Skadovsk raion","46.1869929,32.9369513",,
