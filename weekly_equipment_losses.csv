@@ -10,7 +10,7 @@ week,type,losses
 2022-02-21,"Radars, jammers",1
 2022-02-21,Rocket and missile artillery,5
 2022-02-21,Self-propelled artillery,2
-2022-02-21,Tanks,42
+2022-02-21,Tanks,41
 2022-02-21,Towed artillery,3
 2022-02-21,Transport,89
 2022-02-28,Airplanes,7
@@ -220,7 +220,7 @@ week,type,losses
 2022-06-06,"Command posts, communication",1
 2022-06-06,Drones,2
 2022-06-06,Engineering,7
-2022-06-06,Infantry fighting vehicles,39
+2022-06-06,Infantry fighting vehicles,38
 2022-06-06,Infantry mobility vehicles,1
 2022-06-06,Rocket and missile artillery,11
 2022-06-06,Self-propelled artillery,1
@@ -313,7 +313,7 @@ week,type,losses
 2022-08-01,"Command posts, communication",1
 2022-08-01,Drones,4
 2022-08-01,Engineering,2
-2022-08-01,Infantry fighting vehicles,28
+2022-08-01,Infantry fighting vehicles,27
 2022-08-01,Infantry mobility vehicles,1
 2022-08-01,Rocket and missile artillery,2
 2022-08-01,Self-propelled artillery,2
@@ -325,7 +325,7 @@ week,type,losses
 2022-08-08,"Command posts, communication",4
 2022-08-08,Drones,3
 2022-08-08,Engineering,1
-2022-08-08,Infantry fighting vehicles,25
+2022-08-08,Infantry fighting vehicles,24
 2022-08-08,Infantry mobility vehicles,1
 2022-08-08,Other,1
 2022-08-08,Rocket and missile artillery,2
@@ -610,7 +610,7 @@ week,type,losses
 2023-01-16,"Command posts, communication",1
 2023-01-16,Drones,2
 2023-01-16,Engineering,1
-2023-01-16,Infantry fighting vehicles,14
+2023-01-16,Infantry fighting vehicles,13
 2023-01-16,Infantry mobility vehicles,1
 2023-01-16,Rocket and missile artillery,2
 2023-01-16,Self-propelled artillery,5
@@ -667,7 +667,7 @@ week,type,losses
 2023-02-20,"Ambulances, medical vehicles",1
 2023-02-20,Anti-aircraft systems,2
 2023-02-20,Drones,2
-2023-02-20,Infantry fighting vehicles,36
+2023-02-20,Infantry fighting vehicles,35
 2023-02-20,Infantry mobility vehicles,2
 2023-02-20,"Radars, jammers",2
 2023-02-20,Rocket and missile artillery,2
@@ -1168,7 +1168,7 @@ week,type,losses
 2023-12-18,"Radars, jammers",1
 2023-12-18,Rocket and missile artillery,5
 2023-12-18,Self-propelled artillery,5
-2023-12-18,Tanks,16
+2023-12-18,Tanks,15
 2023-12-18,Towed artillery,1
 2023-12-18,Transport,7
 2023-12-25,Anti-aircraft systems,3
@@ -1304,7 +1304,6 @@ week,type,losses
 2024-03-11,Rocket and missile artillery,1
 2024-03-11,Self-propelled artillery,9
 2024-03-11,Tanks,20
-2024-03-11,Towed artillery,1
 2024-03-11,Transport,15
 2024-03-18,Anti-aircraft systems,3
 2024-03-18,Drones,2
@@ -1636,7 +1635,7 @@ week,type,losses
 2024-10-07,"Command posts, communication",3
 2024-10-07,Drones,6
 2024-10-07,Engineering,4
-2024-10-07,Infantry fighting vehicles,54
+2024-10-07,Infantry fighting vehicles,53
 2024-10-07,Infantry mobility vehicles,1
 2024-10-07,"Radars, jammers",1
 2024-10-07,Rocket and missile artillery,3
@@ -1678,7 +1677,7 @@ week,type,losses
 2024-10-28,Transport,18
 2024-11-04,Anti-aircraft systems,1
 2024-11-04,Drones,5
-2024-11-04,Infantry fighting vehicles,77
+2024-11-04,Infantry fighting vehicles,76
 2024-11-04,Infantry mobility vehicles,15
 2024-11-04,"Radars, jammers",1
 2024-11-04,Rocket and missile artillery,1
@@ -1734,7 +1733,7 @@ week,type,losses
 2024-12-09,Infantry mobility vehicles,4
 2024-12-09,Rocket and missile artillery,1
 2024-12-09,Tanks,6
-2024-12-09,Transport,8
+2024-12-09,Transport,9
 2024-12-16,Drones,6
 2024-12-16,Infantry fighting vehicles,41
 2024-12-16,Infantry mobility vehicles,1
@@ -2246,7 +2245,7 @@ week,type,losses
 2025-12-15,Self-propelled artillery,2
 2025-12-15,Tanks,11
 2025-12-15,Towed artillery,4
-2025-12-15,Transport,15
+2025-12-15,Transport,14
 2025-12-22,Anti-aircraft systems,1
 2025-12-22,Drones,1
 2025-12-22,Engineering,2
@@ -2325,7 +2324,7 @@ week,type,losses
 2026-02-23,"Radars, jammers",2
 2026-02-23,Rocket and missile artillery,5
 2026-02-23,Tanks,2
-2026-02-23,Transport,10
+2026-02-23,Transport,11
 2026-03-02,Anti-aircraft systems,5
 2026-03-02,Helicopters,2
 2026-03-02,Infantry fighting vehicles,10
@@ -2428,7 +2427,7 @@ week,type,losses
 2026-05-11,Vessels,1
 2026-05-18,Anti-aircraft systems,2
 2026-05-18,Engineering,1
-2026-05-18,Infantry fighting vehicles,7
+2026-05-18,Infantry fighting vehicles,8
 2026-05-18,Infantry mobility vehicles,3
 2026-05-18,Other,1
 2026-05-18,"Radars, jammers",1
@@ -2527,7 +2526,6 @@ week,type,losses
 2026-07-27,Transport,16
 2026-08-03,Anti-aircraft systems,1
 2026-08-03,Drones,1
-2026-08-03,Infantry fighting vehicles,1
 2026-08-03,Infantry mobility vehicles,2
 2026-08-03,Other,2
 2026-08-03,Rocket and missile artillery,2
@@ -2547,12 +2545,12 @@ week,type,losses
 2026-08-17,Drones,6
 2026-08-17,Engineering,1
 2026-08-17,Infantry fighting vehicles,1
-2026-08-17,Other,1
+2026-08-17,Other,2
 2026-08-17,Rocket and missile artillery,1
 2026-08-17,Self-propelled artillery,2
 2026-08-17,Tanks,1
 2026-08-17,Towed artillery,2
-2026-08-17,Transport,8
+2026-08-17,Transport,9
 2026-08-24,Airplanes,1
 2026-08-24,Anti-aircraft systems,2
 2026-08-24,Drones,1
