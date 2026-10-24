@@ -2587,12 +2587,13 @@ week,type,losses
 2026-09-14,"Command posts, communication",1
 2026-09-14,Helicopters,2
 2026-09-14,Infantry fighting vehicles,3
+2026-09-14,Infantry mobility vehicles,1
 2026-09-14,"Radars, jammers",1
 2026-09-14,Rocket and missile artillery,1
 2026-09-14,Self-propelled artillery,2
 2026-09-14,Tanks,1
 2026-09-14,Towed artillery,4
-2026-09-14,Transport,10
+2026-09-14,Transport,11
 2026-09-21,Drones,1
 2026-09-21,Infantry fighting vehicles,4
 2026-09-21,Other,1
@@ -2622,4 +2623,4 @@ week,type,losses
 2026-10-19,Self-propelled artillery,3
 2026-10-19,Tanks,1
 2026-10-19,Towed artillery,2
-2026-10-19,Transport,12
+2026-10-19,Transport,14
