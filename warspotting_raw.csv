@@ -23713,7 +23713,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47477,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-19,"Novopetrivka, Berdiansk raion","46.874194,36.929304",,Loitering
 47640,Self-propelled artillery,170mm Chuch'ep'o (M-1989 'Koksan'),Destroyed,Russia,2026-09-19,"Serebrianka reserve, Siverskodonetsk raion",,,Cope cage
 47709,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-09-19,"Krasnaya raion, Belgorod oblast",,,
-47710,Transport,Unknown truck,Destroyed,Russia,2026-09-19,"Zeleny Hai, Melitopol raion","47.010505,34.719876",,"Shattered, Loitering"
+47710,Transport,Unknown truck,Destroyed,Russia,2026-09-19,"Zelenyi Hai, Melitopol raion","47.010505,34.719876",,"Shattered, Loitering"
 47295,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-09-20,"Vovchansk, Chuhuiv raion","50.30709,36.92175",,Cope cage
 47320,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-20,"Ivanivka (Hrodivka hromada), Pokrovsk raion","48.254275,37.458271",,"Cope cage, Hedgehog"
 47321,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-09-20,"Ivanivka (Hrodivka hromada), Pokrovsk raion","48.254275,37.458271",,"Cope cage, Additional armour"
@@ -23769,6 +23769,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47670,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-09,,,,Flipped
 47590,Transport,Ural-63706-0122 'Tornado-U',Destroyed,Russia,2026-10-10,"Kulykivske, Berdiansk raion","46.900722,36.974106",,"Loitering, ∆, ▲"
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
+47514,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-10-13,"Hryshyne, Pokrovsk raion","48.304500,37.112788",,"Cope cage, Additional armour"
 47588,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-10-13,"Glushkovo, Glushkovo raion","51.345326,34.651521",,"Cope cage, Additional armour"
 47513,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-10-14,"Shebekino raion, Belgorod oblast",,,
 47526,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.363196,42.185548",,
@@ -23803,3 +23804,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47675,Transport,ZiL-131,Damaged,Russia,2026-10-23,"Sudzha raion, Kursk oblast",,,Cope cage
 47707,Transport,Ural-4320,Destroyed,Russia,2026-10-23,"Hranitne, Volnovakha raion","47.441160,37.827333",,Loitering
 47708,Transport,KamAZ 6x6,Destroyed,Russia,2026-10-24,,,,"Cope cage, Loitering"
+47716,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-24,Kursk oblast,,,
+47717,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-24,Kursk oblast,,,
+47769,Engineering,REM-KL recovery vehicle,Destroyed,Russia,2026-10-24,"Volnovakha raion, Donetsk oblast",,,Loitering
