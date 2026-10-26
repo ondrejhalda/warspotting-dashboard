@@ -23738,7 +23738,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47296,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-19,,,Eastern Military District,"Cope cage, Jammer"
 47477,Transport,KamAZ 6x6,Destroyed,Russia,2026-09-19,"Novopetrivka, Berdiansk raion","46.874194,36.929304",,Loitering
 47640,Self-propelled artillery,170mm Chuch'ep'o (M-1989 'Koksan'),Destroyed,Russia,2026-09-19,"Serebrianka reserve, Siverskodonetsk raion",,,Cope cage
-47709,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-09-19,"Krasnaya raion, Belgorod oblast",,,
+47709,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-09-19,"Repyakhovka, Krasnaya raion","50.858885,35.470800",,
 47710,Transport,Unknown truck,Destroyed,Russia,2026-09-19,"Zelenyi Hai, Melitopol raion","47.010505,34.719876",,"Shattered, Loitering"
 47295,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-09-20,"Vovchansk, Chuhuiv raion","50.30709,36.92175",,Cope cage
 47320,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-20,"Ivanivka (Hrodivka hromada), Pokrovsk raion","48.254275,37.458271",,"Cope cage, Hedgehog"
@@ -23755,7 +23755,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47595,Drones,Orion UCAV,Destroyed,Russia,2026-09-25,"Saky airbase, Yevpatoriia raion","45.079893,33.578585",,Loitering
 47332,Transport,KamAZ 6x6 with armoured cabin,Destroyed,Russia,2026-09-26,"Kostiantynivka, Melitopol raion","46.821280,35.470669",,"Cope cage, Loitering, Jammer"
 47333,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-09-26,"Melitopol raion, Zaporizhzhia oblast",,Moskva (ex-Western) Military District,"Cope cage, Loitering"
-47406,Tanks,T-80BV,Destroyed,Russia,2026-09-26,"Zaporizhzhia, Pokrovsk raion","48.102290,36.981690",,"Cope cage, Jammer, Additional armour, Z"
+47406,Tanks,T-80BV,Destroyed,Russia,2026-09-26,"Zaporizhzhia, Pokrovsk raion","48.102290,36.981690",,"Z, Cope cage, Jammer, Additional armour"
 47335,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Expanded cabin, Additional armour, Hedgehog"
 47336,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-09-27,"Ivanivske, Bakhmut raion","48.583616,37.922088",,"Cope cage, Jammer, Additional armour"
 47337,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-09-27,"Bakhmut raion, Donetsk oblast",,,Cope cage
@@ -23793,6 +23793,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47461,Transport,KrAZ-255B fuel tanker,Destroyed,Russia,2026-10-09,"Shyrokyi, Shchastia raion","48.808095,39.622352",Moskva (ex-Western) Military District,Loitering
 47669,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-09,,,,Jammer
 47670,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-09,,,,Flipped
+47786,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-10-09,Donetsk oblast,,,"Turtle, Additional armour, Hedgehog"
 47590,Transport,Ural-63706-0122 'Tornado-U',Destroyed,Russia,2026-10-10,"Kulykivske, Berdiansk raion","46.900722,36.974106",,"Loitering, ∆, ▲"
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
 47514,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-10-13,"Hryshyne, Pokrovsk raion","48.304500,37.112788",,"Cope cage, Additional armour"
@@ -23833,3 +23834,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47716,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-24,Kursk oblast,,,
 47717,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-24,Kursk oblast,,,
 47769,Engineering,REM-KL recovery vehicle,Destroyed,Russia,2026-10-24,"Volnovakha raion, Donetsk oblast",,,Loitering
+47784,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-10-24,,,,"Cope cage, Jammer, Additional armour"
+47785,Towed artillery,152mm 52-P-546 D-20 gun-howitzer,Destroyed,Russia,2026-10-24,,,,
