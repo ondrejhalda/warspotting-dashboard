@@ -23819,7 +23819,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47592,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Damaged,Russia,2026-10-20,South Ukraine,,,"Loitering, Additional armour"
 47606,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-10-20,South Ukraine,,,Loitering
 47609,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
-47610,Self-propelled artillery,152mm 2S5 'Giatsint-S',Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
+47610,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
 47615,Transport,Ural-4320,Destroyed,Russia,2026-10-20,Donetsk oblast,,,
 47614,Transport,Ural-4320,Destroyed,Russia,2026-10-21,,,,"Cope cage, Loitering, ◇, ✕"
 47630,Transport,'Ulan' all-terrain vehicle,Damaged,Russia,2026-10-21,"Pryiutne, Polohy raion",,60th Separate Motor Rifle Brigade,Jammer
@@ -23836,3 +23836,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47769,Engineering,REM-KL recovery vehicle,Destroyed,Russia,2026-10-24,"Volnovakha raion, Donetsk oblast",,,Loitering
 47784,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-10-24,,,,"Cope cage, Jammer, Additional armour"
 47785,Towed artillery,152mm 52-P-546 D-20 gun-howitzer,Destroyed,Russia,2026-10-24,,,,
+47829,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-27,"Svatove raion, Luhansk oblast",,,
