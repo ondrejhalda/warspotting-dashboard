@@ -23772,6 +23772,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47403,Transport,Ural-4320,Destroyed,Russia,2026-10-02,"Zamistia, Berdiansk raion","47.075713,36.023004",,Shattered
 47404,Transport,Ural-4320,Destroyed,Russia,2026-10-02,"Zamistia, Berdiansk raion","47.075713,36.023004",,Shattered
 47405,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-10-02,"Myrnohrad, Pokrovsk raion",,,
+47884,Transport,UAZ-452,Destroyed,Russia,2026-10-02,,,,
 47448,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-03,,,,Jammer
 47449,Infantry fighting vehicles,BMP-3,Destroyed,Russia,2026-10-03,,,,"Turretless, Shattered"
 47635,Towed artillery,130mm 52-P-482 M-46 field gun,Destroyed,Russia,2026-10-03,,,,
@@ -23798,6 +23799,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
 47514,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-10-13,"Hryshyne, Pokrovsk raion","48.304500,37.112788",,"Cope cage, Additional armour"
 47588,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-10-13,"Glushkovo, Glushkovo raion","51.345326,34.651521",,"Cope cage, Additional armour"
+47883,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-13,,,,"Cope cage, Jammer, Additional armour"
 47513,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-10-14,"Shebekino raion, Belgorod oblast",,,
 47526,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.363196,42.185548",,
 47529,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-14,"Borisoglebsk air base, Borisoglebsk","51.362794,42.186639",,
@@ -23837,3 +23839,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47784,Infantry mobility vehicles,ASN-233115 'Tigr-M SpN',Destroyed,Russia,2026-10-24,,,,"Cope cage, Jammer, Additional armour"
 47785,Towed artillery,152mm 52-P-546 D-20 gun-howitzer,Destroyed,Russia,2026-10-24,,,,
 47829,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-27,"Svatove raion, Luhansk oblast",,,
+47847,Other,'Kuryer' mine-laying UGV,Destroyed,Russia,2026-10-27,"Oleshky, Kherson raion",,,
+47868,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-27,"Toretsk, Bakhmut raion",,,"Cope cage, Jammer"
+47881,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-28,"Korenevo raion, Kursk oblast",,,
