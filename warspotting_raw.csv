@@ -23842,3 +23842,4 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47847,Other,'Kuryer' mine-laying UGV,Destroyed,Russia,2026-10-27,"Oleshky, Kherson raion",,,
 47868,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-27,"Toretsk, Bakhmut raion",,,"Cope cage, Jammer"
 47881,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-28,"Korenevo raion, Kursk oblast",,,
+47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-30,Donetsk oblast,,,"Shattered, Cope cage"
