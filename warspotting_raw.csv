@@ -23851,6 +23851,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47892,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-29,"Marinovka airbase, Kalach raion","48.64208,43.79543",,
 47893,Airplanes,Su-34 strike aircraft,Destroyed,Russia,2026-10-29,"Marinovka airbase, Kalach raion","48.64235,43.79657",,
 47896,Airplanes,Su-57 stealth multirole aircraft,Destroyed,Russia,2026-10-29,"Akhtubinsk airbase, Akhtubinsk raion","48.311360,46.189107",,
+47958,Tanks,T-72B3,Destroyed,Russia,2026-10-29,"Kramatorsk raion, Donetsk oblast",,,Turtle
 47906,Helicopters,Mi-8AMTSh transport helicopter,Destroyed,Russia,2026-10-30,"Tarasivka, Svatove raion","49.658319,38.398720",,Loitering
 47930,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-30,"Pereizne, Bakhmut raion","48.767382,38.071568",,Jammer
 47952,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-10-30,"Polohy raion, Zaporizhzhia oblast",,,
@@ -23859,3 +23860,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47934,Transport,GAZ-33081 'Eger-II',Destroyed,Russia,2026-10-31,,,,Cope cage
 47935,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-31,,,,Jammer
 47933,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-01,,,,Cope cage
+47957,Transport,Ural-4320,Destroyed,Russia,2026-11-02,Donetsk oblast,,,Cope cage
+47981,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-11-02,"Novopavlivka, Synelnykove raion",,,"Turretless, Cope cage, Hedgehog"
+47959,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2026-11-03,Russia,,,Loitering
