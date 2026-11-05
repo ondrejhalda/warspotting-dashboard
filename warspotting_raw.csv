@@ -23861,5 +23861,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47935,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-31,,,,Jammer
 47933,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-01,,,,Cope cage
 47957,Transport,Ural-4320,Destroyed,Russia,2026-11-02,Donetsk oblast,,,Cope cage
-47981,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-11-02,"Novopavlivka, Synelnykove raion",,,"Turretless, Cope cage, Hedgehog"
+47981,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-11-02,"Novopavlivka, Synelnykove raion",,90th Guards Tank Division,"Turretless, Cope cage, Hedgehog"
 47959,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2026-11-03,Russia,,,Loitering
+47995,Rocket and missile artillery,Unknown combat vehicle based on Ural-4320 (for 9K55 'Grad-1'),Destroyed,Russia,2026-11-05,"Valuyki raion, Belgorod oblast","50.250209,37.819461",,"Cope cage, Improvised"
