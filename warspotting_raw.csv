@@ -23859,8 +23859,14 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47932,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-10-31,"Pokrovsk, Pokrovsk raion",,,
 47934,Transport,GAZ-33081 'Eger-II',Destroyed,Russia,2026-10-31,,,,Cope cage
 47935,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-10-31,,,,Jammer
+48023,Transport,UAZ-452,Destroyed,Russia,2026-10-31,South Ukraine,,,"Cope cage, Flipped, Loitering"
 47933,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-01,,,,Cope cage
 47957,Transport,Ural-4320,Destroyed,Russia,2026-11-02,Donetsk oblast,,,Cope cage
 47981,Tanks,Unknown T-80 Obr. 2022,Destroyed,Russia,2026-11-02,"Novopavlivka, Synelnykove raion",,90th Guards Tank Division,"Turretless, Cope cage, Hedgehog"
 47959,Anti-aircraft systems,2S6M combat vehicle (for 2K22M 'Tunguska-M'),Destroyed,Russia,2026-11-03,Russia,,,Loitering
-47995,Rocket and missile artillery,Unknown combat vehicle based on Ural-4320 (for 9K55 'Grad-1'),Destroyed,Russia,2026-11-05,"Valuyki raion, Belgorod oblast","50.250209,37.819461",,"Cope cage, Improvised"
+48003,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-11-04,"Vnezapnoe, Korenevo raion","51.253729,34.878930",,"Cope cage, Jammer"
+48004,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-04,"Vnezapnoe, Korenevo raion","51.252957,34.879320",,"Cope cage, Additional armour"
+48005,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-11-04,"Vnezapnoe, Korenevo raion","51.252827,34.879390",,Jammer
+47995,Rocket and missile artillery,122mm launcher based on Ural-4320 (for 9K55 'Grad-1'),Destroyed,Russia,2026-11-05,"Valuyki raion, Belgorod oblast","50.250209,37.819461",,"Cope cage, Improvised"
+48022,Transport,KamAZ-65117,Destroyed,Russia,2026-11-05,"Luhansk, Luhansk raion","48.522191,39.382963",,"Cope cage, Loitering"
+48024,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-11-06,Kursk oblast,,Eastern Military District,Jammer
