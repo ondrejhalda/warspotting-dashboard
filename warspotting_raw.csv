@@ -23801,6 +23801,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47670,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-10-09,,,,Flipped
 47786,Infantry fighting vehicles,MT-LBVM(K),Destroyed,Russia,2026-10-09,Donetsk oblast,,,"Turtle, Additional armour, Hedgehog"
 47590,Transport,Ural-63706-0122 'Tornado-U',Destroyed,Russia,2026-10-10,"Kulykivske, Berdiansk raion","46.900722,36.974106",,"Loitering, ∆, ▲"
+48032,Self-propelled artillery,122mm 2S1 'Gvozdika',Damaged,Russia,2026-10-10,Russia,,,Additional armour
 44067,Infantry fighting vehicles,BMP-1AM 675-sb3KDZ,Destroyed,Russia,2026-10-12,"Shandryholove, Kramatorsk raion","49.116664,37.762344",488th Motor Rifle Regiment,"Z, Cope cage, ◇, Jammer, Additional armour, Hedgehog"
 47514,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-10-13,"Hryshyne, Pokrovsk raion","48.304500,37.112788",,"Cope cage, Additional armour"
 47588,Infantry fighting vehicles,BTR-80,Destroyed,Russia,2026-10-13,"Glushkovo, Glushkovo raion","51.345326,34.651521",,"Cope cage, Additional armour"
