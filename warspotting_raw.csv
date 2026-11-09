@@ -23827,13 +23827,13 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47605,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-10-19,Kursk oblast,,,Cope cage
 47613,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-10-19,,,,
 47655,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-10-19,"Shebekino raion, Belgorod oblast",,,"Cope cage, Additional armour"
-47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Cope cage, Shattered"
+47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Shattered, Cope cage"
 47592,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Damaged,Russia,2026-10-20,South Ukraine,,,"Loitering, Additional armour"
 47606,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-10-20,South Ukraine,,,Loitering
 47609,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
 47610,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
+47614,Transport,Ural-4320,Destroyed,Russia,2026-10-20,Luhansk oblast,,,"Cope cage, Loitering, ◇, ✕"
 47615,Transport,Ural-4320,Destroyed,Russia,2026-10-20,Donetsk oblast,,,
-47614,Transport,Ural-4320,Destroyed,Russia,2026-10-21,,,,"Cope cage, Loitering, ◇, ✕"
 47630,Transport,'Ulan' all-terrain vehicle,Damaged,Russia,2026-10-21,"Pryiutne, Polohy raion",,60th Separate Motor Rifle Brigade,Jammer
 47631,Transport,GAZ-231073 'Jihad-Mashina',Destroyed,Russia,2026-10-21,,,Southern Military District,
 47687,Transport,KamAZ 6x6,Destroyed,Russia,2026-10-21,Belgorod oblast,,Central Military District,"◇, ✕"
@@ -23876,7 +23876,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48005,Other,'Kuryer' logistics UGV,Destroyed,Russia,2026-11-04,"Vnezapnoe, Korenevo raion","51.252827,34.879390",,Jammer
 47995,Rocket and missile artillery,122mm launcher based on Ural-4320 (for 9K55 'Grad-1'),Destroyed,Russia,2026-11-05,"Kazinka, Valuyki raion","50.250209,37.819461",,"Cope cage, Improvised"
 48022,Transport,KamAZ-65117,Destroyed,Russia,2026-11-05,"Luhansk, Luhansk raion","48.522191,39.382963",,"Cope cage, Loitering"
-48024,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-11-06,Kursk oblast,,Eastern Military District,Jammer
+48024,Transport,UAZ-39094 'Fermer',Destroyed,Russia,2026-11-06,Kursk oblast,,83rd Separate Guards Air Assault Brigade,Jammer
 48028,Rocket and missile artillery,122mm 9P138 (for 9K55 'Grad-1'),Destroyed,Russia,2026-11-06,Zaporizhzhia oblast,,,Cope cage
 48031,Transport,KamAZ*,Destroyed,Russia,2026-11-06,Kherson oblast,,,Jammer
 48030,Self-propelled artillery,122mm 2S1 'Gvozdika',Destroyed,Russia,2026-11-07,Kursk oblast,,,Cope cage
