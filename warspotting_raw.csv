@@ -23899,3 +23899,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48079,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-11-10,Kharkiv oblast,,,
 48123,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-11,"Stepove (Rozdol hromada), Vasylivka raion","47.422484,35.606436",,
 48124,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-11-11,"Stepove (Rozdol hromada), Vasylivka raion","47.425233,35.606471",299th Air Assault Regiment,"Cope cage, ∆, ▲, Additional armour"
+48144,"Radars, jammers",1L119 'Nebo-SVU' multi-functional radar,Damaged,Russia,2026-11-11,"Mishino, Kingisepp raion","59.728732,28.495323",,Loitering
+48145,Other,40V6M universal mobile mast,Damaged,Russia,2026-11-11,"Mishino, Kingisepp raion","59.728396,28.494284",,Loitering
+48141,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-11-12,"Svatove raion, Luhansk oblast",,,Cope cage
