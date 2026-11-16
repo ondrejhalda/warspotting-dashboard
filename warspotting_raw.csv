@@ -23846,7 +23846,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47605,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-10-19,Kursk oblast,,,Cope cage
 47613,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-10-19,,,,
 47655,Self-propelled artillery,152mm 2S19M2 'Msta-S',Destroyed,Russia,2026-10-19,"Shebekino raion, Belgorod oblast",,,"Cope cage, Additional armour"
-47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Cope cage, Shattered"
+47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Shattered, Cope cage"
 47592,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Damaged,Russia,2026-10-20,South Ukraine,,,"Loitering, Additional armour"
 47606,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-10-20,South Ukraine,,,Loitering
 47609,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
@@ -23918,3 +23918,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48124,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-11-11,"Stepove (Rozdol hromada), Vasylivka raion","47.425233,35.606471",299th Air Assault Regiment,"Cope cage, ∆, ▲, Additional armour"
 48144,"Radars, jammers",1L119 'Nebo-SVU' multi-functional radar,Damaged,Russia,2026-11-11,"Mishino, Kingisepp raion","59.728732,28.495323",,Loitering
 48141,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-11-12,"Svatove raion, Luhansk oblast",,,"Cope cage, Jammer"
+48171,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-11-13,"Dobropillia, Pokrovsk raion",,,Cope cage
+48170,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-15,"Siverskodonetsk raion, Luhansk oblast",,,
+48168,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,"Cope cage, ◇, ✕, Additional armour, Hedgehog"
+48169,Towed artillery,122mm 2A18 D-30 howitzer,Damaged,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,Additional armour
