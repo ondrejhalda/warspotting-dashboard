@@ -23923,3 +23923,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48170,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-15,"Siverskodonetsk raion, Luhansk oblast",,,
 48168,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,"Cope cage, ◇, ✕, Additional armour, Hedgehog"
 48169,Towed artillery,122mm 2A18 D-30 howitzer,Damaged,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,Additional armour
+48188,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-11-16,"Kreminets, Kalmiuske raion","47.916061,37.612972",,
+48191,Tanks,T-72B3 Obr. 2022,Destroyed,Russia,2026-11-16,,,,Cope cage
+48200,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-11-17,,,,"Cope cage, Loitering, Jammer, Additional armour, Hedgehog"
+48202,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-11-17,,,,"Cope cage, Additional armour, Hedgehog"
