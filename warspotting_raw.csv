@@ -23849,7 +23849,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 47605,Infantry fighting vehicles,BTR-82AT,Destroyed,Russia,2026-10-19,Kursk oblast,,,Cope cage
 47613,Towed artillery,152mm 2A36 'Giatsint-B' field gun,Destroyed,Russia,2026-10-19,,,,
 47655,Self-propelled artillery,152mm 2S19M2 'Msta-S',Destroyed,Russia,2026-10-19,"Shebekino raion, Belgorod oblast",,,"Cope cage, Additional armour"
-47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Cope cage, Shattered"
+47897,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-10-19,"Novoielyzavetivka, Pokrovsk raion","48.129688,37.033729",,"Shattered, Cope cage"
 47592,Anti-aircraft systems,9A317M TELAR (for 9K317M 'Buk-M3'),Damaged,Russia,2026-10-20,South Ukraine,,,"Loitering, Additional armour"
 47606,Transport,KamAZ 6x6 fuel tanker,Destroyed,Russia,2026-10-20,South Ukraine,,,Loitering
 47609,Towed artillery,122mm 2A18 D-30 howitzer,Destroyed,Russia,2026-10-20,"Siverskodonetsk raion, Luhansk oblast",,,
@@ -23923,12 +23923,19 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48141,Rocket and missile artillery,122mm 2B17 BM-21-1 (for 9K51 'Grad'),Destroyed,Russia,2026-11-12,"Svatove raion, Luhansk oblast",,,"Cope cage, Jammer"
 48171,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-11-13,"Dobropillia, Pokrovsk raion",,,Cope cage
 48170,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-15,"Siverskodonetsk raion, Luhansk oblast",,,
+48254,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-15,South Ukraine,,,"Cope cage, Loitering"
 48168,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,"Cope cage, ◇, ✕, Additional armour, Hedgehog"
 48169,Towed artillery,122mm 2A18 D-30 howitzer,Damaged,Russia,2026-11-16,"Novopetrovka, Valuyki raion","50.138490,37.742845",,Additional armour
 48191,Tanks,T-72B3 Obr. 2022,Destroyed,Russia,2026-11-16,,,,Cope cage
 48200,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-11-17,,,,"Cope cage, Loitering, Jammer, Additional armour, Hedgehog"
 48202,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-11-17,,,,"Cope cage, Additional armour, Hedgehog"
+48257,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-18,Kursk oblast,,,"Cope cage, Additional armour"
 48239,Rocket and missile artillery,220mm 9P140 BM-27 (for 9K57 'Uragan'),Destroyed,Russia,2026-11-19,Donetsk oblast,,,
 48241,Engineering,PTS(-M) tracked amphibious transport,Destroyed,Russia,2026-11-19,Kharkiv oblast,,,
 48247,Infantry fighting vehicles,BMP-2(K),Abandoned,Russia,2026-11-19,"Polohy raion, Zaporizhzhia oblast",,,"Cope cage, Damaged, Jammer, Additional armour"
 48248,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-19,Luhansk oblast,,,"Cope cage, Additional armour"
+48255,Transport,'Federal-42591',Destroyed,Russia,2026-11-21,South Ukraine,,Rosgvardiya,"Cope cage, Loitering, Jammer, Additional armour"
+48256,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-11-21,Donetsk oblast,,,Cope cage
+48260,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-11-21,"Svatove raion, Luhansk oblast",,,Jammer
+48252,Vessels,Project 20380 'Steregushchiy' class corvette,Destroyed,Russia,2026-11-22,"Benghazi, Benghazi popularate","32.122914,20.050537",30th Surface Ship Division,"Loitering, Underwater"
+48259,Transport,Ural-4320,Destroyed,Russia,2026-11-23,"Svatove raion, Luhansk oblast",,,Cope cage
