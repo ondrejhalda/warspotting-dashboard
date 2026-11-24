@@ -23937,5 +23937,6 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48255,Transport,'Federal-42591',Destroyed,Russia,2026-11-21,South Ukraine,,Rosgvardiya,"Cope cage, Loitering, Jammer, Additional armour"
 48256,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-11-21,Donetsk oblast,,,Cope cage
 48260,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-11-21,"Svatove raion, Luhansk oblast",,,Jammer
+48282,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-21,"Kamianka, Kupiansk raion","49.98322,37.76877",,"Cope cage, Turtle, Additional armour, Hedgehog"
 48252,Vessels,Project 20380 'Steregushchiy' class corvette,Destroyed,Russia,2026-11-22,"Benghazi, Benghazi popularate","32.122914,20.050537",30th Surface Ship Division,"Loitering, Underwater"
 48259,Transport,Ural-4320,Destroyed,Russia,2026-11-23,"Svatove raion, Luhansk oblast",,,Cope cage
