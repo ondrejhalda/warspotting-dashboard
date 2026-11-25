@@ -2648,7 +2648,7 @@ week,type,losses
 2026-11-02,Rocket and missile artillery,2
 2026-11-02,Self-propelled artillery,1
 2026-11-02,Tanks,2
-2026-11-02,Transport,11
+2026-11-02,Transport,14
 2026-11-09,Airplanes,1
 2026-11-09,Infantry fighting vehicles,1
 2026-11-09,"Radars, jammers",1
@@ -2657,10 +2657,12 @@ week,type,losses
 2026-11-09,Transport,5
 2026-11-16,Anti-aircraft systems,1
 2026-11-16,Engineering,1
-2026-11-16,Infantry fighting vehicles,5
+2026-11-16,Infantry fighting vehicles,6
 2026-11-16,Rocket and missile artillery,1
 2026-11-16,Tanks,1
 2026-11-16,Towed artillery,1
 2026-11-16,Transport,4
 2026-11-16,Vessels,1
+2026-11-23,Infantry fighting vehicles,4
+2026-11-23,Tanks,1
 2026-11-23,Transport,1
