@@ -23934,7 +23934,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48202,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-11-17,,,,"Cope cage, Additional armour, Hedgehog"
 48257,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-18,Kursk oblast,,,"Cope cage, Additional armour"
 48239,Rocket and missile artillery,220mm 9P140 BM-27 (for 9K57 'Uragan'),Destroyed,Russia,2026-11-19,Donetsk oblast,,,
-48241,Engineering,PTS(-M) tracked amphibious transport,Destroyed,Russia,2026-11-19,Kharkiv oblast,,,
+48241,Engineering,PTS(-M) tracked amphibious transport,Destroyed,Russia,2026-11-19,"Bochkove, Chuhuiv raion","50.319706,37.132762",,
 48247,Infantry fighting vehicles,BMP-2(K),Abandoned,Russia,2026-11-19,"Polohy raion, Zaporizhzhia oblast",,,"Cope cage, Damaged, Jammer, Additional armour"
 48248,Transport,KamAZ 6x6,Destroyed,Russia,2026-11-19,Luhansk oblast,,,"Cope cage, Additional armour"
 48294,Infantry fighting vehicles,BMP-1 or -2,Destroyed,Russia,2026-11-20,"Kamianka, Kupiansk raion",,,"Cope cage, Hedgehog"
@@ -23948,4 +23948,5 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48295,Tanks,T-72B(1),Destroyed,Russia,2026-11-23,Donetsk oblast,,,Cope cage
 48297,Infantry fighting vehicles,BMP-2 675-sb3KDZ,Destroyed,Russia,2026-11-25,"Matiasheve, Pokrovsk raion","48.408456,37.050170",,"Cope cage, Jammer, Additional armour"
 48298,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-11-25,"Matiasheve, Pokrovsk raion","48.414155,37.047026",,"Cope cage, Additional armour"
-48300,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-25,,,,"Turretless, Cope cage, Expanded cabin, Additional armour"
+48300,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-25,"Malynivka, Pokrovsk raion","48.332116,37.385791",,"Turretless, Cope cage, Expanded cabin, Additional armour"
+48304,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-11-26,"Pisky, Kupiansk raion","49.979767,37.900627",,"Turretless, Shattered, Cope cage, Additional armour"
