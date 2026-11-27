@@ -23932,6 +23932,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48191,Tanks,T-72B3 Obr. 2022,Destroyed,Russia,2026-11-16,,,,Cope cage
 48200,Infantry fighting vehicles,BTR-80 or -82,Destroyed,Russia,2026-11-17,,,,"Cope cage, Loitering, Jammer, Additional armour, Hedgehog"
 48202,Infantry fighting vehicles,Unknown IFV,Destroyed,Russia,2026-11-17,,,,"Cope cage, Additional armour, Hedgehog"
+48310,Transport,KrAZ-255-based vehicle,Destroyed,Russia,2026-11-17,"Leninskii, Shebekino raion","50.357771,37.103235",,Improvised
 48257,Transport,'Ulan-2' all-terrain vehicle,Destroyed,Russia,2026-11-18,Kursk oblast,,,"Cope cage, Additional armour"
 48239,Rocket and missile artillery,220mm 9P140 BM-27 (for 9K57 'Uragan'),Destroyed,Russia,2026-11-19,Donetsk oblast,,,
 48241,Engineering,PTS(-M) tracked amphibious transport,Destroyed,Russia,2026-11-19,"Bochkove, Chuhuiv raion","50.319706,37.132762",,
@@ -23943,6 +23944,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48260,Transport,'Ulan' all-terrain vehicle,Destroyed,Russia,2026-11-21,"Svatove raion, Luhansk oblast",,,Jammer
 48282,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-21,"Kamianka, Kupiansk raion","49.98322,37.76877",,"Cope cage, Turtle, Additional armour, Hedgehog"
 48252,Vessels,Project 20380 'Steregushchiy' class corvette,Destroyed,Russia,2026-11-22,"Benghazi, Benghazi popularate","32.122914,20.050537",30th Surface Ship Division,"Loitering, Underwater"
+48317,Transport,KrAZ-255B,Destroyed,Russia,2026-11-22,"Novoekonomichne, Pokrovsk raion","48.343980,37.313566",,"Shattered, Flipped"
 48259,Transport,Ural-4320,Destroyed,Russia,2026-11-23,"Svatove raion, Luhansk oblast",,,Cope cage
 48291,Infantry fighting vehicles,BMP-1(P),Destroyed,Russia,2026-11-23,"Chuhuiv raion, Kharkiv oblast",,,"Cope cage, Jammer, Hedgehog"
 48295,Tanks,T-72B(1),Destroyed,Russia,2026-11-23,Donetsk oblast,,,Cope cage
@@ -23950,3 +23952,7 @@ id,type,model,status,lost_by,date,nearest_location,geo,unit,tags
 48298,Infantry fighting vehicles,BTR-82A(M),Destroyed,Russia,2026-11-25,"Matiasheve, Pokrovsk raion","48.414155,37.047026",,"Cope cage, Additional armour"
 48300,Infantry fighting vehicles,MT-LB(V),Destroyed,Russia,2026-11-25,"Malynivka, Pokrovsk raion","48.332116,37.385791",,"Turretless, Cope cage, Expanded cabin, Additional armour"
 48304,Self-propelled artillery,152mm 2S19(M1) 'Msta-S',Destroyed,Russia,2026-11-26,"Pisky, Kupiansk raion","49.979767,37.900627",,"Turretless, Shattered, Cope cage, Additional armour"
+48309,Anti-aircraft systems,72V6 combat vehicle (for 96K6 'Pantsir-S1'),Destroyed,Russia,2026-11-27,,,,"Turretless, Shattered, Loitering"
+48311,Transport,KrAZ-255-based vehicle,Destroyed,Russia,2026-11-27,"Leninskii, Shebekino raion","50.357303,37.103476",,Improvised
+48312,Transport,ZiL-131,Destroyed,Russia,2026-11-27,"Polohy raion, Zaporizhzhia oblast",,,"KUNG, Expanded cabin"
+48313,Transport,ZiL-131,Destroyed,Russia,2026-11-27,"Svatove raion, Luhansk oblast",,,"KUNG, Expanded cabin"
